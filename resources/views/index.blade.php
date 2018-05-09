@@ -190,19 +190,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="agileits-services">
 				<div class="services-right-grids">
 					
-					<div class="col-sm-4 services-right-grid">
+					<!-- <div class="col-sm-4 services-right-grid">
 						<div class="se-top">
 							<div class="services-icon">
 								<img src="images/midicon1.png">
-								<!-- <i class="fa fa-book" aria-hidden="true"></i> -->
 							</div>
 							<div class="services-icon-info">
 								<h5>INSCRIPTION</h5>
 								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci enim, posuere sed tincidunt et, pellentesque eget mi.</p>
 							</div>
 						</div>
-					</div>
-					<div class="col-sm-4 services-right-grid">
+					</div> -->
+					<div class="col-sm-4 col-sm-offset-2 services-right-grid">
 						<div class="se-top">
 							<div class="services-icon">
 								<a href="amis"><img src="images/midicon2.png"></a>
@@ -238,49 +237,62 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="events-section">
 		<div class="container">
 			<h3 class="title-txt two"><span>O</span>ur News</h3>
-			<div class="col-sm-4 live-grids-w3ls">
-				<div class="live-left1">
-					<img src="images/g1.jpg" alt=" " class="img-responsive">
+			<div class="">
+				<div class="col-sm-4 live-grids-w3ls">
+					<div class="panel panel-primary">
+						<div class="panel-heading"><center>VAINQUEUR DU JOUR</center></div>
+						<div class="panel-body">
+							<div class="live-info">
+							
+							<img src="images/gagnant1.jpg">
+												
+							</div>
+							<h5>Moris Bah</h5>
+						</div>
+					</div>
+					
+					
 				</div>
-				<div class="live-info">
-					<ul>
-						<li><span class="fa fa-calendar-o" aria-hidden="true"></span> FEBRUARY 08, 2018</li>
-					</ul>
-					<h4>School funding</h4>
-					<p class="para-1"> Proin ultricies vestibulum velit.Lorem ipsum dolor sit amet.Nam
-						aliquam pretium feugiat.</p>
+
+				<div class="col-sm-4 live-grids-w3ls">
+					<div class="panel panel-primary">
+						<div class="panel-heading"><center>TOP 10 EN TETE</center></div>
+						<div class="panel-body">
+							<div class="live-info">
+
+								<marquee style="background:url(ImgMarquee/Canigou.jpg); color:#B20;" direction="up" height="213px">
+	                            <img class="img1" src="images/service1.png">
+	       	 					<img class="img1" src="images/service2.png">
+	       	 					<img class="img1" src="images/service3.png">
+	       	 					<img class="img1" src="images/service4.png">
+	       	 					<img class="img1" src="images/service5.png">
+	       	 					<img class="img1" src="images/service6.png">
+	                    </marquee>
+							<!-- <ul>
+								<li><span class="fa fa-calendar-o" aria-hidden="true"></span> FEBRUARY 08, 2018</li>
+							</ul>
+							<h4>School funding</h4>
+							<p class="para-1">Proin ultricies vestibulum velit.Lorem ipsum dolor sit amet.Nam
+								aliquam pretium feugiat.</p> -->
+							</div>
+						</div>
+					</div>
 				</div>
-				
-			</div>
-			<div class="col-sm-4 live-grids-w3ls">
-				<div class="live-left2">
-					<img src="images/g2.jpg" alt=" " class="img-responsive">
+
+				<div class="col-sm-4 live-grids-w3ls">
+					<div class="panel panel-primary">
+						<div class="panel-heading"><center>LOT EN JEU AUJOURD'HUI</center></div>
+						<div class="panel-body">
+							<div class="live-info">
+							
+							<img src="images/cado1.jpg">
+												
+							</div>
+							<h5>HP Core i5 Intel</h5>
+						</div>
+					</div>
 				</div>
-				<div class="live-info">
-					<ul>
-						<li><span class="fa fa-calendar-o" aria-hidden="true"></span> FEBRUARY 08, 2018</li>
-					</ul>
-					<h4>School funding</h4>
-					<p class="para-1">Proin ultricies vestibulum velit.Lorem ipsum dolor sit amet.Nam
-						aliquam pretium feugiat.</p>
-				</div>
-				
-				
-			</div>
-			<div class="col-sm-4 live-grids-w3ls">
-				<div class="live-left3">
-					<img src="images/g6.jpg" alt=" " class="img-responsive">
-				</div>
-				<div class="live-info">
-					<ul>
-						<li><span class="fa fa-calendar-o" aria-hidden="true"></span> FEBRUARY 08, 2018</li>
-					</ul>
-					<h4>School funding</h4>
-					<p class="para-1"> Proin ultricies vestibulum velit.Lorem ipsum dolor sit amet.Nam
-						aliquam pretium feugiat.</p>
-				</div>
-				
-			</div>
+			</div>	
 			<div class="clearfix"> </div>
 		</div>
 	</div>
@@ -582,6 +594,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 			padding-right: 15px;
 		}
+		.panel-body h5 {
+		    font-size:17px;
+		    letter-spacing: 0.5px;
+		    color: #93c83f;
+		    text-transform: uppercase;
+		    font-weight:700;
+		    text-align: center;
+		}
+
 	</style>
 </body>
 

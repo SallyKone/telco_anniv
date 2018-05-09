@@ -990,7 +990,7 @@ ul.nav.navbar-nav li a.active::before {
 }
 
 .events-section {
-    background: url(../images/bann1.jpg) no-repeat 0px 0px;
+    /*background: url(../images/bann1.jpg) no-repeat 0px 0px;*/
     background-size: cover;
     -webkit-background-size: cover;
     -o-background-size: cover;
@@ -1013,6 +1013,7 @@ ul.nav.navbar-nav li a.active::before {
     font-weight: 700;
     text-align: center;
 }
+
 p.para-1 {
     font-size: 16px;
     letter-spacing: 1px;
