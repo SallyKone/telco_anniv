@@ -43,9 +43,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						
 							<div class="col-md-9 top-left">
 								<ul>
-									<li><i class="fa fa-map-marker" aria-hidden="true"></i> 1143 New York, USA</li>
-									<li><i class="fa fa-phone" aria-hidden="true"></i> +(010) 221 918 811</li>
-									<li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:info@example.com">info@example.com</a></li>
+									<li><i class="fa fa-map-marker" aria-hidden="true"></i>Riviera Palmeraie,Rond point ADO phcie St Moise.</li>
+									<li><i class="fa fa-phone" aria-hidden="true"></i> +(225) 22 46 61 64</li>
+									<li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:info@example.com">info@telco.com</a></li>
 								</ul>
 							</div>
 							<div class="col-md-3 top-middle">
@@ -78,9 +78,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
 						<ul class="nav navbar-nav navbar-right">
-							<li><a href="index">Home</a></li>
-							<li><a href="about" class="active">About</a></li>
-							<li><a href="gallery">Gallery</a></li>
+							<li><a href="index">Accueil</a></li>
+							<li><a href="profil" class="active">Profil</a></li>
+							<li><a href="description">Description</a></li>
 							<li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages <span class="caret"></span></a>
 										<ul class="dropdown-menu">
 											<li><a href="icons">Web Icons</a></li>
@@ -266,24 +266,24 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="container">
 		<div class="f-bg-w3l">
 		<div class="col-md-4 w3layouts_footer_grid">
-					<h3>About Us</h3>
-					<p><h4><strong> TELCO </strong> Sarl est une société incorporée en cote d'ivoire qui intervient dans le domaine des télécommunications.</h4></p>
+					<h3>Qui sommes-nous </h3>
+					<p><strong> TELCO </strong> Sarl est une société incorporée en cote d'ivoire qui intervient dans le domaine des télécommunications.</p>
 				</div>
 				<div class="col-md-4 w3layouts_footer_grid hpft">
-					<h3>Contact Us</h3>
+					<h3>Contactez nous</h3>
 					    <ul class="con_inner_text">
-							<li><span class="fa fa-map-marker" aria-hidden="true"></span>1234k Avenue, 4th block, <label> New York City.</label></li>
-							<li><span class="fa fa-envelope-o" aria-hidden="true"></span> <a href="mailto:info@example.com">info@example.com</a></li>
-							<li><span class="fa fa-phone" aria-hidden="true"></span> +1234 567 567</li>
+							<li><span class="fa fa-map-marker" aria-hidden="true"></span>Riviera Palmeraie, <label> Rond point ADO phcie St Moise.</label></li>
+							<li><span class="fa fa-envelope-o" aria-hidden="true"></span> <a href="mailto:info@example.com">info@telcoanniv.com</a></li>
+							<li><span class="fa fa-phone" aria-hidden="true"></span> +225 22 46 61 64</li>
 						</ul>
 
 					
 				</div>
 				<div class="col-md-4 w3layouts_footer_grid">
-					<h2>Subscribe</h2>
-					<p>By subscribing to our mailing list you will always get latest news from us.</p>
+					<h2>Souscrire</h2>
+					<p>En vous abonnant à notre liste de diffusion, vous recevrez toujours les dernières nouvelles de notre part.</p>
 					<form action="#" method="post">
-						<input type="email" name="Email" placeholder="Enter your email..." required="">
+						<input type="email" name="Email" placeholder="Entrez votre email..." required="">
 						<button class="btn1"><i class="fa fa-envelope-o" aria-hidden="true"></i></button>
 						<div class="clearfix"> </div>
 					</form>

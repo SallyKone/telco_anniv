@@ -44,8 +44,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						
 							<div class="col-md-9 top-left">
 								<ul>
-									<li><i class="fa fa-map-marker" aria-hidden="true"></i>Angré CNPS en haut pharmacie St Moise, Cote d'ivoire</li>
-									<li><i class="fa fa-phone" aria-hidden="true"></i> +(010) 221 918 811</li>
+									<li><i class="fa fa-map-marker" aria-hidden="true"></i>Riviera Palmeraie,Rond point ADO phcie St Moise.</li>
+									<li><i class="fa fa-phone" aria-hidden="true"></i> +(225) 22 46 61 64</li>
 									<li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:info@example.com">info@telco.com</a></li>
 								</ul>
 							</div>
@@ -131,7 +131,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 					</li>
 					<li>
-						<div class="slider-img3">
+						<div class="slider-img1">
 							<div class="container">
 								<div class="slider_banner_info_w3ls">
 									<h4> <span></span></h4>
@@ -141,7 +141,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</li>
 
 					<li>
-						<div class="slider-img4">
+						<div class="slider-img1">
 							<div class="container">
 								<div class="slider_banner_info_w3ls">
 									<h4> <span></span></h4>
@@ -169,12 +169,27 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
        	 		<div class="panel-heading"><center>LES CANDIDATS EN COMPETITION</center></div>
        	 			<div class="panel-body">
        	 			<marquee style="background:url(ImgMarquee/Canigou.jpg); color:#B20;">
-                            <img class="img1" src="images/service1.png">
-       	 					<img class="img1" src="images/service2.png">
-       	 					<img class="img1" src="images/service3.png">
-       	 					<img class="img1" src="images/service4.png">
-       	 					<img class="img1" src="images/service5.png">
-       	 					<img class="img1" src="images/service6.png">
+                            
+       	 					<img class="img1" src="images/candi1.jpg">
+       	 					<img class="img1" src="images/candi2.jpg">
+       	 					<img class="img1" src="images/candi3.jpg">
+       	 					<img class="img1" src="images/candi4.jpg">
+       	 					<img class="img1" src="images/candi5.jpg">
+       	 					<img class="img1" src="images/candi6.jpg">
+       	 					<img class="img1" src="images/candi7.jpg">
+       	 					<img class="img1" src="images/candi8.jpg">
+       	 					<img class="img1" src="images/candi9.jpg">
+       	 					<img class="img1" src="images/candi10.jpg">
+       	 					<img class="img1" src="images/candi12.jpg">
+       	 					<img class="img1" src="images/candi13.jpg">
+       	 					<img class="img1" src="images/candi14.jpg">
+       	 					<img class="img1" src="images/candi15.jpg">
+       	 					<img class="img1" src="images/candi16.jpg">
+       	 					<img class="img1" src="images/candi17.jpg">
+       	 					<img class="img1" src="images/candi18.jpg">
+       	 					<img class="img1" src="images/candi19.jpg">
+       	 					<img class="img1" src="images/candi20.jpg">
+
                     </marquee>
        	 			</div>
        	 		</div>
@@ -201,7 +216,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</div>
 						</div>
 					</div> -->
-					<div class="col-sm-4 col-sm-offset-2 services-right-grid">
+				<div class="col-sm-4 col-sm-offset-2 services-right-grid">
 						<div class="se-top">
 							<div class="services-icon">
 								<a href="amis"><img src="images/midicon2.png"></a>
@@ -216,7 +231,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="col-sm-4 services-right-grid">
 						<div class="se-top">
 							<div class="services-icon">
-								<img src="images/midicon3.png">
+								<a href="classement"><img src="images/midicon3.png"></a>
 							<!-- <i class="fa fa-flask" aria-hidden="true"></i> -->
 							</div>
 							<div class="services-icon-info">
@@ -236,9 +251,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
    <!-- news -->
 	<div class="events-section">
 		<div class="container">
-			<h3 class="title-txt two"><span>O</span>ur News</h3>
+			<h3 class="title-txt two"><span>A</span>ctualitées</h3>
 			<div class="">
 				<div class="col-sm-4 live-grids-w3ls">
+					<center>
 					<div class="panel panel-primary">
 						<div class="panel-heading"><center>VAINQUEUR DU JOUR</center></div>
 						<div class="panel-body">
@@ -250,36 +266,34 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<h5>Moris Bah</h5>
 						</div>
 					</div>
-					
+					</center>
 					
 				</div>
 
 				<div class="col-sm-4 live-grids-w3ls">
+					<center>
 					<div class="panel panel-primary">
 						<div class="panel-heading"><center>TOP 10 EN TETE</center></div>
 						<div class="panel-body">
 							<div class="live-info">
-
+							<center>
 								<marquee style="background:url(ImgMarquee/Canigou.jpg); color:#B20;" direction="up" height="213px">
-	                            <img class="img1" src="images/service1.png">
-	       	 					<img class="img1" src="images/service2.png">
-	       	 					<img class="img1" src="images/service3.png">
-	       	 					<img class="img1" src="images/service4.png">
-	       	 					<img class="img1" src="images/service5.png">
-	       	 					<img class="img1" src="images/service6.png">
+	                            <img class="img2" src="images/service1.png">
+	       	 					<img class="img2" src="images/service2.png">
+	       	 					<img class="img2" src="images/service3.png">
+	       	 					<img class="img2" src="images/service4.png">
+	       	 					<img class="img2" src="images/service5.png">
+	       	 					<img class="img2" src="images/service6.png">
 	                    </marquee>
-							<!-- <ul>
-								<li><span class="fa fa-calendar-o" aria-hidden="true"></span> FEBRUARY 08, 2018</li>
-							</ul>
-							<h4>School funding</h4>
-							<p class="para-1">Proin ultricies vestibulum velit.Lorem ipsum dolor sit amet.Nam
-								aliquam pretium feugiat.</p> -->
+							</center>
 							</div>
 						</div>
 					</div>
+					</center>
 				</div>
 
 				<div class="col-sm-4 live-grids-w3ls">
+					<center>
 					<div class="panel panel-primary">
 						<div class="panel-heading"><center>LOT EN JEU AUJOURD'HUI</center></div>
 						<div class="panel-body">
@@ -291,61 +305,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<h5>HP Core i5 Intel</h5>
 						</div>
 					</div>
+					</center>
 				</div>
 			</div>	
 			<div class="clearfix"> </div>
 		</div>
 	</div>
 
-	<!--about-->
-<!-- 	<div class="about">
-		<div class="container">
-			<div class="about-main">
-				<div class="about-right">
-					<h3 class="subheading-w3-agile">About Us</h3>
-					<p class="para-w3-agileits">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis tristique est, et egestas odio, sed interdum risus.</p>
-					<!-- stats -->
-					<!-- <div class="stats">
-						<div class="stats_inner">
-							<div class="col-md-6 col-sm-6 col-xs-6 stat-grids">
-								<p class="counter-agileits-w3layouts">20</p>
-								<div class="stats-text-wthree">
-									<h3>CLASSES</h3>
-								</div>
-							</div>
-							<div class="col-md-6 col-sm-6 col-xs-6 stat-grids">
-								<p class="counter-agileits-w3layouts">87</p>
-								<div class="stats-text-wthree">
-									<h3>REVIEWS</h3>
-								</div>
-							</div>
-							<div class="col-md-6 col-sm-6 col-xs-6 stat-grids">
-								<p class="counter-agileits-w3layouts">12</p>
-								<div class="stats-text-wthree">
-									<h3> ACTIVITIES</h3>
-								</div>
-							</div>
-							<div class="col-md-6 col-sm-6 col-xs-6 stat-grids">
-								<p class="counter-agileits-w3layouts">45</p>
-								<div class="stats-text-wthree">
-									<h3>PRIZE LAURATES</h3>
-								</div>
-							</div>
-							<div class="clearfix"> </div>
-						</div>
-					</div> -->
-					<!-- //stats -->
-
-				<!--</div>
-			</div>
-			
-		</div>
-	</div> -->
+	
 	<!--//about-->
 <!-- Testimonials -->
 	<div class="testimonials">
 		<div class="container">
-			<h3 class="title-txt"><span>T</span>estimonials</h3>
+			<h3 class="title-txt"><span>T</span>emoignages</h3>
 			<div class="col-md-6 testimonials-main">
 				<section class="slider">
 					<div class="flexslider">
@@ -392,96 +364,30 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</div>
 	<!-- //Testimonials -->
 	
-	<!-- //Events -->
-<!-- <div class="experience">
-	<div class="container">
-	<h3 class="title-txt"><span>A </span> Perfect Learning Center</h3>
-		<div class="experience-info">
-			<div class="col-md-7 exp-matter">
-				<div class="exp-left">
-					<div class="ex-lt">
-						<h6>14 <span>MAR</span></h6>
-					</div>
-					<div class="ex-rt">
-						<h5>How to improve the school results</h5>
-						<p>0 COMMENTS,</p>
-					</div>
-					<div class="clearfix"></div>
-				</div>
-				<div class="exp-left">
-					<div class="ex-lt">
-						<h6>16 <span>MAR</span></h6>
-					</div>
-					<div class="ex-rt">
-						<h5>How to improve the school results</h5>
-						<p> 0 COMMENTS,</p>
-					</div>
-					<div class="clearfix"></div>
-				</div>
-		
-				<div class="exp-left">
-					<div class="ex-lt">
-						<h6>18 <span>MAR</span></h6>
-					</div>
-					<div class="ex-rt">
-						<h5>How to improve the school results</h5>
-						<p> 0 COMMENTS,</p>
-					</div>
-					<div class="clearfix"></div>
-				</div>
-				<div class="exp-left">
-					<div class="ex-lt">
-						<h6>18 <span>MAR</span></h6>
-					</div>
-					<div class="ex-rt">
-						<h5>How to improve the school results</h5>
-						<p> 0 COMMENTS,</p>
-					</div>
-					<div class="clearfix"></div>
-				</div>
-			</div>
-			<div class="col-md-5 exp-info-right">
-				<div class="ex-top">
-					<h4>LEARNING FACILITIES</h4>
-					<li><span class="fa fa-check" aria-hidden="true"></span>After School</li>
-					<li><span class="fa fa-check" aria-hidden="true"></span>After School Fine Arts</li>
-					<li><span class="fa fa-check" aria-hidden="true"></span>Athletics</li>
-					<li><span class="fa fa-check" aria-hidden="true"></span>Resource Room</li>
-					<li><span class="fa fa-check" aria-hidden="true"></span>Dismissal Procedures</li>
-					<li><span class="fa fa-check" aria-hidden="true"></span>Dining Hall</li>
-					<li><span class="fa fa-check" aria-hidden="true"></span>College Planning Services</li>
-					<li><span class="fa fa-check" aria-hidden="true"></span>Summer Camp Programs</li>
-					<li><span class="fa fa-check" aria-hidden="true"></span>Two technology centers</li>
-					<li><span class="fa fa-check" aria-hidden="true"></span>Staff Directory</li>
-				</div>
-			</div>
-			<div class="clearfix"></div>
-		</div>
-	</div>
-</div> -->
+	
 <!-- footer -->
 	<div class="footer">
 	<div class="container">
 		<div class="f-bg-w3l">
 		<div class="col-md-4 w3layouts_footer_grid">
 					<h3>Qui sommes-nous </h3>
-					<p><h4><strong> TELCO </strong> Sarl est une société incorporée en cote d'ivoire qui intervient dans le domaine des télécommunications.</h4></p>
+					<p><strong> TELCO </strong> Sarl est une société incorporée en cote d'ivoire qui intervient dans le domaine des télécommunications.</p>
 				</div>
 				<div class="col-md-4 w3layouts_footer_grid hpft">
 					<h3>Contactez nous</h3>
 					    <ul class="con_inner_text">
-							<li><span class="fa fa-map-marker" aria-hidden="true"></span>Angré CNPS en haut, <label> Pharmacie St Moise.</label></li>
+							<li><span class="fa fa-map-marker" aria-hidden="true"></span>Riviera Palmeraie, <label> Rond point ADO phcie St Moise.</label></li>
 							<li><span class="fa fa-envelope-o" aria-hidden="true"></span> <a href="mailto:info@example.com">info@telcoanniv.com</a></li>
-							<li><span class="fa fa-phone" aria-hidden="true"></span> +225 79 37 66 37</li>
+							<li><span class="fa fa-phone" aria-hidden="true"></span> +225 22 46 61 64</li>
 						</ul>
 
 					
 				</div>
 				<div class="col-md-4 w3layouts_footer_grid">
 					<h2>Souscrire</h2>
-					<p>By subscribing to our mailing list you will always get latest news from us.</p>
+					<p>En vous abonnant à notre liste de diffusion, vous recevrez toujours les dernières nouvelles de notre part.</p>
 					<form action="#" method="post">
-						<input type="email" name="Email" placeholder="Enter your email..." required="">
+						<input type="email" name="Email" placeholder="Entrez votre email..." required="">
 						<button class="btn1"><i class="fa fa-envelope-o" aria-hidden="true"></i></button>
 						<div class="clearfix"> </div>
 					</form>
@@ -593,6 +499,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		.img1 {
 
 			padding-right: 15px;
+			
+		}
+
+		.img2 {
+
+			padding-right: 15px;
+			margin-left: 80px;
 		}
 		.panel-body h5 {
 		    font-size:17px;

@@ -43,9 +43,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						
 							<div class="col-md-9 top-left">
 								<ul>
-									<li><i class="fa fa-map-marker" aria-hidden="true"></i> Angré CNPS en haut, Cote d'ivoire</li>
-									<li><i class="fa fa-phone" aria-hidden="true"></i> +225 79 37 66 37</li>
-									<li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:info@example.com">info@telcoanniv.com</a></li>
+									<li><i class="fa fa-map-marker" aria-hidden="true"></i>Riviera Palmeraie,Rond point ADO phcie St Moise.</li>
+									<li><i class="fa fa-phone" aria-hidden="true"></i> +(225) 22 46 61 64</li>
+									<li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:info@example.com">info@telco.com</a></li>
 								</ul>
 							</div>
 							<div class="col-md-3 top-middle">
@@ -105,7 +105,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <div class="container">
 					<h3 class="title-txt"><span>D</span>ESCRIPTION DU JEU</h3>
 					<div class="row team-row">
-						<div class="col-md-8 col-sm-12 ">
+						<div class="col-md-8  ">
 		           	<div class="description">
 <h1>Description</h1>
 <h2>1. Contexte du jeu</h2>
@@ -138,14 +138,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <p>Le vainqueur devra se rendre dans nos locaux muni de sa pièce d'identité afin de retirer son lot.</p>
 
 
-
-
-
-
 </div>
 					</div>
+	<div class="col-md-4 col-sm-12" >
+
+				<img class="imgD" src="images/DES1.JPG">
+
+    </div>
+    <div class="col-md-4 col-sm-12" >
+<video controls width="410" height="510" autoplay>
+	<source src="images/Formation.mp4" type=""/>
+</video >
+    </div>
+    
 					</div>
-			<div class="clearfix"> </div>
+			
 	</div>
 </div>
 
@@ -158,24 +165,24 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="container">
 		<div class="f-bg-w3l">
 		<div class="col-md-4 w3layouts_footer_grid">
-					<h3>Qui sommes-nous?</h3>
-					<p><h4><strong> TELCO </strong> Sarl est une société incorporée en cote d'ivoire qui intervient dans le domaine des télécommunications.</h4></p>
+					<h3>Qui sommes-nous </h3>
+					<p><strong> TELCO </strong> Sarl est une société incorporée en cote d'ivoire qui intervient dans le domaine des télécommunications.</p>
 				</div>
 				<div class="col-md-4 w3layouts_footer_grid hpft">
-					<h3>Contactez-nous</h3>
+					<h3>Contactez nous</h3>
 					    <ul class="con_inner_text">
-							<li><span class="fa fa-map-marker" aria-hidden="true"></span>CNPS en haut,pharmacie St Moise, <label> Abidjan(Cote d'ivoire).</label></li>
+							<li><span class="fa fa-map-marker" aria-hidden="true"></span>Riviera Palmeraie, <label> Rond point ADO phcie St Moise.</label></li>
 							<li><span class="fa fa-envelope-o" aria-hidden="true"></span> <a href="mailto:info@example.com">info@telcoanniv.com</a></li>
-							<li><span class="fa fa-phone" aria-hidden="true"></span> +225 79 37 66 37</li>
+							<li><span class="fa fa-phone" aria-hidden="true"></span> +225 22 46 61 64</li>
 						</ul>
 
 					
 				</div>
 				<div class="col-md-4 w3layouts_footer_grid">
-					<h2>Newsletter</h2>
-					<p>By subscribing to our mailing list you will always get latest news from us.</p>
+					<h2>Souscrire</h2>
+					<p>En vous abonnant à notre liste de diffusion, vous recevrez toujours les dernières nouvelles de notre part.</p>
 					<form action="#" method="post">
-						<input type="email" name="Email" placeholder="Enter your email..." required="">
+						<input type="email" name="Email" placeholder="Entrez votre email..." required="">
 						<button class="btn1"><i class="fa fa-envelope-o" aria-hidden="true"></i></button>
 						<div class="clearfix"> </div>
 					</form>
@@ -246,7 +253,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 .description h3{font-size:20px; text-align:left; padding:0 0 0 30px; font-style:italic;}
 .description p{font-size:15px; padding:10px; line-height:25px;}
 
-.description{width:100%; height:auto; text-align:left; margin:0 30px 0 0px; float:none;} 
+.description{width:100%; height:auto; text-align:left; margin:0 30px 0 0px; float:none;}
+
+.imgD {
+	height: 510px;
+    width: 410PX; 
+}
 	</style>
 </body>
 

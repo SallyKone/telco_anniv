@@ -43,9 +43,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						
 							<div class="col-md-9 top-left">
 								<ul>
-									<li><i class="fa fa-map-marker" aria-hidden="true"></i> 1143 New York, USA</li>
-									<li><i class="fa fa-phone" aria-hidden="true"></i> +(010) 221 918 811</li>
-									<li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:info@example.com">info@example.com</a></li>
+									<li><i class="fa fa-map-marker" aria-hidden="true"></i>Riviera Palmeraie,Rond point ADO phcie St Moise.</li>
+									<li><i class="fa fa-phone" aria-hidden="true"></i> +(225) 22 46 61 64</li>
+									<li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:info@example.com">info@telco.com</a></li>
 								</ul>
 							</div>
 							<div class="col-md-3 top-middle">
@@ -87,7 +87,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											<li><a href="codes.html">Short Codes</a></li>
 										</ul>
 							</li>  -->
-							<li><a href="about">A propos</a></li>
+							<li><a href="description">Description</a></li>
 							<li><a href="contact" class="active">Contact</a></li>
 						</ul>
 
@@ -130,28 +130,29 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 			<div class=" col-md-7 map">
 				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387193.30591910525!2d-74.25986432970718!3d40.697149422113014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew+York%2C+NY%2C+USA!5e0!3m2!1sen!2sin!4v1518850482333"></iframe>
-				<div class="col-md-4 contact-grid1">
+				<div class="col-md-5 contact-grid1">
 					<i class="fa fa-map-marker" aria-hidden="true"></i>
 					<div class="contact-right">
 						<p>Adresse</p>
-						<span>Angré CNPS en haut, <span>Pharmacie St Moise.</span></span>
+						<span>Riviera Palmeraie, Rond point ADO phcie St Moise.</span>
 					</div>
 				</div>
 				<div class="col-md-4 contact-grid1">
 					<i class="fa fa-phone" aria-hidden="true"></i>
 					<div class="contact-right">
-						<p>Telephone</p>
-						<span>+225 79 37 66 37</span>
-						<span>+225 79 37 66 37</span>
+						<p>Téléphone</p>
+						<p><span> +225 22 46 61 64 </span></p>
+						<span> +225 22 46 61 64 </span>
 					</div>
 				</div>
-				<div class="col-md-4 contact-grid1">
+				<div class="col-md-3 contact-grid1">
 					<i class="fa fa-envelope" aria-hidden="true"></i>
 					<div class="contact-right">
 						<p>Email</p>
 						<a href="mailto:info@example.com">info@telco.com</a>
 						<a href="mailto:info@example1.com">info@telcoanniv.com</a>
 					</div>
+					
 				</div>
 				<div class="clearfix"></div>
 			</div>
@@ -165,25 +166,24 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="container">
 		<div class="f-bg-w3l">
 		<div class="col-md-4 w3layouts_footer_grid">
-					<h3>Qui sommes-nous</h3>
-					<p><h4><strong> TELCO </strong> Sarl est une société incorporée en cote d'ivoire qui intervient dans le domaine des télécommunications.</h4></p>
+					<h3>Qui sommes-nous </h3>
+					<p><strong> TELCO </strong> Sarl est une société incorporée en cote d'ivoire qui intervient dans le domaine des télécommunications.</p>
 				</div>
 				<div class="col-md-4 w3layouts_footer_grid hpft">
-					<h3>Nous Contacter</h3>
+					<h3>Contactez nous</h3>
 					    <ul class="con_inner_text">
-							<li><span class="fa fa-map-marker" aria-hidden="true"></span>Angré CNPS en haut, <label> Pharmacie St Moise.</label></li>
-							<li><span class="fa fa-envelope-o" aria-hidden="true"></span> <a href="mailto:info@example.com">info@telco.com</a></li>
-							<li><span class="fa fa-phone" aria-hidden="true"></span> 
-							+225 79 37 66 37</li>
+							<li><span class="fa fa-map-marker" aria-hidden="true"></span>Riviera Palmeraie, <label> Rond point ADO phcie St Moise.</label></li>
+							<li><span class="fa fa-envelope-o" aria-hidden="true"></span> <a href="mailto:info@example.com">info@telcoanniv.com</a></li>
+							<li><span class="fa fa-phone" aria-hidden="true"></span> +225 22 46 61 64</li>
 						</ul>
 
 					
 				</div>
 				<div class="col-md-4 w3layouts_footer_grid">
-					<h2>Newsletter</h2>
-					<p>By subscribing to our mailing list you will always get latest news from us.</p>
+					<h2>Souscrire</h2>
+					<p>En vous abonnant à notre liste de diffusion, vous recevrez toujours les dernières nouvelles de notre part.</p>
 					<form action="#" method="post">
-						<input type="email" name="Email" placeholder="Enter your email..." required="">
+						<input type="email" name="Email" placeholder="Entrez votre email..." required="">
 						<button class="btn1"><i class="fa fa-envelope-o" aria-hidden="true"></i></button>
 						<div class="clearfix"> </div>
 					</form>

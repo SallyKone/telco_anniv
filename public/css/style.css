@@ -402,7 +402,7 @@ img.img-responsive {
 }
 
 .slider-img2 {
-	background: url(../images/banv1.jpg) no-repeat 0px 0px;
+	background: url(../images/bann0.jpg) no-repeat 0px 0px;
 }
 
 .slider-img3 {
@@ -421,7 +421,7 @@ img.img-responsive {
 	-o-background-size: cover;
 	-moz-background-size: cover;
 	-ms-background-size: cover;
-	min-height: 450px;
+	min-height: 378px;
 }
 .banner{
 	background: url(../images/bann2.jpg) no-repeat 0px 0px;
@@ -989,22 +989,53 @@ ul.nav.navbar-nav li a.active::before {
 	padding: 0;
 }
 
-.events-section {
-    /*background: url(../images/bann1.jpg) no-repeat 0px 0px;*/
+.events-sectione {
+    /*background: url(../images/blink.jpg) no-repeat 0px 0px;*/
     background-size: cover;
     -webkit-background-size: cover;
     -o-background-size: cover;
     -moz-background-size: cover;
     -ms-background-size: cover;
      background-attachment: fixed;
-    padding: 5em 0;
+    padding: -5em 0;
+    margin-top: -157px;
 }
+.events-section {
+    /*background: url(../images/blink.jpg) no-repeat 0px 0px;*/
+    background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -ms-background-size: cover;
+     background-attachment: fixed;
+    padding: -5em 0;
+    
+}
+
+
+.events-classe {
+    /*background: url(../images/blink.jpg) no-repeat 0px 0px;*/
+    background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -ms-background-size: cover;
+     background-attachment: fixed;
+    padding: 4em 0;
+}
+
 
 .live-info {
     padding: 1.5em 1.5em 3em;
     background: #fff;
     box-shadow: 1px 1px 17px #ffffff;
 }
+.live-classe {
+    padding: 0.5em 1.5em 3em;
+    background: #fff;
+    box-shadow: 1px 1px 17px #ffffff;
+}
+
 .live-info h4 {
     font-size:24px;
     letter-spacing: 1px;
@@ -1545,13 +1576,13 @@ span.eme {
 }
 .footer {
     background: #0b0c11;
-	padding:5em 0em;
+	padding:1em 0em;
 }
 .w3layouts_footer_grid.hpft {
     padding: 0 3em;
 }
 .w3layouts_footer_grid h2, .w3layouts_footer_grid h3 {
-    font-size: 24px;
+    font-size: 21px;
     color: #fff;
     position: relative;
     margin-bottom: 1.5em;
@@ -1648,7 +1679,7 @@ ul.links li a {
 }
 
 .w3layouts_footer_grid p {
-    font-size: 15px;
+    font-size: 13px;
     line-height: 1.8em;
     margin-bottom: 2em;
     color: #bfbfbf;
@@ -1710,7 +1741,7 @@ ul.con_inner_text li {
     list-style-type: none;
     color: #bfbfbf;
 	line-height:1.8em;
-    font-size: 15px;
+    font-size: 13px;
     margin-bottom: 17px;
 	letter-spacing: 1px;
 }
