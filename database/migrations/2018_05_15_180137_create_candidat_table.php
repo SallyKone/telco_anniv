@@ -25,6 +25,9 @@ class CreateCandidatTable extends Migration
             $table->string('PHOTO',128);
             $table->integer('NBSMS_CANDIDAT')->length(4)->unsigned();
 
+            $table->unique('LOGIN_CANDIDAT');
+            $table->unique('NUM_CANDIDAT');
+
             $table->timestamps();
         });
     }

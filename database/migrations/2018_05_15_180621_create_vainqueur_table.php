@@ -14,7 +14,14 @@ class CreateVainqueurTable extends Migration
     public function up()
     {
         Schema::create('vainqueur', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('ID_VAINQ');
+            $table->string('ID_PRIX')->length(20);
+            $table->bigInteger('ID_CANDIDAT')->length(20);
+            $table->date('DATE_VAINQ');
+            $table->integer('NB_SMS');
+            //les indexes
+            $table->foreign('ID_CANDIDAT')->references('ID_CANDIDAT')->on('candidat');
+
             $table->timestamps();
         });
     }

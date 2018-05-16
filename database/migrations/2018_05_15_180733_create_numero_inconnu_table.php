@@ -14,7 +14,13 @@ class CreateNumeroInconnuTable extends Migration
     public function up()
     {
         Schema::create('numero_inconnu', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('ID_NI');
+            $table->bigInteger('ID_CANDIDAT')->length(20);
+            $table->string('NUMERO_NI',128);
+            //les indexes
+            $table->unique('NUMERO_NI');
+            $table->index('ID_CANDIDAT');
+
             $table->timestamps();
         });
     }

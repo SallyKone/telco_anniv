@@ -14,7 +14,15 @@ class CreateAmisTable extends Migration
     public function up()
     {
         Schema::create('amis', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('ID_AMIS',20);
+            $table->bigInteger('ID_CANDIDAT',20);
+            $table->string('PSEUDO_AMIS',128);
+            $table->string('NUM_AMIS',24);
+            //les indexes
+            $table->unique(['ID_CANDIDAT','PSEUDO_AMIS']);
+            $table->unique(['ID_CANDIDAT','PSEUDO_AMIS','NUM_AMIS']);
+            $table->foreign('ID_CANDIDAT')->references('ID_CANDIDAT')->on('candidat');
+
             $table->timestamps();
         });
     }
