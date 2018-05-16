@@ -15,7 +15,7 @@ class CreateAmisTable extends Migration
     {
         Schema::create('amis', function (Blueprint $table) {
             $table->bigIncrements('ID_AMIS',20);
-            $table->bigInteger('ID_CANDIDAT',20);
+            $table->bigInteger('ID_CANDIDAT')->length(20);
             $table->string('PSEUDO_AMIS',128);
             $table->string('NUM_AMIS',24);
             //les indexes
