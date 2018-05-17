@@ -1011,6 +1011,19 @@ ul.nav.navbar-nav li a.active::before {
     padding: -5em 0;
     
 }
+.events-sections {
+    /*background: url(../images/blink.jpg) no-repeat 0px 0px;*/
+    background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -ms-background-size: cover;
+     background-attachment: fixed;
+    padding: -5em 0;
+    margin-top: 43px;
+    margin-bottom: 49px;
+    
+}
 
 
 .events-classe {
@@ -1334,6 +1347,7 @@ p.para-w3ls {
     padding:40px 40px;
 }
 /*-- //services --*/
+
 /*-- stats --*/
 .about {   
 	background: url(../images/bann3.jpg) no-repeat 0px 0px;

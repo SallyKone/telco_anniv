@@ -25,6 +25,9 @@ Route::get ('/index', 'IndexController@showIndex');
 Route::get ('/amis', 'AmisController@showAmis');
 Route::get ('/codes', 'CodesController@showCodes');
 Route::get ('/connexion', 'ConnexionController@showConnexion');
+Route::get ('/mot', 'MotController@showMot');
+Route::get ('/change', 'ChangeController@showChange');
+Route::get ('/identite', 'IdentiteController@showIdentite');
 
 Route::get ('/classement', 'ClassementController@showClassement');
 Route::get ('/gallery', 'GalleryController@showGallery');
