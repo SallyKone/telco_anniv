@@ -126,23 +126,27 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="panel panel-primary">
 						
 						<div class="panel-body">
-							<h3>Accéder à mon compte</h3>
+							<h4>Retrouver mon mot de passe</h4>
+							<br>
+						<p>Votre mot de passe vous sera envoyé par SMS.</p>
 							<br>
 							<form action="" method="POST">
 							<br>
-							<input type="text" id="name" name="login" placeholder="Identifiant / Login" class="chaageform" required />
-							<br>							 
+							<input type="text" id="name" name="name" placeholder="Login" class="chaageform" />
 							<br>
-							<input type="password" id="password" name="password" placeholder="Mot de passe / Password" class="chaageform" required/>
+<div class="clear"></div>
+<br>
+<input type="text" id="phone" name="phone" placeholder="Telephone" class="chaageform" />
+<br><br><br>
 
-<div class="forgotpassword"><a href="mot">Mot de passe oublié ?</a></div>
-<div class="forgotpassword"><a href="identite">Identifiant oublié ?</a></div>
-<div class="forgotpassword"><a href="change">Changer mot de passe</a></div>
+
 
 <div class="clear"></div>
 <center>
-	<br>
-<input type="submit" id="submit"  name="contactsubmit" value="Envoyer" class="changesubbtn" /> </center>
+<input type="submit" id="submit"  name="contactsubmit" value="Envoyer" class="changesubbtn" /><br>
+<br><br>
+ </center>
+
 <div class="clear"></div>
 
 
@@ -262,14 +266,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     width: 310PX; 
 }
 
-.forgotpassword{width:160px; height:30px;  font-size:13px; color:#000; line-height:30px; text-align:center; margin:10px 0 0 0px; float:left;}
-.forgotpassword a{text-decoration:none; color:#000;}
-.forgotpassword a:hover{font-size:14px;}
+.chaageform{width:280px; height:30px;  font-size:15px; color:#999; line-height:30px; text-align:left; padding:10px;  margin:0 0 10px 0px; border-radius:10px; box-shadow:inset 0 0 10px #CCC; outline:none; border:none;}
 
-/*.submitbtn{width:100px; height:30px; font-size:15px; color:#fff; line-height:30px; text-align:cente; border:none; cursor:pointer; outline:none; margin:20px 15px 0 0px; text-transform:uppercase; float:right; border-radius:8px;*/
+.changesubbtn{width:100px; height:30px; font-size:15px; color:#fff; line-height:30px; text-align:cente; border:none; cursor:pointer; outline:none; margin:10px 13px 0 0px; text-transform:uppercase; float:right; border-radius:8px;
 
 .clear{clear:both;}
-/*.form{width:280px; height:30px;  font-size:15px; color:#999; line-height:30px; text-align:left; padding:10px;  margin:0 0 20px 0px; border-radius:10px; box-shadow:inset 0 0 10px #CCC; outline:none; border:none;}*/
+.form{width:280px; height:30px;  font-size:15px; color:#999; line-height:30px; text-align:left; padding:10px;  margin:0 0 20px 0px; border-radius:10px; box-shadow:inset 0 0 10px #CCC; outline:none; border:none;}
 
 . h1 {
     font-size: 20px;
@@ -277,9 +279,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     text-align: center;
     padding: 0 0 20px 10px;
     margin: 0px;
-}
-
-.chaageform{width:280px; height:30px;  font-size:15px; color:#999; line-height:30px; text-align:left; padding:10px;  margin:0 0 10px 0px; border-radius:10px; box-shadow:inset 0 0 10px #CCC; outline:none; border:none;}
 
 	</style>
 </body>

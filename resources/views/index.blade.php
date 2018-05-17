@@ -226,11 +226,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</div>
 						</div>
 					</div> -->
-				<div class="col-sm-4 col-sm-offset-2 services-right-grid">
+				<div class="col-sm-4  col-sm-offset-2 services-right-grid">
 						<div class="se-top">
 							<div class="services-icon">
 								<a href="amis"><img src="images/midicon2.png"></a>
-							<!-- <i class="fa fa-eye" aria-hidden="true"></i> -->
+							
 							</div>
 							<div class="services-icon-info">
 								</a><h5>AJOUT D'AMIS</h5>
@@ -238,6 +238,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</div>
 						</div>
 					</div>
+
+
+					
 					<div class="col-sm-4 services-right-grid">
 						<div class="se-top">
 							<div class="services-icon">
