@@ -254,7 +254,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
    <!-- news -->
 	<div class="events-section">
 		<div class="container">
-			<h3 class="title-txt two"><span>A</span>ctualitées</h3>
+			<h3 class="title-txt two"><span>A</span>ctualités</h3>
 			<div class="">
 				<div class="col-sm-4 live-grids-w3ls">
 					<center>
