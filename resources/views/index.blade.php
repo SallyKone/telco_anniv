@@ -90,7 +90,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 						<ul class="nav navbar-nav navbar-right">
 							<li><a href="index" class="active">Accueil</a></li>
-							<li><a href="profil">Profil</a></li>
+							<li><a href="connexion">Profil</a></li>
 							<li><a href="description">Description</a></li>
 							<li><a href="contact">Contact</a></li>
 						</ul>
@@ -321,8 +321,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</center>
 				</div>
 			</div>
-			<video id="lavideo">
-				<source src="videos/videotelco1.mp4" type="video/mp4">
+			<video id="lavideo" loop autoplay>
+				<source src="videos/videotelco.webm" type="video/webm">
 			</video>
 		</div>
 		<div class="clearfix"> </div>

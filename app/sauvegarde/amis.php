@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class amis extends Model
+class Amis extends Model
 {
     //
 }

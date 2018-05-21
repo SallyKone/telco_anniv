@@ -8,7 +8,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <html lang="fr">
 
 <head>
-	<title>Mon incroyable anniversaire| telco</title>
+	<title>Mon incroyable anniversaire | telco</title>
 	<!-- Meta Tags -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -78,8 +78,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
 						<ul class="nav navbar-nav navbar-right">
-							<li><a href="index" class="active">Accueil</a></li>
-							<li><a href="profil">Profil</a></li>
+							<li><a href="index">Accueil</a></li>
+							<li><a href="connexion" class="active">Profil</a></li>
 							<li><a href="description">Description</a></li>
 							<li><a href="contact">Contact</a></li>
 						</ul>
@@ -101,53 +101,70 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</div>
 	
 	<!-- team -->
-	<div class="team">
+	
+
+<div class="events-sections">
 		<div class="container">
-			<h3 class="title-txt"><span>I</span>DENTIFICATION</h3>
-			<div class="row team-row">
-				<div class="col-md-6 col-sm-12 col-md-offset-3">
-           	<div class="panel panel-default">
-           		<div class="panel-heading"><center style:color="red">Veillez saisir vos parametres de conexion</center></div>
-           		<div class="panel-body">
-           			
-  <form action="#" method="post">  
-  <center>      		
- <div class="form-group">
-      <label for="validationServerUsername" class="control-label">Login</label>
-      <div class="input-group">
-        <input type="text" class="form-control is-invalid" id="validationServerUsername" placeholder="Username" aria-describedby="inputGroupPrepend3" required>
-        <div class="invalid-feedback">
-         
-        </div>
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="validationServerUsername" class="control-label">Username</label>
-      <div class="input-group">
-        <input type="text" class="form-control is-invalid" id="validationServerUsername" placeholder="Username" aria-describedby="inputGroupPrepend3" required>
-        <div class="invalid-feedback">
-         
-        </div>
-        <br>
-        <br>
-        <br>
-                </center> 
-         <a href="#"> mot de passe oublié</a> &nbsp; &nbsp; &nbsp; &nbsp; <a href="#"> Identifiant oublié</a>&nbsp; &nbsp; &nbsp; &nbsp;<a href="#">Changer de mot de passe</a>
-      </div>
-    </div>
-</div>
- </div>
-  <center><button class="btn btn-primary" type="submit">Se connecter</button></center>
-  </form>
+			
+			<div class="">
+				<div class="col-sm-4 live-grids-w3ls">
+					
+					<div class="panel panel-primary">
+						
+						<div class="panel-body">
 
+							<img class="imgDp" src="images/DES1.JPG">
+							
+						</div>
+					</div>
+					
+					
+				</div>
 
-  </div>
-	<div class="clearfix"> </div>
+				<div class="col-sm-4 live-grids-w3ls">
+					
+					<div class="panel panel-primary">
+						
+						<div class="panel-body">
+							<h3>Accéder à mon compte</h3>
+							<br>
+							<form action="" method="POST">
+								{{ csrf_field() }}
+								<br>
+								<input type="text" id="login" name="login" placeholder="Identifiant / Login" class="chaageform" required />
+								<br/><br/>
+								<input type="password" id="password" name="password" placeholder="Mot de passe / Password" class="chaageform" required/>
+
+								<div class="forgotpassword"><a href="mot">Mot de passe oublié ?</a></div>
+								<div class="forgotpassword"><a href="identite">Identifiant oublié ?</a></div>
+								<div class="forgotpassword"><a href="change">Changer mot de passe</a></div>
+
+							<div class="clear"></div>
+							<center><br/>
+							<input type="submit" id="submit"  name="contactsubmit" value="Envoyer" class="changesubbtn" /> </center>
+							<div class="clear"></div>
+
+							</form>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-sm-4 live-grids-w3ls">
+					
+					<div class="panel panel-primary">
+						
+						<div class="panel-body">
+							<img class="imgDp" src="images/DES1.JPG">
+						</div>
+					</div>
+					
+				</div>
+			</div>	
+			<div class="clearfix"> </div>
+		</div>
 	</div>
-</div>
 
 
-	</div>
 	<!-- //team -->
 
 <!-- footer -->
@@ -235,6 +252,32 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!--// Bootstrap Js -->
 
 	<!--// Required Scripts -->
+	<style type="text/css">
+		 .imgDp {
+	height: 340px;
+    width: 310PX; 
+}
+
+.forgotpassword{width:160px; height:30px;  font-size:13px; color:#000; line-height:30px; text-align:center; margin:10px 0 0 0px; float:left;}
+.forgotpassword a{text-decoration:none; color:#000;}
+.forgotpassword a:hover{font-size:14px;}
+
+/*.submitbtn{width:100px; height:30px; font-size:15px; color:#fff; line-height:30px; text-align:cente; border:none; cursor:pointer; outline:none; margin:20px 15px 0 0px; text-transform:uppercase; float:right; border-radius:8px;*/
+
+.clear{clear:both;}
+/*.form{width:280px; height:30px;  font-size:15px; color:#999; line-height:30px; text-align:left; padding:10px;  margin:0 0 20px 0px; border-radius:10px; box-shadow:inset 0 0 10px #CCC; outline:none; border:none;}*/
+
+. h1 {
+    font-size: 20px;
+    color: #000;
+    text-align: center;
+    padding: 0 0 20px 10px;
+    margin: 0px;
+}
+
+.chaageform{width:280px; height:30px;  font-size:15px; color:#999; line-height:30px; text-align:left; padding:10px;  margin:0 0 10px 0px; border-radius:10px; box-shadow:inset 0 0 10px #CCC; outline:none; border:none;}
+
+	</style>
 </body>
 
 </html>

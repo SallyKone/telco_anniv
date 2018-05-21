@@ -4,7 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class connectes extends Model
+class Candidat extends Model
 {
     //
+    protected $table = 'candidat';
 }
