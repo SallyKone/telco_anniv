@@ -5328,6 +5328,15 @@ a.list-group-item-danger.active:focus {
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
 }
+
+.panel-heading-list {
+  padding: 32px 15px;
+  border-bottom: 1px solid transparent;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  background-color: orange;
+    margin-bottom: 400px;
+}
 .panel-heading > .dropdown .dropdown-toggle {
   color: inherit;
 }

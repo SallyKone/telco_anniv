@@ -23,9 +23,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			window.scrollTo(0, 1);
 		}
 	</script>
-	<!-- // Meta Tags -->
 	<link href="{{URL::asset('css/bootstrap.css')}}" rel="stylesheet" type="text/css" media="all" />
-	<link href="{{URL::asset('css/font-awesome.min.css')}}" rel="stylesheet" type="text/css" media="all">
+	<link href="{{URL::asset('css/font-awes>
+	<!-- // Meta Tags -->ome.min.css')}}" rel="stylesheet" type="text/css" media="all">
 	<link rel="stylesheet" href="{{URL::asset('css/flexslider.css')}}" type="text/css" media="screen" property="" />
 	<!--testimonial flexslider-->
 	<link href="{{URL::asset('css/style.css')}}" rel="stylesheet" type="text/css" media="all" />
@@ -33,7 +33,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<link href="//fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
 	<link href="//fonts.googleapis.com/css?family=Raleway:300,400,500,600,800" rel="stylesheet">
 	<!--//fonts-->
-
+	<!--// Required Scripts -->
+	<style type="text/css">
+		#pourlavideo{ position: relative; z-index: 1;}
+		#lavideo{position: absolute; top: 0;left: 0;width: 100%; height: 100%; z-index: 0;
+			opacity: 0.3;}
+		.pannel-body img {padding-right: 30px;}
+		.img1 {padding-right: 15px;}
+		.img2 {padding-right: 15px;	margin-left: 80px;}
+		.panel-body h5 { font-size:17px; letter-spacing: 0.5px; color: #93c83f;
+		    text-transform: uppercase; font-weight:700; text-align: center;}
+	</style>
 </head>
 
 <body>
@@ -80,7 +90,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 						<ul class="nav navbar-nav navbar-right">
 							<li><a href="index" class="active">Accueil</a></li>
-							<li><a href="profil">Profil</a></li>
+							<li><a href="connexion">Profil</a></li>
 							<li><a href="description">Description</a></li>
 							<li><a href="contact">Contact</a></li>
 						</ul>
@@ -243,7 +253,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</div>
 						</div>
 					</div>
-					<div class="clearfix"> </div>
+					<div class="clearfix"></div>
 				</div>
 				
 			</div>
@@ -253,9 +263,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         
    <!-- news -->
 	<div class="events-section">
+
 		<div class="container">
-			<h3 class="title-txt two"><span>A</span>ctualités</h3>
+			
 			<div class="">
+<div id="pourlavideo">
+			<div class="container">
+				<h3 class="title-txt two"><span>A</span>ctualités</h3>
+
 				<div class="col-sm-4 live-grids-w3ls">
 					<center>
 					<div class="panel panel-primary">
@@ -310,8 +325,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 					</center>
 				</div>
-			</div>	
-			<div class="clearfix"> </div>
+			</div>
+			<video id="lavideo" loop autoplay>
+				<source src="videos/videotelco.webm" type="video/webm">
+			</video>
+		</div>
+		<div class="clearfix"> </div>
 		</div>
 	</div>
 
@@ -491,35 +510,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!-- //smooth scrolling -->
 
  <script src="{{URL::asset('js/bootstrap.js')}}"></script>
-
-
-	<!--// Required Scripts -->
-	<style type="text/css">
-		.pannel-body img {
-			padding-right: 30px;
-		}
-
-		.img1 {
-
-			padding-right: 15px;
-			
-		}
-
-		.img2 {
-
-			padding-right: 15px;
-			margin-left: 80px;
-		}
-		.panel-body h5 {
-		    font-size:17px;
-		    letter-spacing: 0.5px;
-		    color: #93c83f;
-		    text-transform: uppercase;
-		    font-weight:700;
-		    text-align: center;
-		}
-
-	</style>
 </body>
 
 </html>

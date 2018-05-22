@@ -110,14 +110,31 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class=" col-md-7 .offset-md-1 login-form">
             
            <center> <h3>Liste de vos amis</h3> </center>
+           <br>
+<center>
+            <div class="col-sm-10 live-grids-w3ls" style="text-align: center;">
+					
+				 	<div class="panel panel-primary">
+						<div class="panel-heading-list" >
+<div class="listtext" style="text-align: left;"><strong>Noms</strong></div>
+<div class="listtext" style="text-align: center"><strong>Numeros</strong></div>
+<div class="listtext" style="text-align: right;"><strong>Selectionner</strong></div>
 
-            <div class="col-md-4"></div>
-            
-            <div class="panel panel-body">
-            	<div class="panel panel-heading" style="background-color: orange">
-            </div>	
-            </div>
-            
+					    </div>
+						<div class="panel-body">
+							<div class="live-info">
+							</div>
+							
+						</div>
+					</div>
+					
+					
+				</div>
+
+				<div class="submit1" style="text-align: right;">
+						<input type="submit" value="Envoyer">
+					</div>
+				</center>
             				
 			</div>
 				
@@ -273,6 +290,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     float: left;
 }
 .myprofileform{width:220px; height:17px;  font-size:15px; color:#999; line-height:30px; text-align:left; padding:10px;  margin:0 0 15px 0px; border-radius:10px; box-shadow:inset 0 0 10px #CCC; outline:none; border:none;}
+.listtext{width:135px; height:40px; line-height:40px; font-size:17px; color:#FFF; text-align:center; margin:-21 0 0 6px; float:left;}
 
 	</style>
 </body>

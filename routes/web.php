@@ -24,7 +24,10 @@ Route::name('contact_path')->get('/contact', 'ContactController@Contact');
 Route::get ('/index', 'IndexController@showIndex');
 Route::get ('/amis', 'AmisController@showAmis');
 Route::get ('/codes', 'CodesController@showCodes');
+
 Route::get ('/connexion', 'ConnexionController@showConnexion');
+Route::post ('/connexion', 'ConnexionController@postForm');
+
 Route::get ('/mot', 'MotController@showMot');
 Route::get ('/change', 'ChangeController@showChange');
 Route::get ('/identite', 'IdentiteController@showIdentite');
