@@ -50,7 +50,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</div>
 							<div class="col-md-3 top-middle">
 								<ul>
-									<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+									<li><a href="https://web.facebook.com/monincroyableanniv/"><i class="fa fa-facebook"></i></a></li>
 									<li><a href="#"><i class="fa fa-twitter"></i></a></li>
 									<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
 									<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
@@ -139,7 +139,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="col-md-5 col-sm-12  services-right-grid">
 						<div class="se-top">
 							<div class="services-icon">
-							<a href="afterlogin"><img src="images/newglob.png"></a>
+							<a href="profil"><img src="images/newglob.png"></a>
 							<!-- <i class="fa fa-flask" aria-hidden="true"></i> -->
 							</div>
 							<div class="services-icon-info">

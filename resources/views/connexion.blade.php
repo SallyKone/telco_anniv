@@ -6,9 +6,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 -->
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
-	<title>Mon incroyable anniversaire | telco</title>
+	<title>Mon incroyable anniversaire| telco</title>
 	<!-- Meta Tags -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -50,7 +49,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</div>
 							<div class="col-md-3 top-middle">
 								<ul>
-									<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+									<li><a href="https://web.facebook.com/monincroyableanniv/"><i class="fa fa-facebook"></i></a></li>
 									<li><a href="#"><i class="fa fa-twitter"></i></a></li>
 									<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
 									<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
@@ -113,7 +112,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						
 						<div class="panel-body">
 
-							<img class="imgDp" src="images/DES1.JPG">
+						<img class="imgDp" src="images/precampagne.JPG">
 							
 						</div>
 					</div>
@@ -128,25 +127,30 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="panel-body">
 							<h3>Accéder à mon compte</h3>
 							<br>
-							<form action="" method="POST">
-								{{ csrf_field() }}
-								<br>
-								<input type="text" id="login" name="login" placeholder="Identifiant / Login" class="chaageform" required />
-								<br/><br/>
-								<input type="password" id="password" name="password" placeholder="Mot de passe / Password" class="chaageform" required/>
+							<form action="afterlogin" method="POST">
+							<br>
+							{{csrf_field()}}
+							<input type="text" id="name" name="login" placeholder="Identifiant / Login" class="chaageform" required />
+							<br>							 
+							<br>
+							<input type="password" id="password" name="password" placeholder="Mot de passe / Password" class="chaageform" required/>
 
-								<div class="forgotpassword"><a href="mot">Mot de passe oublié ?</a></div>
-								<div class="forgotpassword"><a href="identite">Identifiant oublié ?</a></div>
-								<div class="forgotpassword"><a href="change">Changer mot de passe</a></div>
+<div class="forgotpassword"><a href="mot">Mot de passe oublié ?</a></div>
+<div class="forgotpassword"><a href="identite">Identifiant oublié ?</a></div>
+<div class="forgotpassword"><a href="change">Changer mot de passe</a></div>
 
-							<div class="clear"></div>
-							<center><br/>
-							<input type="submit" id="submit"  name="contactsubmit" value="Envoyer" class="changesubbtn" /> </center>
-							<div class="clear"></div>
+<div class="clear"></div>
+<center>
+	<br>
+<input type="submit" id="submit"  name="contactsubmit" value="Envoyer" class="changesubbtn" /> </center>
+<div class="clear"></div>
 
+
+								
 							</form>
 						</div>
 					</div>
+					
 				</div>
 
 				<div class="col-sm-4 live-grids-w3ls">

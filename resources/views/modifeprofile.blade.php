@@ -50,7 +50,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</div>
 							<div class="col-md-3 top-middle">
 								<ul>
-									<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+									<li><a href="https://web.facebook.com/monincroyableanniv/"><i class="fa fa-facebook"></i></a></li>
 									<li><a href="#"><i class="fa fa-twitter"></i></a></li>
 									<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
 									<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
@@ -79,7 +79,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 						<ul class="nav navbar-nav navbar-right">
 							<li><a href="index">Accueil</a></li>
-							<li><a href="profil" class="active">Profil</a></li>
+							<li><a href="connexion" class="active">Profil</a></li>
 							<li><a href="description">Description</a></li>
 							<li><a href="contact">Contact</a></li>
 						</ul>
@@ -259,7 +259,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 			<div class=" col-md-4 dash "  >
 				<ul>
-<li><a href="afterlogin">Mon profile</a></li>
+<li><a href="profil">Mon profile</a></li>
 <li><a href="modifeprofile">Modifier mon profile</a></li>
 <li><a href="ajouteramis" >Ajouter ami(s)</a></li>
 <li><a href="listeamis">Liste d'amis</a></li>

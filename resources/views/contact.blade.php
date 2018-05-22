@@ -50,7 +50,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</div>
 							<div class="col-md-3 top-middle">
 								<ul>
-									<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+									<li><a href="https://web.facebook.com/monincroyableanniv/"><i class="fa fa-facebook"></i></a></li>
 									<li><a href="#"><i class="fa fa-twitter"></i></a></li>
 									<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
 									<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
@@ -116,18 +116,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="container">
 		<h3 class="title-txt"><span>N</span>ous Contacter </h3>
 		<div class="contact-grids">
+
 			<div class=" col-md-5 contact-form">
 			<h4 class="heading">Vos informations</h4>
-				<form action="#" method="post">
-						<input type="text" placeholder="Votre nom" required=""/>
-						<input type="email" placeholder="Votre Mail" required=""/>
-						<input type="text" placeholder="Telephone" required=""/>
-						<textarea placeholder="Message" required=""></textarea>
+				<form action="{{ route ('contact_path')}}" method="post">
+					{{ csrf_field() }}
+						<input type="text" name="nom" placeholder="Votre nom" required=""/>
+						<input type="email" name="email" placeholder="Votre Email" required=""/>
+						<input type="text" name="Telephone" placeholder="Telephone" required=""/>
+						<textarea name="message" placeholder="Message" required=""></textarea>
 						<div class="submit1">
 							<input type="submit" value="Envoyer">
 						</div>
 				</form>
 			</div>
+
+
 			<div class=" col-md-7 map">
 				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387193.30591910525!2d-74.25986432970718!3d40.697149422113014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew+York%2C+NY%2C+USA!5e0!3m2!1sen!2sin!4v1518850482333"></iframe>
 				<div class="col-md-5 contact-grid1">

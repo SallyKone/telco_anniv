@@ -61,7 +61,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</div>
 							<div class="col-md-3 top-middle">
 								<ul>
-									<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+									<li><a href="https://web.facebook.com/monincroyableanniv/"><i class="fa fa-facebook"></i></a></li>
 									<li><a href="#"><i class="fa fa-twitter"></i></a></li>
 									<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
 									<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
@@ -141,7 +141,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 					</li>
 					<li>
-						<div class="slider-img1">
+						<div class="slider-img3">
 							<div class="container">
 								<div class="slider_banner_info_w3ls">
 									<h4> <span></span></h4>
@@ -151,7 +151,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</li>
 
 					<li>
-						<div class="slider-img1">
+						<div class="slider-img4">
 							<div class="container">
 								<div class="slider_banner_info_w3ls">
 									<h4> <span></span></h4>
