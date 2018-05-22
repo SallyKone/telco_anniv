@@ -110,6 +110,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class=" col-md-7 .offset-md-1 login-form">
 			
 				<div class="photoedit">
+					<strong>Ajouter ma photo</strong>
 			<form  action="" name="form1" id="form1" method="post" enctype="multipart/form-data" >
 			<img src="" height="175"><br>
 			<br>
@@ -117,22 +118,142 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<input type="file" id="changepic" style="width:0px; height:0px; background:none;" name="photo">
 			<a href="javascript:void();" onClick="openfile();"><strong>Ajouter ma photo</strong></a>
 			<br><br>
-					<div class="submit1">
-						<input type="submit" value="Envoyer">
-					</div>
+					
 			</form>
             </div>
+            
             <div class="col-md-3">
-            	<div class="myprofile"><strong>Nom:</strong></div>
-            	
-            	<div class="myprofile"><strong>Prénons:</strong></div>
-            	<div class="myprofile"><strong>Né(e) le:</strong></div>
-            	<div class="myprofile"><strong>Login:</strong></div>
-            	<div class="myprofile"><strong>Téléphone:</strong></div>
-            	<div class="myprofile"><strong>Code de vote:</strong></div>
-            	<div class="myprofile"><strong>Nombre de voix:</strong></div>
 
-            </div>				
+            <form action="" method="POST">
+            <div class="myprofile" >	
+            	<strong>Nom:</strong>
+            </div>	
+            <div class="myprofile">
+            	<input type="text" id="name" name="" placeholder="" value="" class="myprofileform" required /><br>
+            </div>
+            	
+            	
+            	<div class="myprofile"><strong>Prénons:</strong>
+            	</div>	
+            	<div class="myprofile">	
+            		<input type="text" id="name" name="" placeholder="" value="" class="myprofileform" required />
+            	</div>
+
+            	<div class="myprofile"><strong>Né(e) le:</strong>
+            	</div>	
+            	<div class="myprofile">
+<select name="jour" id="Date" class="inqdropp" required>
+    
+   <option value="0">Jour</option>
+                  <option value="1" >1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+        <option value="20">20</option>
+        <option value="21">21</option>
+        <option value="22">22</option>
+        <option value="23">23</option>
+        <option value="24">24</option>
+        <option value="25">25</option>
+        <option value="26">26</option>
+        <option value="27">27</option>
+        <option value="28">28</option>
+        <option value="29">29</option>
+        <option value="30">30</option>
+        <option value="31">31</option>
+        
+    
+    </select>
+    </div>
+    <div class="myprofile">
+<select name="mois" id="Month" class="inqdropp" required>
+    
+   <option value="0">Mois</option>
+        <option value="1">Janvier</option>
+        <option value="2">Fevrier</option>
+        <option value="3">Mars</option>
+        <option value="4">Avril</option>
+        <option value="5">Mai</option>
+        <option value="6">Juin</option>
+        <option value="7">Juillet</option>
+        <option value="8">Aout</option>
+        <option value="9">Septembre</option>
+        <option value="10">Octobre</option>
+        <option value="11">Novembre</option>
+        <option value="12">Decembre</option>
+        
+    
+    </select>
+</div>
+	<div class="myprofile">
+<select name="Année" id="year" class="inqdropp" required>
+    
+   <option value="0">Année</option>
+        <option value="1">1980</option>
+        <option value="2">1981</option>
+        <option value="3">1982</option>
+        <option value="4">1983</option>
+        <option value="5">1984</option>
+        <option value="6">1985</option>
+        <option value="7">1986</option>
+        <option value="8">1987</option>
+        <option value="9">1988</option>
+        <option value="10">1989</option>
+        <option value="11">1990</option>
+        <option value="12">1991</option>
+        <option value="13">1992</option>
+        <option value="14">1993</option>
+        <option value="15">1994</option>
+        <option value="16">1995</option>
+        <option value="17">1996</option>
+        <option value="18">1997</option>
+        <option value="19">1998</option>
+        <option value="20">1999</option>
+        <option value="21">2000</option>
+        <option value="22">2001</option>
+        <option value="23">2002</option>
+        <option value="24">2003</option>
+        <option value="25">2004</option>
+        <option value="26">2005</option>
+        <option value="27">2006</option>
+        <option value="28">2007</option>
+        <option value="29">2008</option>
+        <option value="30">2009</option>
+        <option value="31">2010</option>
+  </select>
+</div>
+<div class="clear"></div>
+
+            		
+            	<div class="myprofile"><strong>Téléphone:</strong>
+            		</div>
+            		<div>
+
+            		<input type="text" id="name" name="" placeholder="" value="" class="myprofileform" required /></div>
+
+
+            		<div class="submit1">
+						<input type="submit" value="Envoyer">
+					</div>
+            	
+            </form>
+            </div>
+            				
 			</div>
 				
 		</div>
@@ -286,6 +407,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     margin: 0 5px 0 0px;
     float: left;
 }
+.myprofileform{width:220px; height:17px;  font-size:15px; color:#999; line-height:30px; text-align:left; padding:10px;  margin:0 0 15px 0px; border-radius:10px; box-shadow:inset 0 0 10px #CCC; outline:none; border:none;}
 
 	</style>
 </body>

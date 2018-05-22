@@ -108,32 +108,33 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		
 		<div class="login-grids">
 			<div class=" col-md-7 .offset-md-1 login-form">
-			
-				<div class="photoedit">
-			<form  action="" name="form1" id="form1" method="post" enctype="multipart/form-data" >
-			<img src="" height="175"><br>
-			<br>
-			 <input name="MAX_FILE_SIZE" type="hidden" value="3000000" />
-			<input type="file" id="changepic" style="width:0px; height:0px; background:none;" name="photo">
-			<a href="javascript:void();" onClick="openfile();"><strong>Ajouter ma photo</strong></a>
-			<br><br>
-					<div class="submit1">
-						<input type="submit" value="Envoyer">
-					</div>
-			</form>
-            </div>
-            <div class="col-md-3">
-            	<div class="myprofile"><strong>Nom:</strong></div>
-            	
-            	<div class="myprofile"><strong>Prénons:</strong></div>
-            	<div class="myprofile"><strong>Né(e) le:</strong></div>
-            	<div class="myprofile"><strong>Login:</strong></div>
-            	<div class="myprofile"><strong>Téléphone:</strong></div>
-            	<div class="myprofile"><strong>Code de vote:</strong></div>
-            	<div class="myprofile"><strong>Nombre de voix:</strong></div>
+				<div class="myprofilemain" id="last">
+<div class="myprofile" id="last">
+<strong>Ajouter ami(s)</strong>
+</div>
+ <div class="clear"></div>
+ 
+<div class="myprofile" id="last">
+<strong>• Pseudo/Nom:</strong>
+</div>
+<div class="myprofile">
+<form class="commentForm" action="" method="post">
 
-            </div>				
-			</div>
+<input type="text" id="name" name="pseudo" placeholder="Entrer le Pseudo de votre ami"  value="" class="myprofileform" />
+</div>
+
+
+<div class="myprofile" id="last">
+<strong>• Numéro mobile:</strong>
+</div>
+<div class="myprofile">
+<input type="text" id="name" name="numero" required  placeholder="Entrez le numero mobile de votre ami" onkeyup="verif_nombre(this);" maxlength="8" onBlur="valider_numero(this)" class="myprofileform"  />
+</div>
+	<br>
+ <div class="clear"></div>
+ 	<br>
+ <input type="submit" id="submit" name="" value="Envoyer"  />
+           </div>
 				
 		</div>
 			<div class=" col-md-4 dash "  >
@@ -148,7 +149,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		    <div class="clearfix"></div>
 			</div>
 		</div>
-	</div>
+	
 </section>
 
 
@@ -286,6 +287,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     margin: 0 5px 0 0px;
     float: left;
 }
+.myprofileform{width:220px; height:17px;  font-size:15px; color:#999; line-height:30px; text-align:left; padding:10px;  margin:0 0 15px 0px; border-radius:10px; box-shadow:inset 0 0 10px #CCC; outline:none; border:none;}
+.myprofile#last{width:320px; height:50px; font-size:15px; color:#000; text-align:left; line-height:50px; margin:0 5px 0 0px; float:left;}
+
+.changesubbtn{width:100px; height:30px; font-size:15px; color:#fff; line-height:30px; text-align:cente; border:none; cursor:pointer; outline:none; margin:10px 13px 0 0px; text-transform:uppercase; float:right; border-radius:8px;
+
 
 	</style>
 </body>

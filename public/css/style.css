@@ -2330,9 +2330,9 @@ textarea{
 }
 .login-form input[type="text"],.login-form input[type="email"],textarea{
     margin: .5em 0;
-    padding: .7em 1em;
+    padding: 1.2em 1em;
     font-size: .9em;
-    width: 100%;
+    width: 145%;
     background: transparent;
     border: 1px solid #fff;
 	color:#fff;
@@ -2364,12 +2364,7 @@ textarea{
     border: 1px solid #93c83f;
 	color:#93c83f;
 }
-.map iframe {
-    border: 5px solid rgb(147, 200, 63);
-    width: 100%;
-    height: 400px;
-    margin-bottom: 1.5em;
-}
+
 .login-form {
     padding: 4em 3em;
     background: #1e3953;
@@ -2380,32 +2375,6 @@ textarea{
     margin-left: 115px;
 }
 
-.login-form h4.heading {
-    text-align: left;
-    font-size: 35px;
-    margin-bottom: 20px;
-    font-weight: 600;
-    text-transform: capitalize;
-    color: #93c83f;
-    letter-spacing: 1px;
-}
-.login-grid1 i {
-    font-size: 25px;
-    color: #93c83f;
-    margin-bottom: 15px;
-}
-.login-right p {
-    font-weight: 600;
-    font-size: 18px;
-    color: #444;
-    margin-bottom: 5px;
-}
-.login-right span, .login-right a{
-    font-size: 15px;
-    color: #464646;
-	letter-spacing: 1px;
-    line-height: 26px;
-}
 
 /*-- to-top --*/
 

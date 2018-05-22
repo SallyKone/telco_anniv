@@ -29,6 +29,9 @@ Route::get ('/mot', 'MotController@showMot');
 Route::get ('/change', 'ChangeController@showChange');
 Route::get ('/identite', 'IdentiteController@showIdentite');
 Route::get ('/afterlogin', 'AfterloginController@showAfterlogin');
+Route::get ('/modifeprofile', 'ModifeprofileController@showModifeprofile');
+Route::get ('/ajouteramis', 'AjouteramisController@showAjouteramis');
+Route::get ('/listeamis', 'ListeamisController@showListeamis');
 
 Route::get ('/classement', 'ClassementController@showClassement');
 Route::get ('/gallery', 'GalleryController@showGallery');
