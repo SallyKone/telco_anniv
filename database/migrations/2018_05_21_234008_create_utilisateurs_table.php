@@ -27,6 +27,7 @@ class CreateUtilisateursTable extends Migration
             #Cle étrangère et colonne unique;
             $table->unique('login');
             $table->foreign('id_typeuser')->references('id')->on('typeusers');
+            $table->engine = 'InnoDB';
         });
     }
 

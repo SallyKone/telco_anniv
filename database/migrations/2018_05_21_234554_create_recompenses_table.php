@@ -14,12 +14,13 @@ class CreateRecompensesTable extends Migration
     public function up()
     {
         Schema::create('recompenses', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->string('libelle')->length(255);
             $table->text('description');
             $table->text('photo')->length(500);
 
             $table->timestamps();
+            $table->engine = 'InnoDB';
         });
     }
 

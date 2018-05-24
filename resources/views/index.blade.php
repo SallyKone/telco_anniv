@@ -264,6 +264,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
    <!-- news -->
 	<div class="events-section">
 		<div id="pourlavideo">
+			<video id="lavideo" loop autoplay>
+				<source src="videos/girafe.webm" type="video/webm">
+			</video>
 			<div class="container">
 				<h3 class="title-txt two"><span>A</span>ctualitées</h3>
 				<div class="col-sm-4 live-grids-w3ls">
@@ -321,9 +324,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</center>
 				</div>
 			</div>
-			<video id="lavideo" loop autoplay>
-				<source src="videos/videotelco.webm" type="video/webm">
-			</video>
+			
 		</div>
 		<div class="clearfix"> </div>
 		</div>

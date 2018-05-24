@@ -19,7 +19,8 @@ class CreateTypeusersTable extends Migration
             $table->string('abreviation')->length(10)->unique();
             $table->text('description')->length(500); 
 
-            $table->timestamps(); 
+            $table->timestamps()->nullable(false); 
+            $table->engine = 'InnoDB';
         });
     }
 

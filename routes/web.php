@@ -22,6 +22,7 @@ Route::name('description_path')->get('/description', 'DescriptionController@desc
 Route::name('contact_path')->get('/contact', 'ContactController@Contact');
 
 Route::get ('/index', 'IndexController@showIndex');
+Route::post ('/index', 'IndexController@showIndex');
 Route::get ('/amis', 'AmisController@showAmis');
 Route::get ('/codes', 'CodesController@showCodes');
 

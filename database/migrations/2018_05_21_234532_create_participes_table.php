@@ -17,12 +17,14 @@ class CreateParticipesTable extends Migration
             $table->unsignedBigInteger('id_candidat');
             $table->unsignedBigInteger('id_anniversaire');
             $table->unsignedInteger('annee')->length(4);
+            $table->unsignedTinyInteger('gagne')->default(0);
 
             $table->timestamps();
             #Cle étrangère
             $table->foreign('id_candidat')->references('id')->on('candidats');
             $table->foreign('id_anniversaire')->references('id')->on('anniversaires');
             $table->primary(['id_candidat','annee']);
+            $table->engine = 'InnoDB';
         });
     }
 

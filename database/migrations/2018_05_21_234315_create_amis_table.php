@@ -22,6 +22,7 @@ class CreateAmisTable extends Migration
             $table->timestamps();
             #Cle étrangère
             $table->foreign('id_candidat')->references('id')->on('candidats');
+            $table->engine = 'InnoDB';
         });
     }
 

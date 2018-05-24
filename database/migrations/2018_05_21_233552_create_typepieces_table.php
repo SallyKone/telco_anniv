@@ -15,11 +15,12 @@ class CreateTypepiecesTable extends Migration
     {
         Schema::create('typepieces', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('libelle')->length(255)->unique();
+            $table->string('libelle')->length(150)->unique();
             $table->string('abreviation')->length(20)->unique();
             $table->text('description')->length(500)->nullable();
 
             $table->timestamps();
+            $table->engine = 'InnoDB';
         });
     }
 

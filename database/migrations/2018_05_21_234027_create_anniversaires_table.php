@@ -18,16 +18,15 @@ class CreateAnniversairesTable extends Migration
             $table->string('libelle')->length(255);
             $table->date('date_anniv')->comment("Date de l'anniversaire");
             $table->unsignedInteger('annee')->length(4);
-            $table->boolean('anniv_cloture')->comment("Etat de l'anniversaire");
-            $table->date('date_cloture')->nullable();
-            $table->unsignedBigInteger('id_candidat')->nullable();
-            $table->unsignedInteger('id_recompense')->nullable();
+            $table->unsignedTinyInteger('anniv_cloture')->default(0)->comment("Etat de l'anniversaire");
+            $table->dateTime('date_cloture');
+            $table->unsignedBigInteger('id_recompense')->nullable();
 
             $table->timestamps();
             #Cle étrangère et colonne unique;
             $table->unique('date_anniv');
-            $table->foreign('id_candidat')->references('id')->on('candidats');
             $table->foreign('id_recompense')->references('id')->on('recompenses');
+            $table->engine = 'InnoDB';
         });
     }
 

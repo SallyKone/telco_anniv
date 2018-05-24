@@ -17,6 +17,8 @@ class CreateCandidatsTable extends Migration
             $table->bigIncrements('id');
             $table->string('login')->length(35);
             $table->string('motpass')->length(35);
+            $table->string('codecandidat')->length(35);
+            
             $table->string('nom_inscription')->comment('Concaténation du nom et du prénom à la souscription');
             $table->string('nom')->length(50);
             $table->string('prenom')->length(205);
@@ -36,7 +38,9 @@ class CreateCandidatsTable extends Migration
             #Cle étrangère et colonne unique;
             $table->unique('login');
             $table->unique('numero');
+             $table->unique('codecandidat');
             $table->foreign('id_typepiece')->references('id')->on('typepieces');
+            $table->engine = 'InnoDB';
         });
     }
 

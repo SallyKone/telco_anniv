@@ -130,6 +130,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<br>
 							<form action="" method="POST">
 								{{ csrf_field() }}
+								{{ isset($resultat) ? $resultat : ""}}
 								<br>
 								<input type="text" id="login" name="login" placeholder="Identifiant / Login" class="chaageform" required />
 								<br/><br/>

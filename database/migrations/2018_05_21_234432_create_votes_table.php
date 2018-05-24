@@ -14,7 +14,7 @@ class CreateVotesTable extends Migration
     public function up()
     {
         Schema::create('votes', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->unsignedBigInteger('id_candidat');
             $table->unsignedBigInteger('id_anniversaire');
             $table->unsignedInteger('numeroVotant')->length(8);
@@ -23,6 +23,7 @@ class CreateVotesTable extends Migration
             #Cle étrangère
             $table->foreign('id_candidat')->references('id')->on('candidats');
             $table->foreign('id_anniversaire')->references('id')->on('anniversaires');
+            $table->engine = 'InnoDB';
         });
     }
 
