@@ -1,40 +1,42 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+/* Web Routes */
+//Route de maintenance
+Route::get('/', 'PageController@comptaRebour');
+//Route::any('{teste?}','IndexController@comptaRebour')->where(['teste'=>'/\\S+/']);
 
-Route::get('/', function () {
-    return view('index');
-});
-
-Route::name('profil_path')->get('/profil', 'ProfilController@profil');
-
-Route::name('description_path')->get('/description', 'DescriptionController@description');
-
-Route::name('contact_path')->get('/contact', 'ContactController@Contact');
-
-Route::get ('/index', 'IndexController@showIndex');
-Route::post ('/index', 'IndexController@showIndex');
+//Route Amis
 Route::get ('/amis', 'AmisController@showAmis');
-Route::get ('/codes', 'CodesController@showCodes');
+Route::get ('/ajouteramis', 'AmisController@showAjouterAmis');
+Route::get ('/choixamis', 'AmisController@showChoixAmis');
+Route::post ('/listeamis', 'AmisController@showListeAmis');
+//Route::post ('/listeamis', 'AmisController@modifierAmis');
+//Route::post ('/listeamis', 'AmisController@supprimerAmis');
 
+//Route Candidats
+Route::get('/profil', 'CandidatsController@profil');
+
+//Route Anniversaire
+
+//Route Connexion
 Route::get ('/connexion', 'ConnexionController@showConnexion');
-Route::post ('/connexion', 'ConnexionController@postForm');
+Route::post ('/connexion', 'ConnexionController@connecter');
 
-Route::get ('/mot', 'MotController@showMot');
-Route::get ('/change', 'ChangeController@showChange');
-Route::get ('/identite', 'IdentiteController@showIdentite');
+//Route Contact
+Route::get('/contact', 'ContactController@contact');
+Route::post('/contact', 'ContactController@envoiMail');
 
+//Route Pages pour afficher les standards et les formulaires
+Route::get ('/index', 'PageController@showIndex');
+Route::post ('/index', 'PageController@showIndex')->name('home');
+Route::get ('/gallery', 'PageController@showGallery');
+Route::get('/description', 'PageController@description');
+Route::get ('/mdpassoublier', 'PageController@showMDPassOublier');
+Route::get ('/modifiermdpass', 'PageController@showModifMDPass');
+Route::get ('/identifiantoublier', 'IdentiteController@showIdOublier');
+//Route::get ('/miseajour', 'PageController@showModifProfil');
+Route::get ('/icons', 'PageController@showIcons');
+Route::get ('/souscritsms', 'PageController@showSoucritSms');
+
+//Route Classement
 Route::get ('/classement', 'ClassementController@showClassement');
-Route::get ('/gallery', 'GalleryController@showGallery');
-Route::get ('/icons', 'IconsController@showIcons');
-
-Route::get ('/sms', 'SmsController@showSms');

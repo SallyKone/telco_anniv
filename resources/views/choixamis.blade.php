@@ -8,7 +8,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <html lang="fr">
 
 <head>
-	<title>Mon incroyable anniversaire | Telco</title>
+	<title>Bettering an Education Category Bootstrap Responsive Website Template | Contact :: w3layouts</title>
 	<!-- Meta Tags -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -39,59 +39,47 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!--Header-->
 	@include('header')
 	<!--//Header-->
-	<!-- contact -->
-<section class="contact">
-	<div class="container">
-		<h3 class="title-txt"><span>N</span>ous Contacter </h3>
-		<div class="contact-grids">
-
-			<div class=" col-md-5 contact-form">
-			<h4 class="heading">Vos informations</h4>
-				<form action="{{ route ('contact_path')}}" method="post">
-					{{ csrf_field() }}
-						<input type="text" name="nom" placeholder="Votre nom" required=""/>
-						<input type="email" name="email" placeholder="Votre Email" required=""/>
-						<input type="text" name="Telephone" placeholder="Telephone" required=""/>
-						<textarea name="message" placeholder="Message" required=""></textarea>
-						<div class="submit1">
-							<input type="submit" value="Envoyer">
-						</div>
-				</form>
-			</div>
 
 
-			<div class=" col-md-7 map">
-				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387193.30591910525!2d-74.25986432970718!3d40.697149422113014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew+York%2C+NY%2C+USA!5e0!3m2!1sen!2sin!4v1518850482333"></iframe>
-				<div class="col-md-5 contact-grid1">
-					<i class="fa fa-map-marker" aria-hidden="true"></i>
-					<div class="contact-right">
-						<p>Adresse</p>
-						<span>Riviera Palmeraie, Rond point ADO phcie St Moise.</span>
-					</div>
-				</div>
-				<div class="col-md-4 contact-grid1">
-					<i class="fa fa-phone" aria-hidden="true"></i>
-					<div class="contact-right">
-						<p>Téléphone</p>
-						<p><span> +225 22 46 61 64 </span></p>
-						<span> +225 22 46 61 64 </span>
-					</div>
-				</div>
-				<div class="col-md-3 contact-grid1">
-					<i class="fa fa-envelope" aria-hidden="true"></i>
-					<div class="contact-right">
-						<p>Email</p>
-						<a href="mailto:info@example.com">info@telco.com</a>
-						<a href="mailto:info@example1.com">info@telcoanniv.com</a>
-					</div>
+<!-- services -->
+	<div class="w3-agile-services">
+		<div class="container">
+			<h3 class="title-txt"><u><span>C</span>omment ajouter ses amis?</h3></u>
+		<div class="agileits-services">
+				<div class="services-right-grids">
 					
+					<div class="col-md-5 col-md-offset-1 col-sm-12 services-right-grid">
+						<div class="se-top">
+							<div class="services-icon">
+								<a href="sms"><img src="images/newsms.png"></a>
+							<!-- <i class="fa fa-eye" aria-hidden="true"></i> -->
+							</div>
+							<div class="services-icon-info">
+								</a><h5>VIA SMS</h5>
+								<p></p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-5 col-sm-12  services-right-grid">
+						<div class="se-top">
+							<div class="services-icon">
+							<a href="profil"><img src="images/newglob.png"></a>
+							<!-- <i class="fa fa-flask" aria-hidden="true"></i> -->
+							</div>
+							<div class="services-icon-info">
+								<h5>VIA LE SITE</h5>
+								<p></p>
+							</div>
+						</div>
+					</div>
+					<div class="clearfix"> </div>
 				</div>
-				<div class="clearfix"></div>
+				
 			</div>
 		</div>
 	</div>
-</section>
-<!-- //contact -->
+	<!-- //services -->
+
 	@include('footer')
 	<!-- Required Scripts -->
 	<!-- Common Js -->

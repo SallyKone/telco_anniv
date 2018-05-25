@@ -37,69 +37,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <body>
 	<!--Header-->
-	<div class="header">
-	<div class="top">
-					<div class="container">
-						
-							<div class="col-md-9 top-left">
-								<ul>
-									<li><i class="fa fa-map-marker" aria-hidden="true"></i>Riviera Palmeraie,Rond point ADO phcie St Moise.</li>
-									<li><i class="fa fa-phone" aria-hidden="true"></i> +(225) 22 46 61 64</li>
-									<li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:info@example.com">info@telco.com</a></li>
-								</ul>
-							</div>
-							<div class="col-md-3 top-middle">
-								<ul>
-									<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-									<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-									<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-									<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-								</ul>
-							</div>
-							
-							<div class="clearfix"></div>
-						
-					</div>
-				</div>
-		<!--top-bar-w3layouts-->
-		<div class="top-bar-w3layouts">
-			<div class="container">
-				<nav class="navbar navbar-default">
-					<div class="navbar-header">
-						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-							<span class="sr-only">Toggle navigation</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-						<a href="index"><img src="images/telco.png"></a>
-					</div>
-					<!-- navbar-header -->
-				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
-						<ul class="nav navbar-nav navbar-right">
-							<li><a href="index">Accueil</a></li>
-							<li><a href="connexion" class="active">Profil</a></li>
-							<li><a href="description">Description</a></li>
-							<li><a href="contact">Contact</a></li>
-						</ul>
-
-					</div>
-					<div class="clearfix"> </div>
-				</nav>
-			</div>
-
-		</div>
-		<!--//top-bar-w3layouts-->
-		<!--Slider-->
-		<div class="banner">
-			
-		</div>
-		
-		<!-- //Modal1 -->
-		<!--//Slider-->
-	</div>
-	
+	@include('header')
 	<!-- team -->
 	
 
@@ -126,23 +64,61 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="panel panel-primary">
 						
 						<div class="panel-body">
-							<h3>Changer votre mot de passe</h3>
-						<p>Votre mot de passe vous sera envoyé par SMS.</p>
+							<h3>Retrouver mon identifiant</h3>
+							<p>Votre identifiant vous sera envoyé par SMS.</p>
 							<br>
 							<form action="" method="POST">
 							<br>
-<input type="text" id="name" name="login" placeholder="Login" value="" class="chaageform" />
-<div class="clear"></div>
-<input type="password" id="password" name="amdp" placeholder="Ancien mot de passe" value="" class="chaageform" />
-<div class="clear"></div>
-<input type="password" id="name" name="nmdp" placeholder="Nouveau mot de passe" value="" class="chaageform" />
-<div class="clear"></div>
-<input type="password" id="password" name="cnmdp" placeholder="Confirmer nouveau mot de passe" value="" class="chaageform" />
+<input type="text" id="name" name="name" placeholder="Nom" class="chaageform" />
+<br>
 
-
+<input type="text" id="phone" name="phone" placeholder="Telephone"  class="chaageform" />
+<div class="">
+	<br>
+ <select name="Date" id="Date" >
+    
+   <option value="0">Date</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+        
+    
+   </select>
+    
+    
+   <select name="Month" id="Month" >
+    
+   <option value="0">Month</option>
+                  <option value="Jan">Jan</option>
+                  <option value="Feb">Feb</option>
+                  <option value="Mer">Mer</option>
+                  <option value="Apr">Apr</option>
+        
+    
+    </select>
+    
+    
+    
+    <select name="Year" id="Year" >
+    
+   <option value="0">Year</option>
+                  <option value="2000">2000</option>
+                  <option value="2001">2001</option>
+                  <option value="2002">2002</option>
+                  <option value="2003">2003</option>
+        
+    
+    </select>
+   </div>
+   
 <div class="clear"></div>
+<br><br>
 <center>
-<input type="submit" id="submit"  name="contactsubmit" value="Envoyer" class="changesubbtn" /> </center>
+<input type="submit" id="submit"  name="contactsubmit" value="Envoyer" class="changesubbtn" />
+</center>
+<br>
+<br>
 <div class="clear"></div>
 
 
@@ -171,39 +147,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 	<!-- //team -->
 
-<!-- footer -->
-	<div class="footer">
-	<div class="container">
-		<div class="f-bg-w3l">
-		<div class="col-md-4 w3layouts_footer_grid">
-					<h3>Qui sommes-nous </h3>
-					<p><strong> TELCO </strong> Sarl est une société incorporée en cote d'ivoire qui intervient dans le domaine des télécommunications.</p>
-				</div>
-				<div class="col-md-4 w3layouts_footer_grid hpft">
-					<h3>Contactez nous</h3>
-					    <ul class="con_inner_text">
-							<li><span class="fa fa-map-marker" aria-hidden="true"></span>Riviera Palmeraie, <label> Rond point ADO phcie St Moise.</label></li>
-							<li><span class="fa fa-envelope-o" aria-hidden="true"></span> <a href="mailto:info@example.com">info@telcoanniv.com</a></li>
-							<li><span class="fa fa-phone" aria-hidden="true"></span> +225 22 46 61 64</li>
-						</ul>
-
-					
-				</div>
-				<div class="col-md-4 w3layouts_footer_grid">
-					<h2>Souscrire</h2>
-					<p>En vous abonnant à notre liste de diffusion, vous recevrez toujours les dernières nouvelles de notre part.</p>
-					<form action="#" method="post">
-						<input type="email" name="Email" placeholder="Entrez votre email..." required="">
-						<button class="btn1"><i class="fa fa-envelope-o" aria-hidden="true"></i></button>
-						<div class="clearfix"> </div>
-					</form>
-				</div>
-				<div class="clearfix"> </div>		
-			</div>	
-			</div>
-	</div>
-	<p class="copyright">© 2018 Telco. All Rights Reserved |  <a href="https://w3layouts.com/" target="_blank">www.telco.com</a></p>
-	<!-- //footer -->
+	@include('footer')
 	<!-- Required Scripts -->
 	<!-- Common Js -->
 	<script type="text/javascript" src="{{URL::asset('js/jquery-2.2.3.min.js')}}"></script>
@@ -265,6 +209,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 .chaageform{width:280px; height:30px;  font-size:15px; color:#999; line-height:30px; text-align:left; padding:10px;  margin:0 0 10px 0px; border-radius:10px; box-shadow:inset 0 0 10px #CCC; outline:none; border:none;}
 
 .changesubbtn{width:100px; height:30px; font-size:15px; color:#fff; line-height:30px; text-align:cente; border:none; cursor:pointer; outline:none; margin:10px 13px 0 0px; text-transform:uppercase; float:right; border-radius:8px;
+
+.inqdropmain{width:55px; height:18px; padding:10px; border-radius:10px; box-shadow:inset 0 0 10px #CCC; outline:none; border:none; margin:10px 5px 0px 0px; overflow:hidden; float:left; background:#FFF;}
+
+.inqdrop{width:140px; height:20px; outline:none; border:none; background:none !important;}
 
 .clear{clear:both;}
 .form{width:280px; height:30px;  font-size:15px; color:#999; line-height:30px; text-align:left; padding:10px;  margin:0 0 20px 0px; border-radius:10px; box-shadow:inset 0 0 10px #CCC; outline:none; border:none;}

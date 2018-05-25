@@ -10,29 +10,46 @@ use Illuminate\Support\Facades\DB;
 
 class AmisController extends Controller
 {
-    public function showAmis()
+                //Fonctions Get
+    public function showChoixAmis()
     {
-    	return view('amis');
+    	return view('choixamis');
+    }
+    public function showAjouterAmis()
+    {
+        return view('ajouteramis');
     }
 
-    //Récuperer les amis d'un candidat avec son id
-    public function getAllAmisById($idcandidat)
-    {
-    	return DB::table('amis')->where('id_candidat', $idcandidat)->get();
-    }
+                //Fonctions Post
     //Ajouter un ami
-    public function ajouterAmi(Amis $ami)
+    public function ajouterAmis(Request $request)
     {
-    	return DB::table('amis')->insertGetId(['nom'=>$ami->nom,'numero'=>$ami->numero,'id_candidat'=>$ami->idcandidat]);
+        $amis = new Amis;
+        $amis->nom = $request->pseudo;
+        $amis->numero = $request->numero;
+        $amis->id_candidat = 1;
+        //dd ($amis);
+        
+        if($amis->save()){
+            return redirect()->back()->withSuccess("Votre ami(e) a été ajouté avec succès!!!");
+        }else{
+            return redirect()->back()->withError("Une erreur est parvenue, veuillez recommencer");
+        }
+
     }
     //Modifier un ami
-    public function modifierAmi(Amis $ami)
+    public function modifierAmis(Amis $ami)
     {
     	return DB::table('amis')->where('id', $requete('id'))->update(['nom'=>$ami->nom,'numero'=>$ami->numero]);
     }
     //Supprimer un ami
-    public function supprimerAmi($idami)
+    public function supprimerAmis($idami)
     {
     	return DB::table('amis')->where('id', $idami)->delete();
+    }
+    //Récuperer les amis d'un candidat avec son id
+    public function showListeAmis($idcandidat)
+    {
+        return DB::table('amis')->where('id_candidat', $idcandidat)->get();
     }
 }

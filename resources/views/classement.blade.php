@@ -31,93 +31,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <body>
 	<!--Header-->
-	<div class="header">
-	<div class="top">
-					<div class="container">
-						
-							<div class="col-md-9 top-left">
-								<ul>
-									<li><i class="fa fa-map-marker" aria-hidden="true"></i>Riviera Palmeraie,Rond point ADO phcie St Moise.</li>
-									<li><i class="fa fa-phone" aria-hidden="true"></i> +(225) 22 46 61 64</li>
-									<li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:info@example.com">info@telco.com</a></li>
-								</ul>
-							</div>
-							<div class="col-md-3 top-middle">
-								<ul>
-									<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-									<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-									<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-									<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-								</ul>
-							</div>
-							
-							<div class="clearfix"></div>
-						
-					</div>
-				</div>
-		<!--top-bar-w3layouts-->
-		<div class="top-bar-w3layouts">
-			<div class="container">
-				<nav class="navbar navbar-default">
-					<div class="navbar-header">
-						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-							<span class="sr-only">Toggle navigation</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-						<a href="index"><img src="images/telco.png"></a>
-					</div>
-					<!-- navbar-header -->
-					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
-						<ul class="nav navbar-nav navbar-right">							<li><a href="index">Accueil</a></li>					
-							<li><a href="connexion">Profil</a></li>
-							<li><a href="description">Description</a></li>
-							<li><a href="contact" class="active">Contact</a></li>
-						</ul>
-
-					</div>
-
-					<!-- <div class="search-bar-agileits">
-						<div class="cd-main-header">
-							<ul class="cd-header-buttons">
-								<li><a class="cd-search-trigger" href="#cd-search"> <span></span></a></li>
-							</ul>
-							cd-header-buttons
-						</div>
-						<div id="cd-search" class="cd-search">
-							<form action="#" method="post">
-								<input name="Search" type="search" placeholder="Click enter after typing...">
-							</form>
-						</div>
-					</div> -->
-
-
-					<div class="clearfix"> </div>
-				</nav>
-			</div>
-
-		</div>
-		<!--//top-bar-w3layouts-->
-		<!--Slider-->
-		<div class="banner">
-			
-		</div>
-		
-		<!-- //Modal1 -->
-		<!--//Slider-->
-	</div>
-	<br/>
-	<br/>
-
+	@include('header')
+	
+	<br/><br/>
 	<div class="votretop">	
-<form action="" method="post">
-<div class="votretag"><strong>Saisir Votre</strong></div>
-
-		<div class="votredrop">
-		    <input type="text" name="identifiant" value=""  placeholder="Code de vote"  style="background:none; border:none;" required> 
-		</div>
+		<form action="" method="post">
+			<div class="votretag"><strong>Saisir Votre</strong></div>
+				<div class="votredrop">
+				    <input type="text" name="identifiant" value=""  placeholder="Code de vote"  style="background:none; border:none;" required> 
+				</div>
  <input type="submit" id="submit"  name="contactsubmit" value="Envoyer" class="contactsubbbtn" style="margin:0; float:left; font-size:12px; width:70px;" />
 <div class="clear"></div>
 
@@ -243,43 +165,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 	</div>
 
-
-
-
-
-	<!-- footer -->
-	<div class="footer">
-	<div class="container">
-		<div class="f-bg-w3l">
-		<div class="col-md-4 w3layouts_footer_grid">
-					<h3>Qui sommes-nous </h3>
-					<p><strong> TELCO </strong> Sarl est une société incorporée en cote d'ivoire qui intervient dans le domaine des télécommunications.</p>
-				</div>
-				<div class="col-md-4 w3layouts_footer_grid hpft">
-					<h3>Contactez nous</h3>
-					    <ul class="con_inner_text">
-							<li><span class="fa fa-map-marker" aria-hidden="true"></span>Riviera Palmeraie, <label> Rond point ADO phcie St Moise.</label></li>
-							<li><span class="fa fa-envelope-o" aria-hidden="true"></span> <a href="mailto:info@example.com">info@telcoanniv.com</a></li>
-							<li><span class="fa fa-phone" aria-hidden="true"></span> +225 22 46 61 64</li>
-						</ul>
-
-					
-				</div>
-				<div class="col-md-4 w3layouts_footer_grid">
-					<h2>Souscrire</h2>
-					<p>En vous abonnant à notre liste de diffusion, vous recevrez toujours les dernières nouvelles de notre part.</p>
-					<form action="#" method="post">
-						<input type="email" name="Email" placeholder="Entrez votre email..." required="">
-						<button class="btn1"><i class="fa fa-envelope-o" aria-hidden="true"></i></button>
-						<div class="clearfix"> </div>
-					</form>
-				</div>
-				<div class="clearfix"> </div>		
-			</div>	
-			</div>
-	</div>
-	<p class="copyright">© 2018 telco. All Rights Reserved |  <a href="https://www.telco.com/" target="_blank">www.telco.com</a></p>
-	<!-- //footer -->
+	@include('footer')
 	<!-- Required Scripts -->
 	<!-- Common Js -->
 	<script type="text/javascript" src="{{URL::asset('js/jquery-2.2.3.min.js')}}"></script>

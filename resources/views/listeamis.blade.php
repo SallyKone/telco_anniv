@@ -6,6 +6,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 -->
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
 	<title>Mon incroyable anniversaire| telco</title>
 	<!-- Meta Tags -->
@@ -36,74 +37,62 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <body>
 	<!--Header-->
-	<@include('header')
+	@include('header')
 	
 	<!-- team -->
-	
-	<div class="events-sections">
-		<div class="container">
-			
-			<div class="">
-				<div class="col-sm-4 live-grids-w3ls">
+	<section class="login">
+	<div class="container">
+		
+		<div class="login-grids">
+			<div class=" col-md-7 .offset-md-1 login-form">
+            
+           	<center> <h3>Liste de vos amis</h3> </center>
+           	<br>
+			<center>
+            <div class="col-sm-10 live-grids-w3ls" style="text-align: center;">
 					
-					<div class="panel panel-primary">
-						
-						<div class="panel-body">
+				 	<div class="panel panel-primary">
+						<div class="panel-heading-list" >
+							<div class="listtext" style="text-align: left;"><strong>Noms</strong></div>
+							<div class="listtext" style="text-align: center"><strong>Numeros</strong></div>
+							<div class="listtext" style="text-align: right;"><strong>Selectionner</strong></div>
 
-						<img class="imgDp" src="images/precampagne.JPG">
+					    </div>
+						<div class="panel-body">
+							<div class="live-info">
+							</div>
 							
 						</div>
 					</div>
 				</div>
 
-				<div class="col-sm-4 live-grids-w3ls">
-					
-					<div class="panel panel-primary">
-						
-						<div class="panel-body">
-							<h3>Accéder à mon compte</h3>
-							<br>
-							<form action="" method="POST">
-								{{ csrf_field() }}
-								{{ isset($resultat) ? $resultat : ""}}
-								<br>
-								<input type="text" id="login" name="login" placeholder="Identifiant / Login" class="chaageform" required />
-								<br/><br/>
-								<input type="password" id="password" name="password" placeholder="Mot de passe / Password" class="chaageform" required/>
-
-								<div class="forgotpassword"><a href="mot">Mot de passe oublié ?</a></div>
-								<div class="forgotpassword"><a href="identite">Identifiant oublié ?</a></div>
-								<div class="forgotpassword"><a href="change">Changer mot de passe</a></div>
-								<div class="clear"></div>
-								<center><br>
-									<input type="submit" id="submit"  name="contactsubmit" value="Envoyer" class="changesubbtn" />
-								</center>
-								<div class="clear"></div>
-							</form>
-						</div>
+				<div class="submit1" style="text-align: right;">
+						<input type="submit" value="Envoyer">
 					</div>
-					
-				</div>
-
-				<div class="col-sm-4 live-grids-w3ls">
-					
-					<div class="panel panel-primary">
-						
-						<div class="panel-body">
-							<img class="imgDp" src="images/DES1.JPG">
-						</div>
-					</div>
-					
-				</div>
-			</div>	
-			<div class="clearfix"> </div>
+				</center>
+            				
+			</div>
+				
+		</div>
+			<div class=" col-md-4 dash "  >
+				<ul>
+					<li><a href="profil">Mon profile</a></li>
+					<li><a href="modifeprofile">Modifier mon profile</a></li>
+					<li><a href="ajouteramis" >Ajouter ami(s)</a></li>
+					<li><a href="listeamis">Liste d'amis</a></li>
+				<!--<li><a href="#">Numeros inconnus</a></li>-->
+				</ul>
+				
+		    <div class="clearfix"></div>
+			</div>
 		</div>
 	</div>
+</section>
 
 
 	<!-- //team -->
 
-	@include('footer')
+@include('footer')
 	<!-- Required Scripts -->
 	<!-- Common Js -->
 	<script type="text/javascript" src="{{URL::asset('js/jquery-2.2.3.min.js')}}"></script>
@@ -162,14 +151,23 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     width: 310PX; 
 }
 
-.forgotpassword{width:160px; height:30px;  font-size:13px; color:#000; line-height:30px; text-align:center; margin:10px 0 0 0px; float:left;}
-.forgotpassword a{text-decoration:none; color:#000;}
-.forgotpassword a:hover{font-size:14px;}
-
-/*.submitbtn{width:100px; height:30px; font-size:15px; color:#fff; line-height:30px; text-align:cente; border:none; cursor:pointer; outline:none; margin:20px 15px 0 0px; text-transform:uppercase; float:right; border-radius:8px;*/
-
 .clear{clear:both;}
-/*.form{width:280px; height:30px;  font-size:15px; color:#999; line-height:30px; text-align:left; padding:10px;  margin:0 0 20px 0px; border-radius:10px; box-shadow:inset 0 0 10px #CCC; outline:none; border:none;}*/
+
+.myprofilemain{width:495px; height:auto; float:left;}
+
+.monprofilemain{width:95%; height:auto; margin:0 auto; }
+.monprofilelogin{width:95%; height:auto; padding:10px; margin:0px; float:none;}
+.monprofilelogin img{display:none;}
+
+.afterlogin{width:720px; height:auto; border:solid 1px #999; border-radius:2px; padding:10px; background:#efeded; float:left; position:relative;}
+.afterloginimg{width:5%; position:absolute; bottom:20px; right:5%;}
+
+.photoedit{width:220px; height:280px; font-size:13px; color:#000; text-align:center; float:left;}
+.photoedit img{width:80%; border:solid 1px #999; margin:10px 0 0 0px; background:#FFF;}
+.photoedit a{text-decoration:underline; color:#000; text-align:left;}
+.myprofile{width:240px; height:50px; font-size:15px; color:#000; text-align:left; line-height:50px; margin:0 5px 0 0px; float:left; }
+
+.form{width:280px; height:30px;  font-size:15px; color:#999; line-height:30px; text-align:left; padding:10px;  margin:0 0 20px 0px; border-radius:10px; box-shadow:inset 0 0 10px #CCC; outline:none; border:none;}
 
 . h1 {
     font-size: 20px;
@@ -179,7 +177,23 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     margin: 0px;
 }
 
-.chaageform{width:280px; height:30px;  font-size:15px; color:#999; line-height:30px; text-align:left; padding:10px;  margin:0 0 10px 0px; border-radius:10px; box-shadow:inset 0 0 10px #CCC; outline:none; border:none;}
+.dash{width:220px; height:40px;  text-align:center !important; }
+.dash ul{margin:0px; padding:0px;}
+.dash ul li{list-style:none; display:block; margin:0 0 5px 0px;  background:#219b2f; border-radius:5px;}
+.dash ul li a{font-size:20px; color:#000; padding:10px 0px; text-decoration:none; line-height:40px;}
+
+.myprofile {
+    width: 240px;
+    height: 50px;
+    font-size: 15px;
+    color: #000;
+    text-align: left;
+    line-height: 50px;
+    margin: 0 5px 0 0px;
+    float: left;
+}
+.myprofileform{width:220px; height:17px;  font-size:15px; color:#999; line-height:30px; text-align:left; padding:10px;  margin:0 0 15px 0px; border-radius:10px; box-shadow:inset 0 0 10px #CCC; outline:none; border:none;}
+.listtext{width:135px; height:40px; line-height:40px; font-size:17px; color:#FFF; text-align:center; margin:-21 0 0 6px; float:left;}
 
 	</style>
 </body>
