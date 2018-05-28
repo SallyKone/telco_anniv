@@ -51,7 +51,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="col-md-5 col-md-offset-1 col-sm-12 services-right-grid">
 						<div class="se-top">
 							<div class="services-icon">
-								<a href="sms"><img src="images/newsms.png"></a>
+								<a href="souscritsms"><img src="images/newsms.png"></a>
 							<!-- <i class="fa fa-eye" aria-hidden="true"></i> -->
 							</div>
 							<div class="services-icon-info">

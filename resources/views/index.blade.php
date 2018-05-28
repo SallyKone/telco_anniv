@@ -87,9 +87,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 						<ul class="nav navbar-nav navbar-right">
 							<li><a href="index" class="active">Accueil</a></li>
-							<li><a href="connexion">Profil</a></li>
-							<li><a href="description">Description</a></li>
-							<li><a href="contact">Contact</a></li>
+							<li><a href="connexion" class="active">Profil</a></li>
+							<li><a href="description" class="active">Description</a></li>
+							<li><a href="contact" class="active">Contact</a></li>
 						</ul>
 
 					</div>
@@ -223,7 +223,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="col-sm-4  col-sm-offset-2 services-right-grid">
 						<div class="se-top">
 							<div class="services-icon">
-								<a href="amis"><img src="images/midicon2.png"></a>
+								<a href="choixamis"><img src="images/midicon2.png"></a>
 							
 							</div>
 							<div class="services-icon-info">

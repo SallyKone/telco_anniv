@@ -1,7 +1,7 @@
 <?php
-
 /* Web Routes */
 //Route de maintenance
+use App\Mail\ContactMessageCreated;
 Route::get('/', 'PageController@comptaRebour');
 //Route::any('{teste?}','IndexController@comptaRebour')->where(['teste'=>'/\\S+/']);
 
@@ -24,7 +24,13 @@ Route::post ('/connexion', 'ConnexionController@connecter');
 
 //Route Contact
 Route::get('/contact', 'ContactController@contact');
-Route::post('/contact', 'ContactController@envoiMail');
+
+
+Route::post('/contact',['uses'=>'ContactController@store','as'=>'contact_path']);
+
+Route::get ('/test-email', function() {
+	return new ContactMessageCreated ('kone','misskone690@gmail.com','40157925','bienvenu');
+});
 
 //Route Pages pour afficher les standards et les formulaires
 Route::get ('/index', 'PageController@showIndex');

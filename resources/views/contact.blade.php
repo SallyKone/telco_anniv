@@ -52,7 +52,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<input type="text" name="nom" placeholder="Votre nom" required=""/>
 						<input type="email" name="email" placeholder="Votre Email" required=""/>
 						<input type="text" name="Telephone" placeholder="Telephone" required=""/>
-						<textarea name="message" placeholder="Message" required=""></textarea>
+						<textarea name="msg" placeholder="Message" required=""></textarea>
 						<div class="submit1">
 							<input type="submit" value="Envoyer">
 						</div>
