@@ -10,7 +10,19 @@ class PageController extends Controller
     {
         return view('index');
     }
-    
+
+    public function showVueTest()
+    {
+        //session()->start();
+        $resultat = "mpoldfgdgdgeregeratagzerghrm";
+        dd(encrypt($resultat));
+    }
+    public function showVueDeTest()
+    {
+        return view('vuedetest');
+    }
+
+
     public function description()
     {
     	return view('description');

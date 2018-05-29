@@ -11,15 +11,63 @@ use Illuminate\Support\Facades\DB;
 
 class CandidatsController extends Controller
 {
+    //Fonctions Utilitaires
+    function enregistreImage(Request $requet,$image){
+        //Types d'images autiorisés
+        $typepermis["jpg","png","jpeg"];
+        $limage = $requet->file($image);
+        $extension = $limage->extension();
+        if($requet->hasFile($image))
+        {
+            if (in_array($extension, $typepermis))
+            {
+                if ($limage->isValid()) {
+                    # code...
+                }
+            }
+        }
+        else 
+        {
+            # code...
+        }
+
+    }
     //LES FONCTIONS GET
     public function profil()
     {
     	return view('profil');
     }
-    public function showModifProfil()
+
+    public function showModifProfil($idcandidat)
     {
-        return view('modifeprofile');;
+        $candidat = Candidats::findorfail($idcandidat);
+        return view('modifProfilCandidat',compact($candidat));
     }
+    
+    //AJOUTER UN CANDIDAT
+    public function ajouterCandidat($login,$mdpass,$codecandidat,$nom,$prenom,$numero,$journaiss,$moisnaiss)
+    {
+        $candidat = new Candidats;
+        $candidat->login = $login;
+        $candidat->motpass = encrypt($mdpass);
+        $candidat->codecandidat = $codecandidat;
+        $candidat->nom = $nom;
+        $candidat->prenom = $prenom;
+        $candidat->nom_inscription = $nom.' '.$prenom;
+        $candidat->numero = $numero;
+        $candidat->jour_naiss = $journaiss;
+        $candidat->mois_naiss = $moisnaiss;
+        try
+        {
+            return $candidat->save();
+        }
+        catch(Exception $e)
+        {
+            #Log::error($e);
+            return $e->getMessage();
+        }
+    }
+
     //Liste de tous les candidats
     public function getAllCandidats()
     {
@@ -36,8 +84,13 @@ class CandidatsController extends Controller
         return DB::select(DB::raw($requete));
     }
 
+<<<<<<< HEAD
     public function modifProfil (Request $request ) {
 
+=======
+    //MODIFIER CANDIDATS
+    public function modifProfil(Request $requete)
+>>>>>>> ca9155c1457c82c3b2f3accd6a62a80c216f023b
 
         $candidats = Candidats::find(1); 
         $candidats->nom = $request->nom; 

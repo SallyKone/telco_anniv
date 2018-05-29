@@ -16,7 +16,7 @@ class CreateCandidatsTable extends Migration
         Schema::create('candidats', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('login')->length(35);
-            $table->string('motpass')->length(35);
+            $table->string('motpass')->length(255);
             $table->string('codecandidat')->length(35);
             
             $table->string('nom_inscription')->comment('Concaténation du nom et du prénom à la souscription');
@@ -37,7 +37,6 @@ class CreateCandidatsTable extends Migration
             $table->timestamps();
             #Cle étrangère et colonne unique;
             $table->unique('login');
-            $table->unique('numero');
              $table->unique('codecandidat');
             $table->foreign('id_typepiece')->references('id')->on('typepieces');
             $table->engine = 'InnoDB';

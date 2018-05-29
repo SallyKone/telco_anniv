@@ -47,22 +47,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		
 		<div class="login-grids">
 			<div class=" col-md-7 .offset-md-1 login-form">
-                @if(session('success')) 
-                                {{-- ====================================================================================== --}}
+               
+                <div class="{{isset($statut) && $statut ? 'alert alert-success' : 'alert alert-danger'}}" > 
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> 
+                    {{ $message }} 
+                </div> 
                                 
-                                    <div class="alert alert-success"> 
-                                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> 
-                                        {{ session('success') }} 
-                                    </div> 
-                                @endif 
-                                @if(session('error')) 
-                                    <div class="alert alert-danger"> 
-                                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> 
-                                        {{ session('error') }} 
-                                    </div> 
-                                @endif 
-                                {{-- ====================================================================================== --}}
-			
 				<div class="photoedit">
 					<strong>Ajouter ma photo</strong>
 			<form  action="" name="form1" id="form1" method="post" enctype="multipart/form-data" >
@@ -78,7 +68,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             
             <div class="col-md-3">
 
-            <form action="{{route('savemodifeprofile')}} " method="post">
+            <form action="{{route('modifeprofile')}} " method="post">
              {{ csrf_field() }} 
             <div class="myprofile" >	
             	<strong>Nom:</strong>

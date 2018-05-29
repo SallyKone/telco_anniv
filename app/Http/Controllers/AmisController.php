@@ -33,7 +33,7 @@ class AmisController extends Controller
     {
         $amis = new Amis;
         $amis->nom = $request->pseudo;
-        $amis->numero = $request->numero;
+        $amis->numero = (int)$request->numero;
         $amis->id_candidat = 1;
         //dd ($amis);
         $amis->save();

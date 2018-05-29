@@ -2334,9 +2334,9 @@ textarea{
 }
 .login-form input[type="text"],.login-form input[type="email"],textarea{
     margin: .5em 0;
-    padding: 1.2em 1em;
+    padding: 0.5em 1em;
     font-size: .9em;
-    width: 145%;
+    
     background: transparent;
     border: 1px solid #fff;
 	color:#fff;
