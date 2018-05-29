@@ -16,7 +16,7 @@ class CreateUtilisateursTable extends Migration
         Schema::create('utilisateurs', function (Blueprint $table) {
             $table->increments('id');
             $table->string('login')->length(15);
-            $table->string('motpass')->length(25);
+            $table->string('motpass')->length(255);
             $table->string('nom')->length(50);
             $table->string('prenom')->length(205);
             $table->string('telephone')->length(100);

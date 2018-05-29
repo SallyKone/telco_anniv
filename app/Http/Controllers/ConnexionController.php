@@ -19,21 +19,42 @@ class ConnexionController extends Controller
     }
     
     //LES FONCTIONS POST
+    //Fonction de connexion des candidats
     public function connecter(Request $requete){
-    	$lasession = "";
-    	$candidat = new Candidats;
-
+        //Démarrer la session
+    	session()->start();
+        
     	$login = $requete->input('login');
     	$motpass = $requete->input('password');
         
-    	if (DB::table('candidats')->where([['login','=',$login],['motpass','=',$motpass]])->exists())
+    	if (DB::table('candidats')->where('login','=',$login)->exists())
         {
-            $candidat = DB::table('candidats')->where([['login','=',$login],['motpass','=',$motpass]])->get();
-            $lasession = session('key');
-    		return view('index')->with('masession', $lasession);
+            $candidat = DB::table('candidats')->where('login','=',$login)->first();
+            if($candidat->motpass = encrypt($motpass))
+            {
+                Session::put('idcandidat',$candidat->id);
+                Session::put('nom',$candidat->nom);
+                Session::put('prenom',$candidat->prenom);
+                Session::put('ip',$requete-ip());
+                Session::save();
+                return view('profil')->with(['candidat'=> $candidat,'statut'=> true,'message'=>'Bienvenue ']);
+            }
+            else
+            {
+                return view('connexion')->with(['statut'=> false,'message'=>'Mot de passe incorrect !']);
+            }
     	}
 
-    	return view('connexion')->with('resultat', 'echoue');
+    	return view('connexion')->with(['statut'=> false,'message'=>'Mot de passe incorrect !']);
+    }
+    public function deconnecter(Request $requete){
+        //Démarrer la session
+        if($request->session()->has('idcandidat'))
+        {
+            Session::flush();
+            #Session::regenerate();
+            return view('index')->with(['statut'=> true,'message'=>'Déconnecté !']);
+        }
     }
 
 }
