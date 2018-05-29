@@ -62,7 +62,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									</div> 
 								@endif 
 								{{-- ====================================================================================== --}}
-<form class="commentForm" action="" method="post">
+<form class="commentForm" action="{{('saveajouteramis')}}" method="post">
 	{{csrf_field()}}
 				<div class="myprofilemain" id="last">
 <div class="myprofile" id="last">

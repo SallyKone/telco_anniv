@@ -10,7 +10,7 @@ body {
 	margin: 0;
 	font-size: 100%;
 	font-family: 'Lato', sans-serif;
-	background: #fff;
+	background: #e8dfdf24;
 }
 
 body a {
@@ -472,7 +472,7 @@ img.img-responsive {
 }
 .top-left i.fa {
     margin-right: 2px;
-    color: #93c83f;
+    color: red;
     font-size: 20px;
 }
 
@@ -1120,7 +1120,7 @@ p.para-1 {
 	font-size: 20px;
 	letter-spacing: 1px;
 	text-transform: capitalize;
-	color: #93c83f;
+	color: red;
 }
 
 .testimonial-info-wthree span {
@@ -1260,7 +1260,7 @@ h3.title-txt.two, p.two {
 p.para-w3ls {
     font-size: 16px;
     letter-spacing: 1px;
-    color: #9f9f9f;
+    color: #080808;
     line-height: 30px;
     margin-bottom: 2em;
 }
@@ -1744,7 +1744,7 @@ button.btn1 {
     padding: 15px 0;
     text-align: center;
     text-decoration: none;
-    background: #93c83f;
+    background: red;
     -webkit-transition: 0.5s all;
     -moz-transition: 0.5s all;
     -o-transition: 0.5s all;
@@ -1770,7 +1770,7 @@ ul.con_inner_text li label {
 
 ul.con_inner_text span {
     margin-right: 13px;
-    color: #93c83f;
+    color: red;
 }
 ul.con_inner_text li a {
     color: #bfbfbf;
@@ -2356,7 +2356,7 @@ textarea{
 	color:#999 !important;
 }
 .login-form input[type="submit"] {
-    background: #93c83f;
+    background: #fb8306;
     border: 1px solid #93c83f;
     padding: .5em 2em;
     text-transform: uppercase;

@@ -35,8 +35,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!--// Required Scripts -->
 	<style type="text/css">
 		#pourlavideo{ position: relative; z-index: 1;}
-		#lavideo{position: absolute; top: 0;left: 0;width: 100%; height: 100%; z-index: 0;
-			opacity: 0.3;}
+		#lavideo{position: absolute; top: 0;left: 0;width: 139%; height: 217%; z-index: 2;
+			opacity: 0.3; overflow-x:hidden;}
 		.pannel-body img {padding-right: 30px;}
 		.img1 {padding-right: 15px;}
 		.img2 {padding-right: 15px;	margin-left: 80px;}
@@ -339,10 +339,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<div class="inner-testimonials-w3ls">
 									<img src="images/1.jpg" alt=" " class="img-responsive" />
 									<div class="testimonial-info-wthree">
-										<h5>Andy Wovel</h5>
-										<span>Lorem Ipsum</span>
-										<p class="para-w3ls">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis hendrerit lobortis elementum, Quis nostrum exercitationem
-											ullam corporis suscipit laboriosam. </p>
+										<h5>Andy Brou</h5>
+										<br>
+										<p class="para-w3ls">Un grand merci à toute l’équipes de mon incroyable anniversaire, pour cette belle fête organisé en mon honneur, en présence de tous mes amis, ma familles et pour ce merveilleux cadeau. Alors  faite comme moi et devenez l’heureux gagnant du jour !!!. </p>
 									</div>
 								</div>
 							</li>
@@ -350,10 +349,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<div class="inner-testimonials-w3ls">
 									<img src="images/2.jpg" alt=" " class="img-responsive" />
 									<div class="testimonial-info-wthree">
-										<h5>Bernard Russo</h5>
-										<span>Lorem Ipsum</span>
-										<p class="para-w3ls">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis hendrerit lobortis elementum, Quis nostrum exercitationem
-											ullam corporis suscipit laboriosam. </p>
+										<h5>Bernard Tanoh</h5>
+										<br>
+										<p class="para-w3ls">Un grand merci à toute l’équipes de mon incroyable anniversaire, pour cette belle fête organisé en mon honneur, en présence de tous mes amis, ma familles et pour ce merveilleux cadeau. Alors  faite comme moi et devenez l’heureux gagnant du jour !!!. </p>
 									</div>
 								</div>
 							</li>
@@ -361,10 +359,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<div class="inner-testimonials-w3ls">
 									<img src="images/3.jpg" alt=" " class="img-responsive" />
 									<div class="testimonial-info-wthree">
-										<h5>Alex Merphy & July Mao</h5>
-										<span>Lorem Ipsum</span>
-										<p class="para-w3ls">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis hendrerit lobortis elementum, Quis nostrum exercitationem
-											ullam corporis suscipit laboriosam. </p>
+										<h5>Alex Merphy </h5>
+										<br>
+										<p class="para-w3ls">Un grand merci à toute l’équipes de mon incroyable anniversaire, pour cette belle fête organisé en mon honneur, en présence de tous mes amis, ma familles et pour ce merveilleux cadeau. Alors  faite comme moi et devenez l’heureux gagnant du jour !!!. </p>
 									</div>
 								</div>
 							</li>

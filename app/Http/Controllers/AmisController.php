@@ -15,10 +15,17 @@ class AmisController extends Controller
     {
     	return view('choixamis');
     }
+
+     public function showListeAmis()
+    {
+        return view('listeamis');
+    }
+
     public function showAjouterAmis()
     {
         return view('ajouteramis');
     }
+
 
                 //Fonctions Post
     //Ajouter un ami
@@ -29,6 +36,7 @@ class AmisController extends Controller
         $amis->numero = $request->numero;
         $amis->id_candidat = 1;
         //dd ($amis);
+        $amis->save();
         
         if($amis->save()){
             return redirect()->back()->withSuccess("Votre ami(e) a été ajouté avec succès!!!");
@@ -48,8 +56,9 @@ class AmisController extends Controller
     	return DB::table('amis')->where('id', $idami)->delete();
     }
     //Récuperer les amis d'un candidat avec son id
-    public function showListeAmis($idcandidat)
+    /*public function showListeAmis($idcandidat)
     {
-        return DB::table('amis')->where('id_candidat', $idcandidat)->get();
-    }
+        return view('ajouteramis');
+       // return DB::table('amis')->where('id_candidat', $idcandidat)->get();
+    }*/
 }

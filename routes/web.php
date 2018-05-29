@@ -8,8 +8,10 @@ Route::get('/', 'PageController@comptaRebour');
 //Route Amis
 Route::get ('/amis', 'AmisController@showAmis');
 Route::get ('/ajouteramis', 'AmisController@showAjouterAmis');
+Route::post('/saveajouteramis',['as' => 'saveajouteramis',	'uses' => 'AmisController@ajouterAmis'
+					]);
 Route::get ('/choixamis', 'AmisController@showChoixAmis');
-Route::post ('/listeamis', 'AmisController@showListeAmis');
+Route::get ('/listeamis', 'AmisController@showListeAmis');
 //Route::post ('/listeamis', 'AmisController@modifierAmis');
 //Route::post ('/listeamis', 'AmisController@supprimerAmis');
 
@@ -26,7 +28,7 @@ Route::post ('/connexion', 'ConnexionController@connecter');
 Route::get('/contact', 'ContactController@contact');
 
 
-Route::post('/contact',['uses'=>'ContactController@store','as'=>'contact_path']);
+Route::post('/contact',['uses'=>'ContactController@envoiMail','as'=>'contact_path']);
 
 Route::get ('/test-email', function() {
 	return new ContactMessageCreated ('kone','misskone690@gmail.com','40157925','bienvenu');
@@ -40,6 +42,10 @@ Route::get('/description', 'PageController@description');
 Route::get ('/mdpassoublier', 'PageController@showMDPassOublier');
 Route::get ('/modifiermdpass', 'PageController@showModifMDPass');
 Route::get ('/identifiantoublier', 'IdentiteController@showIdOublier');
+Route::get ('/modifeprofile', 'CandidatsController@showModifProfil');
+Route::post('/savemodifeprofile',['as' => 'savemodifeprofile',	'uses' => 'CandidatsController@update'
+					]);
+
 //Route::get ('/miseajour', 'PageController@showModifProfil');
 Route::get ('/icons', 'PageController@showIcons');
 Route::get ('/souscritsms', 'PageController@showSoucritSms');
