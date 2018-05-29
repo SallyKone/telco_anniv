@@ -1091,6 +1091,7 @@ body {
   line-height: 1.42857143;
   color: #333;
   background-color: #fff;
+  overflow-x: hidden;
 }
 input,
 button,
@@ -4961,7 +4962,7 @@ a.thumbnail.active {
 }
 .alert-success {
     color: #0c0c0c;
-    background-color: #f90d59;
+    background-color: #289a36;
     border-color: #d6e9c6;
 }
 .alert-success hr {
@@ -5322,6 +5323,7 @@ a.list-group-item-danger.active:focus {
 }
 .panel-body {
   padding: 15px;
+  background: #e8dfdf2b;
 }
 .panel-heading {
   padding: 10px 15px;

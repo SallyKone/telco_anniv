@@ -37,12 +37,13 @@ class CandidatsController extends Controller
     {
     	return view('profil');
     }
+
     public function showModifProfil($idcandidat)
     {
         $candidat = Candidats::findorfail($idcandidat);
-
-        return view('modifProfilCandidat',compact($candidat);
+        return view('modifProfilCandidat',compact($candidat));
     }
+    
     //AJOUTER UN CANDIDAT
     public function ajouterCandidat($login,$mdpass,$codecandidat,$nom,$prenom,$numero,$journaiss,$moisnaiss)
     {
@@ -66,28 +67,7 @@ class CandidatsController extends Controller
             return $e->getMessage();
         }
     }
-    //MODIFIER CANDIDATS
-    public function modifProfilCandidat(Request $requete)
-    {
-        $id_ = $requete->idcandidat;
-        $nom = $requete->nom;
-        $prenom = $requete->prenom;
-        $numero = $requete->numero;
-        $telephone = $requete->telephone;
-        $photo = $requete->photo;
-        $jour_naiss = $requete->journaiss;
-        $mois_naiss = $requete->moisnaiss;
-        $annee_naiss = $requete->moisnaiss;
-        try
-        {
-            DB::table('candidats')->where('id', $id_)->update(['nom' => $nom,'prenom' => $prenom,'numero' => $numero,'telephone' => $telephone,'numero' => $numero,'jour_naiss' => $jour_naiss,'mois_naiss' => $mois_naiss,'annee_naiss' => $annee_naiss,'photo' => $photo]);
-        }
-        catch(Exception $e)
-        {
-            #Log::error($e);
-            return $e->getMessage();
-        }
-    }
+
     //Liste de tous les candidats
     public function getAllCandidats()
     {
@@ -102,5 +82,28 @@ class CandidatsController extends Controller
             ->selectRaw('candidats.*, anniversaires.date_anniv, COUNT(votes.id) as voix')->where([['anniversaires.date_anniv','=',$ladate],['anniversaires.anniv_cloture','=',0]])->groupBy('votes.id_candidat')->orderBy('voix','desc')->limit(10)->get();
         $requete= $requet->toSql();
         return DB::select(DB::raw($requete));
+    }
+
+    //MODIFIER CANDIDATS
+    public function modifProfil(Request $requete)
+
+        $candidats = Candidats::find(1); 
+        $candidats->nom = $request->nom; 
+        $candidats->prenom = $request->prenom; 
+        $candidats->jour_naiss = $request->jour; 
+        $candidats->mois_naiss = $request->mois; 
+        $candidats->annee_naiss = $request->annee;
+        $candidats->photo = $request->photo;                
+        $candidats->telephone = $request->telephone; 
+
+         $candidats->save();
+
+        if($candidats->save()){
+            return redirect()->back()->withSuccess("Votre ami(e) a été ajouté avec succès!!!");
+        }else{
+            return redirect()->back()->withError("Une erreur est parvenue, veuillez recommencer");
+        }
+
+
     }
 }

@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'Telco_anniv'),
 
     /*
     |--------------------------------------------------------------------------
@@ -148,8 +148,9 @@ return [
         Illuminate\View\ViewServiceProvider::class,
 
         /*
-         * Package Service Providers...
+         * Package Service Providers...         
          */
+        
 
         /*
          * Application Service Providers...

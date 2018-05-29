@@ -47,7 +47,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		
 		<div class="login-grids">
 			<div class=" col-md-7 .offset-md-1 login-form">
-			
+               
+                <div class="{{isset($statut) && $statut ? 'alert alert-success' : 'alert alert-danger'}}" > 
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> 
+                    {{ $message }} 
+                </div> 
+                                
 				<div class="photoedit">
 					<strong>Ajouter ma photo</strong>
 			<form  action="" name="form1" id="form1" method="post" enctype="multipart/form-data" >
@@ -55,7 +60,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<br>
 			 <input name="MAX_FILE_SIZE" type="hidden" value="3000000" />
 			<input type="file" id="changepic" style="width:0px; height:0px; background:none;" name="photo">
-			<a href="javascript:void();" onClick="openfile();"><strong>Ajouter ma photo</strong></a>
+			<strong>Ajouter ma photo</strong>
 			<br><br>
 					
 			</form>
@@ -63,19 +68,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             
             <div class="col-md-3">
 
-            <form action="" method="POST">
+            <form action="{{route('modifeprofile')}} " method="post">
+             {{ csrf_field() }} 
             <div class="myprofile" >	
             	<strong>Nom:</strong>
             </div>	
             <div class="myprofile">
-            	<input type="text" id="name" name="" placeholder="" value="" class="myprofileform" required /><br>
+                <input type="hidden" id="idcandidat" name="idcandidat" placeholder="" value="1" class="myprofileform" required />
+            	<input type="text" id="name" name="nom" placeholder="" value="" class="myprofileform" required /><br>
             </div>
             	
             	
             	<div class="myprofile"><strong>Prénons:</strong>
             	</div>	
             	<div class="myprofile">	
-            		<input type="text" id="name" name="" placeholder="" value="" class="myprofileform" required />
+            		<input type="text" id="name" name="prenom" placeholder="" value="" class="myprofileform" required />
             	</div>
 
             	<div class="myprofile"><strong>Né(e) le:</strong>
@@ -142,7 +149,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="myprofile">
 <select name="Année" id="year" class="inqdropp" required>
     
-   <option value="0">Année</option>
+   <option value="0">Annee</option>
         <option value="1">1980</option>
         <option value="2">1981</option>
         <option value="3">1982</option>
@@ -177,17 +184,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
   </select>
 </div>
 <div class="clear"></div>
-
-            		
+         		
             	<div class="myprofile"><strong>Téléphone:</strong>
             		</div>
             		<div>
 
-            		<input type="text" id="name" name="" placeholder="" value="" class="myprofileform" required /></div>
+            		<input type="text" id="name" name="telephone" placeholder="" value="" class="myprofileform" required /></div>
 
 
             		<div class="submit1">
-						<input type="submit" value="Envoyer">
+						<input type="submit" value="Modifier">
 					</div>
             	
             </form>

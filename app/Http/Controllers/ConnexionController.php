@@ -30,13 +30,13 @@ class ConnexionController extends Controller
     	if (DB::table('candidats')->where('login','=',$login)->exists())
         {
             $candidat = DB::table('candidats')->where('login','=',$login)->first();
-            if($candidat->motpass = encrypt($motpass))
+            if($candidat->motpass == $motpass)
             {
-                Session::put('idcandidat',$candidat->id);
-                Session::put('nom',$candidat->nom);
-                Session::put('prenom',$candidat->prenom);
-                Session::put('ip',$requete-ip());
-                Session::save();
+                session()->put('idcandidat',$candidat->id);
+                session()->put('nom',$candidat->nom);
+                session()->put('prenom',$candidat->prenom);
+                session()->put('ip',$requete->ip());
+                session()->save();
                 return view('profil')->with(['candidat'=> $candidat,'statut'=> true,'message'=>'Bienvenue ']);
             }
             else

@@ -85,9 +85,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
     </div>
     <div class="col-md-4 col-sm-12" >
-<video controls width="410" height="510" autoplay>
-	<source src="images/Formation.mp4" type=""/>
-</video >
+
+				<img class="imgD" src="images/REGIS.JPG">
+
     </div>
     
 					</div>

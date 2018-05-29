@@ -46,32 +46,44 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="container">
 		
 		<div class="login-grids">
-			<div class=" col-md-7 .offset-md-1 login-form">
-			
-				<div class="photoedit">
-			<form  action="" name="form1" id="form1" method="post" enctype="multipart/form-data" >
-			<img src="" height="175"><br>
-			<br>
-			 <input name="MAX_FILE_SIZE" type="hidden" value="3000000" />
-			<input type="file" id="changepic" style="width:0px; height:0px; background:none;" name="photo">
-			<a href="javascript:void();" onClick="openfile();"><strong>Ajouter ma photo</strong></a>
-			<br><br>
-					<div class="submit1">
-						<input type="submit" value="Envoyer">
-					</div>
-			</form>
-            </div>
-            <div class="col-md-3">
-            	<div class="myprofile"><strong>Nom:</strong></div>
-            	
-            	<div class="myprofile"><strong>Prénons:</strong></div>
-            	<div class="myprofile"><strong>Né(e) le:</strong></div>
-            	<div class="myprofile"><strong>Login:</strong></div>
-            	<div class="myprofile"><strong>Téléphone:</strong></div>
-            	<div class="myprofile"><strong>Code de vote:</strong></div>
-            	<div class="myprofile"><strong>Nombre de voix:</strong></div>
-
-            </div>				
+			<div class="col-md-7 login-form">
+				<div class="row">
+				<div class="col-md-4">
+					<form  action="" name="form1" id="form1" method="post" enctype="multipart/form-data" >
+						<img src="" height="175"><br>
+						<br>
+						<input name="MAX_FILE_SIZE" type="hidden" value="3000000" />
+						<input type="file" id="changepic" style="width:0px; height:0px; background:none;" name="photo">
+						<a href="#" onClick="openfile();"><strong>Ajouter ma photo</strong></a>
+					</form>
+	            </div>
+	            <div class="col-md-8">
+	            	<div class="row">
+	            		<label class="col-md-4"><strong>Nom: </strong></label>
+	            		<input class="col-md-7" type="text" readonly value="">
+	            	</div>
+	            	<div class="row">
+	            		<label class="col-md-4"><strong>Prénons: </strong></label>
+	            		<input class="col-md-7" type="text" readonly value="">
+	            	</div>
+	            	<div class="row">
+	            		<label class="col-md-4"><strong>Né(e) le: </strong></label>
+	            		<input class="col-md-7" type="text" readonly value="">
+	            	</div>
+	            	<div class="row">
+	            		<label class="col-md-4"><strong>Login:</strong></label>
+	            		<input class="col-md-7" type="text" readonly value="">
+	            	</div>
+	            	<div class="row">
+	            		<label class="col-md-4"><strong>Téléphone:</strong></label>
+	            		<input class="col-md-7" type="text" readonly value="">
+	            	</div>
+	            	<div class="row">
+	            		<label class="col-md-4"><strong>Code de vote:</strong></label>
+	            		<input class="col-md-7" type="text" readonly value="">
+	            	</div>
+	            </div>
+	            </div>				
 			</div>
 				
 		</div>
@@ -163,7 +175,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 .afterlogin{width:720px; height:auto; border:solid 1px #999; border-radius:2px; padding:10px; background:#efeded; float:left; position:relative;}
 .afterloginimg{width:5%; position:absolute; bottom:20px; right:5%;}
 
-.photoedit{width:220px; height:280px; font-size:13px; color:#000; text-align:center; float:left;}
+/*.photoedit{width:220px; height:280px; font-size:13px; color:#000; text-align:center; float:left;}*/
 .photoedit img{width:80%; border:solid 1px #999; margin:10px 0 0 0px; background:#FFF;}
 .photoedit a{text-decoration:underline; color:#000; text-align:left;}
 .myprofile{width:240px; height:50px; font-size:15px; color:#000; text-align:left; line-height:50px; margin:0 5px 0 0px; float:left; }

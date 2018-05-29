@@ -23,6 +23,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			window.scrollTo(0, 1);
 		}
 	</script>
+	<!-- map -->
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJzgyR3Un04ndSCrm3Ac1goqPxd5U_HQw&callback=initMap" type="text/javascript"></script>
+	<!-- fin map -->
+
 	<!-- // Meta Tags -->
 	<link href="{{URL::asset('css/bootstrap.css')}}" rel="stylesheet" type="text/css" media="all" />
 	<link href="{{URL::asset('css/font-awesome.min.css')}}" rel="stylesheet" type="text/css" media="all">
@@ -44,6 +48,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="container">
 		<h3 class="title-txt"><span>N</span>ous Contacter </h3>
 		<div class="contact-grids">
+			 <!-- @if(session('success')) 
+								{{-- ====================================================================================== --}}
+								
+									<div class="alert alert-success"> 
+										<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> 
+										{{ session('success') }} 
+									</div> 
+								@endif 
+								@if(session('error')) 
+									<div class="alert alert-danger"> 
+										<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> 
+										{{ session('error') }} 
+									</div> 
+								@endif 
+								{{-- ====================================================================================== --}} --> 
 
 			<div class=" col-md-5 contact-form">
 			<h4 class="heading">Vos informations</h4>
@@ -52,7 +71,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<input type="text" name="nom" placeholder="Votre nom" required=""/>
 						<input type="email" name="email" placeholder="Votre Email" required=""/>
 						<input type="text" name="Telephone" placeholder="Telephone" required=""/>
-						<textarea name="message" placeholder="Message" required=""></textarea>
+						<textarea name="msg" placeholder="Message" required=""></textarea>
 						<div class="submit1">
 							<input type="submit" value="Envoyer">
 						</div>
@@ -61,7 +80,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 
 			<div class=" col-md-7 map">
-				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387193.30591910525!2d-74.25986432970718!3d40.697149422113014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew+York%2C+NY%2C+USA!5e0!3m2!1sen!2sin!4v1518850482333"></iframe>
+				<div id="conteneur">
+			
+				</div>
+				<br>
 				<div class="col-md-5 contact-grid1">
 					<i class="fa fa-map-marker" aria-hidden="true"></i>
 					<div class="contact-right">
@@ -96,6 +118,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!-- Required Scripts -->
 	<!-- Common Js -->
 	<script type="text/javascript" src="{{URL::asset('js/jquery-2.2.3.min.js')}}"></script>
+	
 	<!--// Common Js -->
 	<!--search-bar-agileits-->
 	<script src="{{URL::asset('js/main.js')}}"></script>
@@ -130,6 +153,30 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			});
 		});
 	</script>
+
+	<script>
+	
+			function initMap() {
+			
+			var uluru = {lat: 5.378038, lng: -3.968965};
+			
+			
+			var map = new google.maps.Map(document.getElementById('conteneur'), {
+			  zoom: 16,
+			  center: uluru 
+			});
+			
+			var marker = new google.maps.Marker({
+			  position: uluru,//position du marqueur sur la carte
+			  map: map,
+			  // icon : "https://image.ibb.co/h3f688/position.png"//l'icon du markeur , l'icon doit être sur internet a une url donné.
+			});
+		  }
+		  
+		  initMap(); 
+	
+	</script>
+
 	<a href="#home" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
 	<!-- //smooth scrolling -->
 
@@ -138,6 +185,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!--// Bootstrap Js -->
 
 	<!--// Required Scripts -->
+	<style type="text/css">
+		#conteneur{
+			
+			height: 430px;
+			width: 100%;
+			
+		}
+	</style>
 </body>
 
 </html>
