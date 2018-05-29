@@ -43,7 +43,7 @@ Route::get ('/mdpassoublier', 'PageController@showMDPassOublier');
 Route::get ('/modifiermdpass', 'PageController@showModifMDPass');
 Route::get ('/identifiantoublier', 'IdentiteController@showIdOublier');
 Route::get ('/modifeprofile', 'CandidatsController@showModifProfil');
-Route::post('/savemodifeprofile',['as' => 'savemodifeprofile',	'uses' => 'CandidatsController@update'
+Route::post('/savemodifeprofile',['as' => 'savemodifeprofile',	'uses' => 'CandidatsController@modifProfil'
 					]);
 
 //Route::get ('/miseajour', 'PageController@showModifProfil');

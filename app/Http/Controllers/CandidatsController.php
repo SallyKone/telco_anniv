@@ -36,7 +36,7 @@ class CandidatsController extends Controller
         return DB::select(DB::raw($requete));
     }
 
-    public function update (Request $request ) {
+    public function modifProfil (Request $request ) {
 
 
         $candidats = Candidats::find(1); 
@@ -51,7 +51,7 @@ class CandidatsController extends Controller
          $candidats->save();
 
         if($candidats->save()){
-            return redirect()->back()->withSuccess("Votre ami(e) a été ajouté avec succès!!!");
+            return redirect()->back()->withSuccess("Votre profil  a été modifié avec succès!!!");
         }else{
             return redirect()->back()->withError("Une erreur est parvenue, veuillez recommencer");
         }
