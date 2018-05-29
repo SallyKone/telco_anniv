@@ -63,7 +63,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="col-md-5 col-sm-12  services-right-grid">
 						<div class="se-top">
 							<div class="services-icon">
-							<a href="profil"><img src="images/newglob.png"></a>
+							<a href="connexion"><img src="images/newglob.png"></a>
 							<!-- <i class="fa fa-flask" aria-hidden="true"></i> -->
 							</div>
 							<div class="services-icon-info">

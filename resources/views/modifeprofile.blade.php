@@ -41,177 +41,94 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	
 	<!-- team -->
 	
-
 <section class="login">
-	<div class="container">
-		
-		<div class="login-grids">
-			<div class=" col-md-7 .offset-md-1 login-form">
-               
-                <div class="{{isset($statut) && $statut ? 'alert alert-success' : 'alert alert-danger'}}" > 
-                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> 
+    <div class="container">
+        <div class="row login-grids">
+            <div class=" col-md-9 offset-md-1 login-form">
+                <div class="row">
+                    <div class=" {{isset($statut) && $statut ? 'alert alert-success' : 'alert alert-danger'}}"> 
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> 
                     {{ $message }} 
-                </div> 
+                    </div> 
                                 
-				<div class="photoedit">
-					<strong>Ajouter ma photo</strong>
-			<form  action="" name="form1" id="form1" method="post" enctype="multipart/form-data" >
-			<img src="" height="175"><br>
-			<br>
-			 <input name="MAX_FILE_SIZE" type="hidden" value="3000000" />
-			<input type="file" id="changepic" style="width:0px; height:0px; background:none;" name="photo">
-			<strong>Ajouter ma photo</strong>
-			<br><br>
-					
-			</form>
+				    <div class="col-md-4">
+                        <form  action="" name="form1" id="form1" method="post" enctype="multipart/form-data" >
+                            <div>
+                                <img src="{{URL::asset($candidat['photo'])}}" height="175">
+                            </div>
+                            <br><br>
+                            <input type="file" id="changepic"  name="photo">Choisir une photo
+                            
+                        </form>
+                    </div>
+                    <div class="col-md-8">
+                        <form action="{{route('modifeprofile')}} " method="post">
+                         {{ csrf_field() }} 
+                            <div class="row">
+                                <label class="col-md-4"><strong>Nom: </strong></label>
+                                <input class="col-md-7" type="text" value="{{$candidat['nom']}}" required name="nom">
+                            </div>
+                            <br>
+                            <div class="row">
+                                <label class="col-md-4"><strong>Prénons: </strong></label>
+                                <input class="col-md-7" type="text" value="{{$candidat['prenom']}}" required name="prenom">
+                            </div>
+                            <br>
+                            <div class="row">
+                                <label class="col-md-4"><strong>Né(e) le: </strong></label>
+                                <select class="col-md-2" name="jour" id="Date" class="inqdropp" required>
+                                    <option value="">Jour</option>
+                                         @for($i=1;$i<31;$i++)
+                                            <option {{(int)$candidat['jour_naiss'] == $i? "selected":""}} value="{{$i}}">{{$i}}
+                                            </option>
+                                        @endfor 
+                                </select>
+                                <select class="col-md-2" name="mois" id="Month" class="inqdropp" required>
+                                    <option value="0">Mois</option>
+
+                                    <option {{(int)$candidat['mois_naiss'] == 1? "selected":""}} value="1">Janvier</option>
+                                    <option {{(int)$candidat['mois_naiss'] == 2? "selected":""}} value="2">Fevrier</option>
+                                    <option {{(int)$candidat['mois_naiss'] == 3? "selected":""}} value="3">Mars</option>
+                                    <option {{(int)$candidat['mois_naiss'] == 4? "selected":""}} value="4">Avril</option>
+                                    <option {{(int)$candidat['mois_naiss'] == 5? "selected":""}} value="5">Mai</option>
+                                    <option {{(int)$candidat['mois_naiss'] == 6? "selected":""}} value="6">Juin</option>
+                                    <option {{(int)$candidat['mois_naiss'] == 7? "selected":""}} value="7">Juillet</option>
+                                    <option {{(int)$candidat['mois_naiss'] == 8? "selected":""}} value="8">Aout</option>
+                                    <option {{(int)$candidat['mois_naiss'] == 9? "selected":""}} value="9">Septembre</option>
+                                    <option {{(int)$candidat['mois_naiss'] == 10? "selected":""}} value="10">Octobre</option>
+                                    <option {{(int)$candidat['mois_naiss'] == 11? "selected":""}} value="11">Novembre</option>
+                                    <option {{(int)$candidat['mois_naiss'] == 12? "selected":""}} value="12">Decembre</option>
+                                </select>
+                                <select class="col-md-3" name="annee" id="year" class="inqdropp" required>
+                                    <option value="0">Annee</option>
+                                     @for($i=0;$i<100;$i++)
+                                        <option value="{{1950+$i}}">{{1950+$i}}</option>
+                                    @endfor 
+                                </select>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <label class="col-md-4"><strong>Téléphone: </strong></label>
+                                <input class="col-md-7" type="text"  value="{{$candidat['telephone']}}" required name="telephone">
+                            </div>
+                            <br>
+                            <div class="clear"></div>
+                            <div class="submit1">
+                                <input type="submit" value="Modifier">
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
-            
-            <div class="col-md-3">
-
-            <form action="{{route('modifeprofile')}} " method="post">
-             {{ csrf_field() }} 
-            <div class="myprofile" >	
-            	<strong>Nom:</strong>
-            </div>	
-            <div class="myprofile">
-                <input type="hidden" id="idcandidat" name="idcandidat" placeholder="" value="1" class="myprofileform" required />
-            	<input type="text" id="name" name="nom" placeholder="" value="" class="myprofileform" required /><br>
-            </div>
-            	
-            	
-            	<div class="myprofile"><strong>Prénons:</strong>
-            	</div>	
-            	<div class="myprofile">	
-            		<input type="text" id="name" name="prenom" placeholder="" value="" class="myprofileform" required />
-            	</div>
-
-            	<div class="myprofile"><strong>Né(e) le:</strong>
-            	</div>	
-            	<div class="myprofile">
-<select name="jour" id="Date" class="inqdropp" required>
-    
-   <option value="0">Jour</option>
-                  <option value="1" >1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-        <option value="9">9</option>
-        <option value="10">10</option>
-        <option value="11">11</option>
-        <option value="12">12</option>
-        <option value="13">13</option>
-        <option value="14">14</option>
-        <option value="15">15</option>
-        <option value="16">16</option>
-        <option value="17">17</option>
-        <option value="18">18</option>
-        <option value="19">19</option>
-        <option value="20">20</option>
-        <option value="21">21</option>
-        <option value="22">22</option>
-        <option value="23">23</option>
-        <option value="24">24</option>
-        <option value="25">25</option>
-        <option value="26">26</option>
-        <option value="27">27</option>
-        <option value="28">28</option>
-        <option value="29">29</option>
-        <option value="30">30</option>
-        <option value="31">31</option>
-        
-    
-    </select>
-    </div>
-    <div class="myprofile">
-<select name="mois" id="Month" class="inqdropp" required>
-    
-   <option value="0">Mois</option>
-        <option value="1">Janvier</option>
-        <option value="2">Fevrier</option>
-        <option value="3">Mars</option>
-        <option value="4">Avril</option>
-        <option value="5">Mai</option>
-        <option value="6">Juin</option>
-        <option value="7">Juillet</option>
-        <option value="8">Aout</option>
-        <option value="9">Septembre</option>
-        <option value="10">Octobre</option>
-        <option value="11">Novembre</option>
-        <option value="12">Decembre</option>
-        
-    
-    </select>
-</div>
-	<div class="myprofile">
-<select name="Année" id="year" class="inqdropp" required>
-    
-   <option value="0">Annee</option>
-        <option value="1">1980</option>
-        <option value="2">1981</option>
-        <option value="3">1982</option>
-        <option value="4">1983</option>
-        <option value="5">1984</option>
-        <option value="6">1985</option>
-        <option value="7">1986</option>
-        <option value="8">1987</option>
-        <option value="9">1988</option>
-        <option value="10">1989</option>
-        <option value="11">1990</option>
-        <option value="12">1991</option>
-        <option value="13">1992</option>
-        <option value="14">1993</option>
-        <option value="15">1994</option>
-        <option value="16">1995</option>
-        <option value="17">1996</option>
-        <option value="18">1997</option>
-        <option value="19">1998</option>
-        <option value="20">1999</option>
-        <option value="21">2000</option>
-        <option value="22">2001</option>
-        <option value="23">2002</option>
-        <option value="24">2003</option>
-        <option value="25">2004</option>
-        <option value="26">2005</option>
-        <option value="27">2006</option>
-        <option value="28">2007</option>
-        <option value="29">2008</option>
-        <option value="30">2009</option>
-        <option value="31">2010</option>
-  </select>
-</div>
-<div class="clear"></div>
-         		
-            	<div class="myprofile"><strong>Téléphone:</strong>
-            		</div>
-            		<div>
-
-            		<input type="text" id="name" name="telephone" placeholder="" value="" class="myprofileform" required /></div>
-
-
-            		<div class="submit1">
-						<input type="submit" value="Modifier">
-					</div>
-            	
-            </form>
-            </div>
-            				
-			</div>
-				
-		</div>
-			<div class=" col-md-4 dash "  >
+			<div class="col-md-3 dash">
 				<ul>
-<li><a href="profil">Mon profile</a></li>
-<li><a href="modifeprofile">Modifier mon profile</a></li>
-<li><a href="ajouteramis" >Ajouter ami(s)</a></li>
-<li><a href="listeamis">Liste d'amis</a></li>
-<!--<li><a href="#">Numeros inconnus</a></li>-->
-</ul>
-				
-		    <div class="clearfix"></div>
+                    <li><a href="profil">Mon profile</a></li>
+                    <li><a href="modifeprofile">Modifier mon profile</a></li>
+                    <li><a href="ajouteramis" >Ajouter ami(s)</a></li>
+                    <li><a href="listeamis">Liste d'amis</a></li>
+                    <!--<li><a href="#">Numeros inconnus</a></li>-->
+                </ul>
+                <div class="clearfix"></div>
 			</div>
 		</div>
 	</div>
