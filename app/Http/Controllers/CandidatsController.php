@@ -14,7 +14,7 @@ class CandidatsController extends Controller
     //Fonctions Utilitaires
     function enregistreImage(Request $requet,$image){
         //Types d'images autiorisés
-        $typepermis["jpg","png","jpeg"];
+        $typepermis=["jpg","png","jpeg"];
         $limage = $requet->file($image);
         $extension = $limage->extension();
         if($requet->hasFile($image))
@@ -43,7 +43,7 @@ class CandidatsController extends Controller
         $candidat = Candidats::findorfail($idcandidat);
         return view('modifProfilCandidat',compact($candidat));
     }
-    
+
     //AJOUTER UN CANDIDAT
     public function ajouterCandidat($login,$mdpass,$codecandidat,$nom,$prenom,$numero,$journaiss,$moisnaiss)
     {

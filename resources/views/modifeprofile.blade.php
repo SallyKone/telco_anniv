@@ -56,13 +56,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="photoedit">
 					<strong>Ajouter ma photo</strong>
 			<form  action="" name="form1" id="form1" method="post" enctype="multipart/form-data" >
-			<img src="" height="175"><br>
-			<br>
-			 <input name="MAX_FILE_SIZE" type="hidden" value="3000000" />
-			<input type="file" id="changepic" style="width:0px; height:0px; background:none;" name="photo">
-			<strong>Ajouter ma photo</strong>
-			<br><br>
-					
+    			<img src="" height="175"><br>
+    			<br>
+    			 <input name="MAX_FILE_SIZE" type="hidden" value="3000000" />
+    			<input type="file" id="avatar" style="width:0px; height:0px; background:none;" name="photo">
+    			<strong>Ajouter ma photo</strong>
+    			<br><br>	
 			</form>
             </div>
             

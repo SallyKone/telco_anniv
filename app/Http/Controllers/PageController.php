@@ -22,7 +22,6 @@ class PageController extends Controller
         return view('vuedetest');
     }
 
-
     public function description()
     {
     	return view('description');
