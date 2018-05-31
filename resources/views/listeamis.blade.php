@@ -14,6 +14,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="keywords" content="Bettering Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" />
+
 	<script type="application/x-javascript">
 		addEventListener("load", function () {
 			setTimeout(hideURLbar, 0);
@@ -25,6 +26,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</script>
 	<!-- // Meta Tags -->
 	<link href="{{URL::asset('css/bootstrap.css')}}" rel="stylesheet" type="text/css" media="all" />
+	<!--datatable css-->
+	<link href="{{URL::asset('datatables/DataTables-1.10.16/css/jquery.dataTables.min.css')}}" rel="stylesheet" type="text/css" media="all" />
 	<link href="{{URL::asset('css/font-awesome.min.css')}}" rel="stylesheet" type="text/css" media="all">
 	<!--testimonial flexslider-->
 	<link href="{{URL::asset('css/style.css')}}" rel="stylesheet" type="text/css" media="all" />
@@ -46,31 +49,29 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="login-grids">
 			<div class=" col-md-7 .offset-md-1 login-form">
             
-           	<center> <h3>Liste de vos amis</h3> </center>
-           	<br>
-			<center>
-            <div class="col-sm-10 live-grids-w3ls" style="text-align: center;">
-					
-				 	<div class="panel panel-primary">
-						<div class="panel-heading-list" >
-							<div class="listtext" style="text-align: left;"><strong>Noms</strong></div>
-							<div class="listtext" style="text-align: center"><strong>Numeros</strong></div>
-							<div class="listtext" style="text-align: right;"><strong>Selectionner</strong></div>
+	           	<center> <h3>Liste de vos amis</h3> </center>
+	           	<br>
+	            <div class="col-sm-10 live-grids-w3ls" style="text-align: center;">
+					<table id="table" class="display" style="width: 100%">
+						<thead>
+							<tr >
+								<th style="text-align: center;">Nom</th>
+								<th style="text-align: center;">Numéro</th>
+								<th style="text-align: center;">Action</th>
+							</tr>
+						</thead>
+						<tbody>
+							@foreach($listeamis as $ami)
+							<tr>
+								<td>{{$ami->nom}}</td>
+								<td>{{$ami->numero}}</td>
+								<td><button type="button" id="{{$ami->id}}" class="btn btn-sm btn-danger supprimer">Supprimer</button></td>
 
-					    </div>
-						<div class="panel-body">
-							<div class="live-info">
-							</div>
-							
-						</div>
-					</div>
-				</div>
-
-				<div class="submit1" style="text-align: right;">
-						<input type="submit" value="Envoyer">
-					</div>
-				</center>
-            				
+							</tr>
+							@endforeach
+						</tbody>
+					</table>
+				</div>	
 			</div>
 				
 		</div>
@@ -95,7 +96,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 @include('footer')
 	<!-- Required Scripts -->
 	<!-- Common Js -->
-	<script type="text/javascript" src="{{URL::asset('js/jquery-2.2.3.min.js')}}"></script>
+	<script type="text/javascript" src="{{URL::asset('js/jquery-3.3.1.min.js')}}"></script>
 	<!--// Common Js -->
 	<!--search-bar-agileits-->
 	<script src="{{URL::asset('js/main.js')}}"></script>
@@ -144,6 +145,37 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<script type="text/javascript" src="{{URL::asset('js/bootstrap.js')}}"></script>
 	<!--// Bootstrap Js -->
 
+	<!-- datatable Js -->
+	<script type="text/javascript" src="{{URL::asset('datatables/DataTables-1.10.16/js/jquery.dataTables.min.js')}}"></script>
+	<!--// datatable Js -->
+	<script type="text/javascript">
+		$(document).ready(function(){
+			//Initialisation de datatable
+
+			$("#table").DataTable();
+			
+			//requete ajax de suppression d'amis
+			$(document.body).on("click","button.supprimer",function(){
+				var idami = $(this).attr('id');
+				
+				$.ajax({
+					url:"supprimeramis",
+					type:'GET',
+					data:{'idami': idami,"_token": $("input[name='_token']").val()},
+					dataType: "json",
+					success: function(reponse){
+						alert("succes : "+ reponse);
+					},
+					/*error: function(reponse){
+						alert("echec : "+ reponse);
+					}*/
+				});
+			});
+			
+
+		});
+
+	</script>
 	<!--// Required Scripts -->
 	<style type="text/css">
 		 .imgDp {

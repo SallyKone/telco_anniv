@@ -65,38 +65,32 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <form class="commentForm" action="{{route('ajouteramis')}}" method="post">
 	{{csrf_field()}}
-				<div class="myprofilemain" id="last">
-<div class="myprofile" id="last">
-<strong>Ajouter ami(s)</strong>
-</div>
- <div class="clear"></div>
+			<div class="myprofilemain" id="last">
+					<div class="" id="last">
+						<center><h3>Ajouter ami(s)</h3></center>
+					</div>
+					<br><br>
+ 				<div class="clear"></div>
  
-<div class="myprofile" id="last">
-<strong>• Pseudo/Nom:</strong>
-</div>
-<div class="myprofile">
-
-
-<input type="text" id="name" name="pseudo" placeholder="Entrer le Pseudo de votre ami"  value="" class="myprofileform" />
-</div>
-
-
-<div class="myprofile" id="last">
-<strong>• Numéro mobile:</strong>
-</div>
-<div class="myprofile">
-<input type="text" id="name" name="numero" required  placeholder="Entrez le numero mobile de votre ami" onkeyup="verif_nombre(this);" maxlength="8" onBlur="valider_numero(this)" class="myprofileform"  />
-</div>
-	<br>
- <div class="clear"></div>
- 	<br>
- <input type="submit" id="submit" name="" value="Envoyer"  />
+				<div class="row">
+                                <label class="col-md-4"><strong>Pseudo/Nom: </strong></label>
+                                <input class="col-md-7" type="text" value="" required name="nom">
+                            </div>
+                            <br>
+                            <div class="row">
+                                <label class="col-md-4"><strong>Numero Mobile: </strong></label>
+                                <input class="col-md-7" type="text" value="" required name="prenom">
+                            </div>
+				<br>
+ 				<div class="clear"></div>
+ 						<br>
+ 				<input type="submit" id="submit" name="" value="Envoyer"  />
            </div>
-	</form>			
+</form>			
 		</div>
 			<div class=" col-md-4 dash "  >
 				<ul>
-<li><a href="afterlogin">Mon profile</a></li>
+<li><a href="profil">Mon profile</a></li>
 <li><a href="modifeprofile">Modifier mon profile</a></li>
 <li><a href="ajouteramis" >Ajouter ami(s)</a></li>
 <li><a href="listeamis">Liste d'amis</a></li>

@@ -6,17 +6,20 @@ Route::get('/', 'PageController@comptaRebour');
 #Route::any('{teste?}','IndexController@comptaRebour')->where(['teste'=>'/\\S+/']);
 
 //Route Amis
-Route::get ('/amis', 'AmisController@showAmis');
-Route::get ('/ajouteramis', 'AmisController@showAjouterAmis');
-Route::post('/ajouteramis',['as' => 'ajouteramis',	'uses' => 'AmisController@ajouterAmis']);
-Route::get ('/choixamis', 'AmisController@showChoixAmis');
-Route::post ('/listeamis', 'AmisController@showListeAmis');
+Route::get('/amis', 'AmisController@showAmis');
+Route::get('/ajouteramis', 'AmisController@showAjouterAmis');
+Route::post('/ajouteramis',['as' => 'ajouteramis','uses'=>'AmisController@ajouterAmis']);
+Route::get('/amis', 'AmisController@supprimerAmis');
+Route::post('/amis', 'AmisController@supprimerAmis')->name('amis');
+
+Route::get('/choixamis', 'AmisController@showChoixAmis');
+Route::post('/listeamis', 'AmisController@showListeAmis');
 #Route::post ('/listeamis', 'AmisController@modifierAmis');
 #Route::post ('/listeamis', 'AmisController@supprimerAmis');
 
 Route::get ('/listeamis', 'AmisController@showListeAmis');
 //Route::post ('/listeamis', 'AmisController@modifierAmis');
-//Route::post ('/listeamis', 'AmisController@supprimerAmis');
+Route::post('supprimeramis', 'AmisController@supprimerAmis')->name('supprimeramis');
 
 //Route Candidats
 Route::get('/profil', 'CandidatsController@profil');
@@ -28,6 +31,8 @@ Route::post('/modifeprofile',['as' => 'modifeprofile',	'uses' => 'CandidatsContr
 //Route Connexion
 Route::get ('/connexion', 'ConnexionController@showConnexion');
 Route::post ('/connexion', 'ConnexionController@connecter');
+Route::get ('/deconnexion', 'ConnexionController@deconnecter');
+Route::post ('/deconnexion', 'ConnexionController@deconnecter');
 
 //Route Contact
 Route::get('/contact', 'ContactController@contact');

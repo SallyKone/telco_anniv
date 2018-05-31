@@ -84,21 +84,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 					<!-- navbar-header -->
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
+						<a id="lastli" href="{{session()->has('idcandidat') ? 'deconnexion':'connexion' }}" class="btn btn-primary btn-md" role="button" title="Lien">{{session()->has('idcandidat') ? 'Déconnexion':'Connexion' }}</a>
 						<ul class="nav navbar-nav navbar-right">
 							<li><a href="index" class="active">Accueil</a></li>
-							<li><a href="connexion" class="active">Profil</a></li>
+							<li><a href="{{session()->has('idcandidat') ? 'profil':'connexion' }}" class="active">Profil</a></li>
 							<li><a href="description" class="active">Description</a></li>
 							<li><a href="contact" class="active">Contact</a></li>
 						</ul>
-
 					</div>
 
 					<div class="search-bar-agileits">
 						<div class="cd-main-header">
-							<!-- <ul class="cd-header-buttons">
-								<li><a class="cd-search-trigger" href="#cd-search"> <span></span></a></li>
-							</ul> -->
 							<!-- cd-header-buttons -->
 						</div>
 						<!-- <div id="cd-search" class="cd-search">
@@ -209,17 +205,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="agileits-services">
 				<div class="services-right-grids">
 					
-					<!-- <div class="col-sm-4 services-right-grid">
-						<div class="se-top">
-							<div class="services-icon">
-								<img src="images/midicon1.png">
-							</div>
-							<div class="services-icon-info">
-								<h5>INSCRIPTION</h5>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci enim, posuere sed tincidunt et, pellentesque eget mi.</p>
-							</div>
-						</div>
-					</div> -->
+					
 				<div class="col-sm-4  col-sm-offset-2 services-right-grid">
 						<div class="se-top">
 							<div class="services-icon">
@@ -259,7 +245,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="events-section">
 		<div id="pourlavideo">
 			<video id="lavideo" loop autoplay>
-				<source src="videos/girafe.webm" type="video/webm">
+				<source src="videos/video1.mp4" type="video/mp4">
 			</video>
 			<div class="container">
 				<h3 class="title-txt two"><span>A</span>ctualités</h3>
@@ -289,12 +275,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="live-info">
 							<center>
 								<marquee style="background:url(ImgMarquee/Canigou.jpg); color:#B20;" direction="up" height="213px">
-	                            <img class="img2" src="images/service1.png">
-	       	 					<img class="img2" src="images/service2.png">
-	       	 					<img class="img2" src="images/service3.png">
-	       	 					<img class="img2" src="images/service4.png">
-	       	 					<img class="img2" src="images/service5.png">
-	       	 					<img class="img2" src="images/service6.png">
+	                            <img class="img2" src="images/candi11.jpg">
+	       	 					<img class="img2" src="images/candi10.jpg">
+	       	 					<img class="img2" src="images/candi18.jpg">
+	       	 					<img class="img2" src="images/candi20.jpg">
+	       	 					<img class="img2" src="images/candi19.jpg">
+	       	 					<img class="img2" src="images/candi8.jpg">
+	       	 					<img class="img2" src="images/candi14.jpg">
+	       	 					<img class="img2" src="images/candi13.jpg">
+	       	 					<img class="img2" src="images/candi1.jpg">
+	       	 					<img class="img2" src="images/candi4.jpg">
+
 	                    </marquee>
 							</center>
 							</div>
@@ -310,7 +301,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="panel-body">
 							<div class="live-info">
 							
-							<img src="images/cado1.jpg">
+							<img src="images/ordi.jpg">
 												
 							</div>
 							<h5>HP Core i5 Intel</h5>
