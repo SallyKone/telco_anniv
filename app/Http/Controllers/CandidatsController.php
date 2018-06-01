@@ -12,9 +12,12 @@ use Illuminate\Support\Facades\DB;
 class CandidatsController extends Controller
 {
     //Fonctions Utilitaires
-    function enregistreImage(Request $requet,$image){
+    function enregistreImage(Request $requet)
+    {
         //Types d'images autiorisés
-        $typepermis=["jpg","png","jpeg"];
+         
+        Input::file('filename');
+        $typepermis = ['jpg','png','jpeg'];
         $limage = $requet->file($image);
         $extension = $limage->extension();
         if($requet->hasFile($image))
@@ -35,13 +38,28 @@ class CandidatsController extends Controller
     //LES FONCTIONS GET
     public function profil()
     {
-    	return view('profil');
+    	if (session()->has("idcandidat")) {
+            $idcandidat =  (int)session()->get("idcandidat");
+            $candidat = Candidats::findorfail($idcandidat);
+            return view('profil')->with(['candidat'=>$candidat,'statut'=>true,'message'=>"Recuperer avec succès!!"]);
+        }
+        else
+        {
+            return view('connexion');
+        }
     }
 
-    public function showModifProfil($idcandidat)
+    public function showModifProfil(Request $requete)
     {
-        $candidat = Candidats::findorfail($idcandidat);
-        return view('modifProfilCandidat',compact($candidat));
+        if (session()->has("idcandidat")) {
+            $idcandidat =  (int)session()->get("idcandidat");
+            $candidat = Candidats::findorfail($idcandidat);
+            return view('modifeprofile')->with(['candidat'=>$candidat,'statut'=>true,'message'=>"Recuperer avec succès!!"]);
+        }
+        else
+        {
+            return view('connexion');
+        }
     }
 
     //AJOUTER UN CANDIDAT
@@ -55,6 +73,7 @@ class CandidatsController extends Controller
         $candidat->prenom = $prenom;
         $candidat->nom_inscription = $nom.' '.$prenom;
         $candidat->numero = $numero;
+        $candidat->photo = "images/img/avatar/defaut.png";
         $candidat->jour_naiss = $journaiss;
         $candidat->mois_naiss = $moisnaiss;
         try
@@ -85,25 +104,28 @@ class CandidatsController extends Controller
     }
 
     //MODIFIER CANDIDATS
-    public function modifProfil(Request $requete)
+    public function modifProfil(Request $request)
+    {
+        if (session()->has("idcandidat")) {
+            $idcandidat =  (int)session()->get("idcandidat");
+            $candidats = Candidats::find($idcandidat); 
+            $candidats->nom = $request->nom; 
+            $candidats->prenom = $request->prenom; 
+            $candidats->jour_naiss = $request->jour; 
+            $candidats->mois_naiss = $request->mois; 
+            $candidats->annee_naiss = $request->annee;
+            $candidats->photo = $request->photo;                
+            $candidats->telephone = $request->telephone; 
 
-        $candidats = Candidats::find(1); 
-        $candidats->nom = $request->nom; 
-        $candidats->prenom = $request->prenom; 
-        $candidats->jour_naiss = $request->jour; 
-        $candidats->mois_naiss = $request->mois; 
-        $candidats->annee_naiss = $request->annee;
-        $candidats->photo = $request->photo;                
-        $candidats->telephone = $request->telephone; 
-
-         $candidats->save();
-
-        if($candidats->save()){
-            return redirect()->back()->withSuccess("Votre ami(e) a été ajouté avec succès!!!");
-        }else{
-            return redirect()->back()->withError("Une erreur est parvenue, veuillez recommencer");
+            if($candidats->save()){
+                return view('modifeprofile')->with(['candidat'=>$candidats,'statut'=>true,'message'=>"Modifié avec succès !!"]);
+            }else{
+                return view('modifeprofile')->with(['candidat'=>$candidats,'statut'=>false,'message'=>"Impossible de modifier !!"]);
+            }
         }
-
-
+        else
+        {
+            return view('connexion');
+        }
     }
 }

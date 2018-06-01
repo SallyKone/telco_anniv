@@ -46,41 +46,40 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="container">
 		
 		<div class="login-grids">
-			<div class="col-md-7 login-form">
+			<div class="col-md-9 login-form">
 				<div class="row">
 				<div class="col-md-4">
-					<form  action="" name="form1" id="form1" method="post" enctype="multipart/form-data" >
-						<img src="" height="175"><br>
-						<br>
-						<input name="MAX_FILE_SIZE" type="hidden" value="3000000" />
-						<input type="file" id="changepic" style="width:0px; height:0px; background:none;" name="photo">
-						<a href="#" onClick="openfile();"><strong>Ajouter ma photo</strong></a>
-					</form>
+					
+						<div>
+							<img src="{{URL::asset($candidat->photo)}}" height="175">
+						</div>
+						
+					
 	            </div>
 	            <div class="col-md-8">
 	            	<div class="row">
 	            		<label class="col-md-4"><strong>Nom: </strong></label>
-	            		<input class="col-md-7" type="text" readonly value="">
+	            		<input class="col-md-7" type="text" readonly value="{{$candidat->nom}}">
 	            	</div>
 	            	<div class="row">
 	            		<label class="col-md-4"><strong>Prénons: </strong></label>
-	            		<input class="col-md-7" type="text" readonly value="">
+	            		<input class="col-md-7" type="text" readonly value="{{$candidat->prenom}}">
 	            	</div>
 	            	<div class="row">
 	            		<label class="col-md-4"><strong>Né(e) le: </strong></label>
-	            		<input class="col-md-7" type="text" readonly value="">
+	            		<input class="col-md-7" type="text" readonly value="{{$candidat->jour_naiss.'-'.$candidat->mois_naiss}}">
 	            	</div>
 	            	<div class="row">
 	            		<label class="col-md-4"><strong>Login:</strong></label>
-	            		<input class="col-md-7" type="text" readonly value="">
+	            		<input class="col-md-7" type="text" readonly value="{{$candidat->login}}">
 	            	</div>
 	            	<div class="row">
 	            		<label class="col-md-4"><strong>Téléphone:</strong></label>
-	            		<input class="col-md-7" type="text" readonly value="">
+	            		<input class="col-md-7" type="text" readonly value="{{$candidat->telephone}}">
 	            	</div>
 	            	<div class="row">
 	            		<label class="col-md-4"><strong>Code de vote:</strong></label>
-	            		<input class="col-md-7" type="text" readonly value="">
+	            		<input class="col-md-7" type="text" readonly value="{{$candidat->codecandidat}}">
 	            	</div>
 	            </div>
 	            </div>				

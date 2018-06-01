@@ -46,9 +46,6 @@ Route::get('/description', 'PageController@description');
 Route::get ('/mdpassoublier', 'PageController@showMDPassOublier');
 Route::get ('/modifiermdpass', 'PageController@showModifMDPass');
 Route::get ('/identifiantoublier', 'IdentiteController@showIdOublier');
-#Route::get ('/miseajour', 'PageController@showModifProfil');
-
-//Route::get ('/miseajour', 'PageController@showModifProfil');
 Route::get ('/icons', 'PageController@showIcons');
 Route::get ('/souscritsms', 'PageController@showSoucritSms');
 
