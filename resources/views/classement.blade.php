@@ -48,7 +48,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 </form>
 
-				<div class="events-classe">
+	<div class="events-classe">
 		<div class="container">			
 			<div class="">
 				<div class="col-sm-3 live-grids-w3ls">
@@ -59,7 +59,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="live-classe">
 												
 							</div>
-							<h5>Moris Bah</h5>
+							
 						</div>
 					</div>
 					</center>				

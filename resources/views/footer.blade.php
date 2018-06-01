@@ -28,5 +28,5 @@
 			</div>	
 			</div>
 	</div>
-	<p class="copyright">© 2018 Telco. All Rights Reserved |  <a href="https://w3layouts.com/" target="_blank">www.telco.com</a></p>
+	<p class="copyright">© 2018 Telco. Tous droits reservés |  <a href="https://w3layouts.com/" target="_blank">www.telcoanniv.com</a></p>
 	<!-- //footer -->

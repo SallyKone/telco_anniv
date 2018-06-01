@@ -8,6 +8,7 @@ use App\Http\Controllers\CandidatsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Session;
 
 class ConnexionController extends Controller
 {
@@ -35,6 +36,7 @@ class ConnexionController extends Controller
                 session()->put('idcandidat',$candidat->id);
                 session()->put('nom',$candidat->nom);
                 session()->put('prenom',$candidat->prenom);
+                //session()->put('avatar',$candidat->photo);
                 session()->put('ip',$requete->ip());
                 session()->save();
                 return view('profil')->with(['candidat'=> $candidat,'statut'=> true,'message'=>'Bienvenue ']);
@@ -49,9 +51,9 @@ class ConnexionController extends Controller
     }
     public function deconnecter(Request $requete){
         //Démarrer la session
-        if($request->session()->has('idcandidat'))
+        if($requete->session()->has('idcandidat'))
         {
-            Session::flush();
+            session()->flush();
             #Session::regenerate();
             return view('index')->with(['statut'=> true,'message'=>'Déconnecté !']);
         }

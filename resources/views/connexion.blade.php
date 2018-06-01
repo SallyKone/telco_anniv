@@ -36,7 +36,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <body>
 	<!--Header-->
-	<@include('header')
+	@include('header')
 	
 	<!-- team -->
 	

@@ -50,19 +50,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> 
                     {{ $message }} 
                     </div> 
-				    <div class="col-md-4">
-                        <form  action="" name="form1" id="form1" method="post" enctype="multipart/form-data" >
-                            <div>
-                                <img src="{{URL::asset($candidat['photo'])}}" height="175">
+
+                    <form action="{{route('modifeprofile')}} " method="post" enctype="multipart/form-data">
+                         {{ csrf_field() }}             
+    				    <div class="col-md-4">
+                            <div id="divavatar">
+                                <img id="blah" src="{{URL::asset($candidat->photo)}}" alt="Votre image">
                             </div>
                             <br><br>
-                            <input type="file" id="changepic"  name="photo">Choisir une photo
-                            
-                        </form>
-                    </div>
-                    <div class="col-md-8">
-                        <form action="{{route('modifeprofile')}} " method="post">
-                         {{ csrf_field() }} 
+                            <input type="file" id="imgInp"  name="photo">
+                        </div>
+                        <div class="col-md-8">
+                        
                             <div class="row">
                                 <label class="col-md-4"><strong>Nom: </strong></label>
                                 <input class="col-md-7" type="text" value="{{$candidat['nom']}}" required name="nom">
@@ -115,8 +114,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <div class="submit1">
                                 <input type="submit" value="Modifier">
                             </div>
-                        </form>
-                    </div>
+                        </div>
+                    </form>
                 </div>
             </div>
 			<div class="col-md-3 dash">
@@ -141,6 +140,26 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!-- Common Js -->
 	<script type="text/javascript" src="{{URL::asset('js/jquery-2.2.3.min.js')}}"></script>
 	<!--// Common Js -->
+    <!-- upload file -->
+    <script type='text/javascript'>
+        
+             function readURL(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+                    
+                    reader.onload = function (e) {
+                        $('#blah').attr('src', e.target.result);
+                    }
+                    
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+    
+        $("#imgInp").change(function(){
+            readURL(this);
+        }); 
+   </script>
+    <!-- upload file -->
 	<!--search-bar-agileits-->
 	<script src="{{URL::asset('js/main.js')}}"></script>
 	<!--//search-bar-agileits-->
