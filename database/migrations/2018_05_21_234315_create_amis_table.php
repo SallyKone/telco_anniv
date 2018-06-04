@@ -19,7 +19,7 @@ class CreateAmisTable extends Migration
             $table->unsignedInteger('numero')->length(8);
             $table->unsignedBigInteger('id_candidat');
 
-            $table->timestamps();
+            $table->timestamps()->nullable(false);
             #Cle étrangère
             $table->foreign('id_candidat')->references('id')->on('candidats');
             $table->engine = 'InnoDB';

@@ -19,7 +19,7 @@ class CreateTypepiecesTable extends Migration
             $table->string('abreviation')->length(20)->unique();
             $table->text('description')->length(500)->nullable();
 
-            $table->timestamps();
+            $table->timestamps()->nullable();
             $table->engine = 'InnoDB';
         });
     }

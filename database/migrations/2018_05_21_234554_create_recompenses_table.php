@@ -19,7 +19,7 @@ class CreateRecompensesTable extends Migration
             $table->text('description');
             $table->text('photo')->length(500);
 
-            $table->timestamps();
+            $table->timestamps()->nullable(false);
             $table->engine = 'InnoDB';
         });
     }

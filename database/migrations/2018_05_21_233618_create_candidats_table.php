@@ -29,16 +29,19 @@ class CreateCandidatsTable extends Migration
             $table->unsignedInteger('jour_naiss');
             $table->unsignedInteger('mois_naiss');
             $table->unsignedInteger('annee_naiss')->nullable();
+            $table->boolean('genre')->nullable();
             
             $table->unsignedInteger('id_typepiece')->nullable();
+            $table->unsignedInteger('id_pays')->nullable();
             $table->string('numpiece')->length(100)->nullable();
             $table->boolean('profil_complet')->default(false);
 
-            $table->timestamps();
+            $table->timestamps()->nullable(false);
             #Cle étrangère et colonne unique;
             $table->unique('login');
-             $table->unique('codecandidat');
+            $table->unique('codecandidat');
             $table->foreign('id_typepiece')->references('id')->on('typepieces');
+            $table->foreign('id_pays')->references('id')->on('pays');
             $table->engine = 'InnoDB';
         });
     }

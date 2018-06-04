@@ -19,7 +19,7 @@ class CreateParticipesTable extends Migration
             $table->unsignedInteger('annee')->length(4);
             $table->unsignedTinyInteger('gagne')->default(0);
 
-            $table->timestamps();
+            $table->timestamps()->nullable(false);
             #Cle étrangère
             $table->foreign('id_candidat')->references('id')->on('candidats');
             $table->foreign('id_anniversaire')->references('id')->on('anniversaires');
