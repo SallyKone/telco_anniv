@@ -40,7 +40,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		.pannel-body img {padding-right: 30px;}
 		.img1 {padding-right: 15px;}
 		.img2 {padding-right: 15px;	margin-left: 80px;}
-		.panel-body h5 { font-size:17px; letter-spacing: 0.5px; color: #93c83f;
+		.panel-body h5 { font-size:17px; letter-spacing: 0.5px; color: #0c0c0c;
 		    text-transform: uppercase; font-weight:700; text-align: center;}
 	</style>
 </head>
@@ -169,14 +169,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
        	 		<div class="panel panel-primary">
        	 		<div class="panel-heading"><center>LES CANDIDATS EN COMPETITION</center></div>
        	 			<div class="panel-body">
-       	 			<marquee style="background:url(ImgMarquee/Canigou.jpg); color:#B20;">
+       	 			<marquee style=" color:#B20;">
                             
        	 					<img class="img1" src="images/candi1.jpg">
        	 					<img class="img1" src="images/candi2.jpg">
        	 					<img class="img1" src="images/candi3.jpg">
        	 					<img class="img1" src="images/candi4.jpg">
-       	 					<img class="img1" src="images/candi5.jpg">
-       	 					<img class="img1" src="images/candi6.jpg">
        	 					<img class="img1" src="images/candi7.jpg">
        	 					<img class="img1" src="images/candi8.jpg">
        	 					<img class="img1" src="images/candi9.jpg">
@@ -244,9 +242,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
    <!-- news -->
 	<div class="events-section">
 		<div id="pourlavideo">
-			<video id="lavideo" loop autoplay>
+			 <video id="lavideo" loop autoplay>
 				<source src="videos/video1.mp4" type="video/mp4">
-			</video>
+			</video> 
 			<div class="container">
 				<h3 class="title-txt two"><span>A</span>ctualités</h3>
 
@@ -274,7 +272,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="panel-body">
 							<div class="live-info">
 							<center>
-								<marquee style="background:url(ImgMarquee/Canigou.jpg); color:#B20;" direction="up" height="213px">
+								<marquee style="color:#B20;" direction="up" height="213px">
 	                            <img class="img2" src="images/candi11.jpg">
 	       	 					<img class="img2" src="images/candi10.jpg">
 	       	 					<img class="img2" src="images/candi18.jpg">
