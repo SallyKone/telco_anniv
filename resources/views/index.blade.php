@@ -115,7 +115,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="slider">
 			<div class="callbacks_container">
 				<ul class="rslides" id="slider3">
-					<li>
+					<!-- <li>
 						<div class="slider-img1">
 							<div class="container">
 								<div class="slider_banner_info_w3ls">
@@ -123,7 +123,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								</div>
 							</div>
 						</div>
-					</li>
+					</li> -->
 					<li>
 						<div class="slider-img2">
 							<div class="container">
