@@ -22,7 +22,7 @@ class CreateAnniversairesTable extends Migration
             $table->dateTime('date_cloture');
             $table->unsignedBigInteger('id_recompense')->nullable();
 
-            $table->timestamps();
+            $table->timestamps()->nullable(false);
             #Cle étrangère et colonne unique;
             $table->unique('date_anniv');
             $table->foreign('id_recompense')->references('id')->on('recompenses');
