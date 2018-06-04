@@ -29,6 +29,7 @@ class CreateCandidatsTable extends Migration
             $table->unsignedInteger('jour_naiss');
             $table->unsignedInteger('mois_naiss');
             $table->unsignedInteger('annee_naiss')->nullable();
+            $table->boolean('genre')->nullable();
             
             $table->unsignedInteger('id_typepiece')->nullable();
             $table->string('numpiece')->length(100)->nullable();
