@@ -119,7 +119,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="slider-img1">
 							<div class="container">
 								<div class="slider_banner_info_w3ls">
-									<h4><span></span></h4>
+									<h4><span></span>
 								</div>
 							</div>
 						</div>
