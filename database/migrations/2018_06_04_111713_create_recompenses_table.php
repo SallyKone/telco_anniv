@@ -19,7 +19,8 @@ class CreateRecompensesTable extends Migration
             $table->text('description');
             $table->text('photo')->length(500);
 
-            $table->timestamps()->nullable(false);
+            $table->timestamp('created_at');
+            $table->timestamp('updated_at');
             $table->engine = 'InnoDB';
         });
     }

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAmisTable extends Migration
+class CreateParticipesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,18 @@ class CreateAmisTable extends Migration
      */
     public function up()
     {
-        Schema::create('amis', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('nom')->length(255);
-            $table->unsignedInteger('numero')->length(8);
+        Schema::create('participes', function (Blueprint $table) { 
             $table->unsignedBigInteger('id_candidat');
+            $table->unsignedBigInteger('id_anniversaire');
+            $table->unsignedInteger('annee')->length(4);
+            $table->unsignedTinyInteger('gagne')->default(0);
 
-            $table->timestamps()->nullable(false);
+            $table->timestamp('created_at');
+            $table->timestamp('updated_at');
             #Cle étrangère
             $table->foreign('id_candidat')->references('id')->on('candidats');
+            $table->foreign('id_anniversaire')->references('id')->on('anniversaires');
+            $table->primary(['id_candidat','annee']);
             $table->engine = 'InnoDB';
         });
     }
@@ -33,6 +36,6 @@ class CreateAmisTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('amis');
+        Schema::dropIfExists('participes');
     }
 }

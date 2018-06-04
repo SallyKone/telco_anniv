@@ -23,7 +23,8 @@ class CreateUtilisateursTable extends Migration
             $table->text('photo')->length(500)->nullable();
             $table->unsignedInteger('id_typeuser');
 
-            $table->timestamps()->nullable(false);
+            $table->timestamp('created_at');
+            $table->timestamp('updated_at');
             #Cle étrangère et colonne unique;
             $table->unique('login');
             $table->foreign('id_typeuser')->references('id')->on('typeusers');

@@ -19,7 +19,8 @@ class CreateTypepiecesTable extends Migration
             $table->string('abreviation')->length(20)->unique();
             $table->text('description')->length(500)->nullable();
 
-            $table->timestamps()->nullable();
+            $table->timestamp('created_at');
+            $table->timestamp('updated_at');
             $table->engine = 'InnoDB';
         });
     }

@@ -6,7 +6,7 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateLanguesTable extends Migration
 {
-     /**
+    /**
      * Run the migrations.
      *
      * @return void
@@ -18,7 +18,8 @@ class CreateLanguesTable extends Migration
             $table->string('codelangue');
             $table->string('libellelangue');
 
-            $table->timestamps()->nullable(false);
+            $table->timestamp('created_at');
+            $table->timestamp('updated_at');
             $table->engine = 'InnoDB';
         });
     }

@@ -6,7 +6,7 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreatePaysTable extends Migration
 {
-     /*
+    /**
      * Run the migrations.
      *
      * @return void
@@ -20,7 +20,8 @@ class CreatePaysTable extends Migration
             $table->string('codepostal');
             $table->unsignedInteger('id_langue');
 
-            $table->timestamps()->nullable(false);
+            $table->timestamp('created_at');
+            $table->timestamp('updated_at');
 
             #Cle étrangère et colonne unique;
             $table->unique('codepays');
