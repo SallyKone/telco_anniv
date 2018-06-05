@@ -86,7 +86,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </div>
     <div class="col-md-4 col-sm-12" >
 
-				<img class="imgD" src="images/REGIS.jpg>
+				<img class="imgD" src="images/REGIS.jpg">
 
     </div>
     
