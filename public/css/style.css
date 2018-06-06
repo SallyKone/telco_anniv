@@ -45,6 +45,10 @@ input[type="submit"] {
 	-moz-transition: 0.5s all;
 	-o-transition: 0.5s all;
 	-ms-transition: 0.5s all;
+	background-color: orange;
+    border-radius: 6px;
+    padding: 9px;
+    margin: -20px 0px 12px 92px;
 }
 
 h1,
@@ -2270,6 +2274,7 @@ table.table.table-striped,.table-bordered,.bs-docs-example {
     border: 1px solid #fff;
 	color:#fff;
 	letter-spacing: 2px;
+	border-radius: 11px;
 
 }
 textarea{
