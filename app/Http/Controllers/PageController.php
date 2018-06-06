@@ -3,9 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Providers\Utilitaires;
 
 class PageController extends Controller
 {
+    public function __construct(Utilitaires $advisor)
+    {
+        
+    }
     public function showIndex()
     {
         return view('index');

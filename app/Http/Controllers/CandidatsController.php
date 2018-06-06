@@ -49,7 +49,6 @@ class CandidatsController extends Controller
         $candidat->prenom = $prenom;
         $candidat->nom_inscription = $nom.' '.$prenom;
         $candidat->numero = $numero;
-        $candidat->photo = "images/img/avatar/defaut.png";
         $candidat->jour_naiss = $journaiss;
         $candidat->mois_naiss = $moisnaiss;
         $candidat->photo = "images/img/avatar/defaut.jpg";

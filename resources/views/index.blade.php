@@ -242,9 +242,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
    <!-- news -->
 	<div class="events-section">
 		<div id="pourlavideo">
-			 <!-- <video id="lavideo" loop autoplay>
+			  <video id="lavideo" loop autoplay>
 				<source src="videos/video1.mp4" type="video/mp4">
-			</video> --> 
+
+			</video>  
 			<div class="container">
 				<h3 class="title-txt two"><span>A</span>ctualités</h3>
 
