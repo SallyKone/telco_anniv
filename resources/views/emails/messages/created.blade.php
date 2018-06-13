@@ -8,7 +8,6 @@
 
 
 
-
 @component('mail::panel')
 {{$msg}}
 @endcomponent

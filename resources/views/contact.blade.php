@@ -64,13 +64,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								@endif 
 								{{-- ====================================================================================== --}} --> 
 
+
 			<div class=" col-md-5 contact-form">
 			<h4 class="heading">Vos informations</h4>
 				<form action="{{ route ('contact_path')}}" method="post">
 					{{ csrf_field() }}
 						<input type="text" name="nom" placeholder="Votre nom" required=""/>
 						<input type="email" name="email" placeholder="Votre Email" required=""/>
-						<input type="text" name="Telephone" placeholder="Telephone" required=""/>
+						<input type="text" name="telephone" placeholder="Telephone" required=""/>
 						<textarea name="msg" placeholder="Message" required=""></textarea>
 						<br/>
 						<br/>

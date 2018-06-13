@@ -44,12 +44,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <section class="login">
     <div class="container">
         <div class="row login-grids">
-            <div class=" col-md-9 offset-md-1 login-form">
+            <div class=" col-md-8  offset-md-1 login-form">
                 <div class="row">
-                    <div class=" {{isset($statut) && $statut ? 'alert alert-success' : 'alert alert-danger'}}"> 
+                   <!--  <div class=" {{isset($statut) && $statut ? 'alert alert-success' : 'alert alert-danger'}}"> 
                         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> 
                     {{ $message }} 
-                    </div> 
+                    </div> --> 
 
                     <form action="{{route('modifeprofile')}} " method="post" enctype="multipart/form-data">
                          {{ csrf_field() }}             
@@ -119,13 +119,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </div>
             </div>
 			<div class="col-md-3 dash">
-				<ul>
-                    <li><a href="profil">Mon profile</a></li>
-                    <li><a href="modifeprofile">Modifier mon profile</a></li>
-                    <li><a href="ajouteramis" >Ajouter ami(s)</a></li>
-                    <li><a href="listeamis">Liste d'amis</a></li>
-                    <!--<li><a href="#">Numeros inconnus</a></li>-->
-                </ul>
+                        <ul>
+                            <li><a href="profil">Mon profile</a></li>
+                            <li><a href="modifeprofile">Modifier mon profile</a></li>
+                            <li><a href="ajouteramis" >Ajouter ami(s)</a></li>
+                            <li><a href="listeamis">Liste d'amis</a></li>
+                            <!--<li><a href="#">Numeros inconnus</a></li>-->
+                        </ul>
                 <div class="clearfix"></div>
 			</div>
 		</div>
@@ -241,9 +241,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 }
 
 .dash{width:220px; height:40px;  text-align:center !important; }
+.dash li a{font-size:20px; color:#000; padding:10px 0px; text-decoration:none; line-height:40px;}
 .dash ul{margin:0px; padding:0px;}
 .dash ul li{list-style:none; display:block; margin:0 0 5px 0px;  background:#219b2f; border-radius:5px;}
 .dash ul li a{font-size:20px; color:#000; padding:10px 0px; text-decoration:none; line-height:40px;}
+
 
 .myprofile {
     width: 240px;
