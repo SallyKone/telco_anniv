@@ -14,15 +14,4 @@ class Utilitaires
         return $data;
     }
     
-	//Envoi d'un SMS pour attester l'inscrition du candidat
-	public function accuseReceptionMTN($destinataire, $message, $espediteur = 98){
-
-    }
-    public function accuseReceptionORANGE($destinataire, $message, $espediteur = 98){
-    	$message = strtoupper(urlencode($message)); 
-		$url = "http://localhost:11013/cgi-bin/sendsms?username=telcoSender&password=telco12345&smsc=smsc_ocit&from=$dest&to=$telephone&text=$message";  
-		$fp = @fopen($url, "r");
-		if ($fp) 
-			fclose($fp);
-    }
 }

@@ -22,7 +22,7 @@ class CreateCandidatsTable extends Migration
             $table->string('nom_inscription')->comment('Concaténation du nom et du prénom à la souscription');
             $table->string('nom')->length(50);
             $table->string('prenom')->length(205);
-            $table->unsignedInteger('numero')->length(8)->comment('Numero unique associé à un compte');
+            $table->unsignedInteger('numero')->length(8)->comment('Numero de utilisé pendant l\'inscription');
             $table->string('telephone')->length(100)->nullable();
             $table->string('email')->length(255)->nullable();
             $table->text('photo')->length(500)->nullable()->comment("Chemin d'acces a la photo");
@@ -36,8 +36,8 @@ class CreateCandidatsTable extends Migration
             $table->string('numpiece')->length(100)->nullable();
             $table->boolean('profil_complet')->default(false);
 
-            $table->timestamp('created_at');
-            $table->timestamp('updated_at');
+            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             #Cle étrangère et colonne unique;
             $table->unique('login');
             $table->unique('codecandidat');

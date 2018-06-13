@@ -19,8 +19,8 @@ class CreateTypeusersTable extends Migration
             $table->string('abreviation')->length(10)->unique();
             $table->text('description')->length(500); 
 
-            $table->timestamp('created_at');
-            $table->timestamp('updated_at'); 
+            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP')); 
             $table->engine = 'InnoDB';
         });
     }

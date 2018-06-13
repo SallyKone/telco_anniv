@@ -55,7 +55,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                          {{ csrf_field() }}             
     				    <div class="col-md-4">
                             <div id="divavatar">
-                                <img id="blah" src="{{URL::asset($candidat->photo)}}" alt="Votre image">
+                                <img id="blah" src="{{URL::asset('/images/img/avatar/'.$candidat->photo)}}" alt="Votre image">
                             </div>
                             <br><br>
                             <input type="file" id="imgInp"  name="photo">

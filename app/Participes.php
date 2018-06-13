@@ -10,5 +10,4 @@ class Participes extends Model
     protected $table = 'participes';#index le nom la table que le modele utilisera
     protected $keyType = string;#paramette le type de la clé primaire en string
     public $incrementing = false;#Annule l'autoincrématation de la clé primaraire
-
 }
