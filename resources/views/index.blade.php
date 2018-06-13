@@ -90,6 +90,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<li><a href="{{session()->has('idcandidat') ? 'profil':'connexion' }}" class="active">Profil</a></li>
 							<li><a href="description" class="active">Description</a></li>
 							<li><a href="contact" class="active">Contact</a></li>
+							<li id="lastli1"><a href="{{session()->has('idcandidat') ? 'deconnexion':'connexion' }}" class="btn btn-primary btn-md" role="button" title="Lien">{{session()->has('idcandidat') ? 'Déconnexion':'Connexion' }}</a></li>
 						</ul>
 					</div>
 
@@ -112,49 +113,43 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 		<!--//top-bar-w3layouts-->
 		<!--Slider-->
-		<div class="slider">
-			<div class="callbacks_container">
-				<ul class="rslides" id="slider3">
-					<!-- <li>
-						<div class="slider-img1">
-							<div class="container">
-								<div class="slider_banner_info_w3ls">
-									<h4><span></span>
-								</div>
-							</div>
-						</div>
-					</li> -->
-					<li>
-						<div class="slider-img2">
-							<div class="container">
-								<div class="slider_banner_info_w3ls">
-									<h4> <span></span></h4>
-								</div>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="slider-img3">
-							<div class="container">
-								<div class="slider_banner_info_w3ls">
-									<h4> <span></span></h4>
-								</div>
-							</div>
-						</div>
-					</li>
+					<section class="slider" id="home">
+				<div class="container-fluid">
+					<div class="row">
 
-					<li>
-						<div class="slider-img4">
-							<div class="container">
-								<div class="slider_banner_info_w3ls">
-									<h4> <span></span></h4>
-								</div>
-							</div>
-						</div>
-					</li>
-				</ul>
-			</div>
-		</div>
+					    <div id="carouselHacked" class="carousel slide carousel-fade" data-ride="carousel">
+							<div class="header-backup"></div>
+					        <!-- Wrapper for slides -->
+					        <div class="carousel-inner" role="listbox">
+					            <div class="item active">
+					            	<img src="images/slide1.jpg" alt="">
+					                <div class="carousel-caption">
+				               			
+					                </div>
+					            </div>
+					            <div class="item">
+					            	<img src="images/slide3.jpg" alt="">
+					                <div class="carousel-caption">
+				               			
+					                </div>
+					            </div>
+					            <div class="item">
+					            	<img src="images/slide4.jpg" alt="">
+					                <div class="carousel-caption">
+				               			
+					                </div>
+					            </div>
+					            
+					        </div>
+
+					        <!-- Controls -->
+					        
+					        
+					    </div>
+
+					</div>
+				</div>
+			</section><!-- end of slider section -->
 		<div class="clearfix"> </div>
 		<!-- //Modal1 -->
 		<!--//Slider-->
@@ -242,15 +237,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
    <!-- news -->
 	<div class="events-section">
 		<div id="pourlavideo">
-			 <video id="lavideo" loop autoplay>
+			  <!-- <video id="lavideo" loop autoplay>
 				<source src="videos/video1.mp4" type="video/mp4">
-				<source src="videos/video1.mp4" type="video/mp4">
-				<source src="videos/video1.mp4" type="video/mp4">
-			</video> 
+
+			</video> -->  
 			<div class="container">
 				<h3 class="title-txt two"><span>A</span>ctualités</h3>
 
-				<div class="col-sm-4 live-grids-w3ls">
+				<div class="col-md-4 live-grids-w3ls">
 					<center>
 					<div class="panel panel-primary">
 						<div class="panel-heading"><center>VAINQUEUR DU JOUR</center></div>
@@ -267,7 +261,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					
 				</div>
 
-				<div class="col-sm-4 live-grids-w3ls">
+				<div class="col-md-4 live-grids-w3ls">
 					<center>
 					<div class="panel panel-primary">
 						<div class="panel-heading"><center>TOP 10 EN TETE</center></div>
@@ -294,7 +288,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</center>
 				</div>
 
-				<div class="col-sm-4 live-grids-w3ls">
+				<div class="col-md-4 live-grids-w3ls">
 					<center>
 					<div class="panel panel-primary">
 						<div class="panel-heading"><center>LOT EN JEU AUJOURD'HUI</center></div>

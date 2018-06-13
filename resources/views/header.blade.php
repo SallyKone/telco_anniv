@@ -39,7 +39,8 @@
 							<li><a href="index" class="active">Accueil</a></li>
 							<li><a href="{{session()->has('idcandidat') ? 'profil':'connexion' }}" class="active">Profil</a></li>
 							<li><a href="description" class="active">Description</a></li>
-							<li><a href="contact" class="active">Contact</a></li>		
+							<li><a href="contact" class="active">Contact</a></li>	
+							<li id="lastli1"><a href="{{session()->has('idcandidat') ? 'deconnexion':'connexion' }}" class="btn btn-primary btn-md" role="button" title="Lien">{{session()->has('idcandidat') ? 'Déconnexion':'Connexion' }}</a></li>	
 						</ul>
 						
 					</div>
@@ -60,9 +61,29 @@
 		</div>
 		<!--//top-bar-w3layouts-->
 		<!--Slider-->
-		<div class="banner">
-			
-		</div>
+		
+					<div class="row">
+
+					    <div id="carouselHacked" class="carousel slide carousel-fade" data-ride="carousel">
+							<div class="header-backup"></div>
+					        <!-- Wrapper for slides -->
+					        <div class="carousel-inner" role="listbox">
+					            <div class="item active">
+					            	<img src="images/slide1.jpg" alt="">
+					                <div class="carousel-caption">
+				               			
+					                </div>
+					            </div>
+					            
+					            
+					        </div>
+
+					        <!-- Controls -->
+					        
+					        
+					    </div>
+
+					</div>
 		
 		<!-- //Modal1 -->
 		<!--//Slider-->

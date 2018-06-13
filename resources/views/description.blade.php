@@ -163,8 +163,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 .description{width:100%; height:auto; text-align:left; margin:0 30px 0 0px; float:none;}
 
 .imgD {
-	height: 510px;
-    width: 410PX; 
+	height: 502px;
+    width: 100%; 
 }
 	</style>
 </body>

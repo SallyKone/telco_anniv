@@ -50,13 +50,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						
 						<div class="panel-body">
 
-						<img class="imgDp" src="images/precampagne.JPG">
+						<img class="imgDp" src="images/precampagne.jpg">
 							
 						</div>
 					</div>
 				</div>
 
-				<div class="col-sm-4 live-grids-w3ls">
+				<div class="col-sm-4 live-grids-w3ls ">
 					
 					<div class="panel panel-primary">
 						
@@ -71,18 +71,24 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<form action="" method="POST">
 								{{ csrf_field() }}
 								{{ isset($resultat) ? $resultat : ""}}
-								<br>
-								<input type="text" id="login" name="login" placeholder="Identifiant / Login" class="chaageform" required />
-								<br/><br/>
-								<input type="password" id="password" name="password" placeholder="Mot de passe / Password" class="chaageform" required/>
+								
+								<div class="row ">	
+										<input class="col-md-9 forme" type="text" id="login" name="login" placeholder="Identifiant / Login" required />
+								</div>
+								
+								<div class="row ">
+										<input class="col-md-9 forme" type="password" id="password" name="password" placeholder="Mot de passe / Password"  required/>
+								</div>
 
 								<div class="forgotpassword"><a href="mot">Mot de passe oublié ?</a></div>
 								<div class="forgotpassword"><a href="identite">Identifiant oublié ?</a></div>
 								<div class="forgotpassword"><a href="change">Changer mot de passe</a></div>
+								<br>	
 								<div class="clear"></div>
-								<center><br>
-									<input type="submit" id="submit"  name="contactsubmit" value="Envoyer" class="changesubbtn" />
-								</center>
+								<br/>	
+								<div class="submit">
+                                <input type="submit" value="Connecter">
+                            </div>
 								<div class="clear"></div>
 							</form>
 						</div>
@@ -95,7 +101,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="panel panel-primary">
 						
 						<div class="panel-body">
-							<img class="imgDp" src="images/DES1.JPG">
+							<img class="imgDp" src="images/DES1.jpg">
 						</div>
 					</div>
 					
@@ -164,7 +170,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<style type="text/css">
 		 .imgDp {
 	height: 340px;
-    width: 310PX; 
+    width: 100%; 
 }
 
 .forgotpassword{width:160px; height:30px;  font-size:13px; color:#000; line-height:30px; text-align:center; margin:10px 0 0 0px; float:left;}
@@ -185,6 +191,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 }
 
 .chaageform{width:280px; height:30px;  font-size:15px; color:#999; line-height:30px; text-align:left; padding:10px;  margin:0 0 10px 0px; border-radius:10px; box-shadow:inset 0 0 10px #CCC; outline:none; border:none;}
+.forme{
+	margin: .5em 14px;
+    padding: 0.5em 1em;
+    font-size: .9em;
+    background: transparent;
+    border: 2px solid #2d2d2dad;
+    color: #080808;
+    letter-spacing: 2px;
+    border-radius: 14px;
+}
+.submit{
+
+}
+
 
 	</style>
 </body>

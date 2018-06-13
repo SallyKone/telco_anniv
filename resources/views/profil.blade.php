@@ -81,8 +81,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	            </div>
 	            </div>				
 			</div>
-				
-		</div>
+
 			<div class=" col-md-4 dash "  >
 				<ul>
 					<li><a href="profil">Mon profile</a></li>
@@ -94,6 +93,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				
 		    <div class="clearfix"></div>
 			</div>
+				
+		</div>
+			
 		</div>
 	</div>
 </section>
