@@ -46,7 +46,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="container">
 		
 		<div class="login-grids">
-			<div class="col-md-9 login-form">
+			<div class="col-md-8 login-form">
 				<div class="row">
 				<div class="col-md-4">
 					<div>
@@ -89,15 +89,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<li><a href="ajouteramis" >Ajouter ami(s)</a></li>
 					<li><a href="listeamis">Liste d'amis</a></li>
 					<!--<li><a href="#">Numeros inconnus</a></li>-->
-				</ul>
-				
+				</ul>				
 		    <div class="clearfix"></div>
-			</div>
+		</div>
 				
 		</div>
 			
 		</div>
-	</div>
+	
 </section>
 
 

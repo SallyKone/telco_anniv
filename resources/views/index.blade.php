@@ -8,7 +8,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <html lang="fr">
 
 <head>
-	<title>Mon incroyable anniversaire | Home :: telco</title>
+	<title>Mon incroyable anniversaire | :: telco</title>
 	<!-- Meta Tags -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />

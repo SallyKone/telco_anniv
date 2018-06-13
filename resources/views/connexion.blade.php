@@ -80,12 +80,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										<input class="col-md-9 forme" type="password" id="password" name="password" placeholder="Mot de passe / Password"  required/>
 								</div>
 
-								<div class="forgotpassword"><a href="mot">Mot de passe oublié ?</a></div>
-								<div class="forgotpassword"><a href="identite">Identifiant oublié ?</a></div>
-								<div class="forgotpassword"><a href="change">Changer mot de passe</a></div>
+								<div class="forgotpassword"><a href="mdpassoublier">Mot de passe oublié ?</a></div>
+								<div class="forgotpassword"><a href="identifiantoublier">Identifiant oublié ?</a></div>
+								<div class="forgotpassword"><a href="modifiermdpass">Changer mot de passe</a></div>
 								<br>	
 								<div class="clear"></div>
 								<br/>	
+								<br/>	
+								
 								<div class="submit">
                                 <input type="submit" value="Connecter">
                             </div>

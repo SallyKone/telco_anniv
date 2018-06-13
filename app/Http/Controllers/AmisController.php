@@ -37,17 +37,19 @@ class AmisController extends Controller
     public function ajouterAmis(Request $request)
     {
         $amis = new Amis;
-        $amis->nom = $request->pseudo;
+        $amis->nom = $request->nom;
         $amis->numero = (int)$request->numero;
-        $amis->id_candidat = 1;
+        $amis->id_candidat = (int)session()->get("idcandidat");
         //dd ($amis);
         $amis->save();
         
-        if($amis->save()){
-            return back()->withMessage("Votre ami(e) a été ajouté avec succès!!!");
-        }else{
-            return back()->withMessage("Une erreur est parvenue, veuillez recommencer");
-        }
+        if($amis->save())
+                {
+                    return view('ajouteramis')->with(['amis'=>$amis,'statut'=>true,'message'=>"Votre ami(e) à été ajouter avec succès !!"]);
+                }else
+                {
+                    return view('ajouteramis')->with(['amis'=>$amis,'statut'=>false,'message'=>"Impossible d'ajouter' !!"]);
+                }
 
     }
     //Modifier un ami

@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\ContactRequest;
 
 
+
 class ContactController extends Controller
 {
     public function contact()
@@ -19,7 +20,7 @@ class ContactController extends Controller
     {
     	
     	$Mailable = new ContactMessageCreated($request->nom, $request->email, $request->telephone, $request->msg);
-    	Mail::to('misskone690@gmail.com')->send($Mailable);
+    	Mail::to($request->email)->send($Mailable);
 
     	return view('index');
         

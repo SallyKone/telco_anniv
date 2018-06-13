@@ -51,7 +51,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						
 						<div class="panel-body">
 
-							<img class="imgDp" src="images/DES1.JPG">
+							<img class="imgDp" src="images/DES1.jpg">
 							
 						</div>
 					</div>
@@ -78,11 +78,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
  <select name="Date" id="Date" >
     
    <option value="0">Date</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-        
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
     
    </select>
     
@@ -90,35 +89,34 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
    <select name="Month" id="Month" >
     
    <option value="0">Month</option>
-                  <option value="Jan">Jan</option>
-                  <option value="Feb">Feb</option>
-                  <option value="Mer">Mer</option>
-                  <option value="Apr">Apr</option>
-        
-    
+      <option value="Jan">Jan</option>
+      <option value="Feb">Feb</option>
+      <option value="Mer">Mer</option>
+      <option value="Apr">Apr</option>    
     </select>
     
     
     
     <select name="Year" id="Year" >
     
-   <option value="0">Year</option>
-                  <option value="2000">2000</option>
-                  <option value="2001">2001</option>
-                  <option value="2002">2002</option>
-                  <option value="2003">2003</option>
-        
-    
+		   <option value="0">Year</option>
+	      <option value="2000">2000</option>
+	      <option value="2001">2001</option>
+	      <option value="2002">2002</option>
+	      <option value="2003">2003</option>   
     </select>
    </div>
    
 <div class="clear"></div>
-<br><br>
+<br>
+<br/>
+<br/>
+<br/>
 <center>
 <input type="submit" id="submit"  name="contactsubmit" value="Envoyer" class="changesubbtn" />
 </center>
-<br>
-<br>
+<br/>
+
 <div class="clear"></div>
 
 
@@ -134,7 +132,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="panel panel-primary">
 						
 						<div class="panel-body">
-							<img class="imgDp" src="images/DES1.JPG">
+							<img class="imgDp" src="images/REGIS.jpg">
 						</div>
 					</div>
 					
@@ -203,7 +201,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<style type="text/css">
 		 .imgDp {
 	height: 340px;
-    width: 310PX; 
+    width: 100%; 
 }
 
 .chaageform{width:280px; height:30px;  font-size:15px; color:#999; line-height:30px; text-align:left; padding:10px;  margin:0 0 10px 0px; border-radius:10px; box-shadow:inset 0 0 10px #CCC; outline:none; border:none;}

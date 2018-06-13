@@ -30,36 +30,11 @@ class CandidatsController extends Controller
         if (session()->has("idcandidat")) {
             $idcandidat =  (int)session()->get("idcandidat");
             $candidat = Candidats::findorfail($idcandidat);
-            return view('modifeprofile')->with(['candidat'=>$candidat,'statut'=>true,'message'=>"Recuperer avec succès!!"]);
+            return view('modifeprofile')->with(['candidat'=>$candidat]);
         }
         else
         {
             return view('connexion');
-        }
-    }
-
-    //AJOUTER UN CANDIDAT
-    public function ajouterCandidat($login,$mdpass,$codecandidat,$nom,$prenom,$numero,$journaiss,$moisnaiss)
-    {
-        $candidat = new Candidats;
-        $candidat->login = $login;
-        $candidat->motpass = encrypt($mdpass);
-        $candidat->codecandidat = $codecandidat;
-        $candidat->nom = $nom;
-        $candidat->prenom = $prenom;
-        $candidat->nom_inscription = $nom.' '.$prenom;
-        $candidat->numero = $numero;
-        $candidat->jour_naiss = $journaiss;
-        $candidat->mois_naiss = $moisnaiss;
-        $candidat->photo = "images/img/avatar/defaut.jpg";
-        try
-        {
-            return $candidat->save();
-        }
-        catch(Exception $e)
-        {
-            #Log::error($e);
-            return $e->getMessage();
         }
     }
 
@@ -106,7 +81,7 @@ class CandidatsController extends Controller
                 $typimg = $_FILES["photo"]["type"];
                 $avatar = session()->get("idcandidat").session()->get("nom").".".$extens;
                 $cheminacces = $cheminacces.$avatar;
-                $candidats->photo = $cheminacces;
+                $candidats->photo = $avatar;
 
                 if(1048600 > $_FILES["photo"]["size"])
                 {

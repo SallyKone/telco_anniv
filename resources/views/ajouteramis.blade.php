@@ -47,21 +47,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		
 		<div class="login-grids">
 			<div class=" col-md-7 .offset-md-1 login-form">
-@if(session('success')) 
-								{{-- ====================================================================================== --}}
-								
-									<div class="alert alert-success"> 
-										<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> 
-										{{ session('success') }} 
-									</div> 
-								@endif 
-								@if(session('error')) 
-									<div class="alert alert-danger"> 
-										<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> 
-										{{ session('error') }} 
-									</div> 
-								@endif 
-								{{-- ====================================================================================== --}}
+@if(isset($statut))
+                   <div class=" {{isset($statut) && $statut ? 'alert alert-success' : 'alert alert-danger'}}"> 
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> 
+                    {{ $message }} 
+                    </div> 
+                    @endif
 
 <form class="commentForm" action="{{route('ajouteramis')}}" method="post">
 	{{csrf_field()}}
@@ -79,7 +70,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <br>
                             <div class="row">
                                 <label class="col-md-4"><strong>Numero Mobile: </strong></label>
-                                <input class="col-md-7" type="text" value="" required name="prenom">
+                                <input class="col-md-7" type="text" value="" required name="numero">
                             </div>
 				<br>
  				<div class="clear"></div>
