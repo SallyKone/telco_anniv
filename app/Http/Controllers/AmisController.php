@@ -43,11 +43,13 @@ class AmisController extends Controller
         //dd ($amis);
         $amis->save();
         
-        if($amis->save()){
-            return back()->withMessage("Votre ami(e) a été ajouté avec succès!!!");
-        }else{
-            return back()->withMessage("Une erreur est parvenue, veuillez recommencer");
-        }
+        if($amis->save())
+                {
+                    return view('ajouteramis')->with(['amis'=>$amis,'statut'=>true,'message'=>"Votre ami(e) à été ajouter avec succès !!"]);
+                }else
+                {
+                    return view('ajouteramis')->with(['amis'=>$amis,'statut'=>false,'message'=>"Impossible d'ajouter' !!"]);
+                }
 
     }
     //Modifier un ami
