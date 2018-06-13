@@ -79,7 +79,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <br>
                             <div class="row">
                                 <label class="col-md-4"><strong>Numero Mobile: </strong></label>
-                                <input class="col-md-7" type="text" value="" required name="prenom">
+                                <input class="col-md-7" type="text" value="" required name="numero">
                             </div>
 				<br>
  				<div class="clear"></div>

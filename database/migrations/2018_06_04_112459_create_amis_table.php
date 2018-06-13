@@ -19,8 +19,8 @@ class CreateAmisTable extends Migration
             $table->unsignedInteger('numero')->length(8);
             $table->unsignedBigInteger('id_candidat');
 
-            $table->timestamp('created_at');
-            $table->timestamp('updated_at');
+            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             #Cle étrangère
             $table->foreign('id_candidat')->references('id')->on('candidats');
             $table->engine = 'InnoDB';

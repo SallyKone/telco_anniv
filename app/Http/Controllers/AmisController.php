@@ -37,9 +37,9 @@ class AmisController extends Controller
     public function ajouterAmis(Request $request)
     {
         $amis = new Amis;
-        $amis->nom = $request->pseudo;
+        $amis->nom = $request->nom;
         $amis->numero = (int)$request->numero;
-        $amis->id_candidat = 1;
+        $amis->id_candidat = (int)session()->get("idcandidat");
         //dd ($amis);
         $amis->save();
         

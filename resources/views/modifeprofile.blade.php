@@ -46,16 +46,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="row login-grids">
             <div class=" col-md-8  offset-md-1 login-form">
                 <div class="row">
-                   <!--  <div class=" {{isset($statut) && $statut ? 'alert alert-success' : 'alert alert-danger'}}"> 
+                    @if(isset($statut))
+                   <div class=" {{isset($statut) && $statut ? 'alert alert-success' : 'alert alert-danger'}}"> 
                         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> 
                     {{ $message }} 
-                    </div> --> 
-
+                    </div> 
+                    @endif
                     <form action="{{route('modifeprofile')}} " method="post" enctype="multipart/form-data">
                          {{ csrf_field() }}             
     				    <div class="col-md-4">
                             <div id="divavatar">
-                                <img id="blah" src="{{URL::asset($candidat->photo)}}" alt="Votre image">
+                                <img id="blah" src="{{URL::asset('/images/img/avatar/'.$candidat->photo)}}" alt="Votre image">
                             </div>
                             <br><br>
                             <input type="file" id="imgInp"  name="photo">

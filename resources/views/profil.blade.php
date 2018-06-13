@@ -49,12 +49,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="col-md-8 login-form">
 				<div class="row">
 				<div class="col-md-4">
-					
-						<div>
-							<img src="{{URL::asset($candidat->photo)}}" height="175">
-						</div>
-						
-					
+					<div>
+						<img src="{{URL::asset('/images/img/avatar/'.$candidat->photo)}}" height="175">
+					</div>
 	            </div>
 	            <div class="col-md-8">
 	            	<div class="row">
@@ -85,26 +82,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	            </div>				
 			</div>
 
-		<div class=" col-md-4 dash "  >
-			<ul>
-				<li>Menu	
-					<ul>
-						<li><a href="profil">Mon profile</a></li>
-						<li><a href="modifeprofile">Modifier mon profile</a></li>
-						<li><a href="ajouteramis" >Ajouter ami(s)</a></li>
-						<li><a href="listeamis">Liste d'amis</a></li>
-						<!--<li><a href="#">Numeros inconnus</a></li>-->
-					</ul>
-				</li>
-			</ul>
-				
+			<div class=" col-md-4 dash "  >
+				<ul>
+					<li><a href="profil">Mon profile</a></li>
+					<li><a href="modifeprofile">Modifier mon profile</a></li>
+					<li><a href="ajouteramis" >Ajouter ami(s)</a></li>
+					<li><a href="listeamis">Liste d'amis</a></li>
+					<!--<li><a href="#">Numeros inconnus</a></li>-->
+				</ul>				
 		    <div class="clearfix"></div>
 		</div>
 				
 		</div>
 			
 		</div>
-	</div>
+	
 </section>
 
 
@@ -164,53 +156,52 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 	<!--// Required Scripts -->
 	<style type="text/css">
-		 .imgDp {
-	height: 340px;
-    width: 310PX; 
-}
+		.imgDp {
+		height: 340px;
+	    width: 310PX; 
+		}
 
-.clear{clear:both;}
+		.clear{clear:both;}
 
-.myprofilemain{width:495px; height:auto; float:left;}
+		.myprofilemain{width:495px; height:auto; float:left;}
 
-.monprofilemain{width:95%; height:auto; margin:0 auto; }
-.monprofilelogin{width:95%; height:auto; padding:10px; margin:0px; float:none;}
-.monprofilelogin img{display:none;}
+		.monprofilemain{width:95%; height:auto; margin:0 auto; }
+		.monprofilelogin{width:95%; height:auto; padding:10px; margin:0px; float:none;}
+		.monprofilelogin img{display:none;}
 
-.afterlogin{width:720px; height:auto; border:solid 1px #999; border-radius:2px; padding:10px; background:#efeded; float:left; position:relative;}
-.afterloginimg{width:5%; position:absolute; bottom:20px; right:5%;}
+		.afterlogin{width:720px; height:auto; border:solid 1px #999; border-radius:2px; padding:10px; background:#efeded; float:left; position:relative;}
+		.afterloginimg{width:5%; position:absolute; bottom:20px; right:5%;}
 
-/*.photoedit{width:220px; height:280px; font-size:13px; color:#000; text-align:center; float:left;}*/
-.photoedit img{width:80%; border:solid 1px #999; margin:10px 0 0 0px; background:#FFF;}
-.photoedit a{text-decoration:underline; color:#000; text-align:left;}
-.myprofile{width:240px; height:50px; font-size:15px; color:#000; text-align:left; line-height:50px; margin:0 5px 0 0px; float:left; }
+		/*.photoedit{width:220px; height:280px; font-size:13px; color:#000; text-align:center; float:left;}*/
+		.photoedit img{width:80%; border:solid 1px #999; margin:10px 0 0 0px; background:#FFF;}
+		.photoedit a{text-decoration:underline; color:#000; text-align:left;}
+		.myprofile{width:240px; height:50px; font-size:15px; color:#000; text-align:left; line-height:50px; margin:0 5px 0 0px; float:left; }
 
-.form{width:280px; height:30px;  font-size:15px; color:#999; line-height:30px; text-align:left; padding:10px;  margin:0 0 20px 0px; border-radius:10px; box-shadow:inset 0 0 10px #CCC; outline:none; border:none;}
+		.form{width:280px; height:30px;  font-size:15px; color:#999; line-height:30px; text-align:left; padding:10px;  margin:0 0 20px 0px; border-radius:10px; box-shadow:inset 0 0 10px #CCC; outline:none; border:none;}
 
-. h1 {
-    font-size: 20px;
-    color: #000;
-    text-align: center;
-    padding: 0 0 20px 10px;
-    margin: 0px;
-}
+		. h1 {
+		    font-size: 20px;
+		    color: #000;
+		    text-align: center;
+		    padding: 0 0 20px 10px;
+		    margin: 0px;
+		}
 
-.dash{width:220px; height:40px;  text-align:center !important; }
-.dash ul{margin:0px; padding:0px;}
-.dash ul li{list-style:none; display:block; margin:0 0 5px 0px;  background:#219b2f; border-radius:5px;}
-.dash ul li a{font-size:20px; color:#000; padding:10px 0px; text-decoration:none; line-height:40px;}
+		.dash{width:220px; height:40px;  text-align:center !important; }
+		.dash ul{margin:0px; padding:0px;}
+		.dash ul li{list-style:none; display:block; margin:0 0 5px 0px;  background:#219b2f; border-radius:5px;}
+		.dash ul li a{font-size:20px; color:#000; padding:10px 0px; text-decoration:none; line-height:40px;}
 
-.myprofile {
-    width: 240px;
-    height: 50px;
-    font-size: 15px;
-    color: #000;
-    text-align: left;
-    line-height: 50px;
-    margin: 0 5px 0 0px;
-    float: left;
-}
-
+		.myprofile {
+		    width: 240px;
+		    height: 50px;
+		    font-size: 15px;
+		    color: #000;
+		    text-align: left;
+		    line-height: 50px;
+		    margin: 0 5px 0 0px;
+		    float: left;
+		}
 	</style>
 </body>
 

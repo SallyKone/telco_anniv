@@ -20,8 +20,8 @@ class CreatePaysTable extends Migration
             $table->string('codepostal');
             $table->unsignedInteger('id_langue');
 
-            $table->timestamp('created_at');
-            $table->timestamp('updated_at');
+            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP'));
 
             #Cle étrangère et colonne unique;
             $table->unique('codepays');
