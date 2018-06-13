@@ -154,18 +154,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!--// Required Scripts -->
 	<style type="text/css">
 		.description{width:650px; height:auto; background:#efeded; font-size:13px; line-height:20px; color:000; text-align:left; border:solid 1px #999; border-radius:3px; margin:0 10px 0 0px; float:left;} 
-.description span{font-size:20px; text-align:center; font-style:italic; padding:0 0 0 30px;}
-.description h1{font-size:35px; text-align:center;}
-.description h2{font-size:20px; text-align:left; padding:0 0 0 10px; font-style:italic;}
-.description h3{font-size:20px; text-align:left; padding:0 0 0 30px; font-style:italic;}
-.description p{font-size:15px; padding:10px; line-height:25px;}
+		.description span{font-size:20px; text-align:center; font-style:italic; padding:0 0 0 30px;}
+		.description h1{font-size:35px; text-align:center;}
+		.description h2{font-size:20px; text-align:left; padding:0 0 0 10px; font-style:italic;}
+		.description h3{font-size:20px; text-align:left; padding:0 0 0 30px; font-style:italic;}
+		.description p{font-size:15px; padding:10px; line-height:25px;}
 
-.description{width:100%; height:auto; text-align:left; margin:0 30px 0 0px; float:none;}
+		.description{width:100%; height:auto; text-align:left; margin:0 30px 0 0px; float:none;}
 
-.imgD {
-	height: 502px;
-    width: 100%; 
-}
+		.imgD {
+			height: 502px;
+		    width: 100%; 
+		}
 	</style>
 </body>
 

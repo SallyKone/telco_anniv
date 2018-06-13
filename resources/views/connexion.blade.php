@@ -168,44 +168,42 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 	<!--// Required Scripts -->
 	<style type="text/css">
-		 .imgDp {
-	height: 340px;
-    width: 100%; 
-}
+		.imgDp {
+			height: 340px;
+		    width: 100%; 
+		}
 
-.forgotpassword{width:160px; height:30px;  font-size:13px; color:#000; line-height:30px; text-align:center; margin:10px 0 0 0px; float:left;}
-.forgotpassword a{text-decoration:none; color:#000;}
-.forgotpassword a:hover{font-size:14px;}
+		.forgotpassword{width:160px; height:30px;  font-size:13px; color:#000; line-height:30px; text-align:center; margin:10px 0 0 0px; float:left;}
+		.forgotpassword a{text-decoration:none; color:#000;}
+		.forgotpassword a:hover{font-size:14px;}
 
-/*.submitbtn{width:100px; height:30px; font-size:15px; color:#fff; line-height:30px; text-align:cente; border:none; cursor:pointer; outline:none; margin:20px 15px 0 0px; text-transform:uppercase; float:right; border-radius:8px;*/
+		/*.submitbtn{width:100px; height:30px; font-size:15px; color:#fff; line-height:30px; text-align:cente; border:none; cursor:pointer; outline:none; margin:20px 15px 0 0px; text-transform:uppercase; float:right; border-radius:8px;*/
 
-.clear{clear:both;}
-/*.form{width:280px; height:30px;  font-size:15px; color:#999; line-height:30px; text-align:left; padding:10px;  margin:0 0 20px 0px; border-radius:10px; box-shadow:inset 0 0 10px #CCC; outline:none; border:none;}*/
+		.clear{clear:both;}
+		/*.form{width:280px; height:30px;  font-size:15px; color:#999; line-height:30px; text-align:left; padding:10px;  margin:0 0 20px 0px; border-radius:10px; box-shadow:inset 0 0 10px #CCC; outline:none; border:none;}*/
 
-. h1 {
-    font-size: 20px;
-    color: #000;
-    text-align: center;
-    padding: 0 0 20px 10px;
-    margin: 0px;
-}
+		. h1 {
+		    font-size: 20px;
+		    color: #000;
+		    text-align: center;
+		    padding: 0 0 20px 10px;
+		    margin: 0px;
+		}
 
-.chaageform{width:280px; height:30px;  font-size:15px; color:#999; line-height:30px; text-align:left; padding:10px;  margin:0 0 10px 0px; border-radius:10px; box-shadow:inset 0 0 10px #CCC; outline:none; border:none;}
-.forme{
-	margin: .5em 14px;
-    padding: 0.5em 1em;
-    font-size: .9em;
-    background: transparent;
-    border: 2px solid #2d2d2dad;
-    color: #080808;
-    letter-spacing: 2px;
-    border-radius: 14px;
-}
-.submit{
+		.chaageform{width:280px; height:30px;  font-size:15px; color:#999; line-height:30px; text-align:left; padding:10px;  margin:0 0 10px 0px; border-radius:10px; box-shadow:inset 0 0 10px #CCC; outline:none; border:none;}
+		.forme{
+			margin: .5em 14px;
+		    padding: 0.5em 1em;
+		    font-size: .9em;
+		    background: transparent;
+		    border: 2px solid #2d2d2dad;
+		    color: #080808;
+		    letter-spacing: 2px;
+		    border-radius: 14px;
+		}
+		.submit{
 
-}
-
-
+		}
 	</style>
 </body>
 
