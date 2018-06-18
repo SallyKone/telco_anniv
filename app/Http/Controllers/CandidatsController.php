@@ -45,15 +45,6 @@ class CandidatsController extends Controller
     }
     //LES FONCTIONS POST
     
-    //Liste des 10er candidats d'une date d'anniversai
-    public function getTop10Candidats($ladate)
-    {
-    	$requet = DB::table('anniversaires')->join('votes', 'anniversaires.id', '=', 'votes.id_anniversaire')->join('candidats', 'candidats.id', '=', 'votes.id_candidat')
-            ->selectRaw('candidats.*, anniversaires.date_anniv, COUNT(votes.id) as voix')->where([['anniversaires.date_anniv','=',$ladate],['anniversaires.anniv_cloture','=',0]])->groupBy('votes.id_candidat')->orderBy('voix','desc')->limit(10)->get();
-        $requete= $requet->toSql();
-        return DB::select(DB::raw($requete));
-    }
-
     //MODIFIER CANDIDATS
     public function modifProfil(Request $request)
     {

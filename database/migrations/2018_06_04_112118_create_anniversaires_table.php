@@ -17,6 +17,8 @@ class CreateAnniversairesTable extends Migration
             $table->bigIncrements('id');
             $table->string('libelle')->length(255);
             $table->date('date_anniv')->comment("Date de l'anniversaire");
+            $table->unsignedInteger('jour')->length(2);
+            $table->unsignedInteger('mois')->length(2);
             $table->unsignedInteger('annee')->length(4);
             $table->unsignedTinyInteger('anniv_cloture')->default(0)->comment("Etat de l'anniversaire");
             $table->dateTime('date_cloture');

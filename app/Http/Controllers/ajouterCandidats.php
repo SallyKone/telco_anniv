@@ -58,6 +58,7 @@
 			}
 			$mesg = "INSCRIPTION VALIDEE!"."\nLogin: ".$lelogin."\nMot de passe: xxxxxx"."\nVia www.telcoanniv.com Ajoutez vos amis";
 			addMessageEnvoye($lenumero,$reseau,$mesg,date("Y-m-d H:i:s"));
+			miseAjrCandidat();
 		}
 	}
 	else

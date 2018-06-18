@@ -1,6 +1,7 @@
 <?php
 	header('content-type: text/html; charset=utf-8');
-    $bdd = "";
+
+    define(CANDIDAT_EN_COMPET,30240);
 
 	//Envoi d'un SMS pour attester l'inscrition du candidat
 	function accuseReceptionMTN($destinataire, $message, $espediteur = 459){
@@ -92,6 +93,76 @@
 			$bdd = null;
 			return -1;
 		}
+	}
+	function testCode($codepropose){
+		$bdd = laconnection('213.136.80.39','telco','telcosarl2013','telco_anniv');
+		try
+		{
+			//Préparation de la requête
+			$lareq = $bdd->prepare('SELECT id FROM candidats WHERE codecandidat = :codepropo');
+			//Enregistre les données
+			$lareq->execute(array('codepropo'=> $codepropose));
+			$res = $lareq->fetchAll();
+            $res = count($res);
+
+			if ($res != 0) {
+				$bdd = null;
+				return true;
+			}
+			$bdd = null;
+			return false;
+		}
+		catch(Exception $e)
+		{
+			$fichierlog = fopen('../../../storage/logs/fichierlog.log', 'a+');
+			
+			if ($fichierlog)
+			{
+				fputs($fichierlog,date('d-m-Y H:i:s').' Error test login : '.$e->getMessage()."\n");
+				fclose($fichierlog);
+			}
+			$bdd = null;
+			return -1;
+		}
+	}
+	//Fonction de mise en competition de candidats
+	function miseAjrCandidat()
+	{
+		$bdd = null;
+		$codecandid = '';
+		try
+		{
+			$bdd = laconnection('213.136.80.39','telco','telcosarl2013','telco_anniv');
+			//Préparation de la requête
+			$lareq = $bdd->prepare('CALL SP_CANDIDAT_COMPETITION()');
+			//Enregistre les données
+			$lareq->execute();                     
+			$donnees = $lareq->fetchAll();
+            $lareq->closeCursor();
+            
+            for ($i = 0; $i < count($donnees); $i++) 
+			{
+                $codecandid = genererchiffre(5);
+                
+                while(testCode($codecandid))
+                {
+                    $codecandid = genererchiffre(5);
+                }
+                $mareq = $bdd->prepare('UPDATE candidats SET codecandidat = :lecode WHERE id = :leid');
+                $mareq->execute(array('lecode' => $codecandid,'leid'=> $donnees[$i]['candidat']));
+			}
+		}
+		catch(Exception $e)
+		{
+			$fichierlog = fopen('../../../storage/logs/fichierlog.log', 'a+');
+			
+			if ($fichierlog)
+			{
+				fputs($fichierlog,date('d-m-Y H:i:s').' Error add in Messages : '.$e->getMessage()."\n"); 
+				fclose($fichierlog);
+			}
+		}
+		$bdd = null;
 	}
 
 	//Fonction d'ajout du candidat

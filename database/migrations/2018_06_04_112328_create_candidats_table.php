@@ -26,8 +26,8 @@ class CreateCandidatsTable extends Migration
             $table->string('telephone')->length(100)->nullable();
             $table->string('email')->length(255)->nullable();
             $table->text('photo')->length(500)->nullable()->comment("Chemin d'acces a la photo");
-            $table->unsignedInteger('jour_naiss');
-            $table->unsignedInteger('mois_naiss');
+            $table->unsignedInteger('jour_naiss')->length(2);
+            $table->unsignedInteger('mois_naiss')->length(2);
             $table->unsignedInteger('annee_naiss')->nullable();
             $table->boolean('genre')->nullable();
             

@@ -1,4 +1,5 @@
 <?php
+	include('utilitaireSouscription.php');
 	$bdd = null;
 	try
 	{
@@ -9,7 +10,7 @@
 		$lareq = $bdd->prepare('CALL SP_ADD_ANNIVERSAIRE()');
 		//Enregistre les données
 		$lareq->execute();
-		echo 'Généré !';
+		miseAjrCandidat();
 	}
 	catch(Exception $e)
 	{
