@@ -40,46 +40,34 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="votredrop">
 				    <input type="text" name="identifiant" value=""  placeholder="Code de vote"  style="background:none; border:none;" required> 
 				</div>
- <input type="submit" id="submit"  name="contactsubmit" value="Envoyer" class="contactsubbbtn" style="margin:0; float:left; font-size:12px; width:70px;" />
-<div class="clear"></div>
+				<input type="submit" id="submit"  name="contactsubmit" value="Envoyer" class="contactsubbbtn" style="margin:0; float:left; font-size:12px; width:70px;" />
+				<div class="clear"></div>
+				<div class="clear"></div>
+		</form>
 
-
-<div class="clear"></div>
-
-</form>
-
-	<div class="events-classe">
-		<div class="container">			
-			<div class="">
-				<div class="col-sm-3 live-grids-w3ls">
-					<center>
-					<div class="panel panel-primary">
-						<div class="panel-heading"><center>VOTRE CLASSEMENT</center></div>
-						<div class="panel-body">
-							<div class="live-classe">
-												
+		<div class="events-classe">
+			<div class="container">			
+				<div class="">
+					<div class="col-sm-3 live-grids-w3ls">
+						<center>
+						<div class="panel panel-primary">
+							<div class="panel-heading"><center>VOTRE CLASSEMENT</center></div>
+							<div class="panel-body">
+								<div class="live-classe">
+													
+								</div>
+								
 							</div>
-							
 						</div>
-					</div>
-					</center>				
-				</div>		
-			</div>	
-			<div class="clearfix"> </div>
+						</center>				
+					</div>		
+				</div>	
+				<div class="clearfix"> </div>
+			</div>
 		</div>
-	</div>
+	</div><br><br><br><br>
 
-
-
-
-</div>
-<br>
-<br>
-		
-
-	<br>
-	<br>
-			<div class="events-sectione">
+	<div class="events-sectione">
 		<div class="container">
 			<h3 class="title-txt two"><span></span></h3>
 			<div class="">
@@ -88,7 +76,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="panel-heading"><center>Top 10 d'aujourd'hui</center></div>
 						<div class="panel-body" style="height: 390px; overflow: hidden;">
 							<div class="live-info">
+							@foreach($classement1 as $classement)
+								<div class="imag">
+									<img src="{{URL::asset('/images/img/avatar/'.$classement->photo)}}">
+								</div>
+								<div class="detail">
 									
+								</div>
+							@endforeach
 							</div>
 							<h5></h5>
 						</div>
@@ -101,23 +96,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="panel-heading"><center>TOP 10 DU 11-05-2018</center></div>
 						<div class="panel-body" style="height: 390px; overflow: hidden;">
 							<div class="live-info">
-
-								<!-- <marquee style="background:url(ImgMarquee/Canigou.jpg); color:#B20;" direction="up" height="213px">
-	                            <img class="img1" src="images/service1.png">
-	       	 					<img class="img1" src="images/service2.png">
-	       	 					<img class="img1" src="images/service3.png">
-	       	 					<img class="img1" src="images/service4.png">
-	       	 					<img class="img1" src="images/service5.png">
-	       	 					<img class="img1" src="images/service6.png">
-	                    </marquee> -->
-							
+								
 							</div>
 							<h5></h5>
 						</div>
 					</div>
 				</div>
-
-				
 
 				<div class="col-sm-3 live-grids-w3ls">
 					<div class="panel panel-primary">

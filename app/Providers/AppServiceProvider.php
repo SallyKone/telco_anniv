@@ -23,8 +23,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton(Utilitaire::class, function(){
-            return new Utilitaire();
+        $this->app->singleton(Utilitaires::class, function(){
+            return new Utilitaires();
         });
     }
 }

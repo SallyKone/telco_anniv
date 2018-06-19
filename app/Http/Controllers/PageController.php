@@ -9,18 +9,17 @@ class PageController extends Controller
 {
     public function __construct(Utilitaires $advisor)
     {
-        
+
     }
     public function showIndex()
     {
         return view('index');
     }
 
-    public function showVueTest()
+    public function showVueTest(Utilitaires $advisor)
     {
         //session()->start();
-        $resultat = "mpoldfgdgdgeregeratagzerghrm";
-        dd(encrypt($resultat));
+        dd($advisor->getTop10bydate(now()));
     }
     public function showVueDeTest()
     {

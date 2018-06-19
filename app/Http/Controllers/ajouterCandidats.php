@@ -15,8 +15,8 @@
 
 
 	//Definitions des traitements de données
-	$reseau = (int)trim(str_replace(' ', '', $_GET['dest']));
-	$lenumero = (int)trim(str_replace(' ', '', $_GET['source']));
+	$reseau = trim(str_replace(' ', '', $_GET['dest']));
+	$lenumero = trim(str_replace(' ', '', $_GET['source']));
 	$tpsrecept = $_GET['time'];
 
 	$codecandidat = 'tempo '.genererchaine(10);
@@ -63,11 +63,23 @@
 	}
 	else
 	{
-		$fichierlog = fopen('../../../storage/logs/fichierlog.log', 'a+');	
-		if ($fichierlog)
-		{
-			fputs($fichierlog,date('d-m-Y H:i:s').' Error conformité du message : '.$_GET['msg']."\n"); 
-			fclose($fichierlog);
-		}
-	}
+		$tableau = false;
+		//Definitions des traitements de données
+		$lenumero = trim(str_replace(' ', '', $_GET['source']));
+		$codecand = trim(str_replace(' ', '', $_GET['msg']));
+        
+        $tableau = idCandetAnniv($codecand);
+        
+        if($tableau)
+        {
+            addvote($tableau[0],$tableau[1],$lenumero);
+        } else {
+            $fichierlog = fopen('../../../storage/logs/fichierlog.log', 'a+');	
+			if ($fichierlog)
+			{
+				fputs($fichierlog,date('d-m-Y H:i:s').' Error ce code de vote n\'existe pas ou structure non conforme: '.$_GET['msg']."\n"); 
+				fclose($fichierlog);
+			}
+        }
+    }
 ?>
