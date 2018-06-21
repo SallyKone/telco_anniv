@@ -30,7 +30,7 @@
 	{
 		$lelogin = strtolower($lesms[1]).genererlogin(4);
 		$mdpass = genererchaine(6);
-		$mdpassc = password_hash($mdpass,PASSWORD_DEFAULT);
+		//$mdpassc = password_hash($mdpass,PASSWORD_DEFAULT);
 		$lenom = $lesms[1];
 		$leprenom = $lesms[2];
 		$datenaissaice = explode('-', $lesms[3]);
@@ -45,9 +45,8 @@
 			 	$testeur = testLoginEtCode($lelogin,$codecandidat);
 			}
 			//Appel de la fontion d'ajout du candidat		
-			ajouterCandidat($lelogin,$mdpassc,$codecandidat,$lenom,$leprenom,$lenumero,$journaiss,$moisnaiss);
+			ajouterCandidat($lelogin,$mdpass,$codecandidat,$lenom,$leprenom,$lenumero,$journaiss,$moisnaiss);
 			$messageSucces .= "\nLogin: ".$lelogin;
-			$messageSucces .= "\nMot de passe: ".$mdpass;
 			$messageSucces .= "\nVia www.telcoanniv.com Ajoutez vos amis";
 			
 			if ($reseau = 98164) {

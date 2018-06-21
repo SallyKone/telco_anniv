@@ -32,7 +32,7 @@ class ConnexionController extends Controller
         {
             $candidat = DB::table('candidats')->where('login','=',$login)->first();
             //dd($candidat->motpass);
-            if(password_verify($motpass,$candidat->motpass))
+            if($motpass == $candidat->motpass)
             {
                 session()->put('idcandidat',$candidat->id);
                 session()->put('nom',$candidat->nom);

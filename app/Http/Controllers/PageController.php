@@ -19,7 +19,7 @@ class PageController extends Controller
     public function showVueTest(Utilitaires $advisor)
     {
         //session()->start();
-        dd($advisor->getTop10bydate(now()));
+        dd(now());
     }
     public function showVueDeTest()
     {

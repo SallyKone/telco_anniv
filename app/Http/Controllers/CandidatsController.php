@@ -73,6 +73,7 @@ class CandidatsController extends Controller
                 $avatar = session()->get("idcandidat").session()->get("nom").".".$extens;
                 $cheminacces = $cheminacces.$avatar;
                 $candidats->photo = $avatar;
+                $candidats->updated_at = now();
 
                 if(1048600 > $_FILES["photo"]["size"])
                 {

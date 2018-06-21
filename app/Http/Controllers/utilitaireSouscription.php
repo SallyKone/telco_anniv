@@ -162,7 +162,7 @@
 		try
 		{
 			//Préparation de la requête
-			$lareq = $bdd->prepare('INSERT INTO Votes (id_candidat, id_anniversaire, numeroVotant, created_at) VALUES (:idcand, :idanniv, :numero, NOW()))');
+			$lareq = $bdd->prepare('INSERT INTO Votes (id_candidat, id_anniversaire, numeroVotant, created_at,updated_at) VALUES (:idcand, :idanniv, :numero, NOW(),NOW()))');
 			//Enregistre les données
 			$lareq->execute(array(':idcand' => $idcandidat,  ':idanniv' => $idanniversaire, 
                             ':numero' => $numerovotant));
@@ -230,7 +230,7 @@
 			//Debute une transaction
 			
 			//Préparation de la requête
-			$lareq = $bdd->prepare('INSERT INTO Candidats (login, motpass, codecandidat, nom, prenom, numero, jour_naiss, mois_naiss, nom_inscription, photo, created_at) VALUES (:lelogin, :mdpass, :codecandidat, :lenom, :leprenom, :lenumero, :journaiss, :moisnaiss,:nominscr,"defaut.png", NOW())');
+			$lareq = $bdd->prepare('INSERT INTO Candidats (login, motpass, codecandidat, nom, prenom, numero, jour_naiss, mois_naiss, nom_inscription, photo, created_at, updated_at) VALUES (:lelogin, :mdpass, :codecandidat, :lenom, :leprenom, :lenumero, :journaiss, :moisnaiss,:nominscr,"defaut.png", NOW(), NOW())');
 			//Enregistre les données
 			$res = $lareq->execute(array('lelogin' => $login_,  'mdpass' => $mdpass_, 'codecandidat' => $codecandidat_, 'lenom' => $lenom_, 'leprenom' => $leprenom_, 'lenumero' => $lenumero_, 'journaiss' => $journaiss_,'moisnaiss' => $moisnaiss_,'nominscr'=> $lenom_.' '.$leprenom_));
 			$bdd->commit();

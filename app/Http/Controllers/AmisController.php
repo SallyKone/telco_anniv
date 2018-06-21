@@ -40,6 +40,8 @@ class AmisController extends Controller
         $amis->nom = $request->nom;
         $amis->numero = (int)$request->numero;
         $amis->id_candidat = (int)session()->get("idcandidat");
+        $amis->created_at = now();
+        $amis->updated_at = now();
         //dd ($amis);
         $amis->save();
         
