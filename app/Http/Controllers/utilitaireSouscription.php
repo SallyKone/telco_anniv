@@ -125,6 +125,61 @@
 			return -1;
 		}
 	}
+	//Teste de vote 
+	function idCandetAnniv($codecandidat){
+		$bdd = laconnection('213.136.80.39','telco','telcosarl2013','telco_anniv');
+		try
+		{
+			//Préparation de la requête
+			$lareq = $bdd->prepare('SELECT a.id as anniv, c.id as candid FROM anniversaires a inner join participes p ON a.id = p.id_anniversaire inner join candidats c ON c.id = p.id_candidat WHERE c.codecandidat = :codecandi ;');
+			//Enregistre les données
+			$lareq->execute(array('codecandi'=> $codecandidat));
+			$res = $lareq->fetchAll();
+                        
+                        if(count($res)>0)
+                        {
+				$bdd = null;
+				return array($res[0]['candid'],$res[0]['anniv']);
+			}
+			$bdd = null;
+			return false;
+		}
+		catch(Exception $e)
+		{
+			$fichierlog = fopen('../../../storage/logs/fichierlog.log', 'a+');
+			
+			if ($fichierlog)
+			{
+				fputs($fichierlog,date('d-m-Y H:i:s').' Error test login : '.$e->getMessage()."\n");
+				fclose($fichierlog);
+			}
+			$bdd = null;
+			return -1;
+		}
+	}
+	function addvote($idcandidat,$idanniversaire,$numerovotant){
+		$bdd = laconnection('localhost','root','','telco_anniv');
+		try
+		{
+			//Préparation de la requête
+			$lareq = $bdd->prepare('INSERT INTO Votes (id_candidat, id_anniversaire, numeroVotant) VALUES (:idcand, :idanniv, :numero)');
+			//Enregistre les données
+			$lareq->execute(array(':idcand' => $idcandidat,  ':idanniv' => $idanniversaire, 
+                            ':numero' => $numerovotant));
+			$bdd = null;
+		}
+		catch(Exception $e)
+		{
+			$fichierlog = fopen('classes/log.txt', 'a+');
+			
+			if ($fichierlog)
+			{
+				fputs($fichierlog,date('d-m-Y H:i:s').' Error Send Accué sms : '.$e->getMessage()."\n"); 
+				fclose($fichierlog);
+			}
+			$bdd = null;
+		}
+	}
 	//Fonction de mise en competition de candidats
 	function miseAjrCandidat()
 	{
