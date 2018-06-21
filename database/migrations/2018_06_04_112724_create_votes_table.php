@@ -19,8 +19,7 @@ class CreateVotesTable extends Migration
             $table->unsignedBigInteger('id_anniversaire');
             $table->unsignedInteger('numeroVotant')->length(8);
 
-            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
-            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamps();
             
             #Cle étrangère
             $table->foreign('id_candidat')->references('id')->on('candidats');

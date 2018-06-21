@@ -19,8 +19,7 @@ class CreateParticipesTable extends Migration
             $table->unsignedInteger('annee')->length(4);
             $table->unsignedTinyInteger('gagne')->default(0);
 
-            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
-            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamps();
             
             #Cle étrangère
             $table->foreign('id_candidat')->references('id')->on('candidats');

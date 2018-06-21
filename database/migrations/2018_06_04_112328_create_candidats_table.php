@@ -36,8 +36,7 @@ class CreateCandidatsTable extends Migration
             $table->string('numpiece')->length(100)->nullable();
             $table->boolean('profil_complet')->default(false);
 
-            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
-            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamps();
             #Cle étrangère et colonne unique;
             $table->unique('login');
             $table->unique('codecandidat');
