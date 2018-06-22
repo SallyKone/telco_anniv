@@ -16,7 +16,7 @@ class CreateAmisTable extends Migration
         Schema::create('amis', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nom')->length(255);
-            $table->unsignedInteger('numero')->length(8);
+            $table->string('numero')->length(15);
             $table->unsignedBigInteger('id_candidat');
 
             $table->timestamps();

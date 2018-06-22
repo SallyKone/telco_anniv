@@ -17,7 +17,7 @@ class CreateVotesTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('id_candidat');
             $table->unsignedBigInteger('id_anniversaire');
-            $table->unsignedInteger('numeroVotant')->length(8);
+            $table->string('numeroVotant')->length(15);
 
             $table->timestamps();
             
