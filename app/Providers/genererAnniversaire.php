@@ -14,7 +14,7 @@
 	}
 	catch(Exception $e)
 	{
-		$fichierlog = fopen('../../../storage/logs/fichierlog.log', 'a+');
+		$fichierlog = fopen('../../storage/logs/fichierlog.log', 'a+');
 		
 		if ($fichierlog)
 		{

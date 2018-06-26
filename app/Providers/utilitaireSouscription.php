@@ -1,7 +1,7 @@
 <?php
 	header('content-type: text/html; charset=utf-8');
 
-    define(CANDIDAT_EN_COMPET,30240);
+    define('CANDIDAT_EN_COMPET',30240);
 
 	//Envoi d'un SMS pour attester l'inscrition du candidat
 	function accuseReceptionMTN($destinataire, $message, $espediteur = 459){
@@ -52,7 +52,7 @@
 		}
 		catch(Exception $e)
 		{
-			$fichierlog = fopen('../../../storage/logs/fichierlog.log', 'a+');
+			$fichierlog = fopen('../../storage/logs/fichierlog.log', 'a+');
 			
 			if ($fichierlog)
 			{
@@ -83,7 +83,7 @@
 		}
 		catch(Exception $e)
 		{
-			$fichierlog = fopen('../../../storage/logs/fichierlog.log', 'a+');
+			$fichierlog = fopen('../../storage/logs/fichierlog.log', 'a+');
 			
 			if ($fichierlog)
 			{
@@ -114,7 +114,7 @@
 		}
 		catch(Exception $e)
 		{
-			$fichierlog = fopen('../../../storage/logs/fichierlog.log', 'a+');
+			$fichierlog = fopen('../../storage/logs/fichierlog.log', 'a+');
 			
 			if ($fichierlog)
 			{
@@ -146,7 +146,7 @@
 		}
 		catch(Exception $e)
 		{
-			$fichierlog = fopen('../../../storage/logs/fichierlog.log', 'a+');
+			$fichierlog = fopen('../../storage/logs/fichierlog.log', 'a+');
 			
 			if ($fichierlog)
 			{
@@ -157,7 +157,7 @@
 			return -1;
 		}
 	}
-	function addvote($idcandidat,$idanniversaire,$numerovotant){
+	function addVote($idcandidat,$idanniversaire,$numerovotant){
 		$bdd = laconnection('localhost','root','','telco_anniv');
 		try
 		{
@@ -209,7 +209,7 @@
 		}
 		catch(Exception $e)
 		{
-			$fichierlog = fopen('../../../storage/logs/fichierlog.log', 'a+');
+			$fichierlog = fopen('../../storage/logs/fichierlog.log', 'a+');
 			
 			if ($fichierlog)
 			{
@@ -239,7 +239,7 @@
 		}
 		catch(Exception $e)
 		{
-			$fichierlog = fopen('../../../storage/logs/fichierlog.log', 'a+');
+			$fichierlog = fopen('../../storage/logs/fichierlog.log', 'a+');
 			
 			if ($fichierlog)
 			{
@@ -264,7 +264,7 @@
 		}
 		catch(Exception $e)
 		{
-			$fichierlog = fopen('../../../storage/logs/fichierlog.log', 'a+');
+			$fichierlog = fopen('../../storage/logs/fichierlog.log', 'a+');
 			
 			if ($fichierlog)
 			{
@@ -285,7 +285,7 @@
 		}
 		catch(Exception $e)
 		{
-			$fichierlog = fopen('../../../storage/logs/fichierlog.log', 'a+');
+			$fichierlog = fopen('../../storage/logs/fichierlog.log', 'a+');
 			
 			if ($fichierlog)
 			{

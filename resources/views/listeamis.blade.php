@@ -65,7 +65,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<tr>
 								<td>{{$ami->nom}}</td>
 								<td>{{$ami->numero}}</td>
-								<td><button type="button" id="{{$ami->id}}" class="btn btn-sm btn-danger supprimer">Supprimer</button></td>
+								<td><button type="button" id="{{$ami->id}}" class="btn btn-sm btn-primary modifier">Modifier</button></td>
 
 							</tr>
 							@endforeach

@@ -1,9 +1,13 @@
 <?php
 /* Web Routes */
-//Route de maintenance
+
 use App\Mail\ContactMessageCreated;
-Route::get('/', 'PageController@comptaRebour');
-#Route::any('{teste?}','IndexController@comptaRebour')->where(['teste'=>'/\\S+/']);
+//Route de administration
+//Route Anniversaire
+Route::get('/admins/genereranniv', 'AnnivController@genererAnniv');
+Route::post('/admins/genereranniv', 'AnnivController@genererAnniv');
+
+#Route::any('{teste?}','IndexController@comptaRebour')->where(['teste'=>'/\/\\S+/']);
 
 //Route Amis
 Route::get('/amis', 'AmisController@showAmis');
@@ -11,22 +15,18 @@ Route::get('/ajouteramis', 'AmisController@showAjouterAmis');
 Route::post('/ajouteramis',['as' => 'ajouteramis','uses'=>'AmisController@ajouterAmis']);
 Route::get('/amis', 'AmisController@supprimerAmis');
 Route::post('/amis', 'AmisController@supprimerAmis')->name('amis');
-
 Route::get('/choixamis', 'AmisController@showChoixAmis');
 Route::post('/listeamis', 'AmisController@showListeAmis');
-#Route::post ('/listeamis', 'AmisController@modifierAmis');
-#Route::post ('/listeamis', 'AmisController@supprimerAmis');
-
 Route::get ('/listeamis', 'AmisController@showListeAmis');
-//Route::post ('/listeamis', 'AmisController@modifierAmis');
-Route::post('supprimeramis', 'AmisController@supprimerAmis')->name('supprimeramis');
+#Route::post ('/listeamis', 'AmisController@modifierAmis');
+Route::post('supprimeramis', 'AmisController@supprimerAmis');
 
 //Route Candidats
+Route::get('/admins/ajoutcandidat', 'CandidatsController@ajouterCandidat')->name('ajoutcandidat');
+Route::post('/admins/ajoutcandidat','CandidatsController@ajouterCandidat')->name('ajoutcandidat');
 Route::get('/profil', 'CandidatsController@profil');
 Route::get ('/modifeprofile', 'CandidatsController@showModifProfil');
 Route::post('/modifeprofile',['as' => 'modifeprofile',	'uses' => 'CandidatsController@modifProfil']);
-
-//Route Anniversaire
 
 //Route Connexion
 Route::get ('/connexion', 'ConnexionController@showConnexion');
@@ -42,6 +42,7 @@ Route::get ('/test-email', function() {
 });
 
 //Route Pages pour afficher les standards et les formulaires
+Route::get('/','PageController@showIndex');
 Route::get ('/vuedetest', 'PageController@showVueDeTest');
 Route::post ('/vuedetest', 'PageController@showVueTest');
 Route::get ('/index', 'PageController@showIndex');
@@ -54,5 +55,7 @@ Route::get ('/identifiantoublier','PageController@showIdOublier');
 Route::get ('/icons', 'PageController@showIcons');
 Route::get ('/souscritsms', 'PageController@showSoucritSms');
 
-//Route Classement
+//Route vote & Classement
+Route::get('/admins/ajoutvote', 'CandidatsController@addVote')->name('ajoutvote');
+Route::post('/admins/ajoutvote','CandidatsController@addVote')->name('ajoutvote');
 Route::get ('/classement', 'ClassementController@showClassement');

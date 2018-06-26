@@ -15,8 +15,8 @@ class CreateMessagesTable extends Migration
     {
         Schema::create('messages', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('espediteur');
-            $table->integer('destinataire');
+            $table->string('espediteur')->length(15);
+            $table->string('destinataire')->length(15);
             $table->text('message');
             $table->string('daterecu')->nullable();
             $table->datetime('dateenvoi')->nullable();

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Providers\Utilitaires;
 
 class PageController extends Controller
@@ -16,14 +17,16 @@ class PageController extends Controller
         return view('index');
     }
 
-    public function showVueTest(Utilitaires $advisor)
+    public function showVueTest(Utilitaires $util)
     {
         //session()->start();
-        dd(now());
+        dd($util->getTop10bydate(now()));
     }
     public function showVueDeTest()
     {
-        return view('vuedetest');
+        $candidats = DB::select("CALL SP_CANDIDAT_COMPETITION()");
+        $candidathors = DB::select("CALL SP_CANDIDAT_HORSCOMPET()");
+        return view('vuedetest')->with(['candidats'=>$candidats,'candidathors'=>$candidathors]);
     }
 
     public function description()

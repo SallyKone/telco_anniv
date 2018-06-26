@@ -23,7 +23,7 @@
 	
 	$lesms = explode(',', $_GET['msg']);
 	
-	//Enregitrer le message reçu utf8_encode
+	//Enregitrer le message reçu
 	addMessageRecu($reseau,$lenumero,$_GET['msg'],$tpsrecept);
 
 	if(count($lesms) == 4 && $lesms[0] == 'I')
@@ -71,7 +71,7 @@
         
         if($tableau)
         {
-            addvote($tableau[0],$tableau[1],$lenumero);
+            addVote($tableau[0],$tableau[1],$lenumero);
         } else {
             $fichierlog = fopen('../../../storage/logs/fichierlog.log', 'a+');	
 			if ($fichierlog)

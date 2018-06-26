@@ -8,6 +8,7 @@ use App\Votes;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
+use App\Providers\Utilitaires;
 
 class CandidatsController extends Controller
 {
@@ -36,6 +37,126 @@ class CandidatsController extends Controller
         {
             return view('connexion');
         }
+    }
+    //Fonction d'ajout du candidat
+    function ajouterCandidat(Request $requet,Utilitaires $util)
+    {
+        $candidat = new Candidats();
+        //Les variables
+        $testeur = false; $lelogin = ""; $mdpass = ""; $lenom = ""; $leprenom = "";$datenaissaice = "";
+        $journaiss = 0; $moisnaiss = 0; $messageSucces = "INSCRIPTION VALIDEE!";
+
+        //Definitions des traitements de données
+        $reseau = trim(str_replace(' ', '', $requet->dest));
+        $lenumero = trim(str_replace(' ', '', $requet->source));
+        $tpsrecept = $requet->time;
+
+        $lecodecandidat = 'tempo '.$util->genererchaine(10);
+        
+        $lesms = explode(',', $requet->msg);
+        
+        //Enregitrer le message reçu
+        if(isset($requet->msg))
+        {$util->addMessageRecu($reseau,$lenumero,$requet->msg,$tpsrecept);}
+
+        if(count($lesms) == 4 && $lesms[0] == 'I')
+        {
+            $lelogin = strtolower($lesms[1]).$util->genererlogin(4);
+            $mdpass = $util->genererchaine(6);
+            //$mdpassc = password_hash($mdpass,PASSWORD_DEFAULT);
+            $lenom = $lesms[1];
+            $leprenom = $lesms[2];
+            $datenaissaice = explode('-', $lesms[3]);
+            $journaiss = (int)$datenaissaice[0];
+            $moisnaiss = (int)$datenaissaice[1];
+
+            $testeur = $util->testLoginEtCode($lelogin, $lecodecandidat);
+            if ($testeur != -1) {
+                while ($testeur) {
+                    $lelogin = strtolower($lesms[1]).$util->genererlogin(4);
+                    $lecodecandidat = 'tempo '.$util->genererchaine(10);
+                    $testeur = $util->testLoginEtCode($lelogin,$lecodecandidat);
+                }
+                //Appel de la fontion d'ajout du candidat 
+                $candidat->login = $lelogin;
+                $candidat->motpass = $mdpass;
+                $candidat->codecandidat = $lecodecandidat;
+                $candidat->nom_inscription = $lenom.' '.$leprenom;
+                $candidat->nom = $lenom;
+                $candidat->prenom = $leprenom;
+                $candidat->numero = $lenumero;
+                $candidat->jour_naiss = $journaiss;
+                $candidat->mois_naiss = $moisnaiss;
+                $candidat->photo = 'defaut.jpg';
+                $candidat->created_at = now();
+
+                if($candidat->save())
+                {
+                    $messageSucces .= "\nLogin: ".$lelogin;
+                    $messageSucces .= "\nVia www.telcoanniv.com Ajoutez vos amis";
+                    
+                    if ($reseau = 98164) {
+                        $util->accuseReceptionORANGE($lenumero, $messageSucces, 98164);
+                    }
+                    else{
+                        $util->accuseReceptionMTN($lenumero,$messageSucces,459);
+                    }
+                    $mesg = "INSCRIPTION VALIDEE!"."\nLogin: ".$lelogin."\nMot de passe: xxxxxx"."\nVia www.telcoanniv.com Ajoutez vos amis";
+                    $util->addMessageEnvoye($lenumero,$reseau,$mesg,date("Y-m-d H:i:s"),'accuse');
+                    $util->miseAjrCandidat();
+                    return view('/admins/ajoutcandidat')->with(['statut' => true,'message'=>'Candidat ajouté avec succès '.$requet->msg]);
+
+                }
+                else
+                {
+                    return view('/admins/ajoutcandidat')->with(['statut' => false,'message'=>'Impossible d\'ajouter le candidat'.$requet->msg]);
+                }
+            }
+        }
+        else{
+            $fichierlog = fopen('../storage/logs/fichierlog.log', 'a+');  
+            if ($fichierlog)
+            {
+                fputs($fichierlog,date('d-m-Y H:i:s').' Error Structure du message non conforme '.$requet->msg."\n"); 
+                fclose($fichierlog);
+            }
+            return view('/admins/ajoutcandidat')->with(['statut' => false,'message'=>'Structure du message non conforme '.$requet->msg]);
+        }  
+    }
+
+    function addVote(Request $requet, Utilitaires $util)
+    {
+        $vote = new Votes();
+        $tableau = false;
+        //Definitions des traitements de données
+        $lenumero = trim(str_replace(' ', '', $requet->source));
+        $codecand = trim(str_replace(' ', '', $requet->msg));
+        $tableau = $util->idCandetAnniv($codecand);
+        
+        if($tableau)
+        {
+            //Enregistrer les données
+            $vote->id_candidat = $tableau->candid;
+            $vote->id_anniversaire = $tableau->anniv;
+            $vote->numeroVotant = $lenumero;
+            $vote->created_at = now();
+            
+            if($vote->save())
+            {
+                return view('/admins/ajoutvote')->with(['statut' => true,'message'=>'Vote Accepté ! '.$requet->msg]);
+            }else{
+                return view('/admins/ajoutvote')->with(['statut' => false,'message'=>'Vote Réfusé ! '.$requet->msg]);
+            }
+        }else {
+            $fichierlog = fopen('../storage/logs/fichierlog.log', 'a+');  
+            if ($fichierlog)
+            {
+                fputs($fichierlog,date('d-m-Y H:i:s').' Error ce code de vote n\'existe pas '.$codecand."\n"); 
+                fclose($fichierlog);
+            }
+            return view('/admins/ajoutvote')->with(['statut' => false,'message'=>'Le code de vote est incorrect ou n\'existe pas '.$requet->msg]);
+        }
+
     }
 
     //Liste de tous les candidats
