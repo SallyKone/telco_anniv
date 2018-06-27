@@ -49,7 +49,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="col-md-8 login-form">
 				<div class="row">
 				<div class="col-md-4">
-					<div>
+					<div id="divavatar">
 						<img src="{{URL::asset('/images/img/avatar/'.$candidat->photo)}}" height="175">
 					</div>
 	            </div>
