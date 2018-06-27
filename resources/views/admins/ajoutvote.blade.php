@@ -17,7 +17,17 @@
 
 <body>
 	<pre>{{isset($message) ? $message : ""}}</pre>
-	
+	<form method="post" action="ajoutvote" style="margin: 100px 40%;">
+		{{csrf_field()}}
+        <fieldset style="width: 200px">
+            <legend>Test d'envoi de sms</legend>
+            <table>
+                <tr><td>Téléphone </td><td><input type="text" name="source"></td></tr>
+                    <tr><td>Code candidat </td><td><input type="text" name="msg"></td></tr>
+                <tr><td colspan="2" style="text-align: right;"><input type="submit" value="Envoyer"></td></tr>
+            </table>
+        </fieldset>
+    </form>
 	<script type="text/javascript" src="{{URL::asset('js/jquery-3.3.1.min.js')}}"></script>
 </body>
 
