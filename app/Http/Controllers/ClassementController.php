@@ -14,9 +14,9 @@ class ClassementController extends Controller
 
     public function showClassement(Utilitaires $advisor)
     {
-    	$classement0 = $advisor->getTop10bydate(date('Y-m-d'));
+        $classement0 = $advisor->getTop10bydate(date('Y-m-d'));
     	$classement1 = $advisor->getTop10bydate(date('Y-m-d', strtotime("1 day")));
-    	$classement2= $advisor->getTop10bydate(date('Y-m-d', strtotime("2 day")));
+    	$classement2 = $advisor->getTop10bydate(date('Y-m-d', strtotime("2 day")));
     	$classement3 = $advisor->getTop10bydate(date('Y-m-d', strtotime("3 day")));
     	$classement4 = $advisor->getTop10bydate(date('Y-m-d', strtotime("4 day")));
     	
