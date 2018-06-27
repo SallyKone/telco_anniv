@@ -44,7 +44,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="container">
 			
 			<div class="">
-				<div class="col-sm-4 live-grids-w3ls">
+				<div class="col-sm-4 live-grids-w3ls imgG">
 					
 					<div class="panel panel-primary">
 						
@@ -56,7 +56,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 				</div>
 
-				<div class="col-sm-4 live-grids-w3ls ">
+				<div class="col-sm-4 live-grids-w3ls">
 					
 					<div class="panel panel-primary">
 						
@@ -87,9 +87,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<br/>	
 								<br/>	
 								
-								<div class="submit">
-                                <input type="submit" value="Connecter">
-                            </div>
+								<div class="submit" >
+                                	<input type="submit" value="Connecter" style="margin-left: -5px;" >
+                            	</div>
 								<div class="clear"></div>
 							</form>
 						</div>
@@ -97,7 +97,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					
 				</div>
 
-				<div class="col-sm-4 live-grids-w3ls">
+				<div class="col-sm-4 live-grids-w3ls imgD">
 					
 					<div class="panel panel-primary">
 						
@@ -169,6 +169,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 	<!--// Required Scripts -->
 	<style type="text/css">
+		@media all and (max-device-width: 740px) {
+   
+     .imgG div {display: none;}
+     .imgD div {display: none;}
+	}
+	</style>
+
+	<style type="text/css">
 		.imgDp {
 			height: 340px;
 		    width: 100%; 
@@ -193,14 +201,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 		.chaageform{width:280px; height:30px;  font-size:15px; color:#999; line-height:30px; text-align:left; padding:10px;  margin:0 0 10px 0px; border-radius:10px; box-shadow:inset 0 0 10px #CCC; outline:none; border:none;}
 		.forme{
-			margin: .5em 14px;
+			
 		    padding: 0.5em 1em;
 		    font-size: .9em;
 		    background: transparent;
 		    border: 2px solid #2d2d2dad;
 		    color: #080808;
-		    letter-spacing: 2px;
 		    border-radius: 14px;
+		    width: 100%;
+		    margin-top: 3px;
 		}
 		.submit{
 

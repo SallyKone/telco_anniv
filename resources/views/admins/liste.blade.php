@@ -42,7 +42,16 @@
         </div>
       </div><!-- /.container-fluid -->
     </section>
-
+            @if(session('success'))
+              <div class="alert alert-success">
+                {{session('success')}} 
+              </div>  
+            @endif
+            @if(session('error'))
+              <div class="alert alert-error">
+                  {{session('error')}}
+              </div>
+            @endif
     <!-- Main content -->
     <section class="content">
       <div class="row">
@@ -76,36 +85,66 @@
                   <td>{{$valeur->numero}}</td>
                   <td>{{$valeur->nbramis}}</td>
                   <td>{{($valeur->profil_complet)?'Complet':'Incomplet'}}</td>
-                  <td style="text-align: center;"><a href="{{route('candidat')}}?id={{$valeur->id}}" class="btn btn-sm btn-primary modifier">Modifier</a></td>
+                  <td ><a href="{{route('candidat')}}?id={{$valeur->id}}" class="btn btn-sm btn-primary modifier"><i class="fa fa-edit"></i></a>
+                    <form id="frm_supprimer_valeur_{{$valeur->id}}" action="  {{route('deleteCandidat',$valeur->id)}}" method="POST">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                            <a href="#" class="btn btn-sm btn-primary" onclick="confirmer({{$valeur->id}})">
+                              <i class="fa fa-trash"></i></a>
+                   </form>
+                  </td>
                   @endif
                   @if($nomtable == 'anniversaire')
                   <td>{{$valeur->libelle}}</td>
                   <td style="text-align: right;">{{$valeur->nbrparticipe}}</td>
                   <td>{{($valeur->anniv_cloture)?'Cloturé':'Ouvert'}}</td>
-                  <td style="text-align: center;"><a href="{{route('anniversaire')}}?id={{$valeur->id}}" class="btn btn-sm btn-primary modifier">Modifier</a></td>
+                  <td style="text-align: center;"><a href="{{route('anniversaire')}}?id={{$valeur->id}}"class="btn btn-sm btn-primary modifier"><i class="fa fa-edit"></i></a>
+                   <form id="frm_supprimer_anniv_{{$valeur->id}}" action=" {{route('deleteAnniversaire',$valeur->id)}}" method="POST">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                            <a href="#" class="btn btn-sm btn-primary" onclick="confirmerAnniv({{$valeur->id}})"><i class="fa fa-trash"></i></a>
+                   </form> 
+                  </td>
+                  
                   @endif
                   @if($nomtable == 'amis')
                   <td>{{$valeur->nom}}</td>
                   <td>{{$valeur->numero}}</td>
                   <td>{{$valeur->nomc.' '.$valeur->prenomc.' ['.$valeur->login.']'}}</td>
-                  <td style="text-align: center;"><a href="{{route('ami')}}?id={{$valeur->id}}" class="btn btn-sm btn-primary modifier">Modifier</a></td>
+                  <td style="text-align: center;"><a href="{{route('ami')}}?id={{$valeur->id}}" class="btn btn-sm btn-primary modifier"><i class="fa fa-edit"></i></a>
+                  <form id="frm_supprimer_amis_{{$valeur->id}}" action="{{route('deleteAmi',$valeur->id)}}" method="POST">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                            <a href="#" class="btn btn-sm btn-primary" onclick="confirmerAmis({{$valeur->id}})"><i class="fa fa-trash"></i></a>
+                   </form> 
+                  </td>
+                  
                   @endif
                   @if($nomtable == 'recompense')
                   <td>{{$valeur->libelle}}</td>
                   <td>{{$valeur->description}}</td>
-                  <td style="text-align: center;"><a href="{{route('recompense')}}?id={{$valeur->id}}" class="btn btn-sm btn-primary modifier">Modifier</a></td>
+                  <td style="text-align: center;"><a href="{{route('recompense')}}?id={{$valeur->id}}" class="btn btn-sm btn-primary modifier"><i class="fa fa-edit"></i></a>
+                   <form id="frm_supprimer_recompense_{{$valeur->id}}" action="  {{route('deleteRecompense',$valeur->id)}}" method="POST">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                            <a href="#" class="btn btn-sm btn-primary" onclick="confirmerRecompense({{$valeur->id}})"><i class="fa fa-trash"></i></a>
+                   </form> 
+                  </td>
+
+
+
                   @endif
                 </tr>
                 @endforeach
                 </tbody>
-                <tfoot>
+                <!-- <tfoot>
                 <tr>
                   @foreach($colonnes as $key => $valeur)
                   <th>{{$valeur}}</th>
                   @endforeach
                   <th>Action</th>
                 </tr>
-                </tfoot>
+                </tfoot> -->
               </table>
             </div>
             <!-- /.card-body -->
@@ -203,5 +242,49 @@
     } );
   });
 </script>
+<script type="text/javascript">
+  function confirmer(id)
+  {
+    var r = confirm("Confirmez vous la suppression ?");
+
+    if (r == true)
+    {
+      $('#frm_supprimer_valeur_'+id).submit();
+    }
+  }
+</script>
+ <script type="text/javascript">
+  function confirmerAnniv(id)
+  {
+    var r = confirm("Confirmez vous la suppression ?");
+
+    if (r == true)
+    {
+      $('#frm_supprimer_anniv_'+id).submit();
+    }
+  }
+</script>
+<script type="text/javascript">
+  function confirmerAmis(id)
+  {
+    var r = confirm("Confirmez vous la suppression ?");
+
+    if (r == true)
+    {
+      $('#frm_supprimer_amis_'+id).submit();
+    }
+  }
+</script>
+<script type="text/javascript">
+  function confirmerRecompense(id)
+  {
+    var r = confirm("Confirmez vous la suppression ?");
+
+    if (r == true)
+    {
+      $('#frm_supprimer_recompense_'+id).submit();
+    }
+  }
+</script> 
 </body>
 </html>

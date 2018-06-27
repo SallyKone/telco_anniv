@@ -13,9 +13,15 @@ class PageController extends Controller
     {
 
     }
+
+    public function retourne_test(Utilitaires $util)
+    {
+        return $util->getTop10bydate();
+    }
+
     public function showIndex(Utilitaires $util)
     {
-        $listecandidats = $util->listeCandidatCompet();
+        $listecandidats = $util->getTop10bydate(date('Y-m-d'));
         $classement = $util->getTop10bydate(date('Y-m-d'));
         $anniversaire = DB::table('anniversaires')->leftjoin('recompenses','recompenses.id','=','anniversaires.id_recompense')->select('anniversaires.*',DB::raw('recompenses.photo as photo'))->where('anniversaires.date_anniv','=',date('Y/m/d'))->get();
         $anniversaire = isset($anniversaire[0]) ? $anniversaire[0] : new Anniversaires();
@@ -80,10 +86,9 @@ class PageController extends Controller
             return view('connexion');
         }
     }
+
     
     public function comptaRebour(){
-    	
-		$tpsrestant=mktime(0, 0, 0, 6, 1, 2018)-time();
-    	return ($tpsrestant <= 0) ? view('index') : view('compterebour',['letemps'=>$tpsrestant]);
+    	return view('videopub');
     }
 }

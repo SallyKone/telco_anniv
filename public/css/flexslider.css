@@ -131,11 +131,11 @@ html[xmlns] .slides {
 
 .flex-direction-nav .flex-next {
 	background: red url(../images/left.png) no-repeat 7px 11px;
-	right: 53%;
+	right: 43%;
 }
 
 .flex-direction-nav .flex-prev {
-	left: 47%;
+	left: 57%;
 }
 
 

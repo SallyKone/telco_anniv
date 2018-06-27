@@ -37,7 +37,66 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <body>
 	<!--Header-->
-	@include('header')
+	<div class="top">
+                <div class="container"> 
+                <div class="col-md-9 top-left">
+                    <ul>
+                        <li><i class="fa fa-map-marker" aria-hidden="true"></i>Riviera Palmeraie,Rond point ADO phcie St Moise.</li>
+                        <li><i class="fa fa-phone" aria-hidden="true"></i> +(225) 22 46 72 66</li>
+                        <li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:info@example.com">info@telco.com</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 top-middle">
+                    <ul>
+                        <li><a href="https://web.facebook.com/monincroyableanniv/"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <!--top-bar-w3layouts-->
+        <div class="top-bar-w3layouts" style="margin-top: -15px;margin-bottom: -50px;">
+            <div class="container">
+                <nav class="navbar navbar-default">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a href="index"><img  style="margin-top: 10px" src="images/telco.png"></a>
+                    </div>
+                    <!-- navbar-header -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <a id="lastli" href="{{session()->has('idcandidat') ? 'deconnexion':'connexion' }}" class="btn btn-primary btn-md" role="button" title="Lien">{{session()->has('idcandidat') ? 'Déconnexion':'Connexion' }}</a>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a style="font-family: Roboto Slab;" href="index" class="active">Accueil</a></li>
+                            <li><a style="font-family: Roboto Slab;" href="{{session()->has('idcandidat') ? 'profil':'connexion' }}" class="active">Profil</a></li>
+                            <li><a style="font-family: Roboto Slab;" href="description" class="active">Description</a></li>
+                            <li><a style="font-family: Roboto Slab;" href="contact" class="active">Contact</a></li> 
+                            <li style="font-family: Roboto Slab;" id="lastli1"><a href="{{session()->has('idcandidat') ? 'deconnexion':'connexion' }}" class="btn btn-primary btn-md" role="button" title="Lien">{{session()->has('idcandidat') ? 'Déconnexion':'Connexion' }}</a></li> 
+                        </ul>
+                        
+                    </div>
+                    <div class="search-bar-agileits">
+                        <div class="cd-main-header" id="lastli">
+                            <!-- cd-header-buttons -->
+                        </div>
+                        <!-- <div id="cd-search" class="cd-search">
+                            <form action="#" method="post">
+                                <input name="Search" type="search" placeholder="Click enter after typing...">
+                            </form>
+                        </div> -->
+                    </div>
+                    <div class="clearfix"> </div>
+                </nav>
+            </div>
+
+        </div>
 	
 	<!-- team -->
 	
@@ -54,14 +113,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     @endif
                     <form action="{{route('modifeprofile')}} " method="post" enctype="multipart/form-data">
                          {{ csrf_field() }}             
-    				    <div class="col-md-4">
+    				    <div class="col-md-4 imgPhoto">
                             <div id="divavatar">
                                 <img id="blah" src="{{URL::asset('/images/img/avatar/'.$candidat->photo)}}" alt="Votre image">
                             </div>
                             <br><br>
                             <input type="file" id="imgInp"  name="photo">
                         </div>
-                        <div class="col-md-8">
+                        <div class="col-md-8 saisiForm">
                         
                             <div class="row">
                                 <label class="col-md-4"><strong>Nom: </strong></label>
@@ -97,7 +156,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     <option {{(int)$candidat['mois_naiss'] == 11 ? "selected":""}} value="11">Novembre</option>
                                     <option {{(int)$candidat['mois_naiss'] == 12 ? "selected":""}} value="12">Decembre</option>
                                 </select>
-                                <select class="col-md-3" name="annee" id="year" class="inqdropp" required>
+                                <select class="col-md-3" name="annee" id="year" class="inqdropp" required >
                                     <option value="0">Annee</option>
                                      @for($i=0;$i<100;$i++)
                                         <option value="{{1950+$i}}">{{1950+$i}}</option>
@@ -208,6 +267,30 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!--// Bootstrap Js -->
 
 	<!--// Required Scripts -->
+    <style type="text/css">
+        @media all and (max-device-width: 740px) 
+        {
+            .dash{
+                display: inline-block;
+                margin-left: 59px;
+
+             }
+             .login-form{
+                margin-left: 1px;
+             }
+             .imgPhoto  {
+                width:auto;
+                float: left;
+
+                        }
+             .saisiForm {
+                width: auto;
+                float: left;
+             }
+             
+        }
+    </style>
+
 	<style type="text/css">
 		 .imgDp {
 	height: 340px;
@@ -242,7 +325,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 .dash{width:220px; height:40px;  text-align:center !important; }
 .dash li a{font-size:20px; color:#000; padding:10px 0px; text-decoration:none; line-height:40px;}
-.dash ul{margin:0px; padding:0px;}
+.dash ul{margin-top:43px; padding:0px;}
 .dash ul li{list-style:none; display:block; margin:0 0 5px 0px;  background:#219b2f; border-radius:5px;}
 .dash ul li a{font-size:20px; color:#000; padding:10px 0px; text-decoration:none; line-height:40px;}
 
@@ -258,7 +341,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     float: left;
 }
 .myprofileform{width:220px; height:17px;  font-size:15px; color:#999; line-height:30px; text-align:left; padding:10px;  margin:0 0 15px 0px; border-radius:10px; box-shadow:inset 0 0 10px #CCC; outline:none; border:none;}
-
+.navbar-default .navbar-nav>li>a:focus,
+        .navbar-default .navbar-nav>li>a:hover {
+        color: white;
+        background-color: red;
+}
 	</style>
 </body>
 

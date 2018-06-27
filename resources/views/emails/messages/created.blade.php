@@ -5,9 +5,6 @@
 {{$email}} <br>
 {{$telephone}} <br>
 
-
-
-
 @component('mail::panel')
 {{$msg}}
 @endcomponent

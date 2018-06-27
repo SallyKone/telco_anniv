@@ -6,7 +6,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 -->
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
 	<title>Mon incroyable anniversaire | :: telco</title>
 	<!-- Meta Tags -->
@@ -41,15 +40,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		.pannel-body img {padding-right: 30px;}
 		.img1 {padding-right: 15px;}
 		.img2 {padding-right: 15px;	margin-left: 80px;}
-		.panel-body h5 { font-size:17px; letter-spacing: 0.5px; color: #0c0c0c;
+		.panel-body h5 { font-size:17px; letter-spacing: 0.5px; color:#59545433;
 		    text-transform: uppercase; font-weight:700; text-align: center;}
-		.panel-header {background-color: #1e3953; color:white; font-size: 17px;font-family: Arial, Helvetica, sans-serif; font-style: bold}
+		.panel-header {background-color:orange; color:#080707; font-size: 17px;font-family: New Century Schoolbook, TeX Gyre Schola, serif; font-weight: bold;}
 		.candilist{
 			width: 185px;
 			display: inline-block;
 			position: relative;
 			border: 1px solid black;
-			padding: 1% 2%;
+			padding: 1% 3%;
+			margin-left: 55px;
 		} 
 		.candilist-img{
 			width: 100%;
@@ -60,7 +60,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			position: relative;
 		}
 		.lesdivlot{
-			height: 400px;
+			height: 420px;
 			position: relative;
 			overflow: hidden;
 		}
@@ -89,7 +89,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 }
 	</style>
 </head>
-
 <body class="light-theme animation-theme snow" id="canvasAnimation" width="1366" height="423">
 	<!--Header-->
 	@include('header')
@@ -97,10 +96,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="clearfix"> </div>
 		<!-- //Modal1 -->
 		<!--//Slider-->
-	</div>
+	
 	<!--//Header-->
-     <!--//Candidat-->
-      
+     <!--//Candidat-->    
        <div class="container">
        	<div id="candidat">
        	 <div class="row">
@@ -109,17 +107,44 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	       	 		<div class="panel-header"><center>LES CANDIDATS EN COMPETITION</center>
 	       	 		</div>
        	 			<div class="panel-body">
-	       	 			<marquee>
+
+	       	 			<!-- <marquee onmouseout="this.start();" onmouseover="this.stop();" loop="infinite"  direction="left">
 	       	 				@foreach($listecandidats as $candidat)
 	       	 				<div class="candilist">
 	       	 					<div class="candilist-img">
 	       	 						<img class="imag" src="{{URL::asset('/images/img/avatar/'.$candidat->photo)}}">
 	       	 					</div>
+	       	 					@if(strlen($candidat->nom.' '.$candidat->prenom)>19)
+	       	 					<p title="{{$candidat->nom.' '.$candidat->prenom}}">{{substr($candidat->nom.' '.$candidat->prenom,0,19)."..."}}</p>
+	       	 					@else
 	       	 					<p>{{$candidat->nom.' '.$candidat->prenom}}</p>
-								<p>Code de vote: {{$candidat->codecandidat}}</p>
+	       	 					@endif
+								<p>Code de vote: </p>
+								<p style="color: red">{{$candidat->codecandidat}}</p>
+								<p></p>
+
 	       	 				</div>
        	 					@endforeach
-	                    </marquee>
+	                    </marquee> -->
+	                    <marquee onmouseout="this.start();" onmouseover="this.stop();" loop="infinite"  direction="left">
+									@foreach($classement as $classemt)
+										<div class="candilist" style="margin-bottom: 10px;">
+											<div class="candilist-img" >
+												<img class="imag" src="{{URL::asset('/images/img/avatar/'.$classemt->photo)}}">
+											</div>
+											@if(strlen($classemt->nom.' '.$classemt->prenom)>19)
+											<p title="{{$classemt->nom.' '.$classemt->prenom}}">{{substr($classemt->nom.' '.$classemt->prenom,0,19)."..."}}</p>
+	       	 								@else	
+												<p>{{$classemt->nom.' '.$classemt->prenom}}</p>
+											@endif
+												<p>Code de vote: </p>
+												<p style="color: red">{{$classemt->codecandidat}}</p>
+												<p style="color: orange">{{$classemt->nbre_vote}} votes</p>
+											
+										</div>
+										@endforeach
+						</marquee>
+	                    
        	 			</div>
 	       	 	</div>
        	 	</div>
@@ -129,26 +154,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
       <!--//Candidat-->
 	<!-- services -->
 	<div class="w3-agile-services">
-		<div class="container">
+		<div class="container"  style="margin-top: -50px;">
 			<h3 class="title-txt"><span>S</span>ervices</h3>
 		<div class="agileits-services">
-				<div class="services-right-grids">
-					
-					
-				<div class="col-sm-4  col-sm-offset-2 services-right-grid">
+				<div class="services-right-grids">										
+					<div class="col-sm-4  col-sm-offset-2 services-right-grid">
 						<div class="se-top">
 							<div class="services-icon">
 								<a href="choixamis"><img src="images/midicon2.png"></a>
 							
 							</div>
 							<div class="services-icon-info">
-								</a><h5>AJOUT D'AMI(E)S</h5>
+								<h5>AJOUT D'AMI(E)S</h5>
 								<p>Ajouter vos ami(e)s gratuitement ici et augmenter vos chances d'être le vainqueur.</p>
 							</div>
 						</div>
 					</div>
-
-
 					
 					<div class="col-sm-4 services-right-grid">
 						<div class="se-top">
@@ -177,7 +198,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<source src="videos/video1.mp4" type="video/mp4">
 
 			</video> -->  
-			<div class="container">
+			<div class="container"  style="margin-top: -41px">
 				<h3 class="title-txt two"><span>A</span>ctualités</h3>
 				<div class="row">
 				<div class="col-md-4 live-grids-w3ls">
@@ -187,7 +208,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="panel-body">
 							<div class="live-info">
 							
-							<img src="images/gagnant12.jpeg">
+							<img src="images/vainqueur1.JPG">
 												
 							</div>
 							<h5>KOUAKOU Junior</h5>
@@ -200,9 +221,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<center>
 					<div class="panel panel-primary lesdivlot">
 						<div class="panel-header"><center>TOP 10 EN TETE</center></div>
-						<div id="top10index" class="panel-body" style="height: 90%">
+						<div id="top10index" class="panel-body" style="height: 94%">
 							<div class="live-info">
-								<!-- <marquee style="" direction="up" height="213px"> -->
+								<marquee direction="up" height="400px" onmouseout="this.start();" onmouseover="this.stop();" loop="infinite">
 									@foreach($classement as $classemt)
 										<div class="candilist" style="margin-bottom: 10px;">
 											<div class="candilist-img" >
@@ -211,17 +232,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											<div >	
 												<p>{{$classemt->nom.' '.$classemt->prenom}}</p>
 												<p>Code: {{$classemt->codecandidat}}</p>
-												<p style="color: red">{{$classemt->voix}} voix</p>
+												<p style="color: red">{{$classemt->nbre_vote}} votes</p>
 											</div>
 										</div>
-									@endforeach
-	                            <!-- </marquee> -->
-
+										@endforeach
+								</marquee> 
+								<!-- 
 	                            <div class="candilist" style="margin-bottom: 10px;">
 									<div class="candilist-img" >
 										<img class="imag" src="/images/img/avatar/defaut.png">
 									</div>
-									<div >	
+									<div>	
 										<p>Marc Durant</p>
 										<p>Code: 23456</p>
 										<p style="color: red">8 voix</p>
@@ -236,18 +257,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										<p>Code: 23456</p>
 										<p style="color: red">8 voix</p>
 									</div>
-								</div>
+								</div> -->
 							</div>
 						</div>
 					</div>
 					</center>
 				</div>
-
 				<div class="col-md-4 live-grids-w3ls">
 					<center>
 					<div class="panel panel-primary lesdivlot">
 						<div class="panel-header"><center>LOT EN JEU AUJOURD'HUI</center></div>
-						<div class="panel-body">
+						<div class="panel-body" style="height: 94%;">
 							<div class="live-info">
 								<img src="images/cadeaux/{{isset($anniversaire->photo)?$anniversaire->photo : 'defaut.jpg'}}">				
 							</div>
@@ -262,13 +282,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 		<div class="clearfix"> </div>
 		</div>
-	</div>
 
 	
 	<!--//about-->
 <!-- Testimonials -->
 	<div class="testimonials">
-		<div class="container">
+		<div class="container"  style="margin-top: -59px">
 			<h3 class="title-txt"><span>T</span>émoignages</h3>
 			<div class="col-md-6 testimonials-main">
 				<section class="slider">
@@ -276,11 +295,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<ul class="slides">
 							<li>
 								<div class="inner-testimonials-w3ls">
-									<img src="images/1.jpg" alt=" " style="height: 60%;" class="img-responsive" />
+									<img src="images/MELTICIA.JPG" alt=" " style="height: 60%;" class="img-responsive" />
 									<div class="testimonial-info-wthree">
-										<h5>GISREY</h5>
+										<h5>MELTICIA</h5>
 										<br>
-										<p class="para-w3ls">Un grand merci à toute l’équipe de mon incroyable anniversaire, pour cette belle fête organisée en mon honneur, en présence de tous mes amis, ma familles et pour ce merveilleux cadeau. Alors  faite comme moi et devenez l’heureux gagnant du jour !!!. </p>
+										<p class="para-w3ls">J’ai toujours voulu rendre le jour de mon anniversaire inoubliable! Grand merci à l’équipe de MON INCROYABLE ANNIVERSAIRE  d’avoir  organisé une émission de télé-réalité en  l’honneur  de mon anniversaire ! Non seulement  j’ai obtenu un superbe lot et en plus de tout cela je suis devenu une star de la télé-réalité ! Je suis dans la béatitude grâce à ce concours. </p>
 									</div>
 								</div>
 							</li>
@@ -296,11 +315,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</li>
 							<li>
 								<div class="inner-testimonials-w3ls">
-									<img src="images/3.jpeg" alt=" " class="img-responsive" />
+									<img src="images/candidate2.jpeg" alt=" " class="img-responsive" />
 									<div class="testimonial-info-wthree">
-										<h5>NEYTIRIE</h5>
+										<h5>Sarah Audrey</h5>
 										<br>
-										<p class="para-w3ls">Un grand merci à toute l’équipe de mon incroyable anniversaire, pour cette belle fête organisé en mon honneur, en présence de tous mes amis, ma familles et pour ce merveilleux cadeau. Alors  faite comme moi et devenez l’heureux gagnant du jour !!!. </p>
+										<p class="para-w3ls">Merci à toute l’équipe de MON INCROYABLE ANNIVERSAIRE! je n’arrive toujours pas à croire que j’ai eu le privilège de célébrer la fête de mon anniversaire dans l’endroit de mes rêves ! C’est vraiment incroyable mais vrai. </p>
 									</div>
 								</div>
 							</li>

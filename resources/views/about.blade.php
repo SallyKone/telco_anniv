@@ -8,7 +8,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <html lang="fr">
 
 <head>
-	<title>Bettering an Education Category Bootstrap Responsive Website Template | About :: w3layouts</title>
+	<title>Mon incroyable anniversaire| telco</title>
 	<!-- Meta Tags -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />

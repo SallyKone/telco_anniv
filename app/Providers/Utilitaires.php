@@ -17,6 +17,7 @@ class Utilitaires
     }
     public function dateFr_En($chaine)
     {
+
         $tab = explode(' ', $chaine);
         $ladate = explode('/', $tab[0]);
         $letps = null;
@@ -73,9 +74,55 @@ class Utilitaires
         }
     }
     //Liste des 10er candidats d'une date d'anniversaire 
-    public function getTop10bydate($ladate)
+    public function getTop10bydate($date)
     {
-    	return DB::select(DB::raw('CALL GET_TOP10_BY_DATE(?)'),array($ladate));
+
+        $candidats = DB::select('select id_candidat, photo, nom, prenom, codecandidat, count(id_candidat) as nbre_vote 
+            FROM votes, candidats, anniversaires 
+            WHERE votes.id_candidat = candidats.id 
+            and anniversaires.date_anniv = ?
+            and votes.id_anniversaire = anniversaires.id
+            and DATE_FORMAT(votes.created_at, "%Y-%m-%d") BETWEEN ADDDATE(DATE_FORMAT(?, "%Y-%m-%d"), INTERVAL -5 DAY) AND DATE_FORMAT(?, "%Y-%m-%d") 
+            group BY id_candidat
+            order by nbre_vote DESC
+            LIMIT 10', [$date,$date,$date]);
+
+            return $candidats;
+            //dd($nbre_vote) ;
+
+    }
+    //classement des candidats par periode
+    public function rangCandi($lecodecandidat){
+            
+       $candidats = DB::select('select id_candidat, photo, nom, prenom, codecandidat, count(id_candidat) as nbre_vote 
+            FROM votes, candidats, anniversaires 
+            WHERE votes.id_candidat = candidats.id 
+            and anniversaires.date_anniv =DATE_FORMAT(NOW(), "%Y-%m-%d")
+            and votes.id_anniversaire = anniversaires.id
+            and DATE_FORMAT(votes.created_at, "%Y-%m-%d") BETWEEN ADDDATE(DATE_FORMAT(NOW(), "%Y-%m-%d"), INTERVAL -5 DAY) AND DATE_FORMAT(NOW(), "%Y-%m-%d") 
+            group BY id_candidat
+            order by nbre_vote DESC');  
+
+       for($i=0;$i<count($candidats);$i++)
+       {
+
+            if($candidats[$i]->codecandidat == $lecodecandidat)
+            {
+                switch ($i+1) {
+                    case 1:
+                            return ($i+1)."ier avec" .$candidats[$i]->nbre_vote." votes";
+                        break;
+                    
+                    default:
+                            return ($i+1)."ieme avec" .$candidats[$i]->nbre_vote." votes";
+                        break;
+                }
+            }
+            
+       }
+
+        return "Vous n'êtes pas en competition!!";
+
     }
     //Liste des candidats par anniversaire 
     public function getParticipantByAnniv($idanniv)
@@ -86,13 +133,13 @@ class Utilitaires
     public function classement($ladate)
     {
         return DB::select(DB::raw('CALL SP_CLASSEMENT(?)'),array($ladate));
-    }
-    // liste des candidats en competition
-    public function listeCandidatCompet ()
-    {
-        return DB::table('candidats')->select(DB::raw('nom, prenom, codecandidat, photo'))->where("codecandidat","NOT LIKE",'tempo%')->get();
 
     }
+    // liste des candidats en competition
+    /*public function listeCandidatCompet ()
+    {
+        return DB::table('candidats')->join('votes','candidats.id','=','votes.id_candidat')->select(DB::raw('nom, prenom, codecandidat, photo'))->where("mois_naiss","=",date('m'))->where("jour_naiss","=",date('d'))->get();
+    }*/
 
     public function genererAnniversaire()
     {
@@ -101,7 +148,7 @@ class Utilitaires
     //Envoi d'un SMS pour attester l'inscrition du candidat
     public function accuseReceptionMTN($destinataire, $message, $espediteur = 459){
         $message = urlencode($message); 
-        $url = "http://localhost:11013/cgi-bin/sendsms?username=telcoSender&password=telco12345&smsc=smsc_mtn_ci&from= $espediteur&to=$destinataire&text=$message";
+        $url = "http://localhost:12013/cgi-bin/sendsms?username=telcoSender&password=telco12345&smsc=smsc_mtn_ci&from=$espediteur&to=$destinataire&text=$message";
         file_get_contents($url);
     }
     public function accuseReceptionORANGE($destinataire, $message, $espediteur = 98164){
@@ -120,9 +167,17 @@ class Utilitaires
         }
         return $chaine;
     }
+    public function generercodecandi($moisnaiss){
+        $codecandi = array('jan','fev','mar','avr','mai','jui','juil','aou','sep','oct','nov','dec');
+        $nbre = count(Candidats::where('mois_naiss','=',$moisnaiss)->get())+1;
+        $lecodecandidat = $codecandi[$moisnaiss-1].$nbre;
+        return $lecodecandidat;
+
+    }
     public function genererchaine($car) {
         $chaine = "";
-        $tchaine = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijqklmnopqrstuvwxyz0123456789";
+        //$tchaine = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijqklmnopqrstuvwxyz0123456789";
+        $tchaine = "0123456789";
         srand((double)microtime()*1000000);
         for($i=0; $i< $car; $i++) {
             $chaine .= $tchaine[rand()%strlen($tchaine)];

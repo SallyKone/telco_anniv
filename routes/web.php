@@ -14,27 +14,33 @@ Route::group(['prefix'=>'admins','middleware'=>'utilisateur'],function(){
 	Route::post('/candidat','AdminsController@modifierCandidat')->name('candidat');
 	Route::get('/listcandidat','AdminsController@getAllCandidats')->name('listcandidat');
 	Route::post('/listcandidat','AdminsController@getAllCandidats')->name('listcandidat');
+	Route::delete('/deleteCandidat/{id}','AdminsController@deleteCandidats')->name('deleteCandidat');
+	
+	
 	//Anniversaires
 	Route::get('/anniversaire','AdminsController@showAnniversaire')->name('anniversaire');
 	Route::post('/anniversaire','AnnivController@modifierAnniv')->name('anniversaire');
 	Route::get('/listanniv','AdminsController@getAllAnniversaires')->name('listanniv');
 	Route::post('/listanniv','AdminsController@getAllAnniversaires')->name('listanniv');
+	Route::delete('/deleteAnniversaire/{id}','AdminsController@deleteAnniv')->name('deleteAnniversaire');
 	//Recompenses
 	Route::get('/recompense','AdminsController@showRecompense')->name('recompense');
 	Route::post('/recompense','AnnivController@ajoutmodifRecompense')->name('recompense');
 	Route::get('/listrecompense','AdminsController@getAllRecompenses')->name('listrecompense');
 	Route::post('/listrecompense','AdminsController@getAllRecompenses')->name('listrecompense');
+	Route::delete('/deleteRecompense/{id}','AdminsController@deleteRecompense')->name('deleteRecompense');
 	//Amis
 	Route::get('/ami','AdminsController@showAmi')->name('ami');
 	Route::post('/ami','AmisController@ajouterModifierAmis')->name('ami');
 	Route::get('/listami','AdminsController@getAllAmis')->name('listami');
 	Route::post('/listami','AdminsController@getAllAmis')->name('listami');
+	Route::delete('/deleteAmi/{id}','AdminsController@deleteAmis')->name('deleteAmi');
 
 });
 
 Route::get('/admins/login','AdminsController@showLogin');
 Route::post('/admins/login','AdminsController@connexion');
-Route::get('envoyermessage','CandidatsController@envoyermessage')->name('envoyermessage');
+//Route::get('envoyermessage','CandidatsController@envoyermessage')->name('envoyermessage');
 
 //Route Anniversaire
 Route::get('/admins/genereranniv', 'AnnivController@genererAnniv')->name('genereranniv');
@@ -52,7 +58,9 @@ Route::post('/listeamis', 'AmisController@showListeAmis');
 Route::get ('/listeamis', 'AmisController@showListeAmis');
 
 //Route Candidats
-Route::get('/admins/ajoutcandidat', 'CandidatsController@ajouterCandidat')->name('ajoutcandidat');
+//Route::get('/testCode', 'CandidatsController@testCode')->name('testCode');
+
+Route::get('/admins/ajoutcandidat', 'CandidatsController@traitementmessage')->name('ajoutcandidat');
 Route::post('/admins/ajoutcandidat','CandidatsController@ajouterCandidat')->name('ajoutcandidat');
 Route::get('/profil', 'CandidatsController@profil');
 Route::get ('/modifeprofile', 'CandidatsController@showModifProfil');
@@ -74,6 +82,7 @@ Route::get ('/test-email', function() {
 });
 
 //Route Pages pour afficher les standards et les formulaires
+//Route::get('/', 'PageController@comptaRebour');
 Route::get('/','PageController@showIndex');
 Route::post('/','PageController@showIndex');
 Route::get ('/vuedetest', 'PageController@showVueDeTest');
@@ -94,5 +103,9 @@ Route::post ('/indexajax', 'PageController@ajaxIndex');//Requêtes ajax
 Route::get('/admins/ajoutvote', 'CandidatsController@addVote')->name('ajoutvote');
 Route::post('/admins/ajoutvote','CandidatsController@addVote')->name('ajoutvote');
 Route::get('/classement', 'ClassementController@showClassement');
-Route::get('/monrang', 'ClassementController@monRang');
-Route::post('/monrang', 'ClassementController@monRang');
+//Route::get('/monrang', 'ClassementController@monRang');
+Route::get('/monrang/{lecodecandidat}', 'ClassementController@monRang');
+
+//Route::get('/testRang', 'ClassementController@testerRang')->name('testRang');
+
+

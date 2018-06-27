@@ -111,6 +111,7 @@ class AdminsController extends Controller
     //Liste de tous les candidats
     public function getAllCandidats()
     {
+        
         $nomtable = 'candidat';
         $titreliste = 'Liste de tous les candidats';
         $lists = DB::table('candidats')->leftjoin('amis','candidats.id','=','amis.id_candidat')->groupBy('candidats.id')->select(DB::raw('COUNT(amis.id_candidat) as nbramis'),'candidats.id', 'candidats.login' , 'candidats.codecandidat', 'candidats.nom', 'candidats.prenom', 'candidats.numero', 'candidats.photo', 'candidats.jour_naiss', 'candidats.mois_naiss', 'annee_naiss', 'candidats.genre', 'candidats.profil_complet')->get();
@@ -148,6 +149,91 @@ class AdminsController extends Controller
 
         return view('admins/liste')->with(['nomtable'=>$nomtable,'titreliste'=>$titreliste,'lists'=>$lists,'colonnes'=>$colonnes]);
     }
+    // Supprimer un candidat
+    public function deleteCandidats ($id)
+    {
+       
+        try {
+            
+        if(Candidats::destroy($id))
+        {
+             return redirect()->back()->with('success','Candidat supprimé avec succès');
+        }
+        else
+        {
+            return redirect()->back()->with('error','Echec de la suppréssion, veuillez réessayer svp'.$candidat->id);
+        }
+
+        }
+        catch (Exception $e){
+            dd($e);
+        }
+    }
+
+    //Supprimer un amis
+    public function deleteAmis ($id)
+    {
+       
+        try {
+            
+        if(Amis::destroy($id))
+        {
+             return redirect()->back()->with('success','Amis supprimé avec succès');
+        }
+        else
+        {
+            return redirect()->back()->with('error','Echec de la suppréssion, veuillez réessayer svp'.$candidat->id);
+        }
+
+        }
+        catch (Exception $e){
+            dd($e);
+        }
+    }
+
+    //Supprimer un anniverssaire
+    public function deleteAnniv ($id)
+    {
+       
+        try {
+            
+        if(Anniversaires::destroy($id))
+        {
+             return redirect()->back()->with('success','Anniversaire supprimé avec succès');
+        }
+        else
+        {
+            return redirect()->back()->with('error','Echec de la suppréssion, veuillez réessayer svp'.$candidat->id);
+        }
+
+        }
+        catch (Exception $e){
+            dd($e);
+        }
+    }
+
+    //Supprimer des recompenses
+    public function deleteRecompense ($id)
+    {
+       
+        try {
+            
+        if(Recompenses::destroy($id))
+        {
+             return redirect()->back()->with('success','Recompense supprimé avec succès');
+        }
+        else
+        {
+            return redirect()->back()->with('error','Echec de la suppréssion, veuillez réessayer svp'.$candidat->id);
+        }
+
+        }
+        catch (Exception $e){
+            dd($e);
+        }
+    }
+
+
     public function modifierCandidat(Request $request, Utilitaires $util)
     {
         $messg=""; $avatar="";

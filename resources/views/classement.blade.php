@@ -2,7 +2,7 @@
 <html lang="zxx">
 
 <head>
-	<title>Bettering an Education Category Bootstrap Responsive Website Template | Contact :: w3layouts</title>
+	<title>Mon incroyable anniversaire| telco</title>
 	<!-- Meta Tags -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -55,151 +55,149 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	
 	<br/><br/>
 	<div class="votretop">	
-		<form action="monrang" method="post">
+		<form method="POST" id="montableau">
 			{{csrf_field()}}
-			<div class="votretag"><strong>Saisir Votre</strong></div>
+			<div class="votretag"><strong style="color: white">Saisissez Votre</strong></div>
 			<div class="votredrop">
-			    <input type="text" name="lecodecandidat" value=""  placeholder="Code de vote"  style="background:none; border:none;" required> 
+			    <input type="text" name="lecodecandidat" id="lecodecandidat" placeholder="Code de vote"  style="background:none; border:none;" required> 
 			</div>
-			<input type="submit" id="submit" value="Envoyer" class="contactsubbbtn" style="margin:0; float:left; font-size:12px; width:70px;" />
+			<input type="button" value="Verifier" reset onclick="message()" style="margin: auto; float:left; font-size:18px; width:90px;" />
+			<!-- <input type="reset" value="annuler" name=""/ style="margin-left: 112px;width: 138px;margin-top: 17px;"> -->
 			<div class="clear"></div>
 		</form>
 
-		<div class="events-classe">
-			<div class="container">			
+		<div class="events-classe dash">
+			<div class="container ">			
 				<div class="">
-					<div class="colum-classement ">
-						<center>
+					<div class="colum-classement dash ">	
 						<div class="panel panel-primary">
-							<div class="panel-heading"><center>VOTRE CLASSEMENT</center></div>
+							<div class="panel-heading"><center >VOTRE CLASSEMENT</center></div>
 							<div class="panel-body">
-								<div class="row">
-									{{isset($message)? $message : ""}}
-									@if(isset($candidat))
-									<div class="col-sm-12">
-										<img class="imag" src="{{URL::asset('/images/img/avatar/'.$candidat->photo)}}">
-									</div>
-									<div class="col-sm-12">	
-										<p>{{$candidat->nom.' '.$candidat->prenom}}</p>
-										<p>Code: {{$candidat->codecandidat}}</p>
-										<p>{{$candidat->voix}}er avec {{$candidat->voix}} voix</p>
-									</div>
-									@endif			
+								<div class="row" id="resultat" style="text-align: center;">
+											
 								</div>
-								
 							</div>
-						</div>
-						</center>				
+						</div>					
 					</div>		
 				</div>	
 				<div class="clearfix"> </div>
 			</div>
 		</div>
-	</div><br><br><br><br>
+	</div><br/><br/><br/><br>
 
 	<div class="events-sectione">
 		<div class="row">
-			<div class="colum-classement">
+			<div class="colum-classement tableau">
 				<div class="panel panel-primary">
 					<div class="panel-heading"><center>TOP 10 D'AUJOURD'HUI</center></div>
 					<div class="panel-body " style="height: 390px; overflow: hidden;">
-						@foreach($classement0 as $classement)
-						<div class="row" style="margin-bottom: 10px;">
-							<div class="col-sm-4">
-								<img class="imag" src="{{URL::asset('/images/img/avatar/'.$classement->photo)}}">
-							</div>
-							<div class="col-sm-8">	
-								<p>{{$classement->nom.' '.$classement->prenom}}</p>
-								<p>Code: {{$classement->codecandidat}}</p>
-								<p style="color: red">{{$classement->voix}} voix</p>
-							</div>
-						</div>
-						@endforeach
+						<marquee direction="up" height="400px" onmouseout="this.start();" onmouseover="this.stop();" loop="infinite">
+								@foreach($classement0 as $classement)
+								<div class="row" style="margin-bottom: 10px;">
+									<div class="col-sm-4">
+										<img class="imag" src="{{URL::asset('/images/img/avatar/'.$classement->photo)}}">
+									</div>
+									<div class="col-sm-8">	
+										<p>{{$classement->nom.' '.$classement->prenom}}</p>
+										<p>Code: {{$classement->codecandidat}}</p>
+										<p style="color: red">{{$classement->nbre_vote}} voix</p>
+									</div>
+								</div>
+								@endforeach
+						</marquee>		
 						<h5></h5>
 					</div>
 				</div>
 				
 			</div>
 
-			<div class="colum-classement">
+			<div class="colum-classement tableau">
 				<div class="panel panel-primary">
 					<div class="panel-heading"><center>TOP 10 DU {{date("d-m-Y", strtoTime("1 day"))}}</center></div>
 					<div class="panel-body " style="height: 390px; overflow: hidden;">
-						@foreach($classement1 as $classement)
-						<div class="row" style="margin-bottom: 10px;">
-							<div class="col-sm-4">
-								<img class="imag" src="{{URL::asset('/images/img/avatar/'.$classement->photo)}}">
-							</div>
-							<div class="col-sm-8">	
-								<p>{{$classement->nom.' '.$classement->prenom}}</p>
-								<p>Code: {{$classement->codecandidat}}</p>
-								<p style="color: red">{{$classement->voix}} voix</p>
-							</div>
-						</div>
-						@endforeach
+						<marquee direction="up" height="400px" onmouseout="this.start();" onmouseover="this.stop();" loop="infinite">
+								@foreach($classement1 as $classement)
+								<div class="row" style="margin-bottom: 10px;">
+									<div class="col-sm-4">
+										<img class="imag" src="{{URL::asset('/images/img/avatar/'.$classement->photo)}}">
+									</div> 
+									<div class="col-sm-8">	
+										<p>{{$classement->nom.' '.$classement->prenom}}</p>
+										<p>Code: {{$classement->codecandidat}}</p>
+										<p style="color: red">{{$classement->nbre_vote}} voix</p>
+									</div>
+								</div>
+								@endforeach
+						</marquee>		
 						<h5></h5>
 					</div>
 				</div>
 			</div>
 
-			<div class="colum-classement">
+			<div class="colum-classement tableau">
 				<div class="panel panel-primary">
 					<div class="panel-heading" ><center>TOP 10 DU {{date("d-m-Y", strtoTime("2 day"))}}</center></div>
 					<div class="panel-body " style="height: 390px; overflow: hidden;">
-						@foreach($classement2 as $classement)
-						<div class="row" style="margin-bottom: 10px;">
-							<div class="col-sm-4">
-								<img class="imag" src="{{URL::asset('/images/img/avatar/'.$classement->photo)}}">
+						<marquee direction="up" height="400px" onmouseout="this.start();" onmouseover="this.stop();" loop="infinite">
+							@foreach($classement2 as $classement)
+							<div class="row" style="margin-bottom: 10px;">
+								<div class="col-sm-4">
+									<img class="imag" src="{{URL::asset('/images/img/avatar/'.$classement->photo)}}">
+								</div>
+								<div class="col-sm-8">	
+									<p>{{$classement->nom.' '.$classement->prenom}}</p>
+									<p>Code: {{$classement->codecandidat}}</p>
+									<p style="color: red">{{$classement->nbre_vote}} voix</p>
+								</div>
 							</div>
-							<div class="col-sm-8">	
-								<p>{{$classement->nom.' '.$classement->prenom}}</p>
-								<p>Code: {{$classement->codecandidat}}</p>
-								<p style="color: red">{{$classement->voix}} voix</p>
-							</div>
-						</div>
-						@endforeach
+							@endforeach
+						</marquee>	
 						<h5></h5>
 					</div>
 				</div>
 			</div>
 
-			<div class="colum-classement">
+			<div class="colum-classement tableau">
 				<div class="panel panel-primary">
 					<div class="panel-heading"><center>TOP 10 DU {{date("d-m-Y", strtoTime("3 day"))}}</center></div>
 					<div class="panel-body " style="height: 390px; overflow: hidden;">
-						@foreach($classement3 as $classement)
-						<div class="row" style="margin-bottom: 10px;">
-							<div class="col-sm-4">
-								<img class="imag" src="{{URL::asset('/images/img/avatar/'.$classement->photo)}}">
+						<marquee direction="up" height="400px" onmouseout="this.start();" onmouseover="this.stop();" loop="infinite">
+							@foreach($classement3 as $classement)
+							<div class="row" style="margin-bottom: 10px;">
+								<div class="col-sm-4">
+									<img class="imag" src="{{URL::asset('/images/img/avatar/'.$classement->photo)}}">
+								</div>
+								<div class="col-sm-8">	
+									<p>{{$classement->nom.' '.$classement->prenom}}</p>
+									<p>Code: {{$classement->codecandidat}}</p>
+									<p style="color: red">{{$classement->nbre_vote}} voix</p>
+								</div>
 							</div>
-							<div class="col-sm-8">	
-								<p>{{$classement->nom.' '.$classement->prenom}}</p>
-								<p>Code: {{$classement->codecandidat}}</p>
-								<p style="color: red">{{$classement->voix}} voix</p>
-							</div>
-						</div>
-						@endforeach
+							@endforeach
+						</marquee>
 						<h5></h5>
 					</div>
 				</div>
 			</div>
 
-			<div class="colum-classement">
+			<div class="colum-classement tableau">
 				<div class="panel panel-primary">
 					<div class="panel-heading"><center>TOP 10 DU {{date("d-m-Y", strtoTime("4 day"))}}</center></div>
 					<div class="panel-body " style="height: 390px; overflow: hidden;">
-						@foreach($classement4 as $classement)
-						<div class="row" style="margin-bottom: 10px;">
-							<div class="col-sm-4">
-								<img class="imag" src="{{URL::asset('/images/img/avatar/'.$classement->photo)}}">
+						<marquee direction="up" height="400px" onmouseout="this.start();" onmouseover="this.stop();" loop="infinite">
+							@foreach($classement4 as $classement)
+							<div class="row" style="margin-bottom: 10px;">
+								<div class="col-sm-4">
+									<img class="imag" src="{{URL::asset('/images/img/avatar/'.$classement->photo)}}">
+								</div>
+								<div class="col-sm-8">	
+									<p>{{$classement->nom.' '.$classement->prenom}}</p>
+									<p>Code: {{$classement->codecandidat}}</p>
+									<p style="color: red">{{$classement->nbre_vote}} voix</p>
+								</div>
 							</div>
-							<div class="col-sm-8">	
-								<p>{{$classement->nom.' '.$classement->prenom}}</p>
-								<p>Code: {{$classement->codecandidat}}</p>
-								<p style="color: red">{{$classement->voix}} voix</p>
-							</div>
-						</div>
-						@endforeach
+							@endforeach
+						</marquee>	
 						<h5></h5>
 					</div>
 				</div>
@@ -211,6 +209,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	@include('footer')
 	<!-- Required Scripts -->
 	<!-- Common Js -->
+	<style type="text/css">
+        @media all and (max-device-width: 740px) 
+        {
+            .dash {
+                width: 75%;
+    			margin-left: 41px;
+             }
+             .tableau{
+             	width: 167px;
+             	position: relative;
+
+             }
+             
+        }
+    </style>
 	<script type="text/javascript" src="{{URL::asset('js/jquery-2.2.3.min.js')}}"></script>
 	<!--// Common Js -->
 	<!--search-bar-agileits-->
@@ -254,5 +267,28 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!--// Bootstrap Js -->
 
 	<!--// Required Scripts -->
+
+	 <script type="text/javascript">
+
+		function message()
+
+		{
+			var xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function() {
+		    if (this.readyState == 4 && this.status == 200) {
+		      document.getElementById("resultat").innerHTML = this.responseText;
+		      
+		    }
+		  };
+		  var montableau = document.getElementById("montableau");
+		 
+    		
+		  xhttp.open("GET", "/monrang/"+document.getElementById("lecodecandidat").value, true);
+		  xhttp.send();
+
+		}
+	</script> 
+
+	
 </body>
 </html>

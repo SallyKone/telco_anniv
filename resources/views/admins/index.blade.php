@@ -70,8 +70,7 @@
             </div>
           </div>
 
-          <a href="{{route('envoyermessage')}}">envoyer message</a>
-          <!-- ./col -->
+            <!-- ./col -->
           <div class="col-lg-3 col-6">
             <!-- small box -->
             <div class="small-box bg-success">

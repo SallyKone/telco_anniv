@@ -52,6 +52,32 @@ class CandidatsController extends Controller
         }
             
     }
+
+    function traitementmessage(Request $requet, Utilitaires $util)
+   {
+       try
+       {
+               $reseau = trim(str_replace(' ', '', $requet->dest));
+               if($reseau==459 || $reseau==98164)
+               {
+                       return $this::ajouterCandidat($requet, $util);
+               }
+               else if($reseau==460)
+               {
+                       return $this::addVote($requet, $util);
+               }
+       }
+       catch(\Exception $e)
+       {
+               return $e;
+       }
+   }
+    /*function testCode(Request $requet,Utilitaires $util)
+    {
+        $moisnaiss=7;
+        $lecodecandidat = $util->generercodecandi($moisnaiss);
+        return $lecodecandidat;
+    }*/
     
 
     //Fonction d'ajout du candidat
@@ -67,7 +93,8 @@ class CandidatsController extends Controller
         $lenumero = trim(str_replace(' ', '', $requet->source));
         $tpsrecept = $requet->time;
 
-        $lecodecandidat = 'tempo '.$util->genererchaine(10);
+        
+        //$lecodecandidat = 'tempo '.$util->genererchaine(10);
         
         $lesms = explode(',', $requet->msg);
         
@@ -83,10 +110,10 @@ class CandidatsController extends Controller
 
             $messageSucces = "Vous etes déjà inscrit! Connectez vous avec votre\nLogin: ".$candidat->login;
             $messageSucces .= "\nMotPasse: ".$candidat->motpass."\nVia http://www.telcoanniv.com et ajoutez vos amis";
-            if ($reseau = 98164) {
+            if ($reseau == 98164) {
                 $util->accuseReceptionORANGE($lenumero, $messageSucces, 98164);
-            }
-            elseif ($reseau = 459){
+	    }
+            elseif ($reseau == 459){
                 $util->accuseReceptionMTN($lenumero,$messageSucces,459);
             }
             $mesg = "DEJA INSCRIT!"."\nLogin: ".$candidat->login."\nVia www.telcoanniv.com Ajoutez vos amis";
@@ -104,6 +131,11 @@ class CandidatsController extends Controller
             $datenaissaice = explode('-', $lesms[3]);
             $journaiss = (int)$datenaissaice[0];
             $moisnaiss = (int)$datenaissaice[1];
+
+            //appeler le code du candidat
+            $lecodecandidat =$util->generercodecandi($moisnaiss);
+
+            
 
             $testeur = $util->testLoginEtCode($lelogin, $lecodecandidat);
             if ($testeur != -1) {
@@ -131,10 +163,10 @@ class CandidatsController extends Controller
                     $messageSucces .= "\nMot de passe: ".$mdpass;
                     $messageSucces .= "\nVia http://www.telcoanniv.com Ajoutez vos amis";
                     
-                    if ($reseau = 98164) {
+                    if ($reseau == 98164) {
                         $util->accuseReceptionORANGE($lenumero, $messageSucces, 98164);
                     }
-                    elseif ($reseau = 459){
+                    elseif ($reseau == 459){
                         $util->accuseReceptionMTN($lenumero,$messageSucces,459);
                     }
                     $mesg = "INSCRIPTION VALIDEE!"."\nLogin: ".$lelogin."\nMot de passe: xxxxxx"."\nVia www.telcoanniv.com Ajoutez vos amis";
@@ -327,4 +359,6 @@ class CandidatsController extends Controller
             return view('connexion');
         }
     }
+
+   
 }
