@@ -17,6 +17,7 @@
 
 <body>
 	<pre>{{isset($message) ? $message : ""}}</pre>
+<<<<<<< HEAD
 	<form method="post" action="ajoutvote" style="margin: 100px 40%;">
 		{{csrf_field()}}
         <fieldset style="width: 200px">
@@ -28,6 +29,10 @@
             </table>
         </fieldset>
     </form>
+=======
+	
+	
+>>>>>>> aa051ae31daab739bdc457656aec356b5448025d
 	<script type="text/javascript" src="{{URL::asset('js/jquery-3.3.1.min.js')}}"></script>
 </body>
 

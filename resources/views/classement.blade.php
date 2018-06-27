@@ -48,7 +48,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="events-classe">
 			<div class="container">			
 				<div class="">
-					<div class="col-sm-3 live-grids-w3ls">
+					<div class="colum-classement ">
 						<center>
 						<div class="panel panel-primary">
 							<div class="panel-heading"><center>VOTRE CLASSEMENT</center></div>
@@ -68,85 +68,114 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</div><br><br><br><br>
 
 	<div class="events-sectione">
-		<div class="container">
-			<h3 class="title-txt two"><span></span></h3>
-			<div class="">
-				<div class="col-sm-3 live-grids-w3ls">
-					<div class="panel panel-primary">
-						<div class="panel-heading"><center>Top 10 d'aujourd'hui</center></div>
-						<div class="panel-body" style="height: 390px; overflow: hidden;">
-							<div class="live-info">
-							@foreach($classement1 as $classement)
-								<div class="imag">
-									<img src="{{URL::asset('/images/img/avatar/'.$classement->photo)}}">
-								</div>
-								<div class="detail">
-									
-								</div>
-							@endforeach
+		<div class="row">
+			<div class="colum-classement">
+				<div class="panel panel-primary">
+					<div class="panel-heading"><center>TOP 10 D'AUJOURD'HUI</center></div>
+					<div class="panel-body " style="height: 390px; overflow: hidden;">
+						@foreach($classement0 as $classement)
+						<div class="row" style="margin-bottom: 10px;">
+							<div class="col-sm-4">
+								<img class="imag" src="{{URL::asset('/images/img/avatar/'.$classement->photo)}}">
 							</div>
-							<h5></h5>
-						</div>
-					</div>
-					
-				</div>
-
-				<div class="col-sm-3 live-grids-w3ls">
-					<div class="panel panel-primary">
-						<div class="panel-heading"><center>TOP 10 DU 11-05-2018</center></div>
-						<div class="panel-body" style="height: 390px; overflow: hidden;">
-							<div class="live-info">
-								
+							<div class="col-sm-8">	
+								<p>{{$classement->nom.' '.$classement->prenom}}</p>
+								<p>Code: {{$classement->codecandidat}}</p>
+								<p style="color: red">{{$classement->voix}} voix</p>
 							</div>
-							<h5></h5>
 						</div>
+						@endforeach
+						<h5></h5>
 					</div>
 				</div>
+				
+			</div>
 
-				<div class="col-sm-3 live-grids-w3ls">
-					<div class="panel panel-primary">
-						<div class="panel-heading" ><center>TOP 10 DU 13-05-2018</center></div>
-						<div class="panel-body" style="height: 390px; overflow: hidden;width: 230px">
-							<div class="live-info">
-							
-							
-												
+			<div class="colum-classement">
+				<div class="panel panel-primary">
+					<div class="panel-heading"><center>TOP 10 DU {{date("d-m-Y", strtoTime("1 day"))}}</center></div>
+					<div class="panel-body " style="height: 390px; overflow: hidden;">
+						@foreach($classement1 as $classement)
+						<div class="row" style="margin-bottom: 10px;">
+							<div class="col-sm-4">
+								<img class="imag" src="{{URL::asset('/images/img/avatar/'.$classement->photo)}}">
 							</div>
-							<h5></h5>
+							<div class="col-sm-8">	
+								<p>{{$classement->nom.' '.$classement->prenom}}</p>
+								<p>Code: {{$classement->codecandidat}}</p>
+								<p style="color: red">{{$classement->voix}} voix</p>
+							</div>
 						</div>
+						@endforeach
+						<h5></h5>
 					</div>
 				</div>
+			</div>
 
-				<div class="col-sm-3 live-grids-w3ls">
-					<div class="panel panel-primary">
-						<div class="panel-heading"><center>TOP 10 DU 13-05-2018</center></div>
-						<div class="panel-body" style="height: 390px; overflow: hidden; ">
-							<div class="live-info">
-							
-							
-												
+			<div class="colum-classement">
+				<div class="panel panel-primary">
+					<div class="panel-heading" ><center>TOP 10 DU {{date("d-m-Y", strtoTime("2 day"))}}</center></div>
+					<div class="panel-body " style="height: 390px; overflow: hidden;">
+						@foreach($classement2 as $classement)
+						<div class="row" style="margin-bottom: 10px;">
+							<div class="col-sm-4">
+								<img class="imag" src="{{URL::asset('/images/img/avatar/'.$classement->photo)}}">
 							</div>
-							<h5></h5>
+							<div class="col-sm-8">	
+								<p>{{$classement->nom.' '.$classement->prenom}}</p>
+								<p>Code: {{$classement->codecandidat}}</p>
+								<p style="color: red">{{$classement->voix}} voix</p>
+							</div>
 						</div>
+						@endforeach
+						<h5></h5>
 					</div>
 				</div>
+			</div>
 
-				<!-- <div class="col-sm-2 live-grids-w3ls">
-					<div class="panel panel-primary">
-						<div class="panel-heading"><center>TOP 10 DU 13-05-2018</center></div>
-						<div class="panel-body" style="height: 390px; overflow: hidden;">
-							<div class="live-info">
-							
-							
-												
+			<div class="colum-classement">
+				<div class="panel panel-primary">
+					<div class="panel-heading"><center>TOP 10 DU {{date("d-m-Y", strtoTime("3 day"))}}</center></div>
+					<div class="panel-body " style="height: 390px; overflow: hidden;">
+						@foreach($classement3 as $classement)
+						<div class="row" style="margin-bottom: 10px;">
+							<div class="col-sm-4">
+								<img class="imag" src="{{URL::asset('/images/img/avatar/'.$classement->photo)}}">
 							</div>
-							<h5></h5>
+							<div class="col-sm-8">	
+								<p>{{$classement->nom.' '.$classement->prenom}}</p>
+								<p>Code: {{$classement->codecandidat}}</p>
+								<p style="color: red">{{$classement->voix}} voix</p>
+							</div>
 						</div>
+						@endforeach
+						<h5></h5>
 					</div>
-				</div> -->
-			</div>	
-			<div class="clearfix"> </div>
-		</div>
+				</div>
+			</div>
+
+			<div class="colum-classement">
+				<div class="panel panel-primary">
+					<div class="panel-heading"><center>TOP 10 DU {{date("d-m-Y", strtoTime("4 day"))}}</center></div>
+					<div class="panel-body " style="height: 390px; overflow: hidden;">
+						@foreach($classement4 as $classement)
+						<div class="row" style="margin-bottom: 10px;">
+							<div class="col-sm-4">
+								<img class="imag" src="{{URL::asset('/images/img/avatar/'.$classement->photo)}}">
+							</div>
+							<div class="col-sm-8">	
+								<p>{{$classement->nom.' '.$classement->prenom}}</p>
+								<p>Code: {{$classement->codecandidat}}</p>
+								<p style="color: red">{{$classement->voix}} voix</p>
+							</div>
+						</div>
+						@endforeach
+						<h5></h5>
+					</div>
+				</div>
+			</div> 
+		</div>	
+		<div class="clearfix"> </div>
 	</div>
 
 	@include('footer')
@@ -199,18 +228,27 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<style type="text/css">
 		
 		.votretop{width:350px; height:auto; margin:0 auto 30px auto; position:relative;}
-.votretag{width:115px; height:auto; float:left; text-align:right; font-size:15px; line-height:25px;}
-.votredrop{width:116px; height:37px; padding:5px 10px; border-radius:10px; box-shadow:inset 0 0 10px #CCC; outline:none; border:none; margin:0px 10px 10px 10px; overflow:hidden; float:left; background:#FFF; float:left;}
-.votredrop img{width:100%; float:right;}
-.dropp{width:200px; height:20px; outline:none; border:none; background:none !important; -web-kit-background:none !important}
+		.votretag{width:115px; height:auto; float:left; text-align:right; font-size:15px; line-height:25px;}
+		.votredrop{width:116px; height:37px; padding:5px 10px; border-radius:10px; box-shadow:inset 0 0 10px #CCC; outline:none; border:none; margin:0px 10px 10px 10px; overflow:hidden; float:left; background:#FFF; float:left;}
+		.votredrop img{width:100%; float:right;}
+		.dropp{width:200px; height:20px; outline:none; border:none; background:none !important; -web-kit-background:none !important}
 
-.downtag{width:300px; height:auto; font-size:15px; text-align:left; line-height:15px; border:solid 1px #000; margin:0 0 0 20px;}
-.downtag span{float:right;}
-.downtag p{padding:5px; margin:0px;}
-.downheading{width:300px; height:30px; background:#fd841e; border-bottom:solid 1px #000; font-size:20px; text-align:center; line-height:30px; margin:0 0 10px 0px;}
-.votreimg{width:5%; position:absolute; bottom:5px; left:-50px;}
-.votreimgg{width:5%; position:absolute; bottom:5px; right:-20px;}
+		.downtag{width:300px; height:auto; font-size:15px; text-align:left; line-height:15px; border:solid 1px #000; margin:0 0 0 20px;}
+		.downtag span{float:right;}
+		.downtag p{padding:5px; margin:0px;}
+		.downheading{width:300px; height:30px; background:#fd841e; border-bottom:solid 1px #000; font-size:20px; text-align:center; line-height:30px; margin:0 0 10px 0px;}
+		.votreimg{width:5%; position:absolute; bottom:5px; left:-50px;}
+		.votreimgg{width:5%; position:absolute; bottom:5px; right:-20px;}
+		.imag{position: relative;width: 100%;}
+		.colum-classement{
+			width: 19.6%;
+			position: relative;
+			display: inline-block;
+		}
+
 	</style>
+
+
 </body>
 
 </html>
