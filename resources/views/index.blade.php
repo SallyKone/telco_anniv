@@ -170,19 +170,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
        	 					<img class="img1" src="images/candi2.jpg">
        	 					<img class="img1" src="images/candi3.jpg">
        	 					<img class="img1" src="images/candi4.jpg">
-       	 					<img class="img1" src="images/candi7.jpg">
-       	 					<img class="img1" src="images/candi8.jpg">
-       	 					<img class="img1" src="images/candi9.jpg">
-       	 					<img class="img1" src="images/candi10.jpg">
-       	 					<img class="img1" src="images/candi12.jpg">
-       	 					<img class="img1" src="images/candi13.jpg">
-       	 					<img class="img1" src="images/candi14.jpg">
-       	 					<img class="img1" src="images/candi15.jpg">
-       	 					<img class="img1" src="images/candi16.jpg">
-       	 					<img class="img1" src="images/candi17.jpg">
-       	 					<img class="img1" src="images/candi18.jpg">
-       	 					<img class="img1" src="images/candi19.jpg">
-       	 					<img class="img1" src="images/candi20.jpg">
+       	 					<img class="img1" src="images/candi5.jpg">
+       	 					<img class="img1" src="images/candi1.jpg">
+       	 					<img class="img1" src="images/candi2.jpg">
+       	 					<img class="img1" src="images/candi3.jpg">
+       	 					<img class="img1" src="images/candi4.jpg">
+       	 					
                     </marquee>
        	 			</div>
        	 		</div>
@@ -269,16 +262,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="live-info">
 							<center>
 								<marquee style="color:#B20;" direction="up" height="213px">
-	                            <img class="img2" src="images/candi11.jpg">
-	       	 					<img class="img2" src="images/candi10.jpg">
-	       	 					<img class="img2" src="images/candi18.jpg">
-	       	 					<img class="img2" src="images/candi20.jpg">
-	       	 					<img class="img2" src="images/candi19.jpg">
-	       	 					<img class="img2" src="images/candi8.jpg">
-	       	 					<img class="img2" src="images/candi14.jpg">
-	       	 					<img class="img2" src="images/candi13.jpg">
-	       	 					<img class="img2" src="images/candi1.jpg">
+	                            <img class="img2" src="images/candi2.jpg">
+	       	 					<img class="img2" src="images/candi3.jpg">
 	       	 					<img class="img2" src="images/candi4.jpg">
+	       	 					<img class="img2" src="images/candi5.jpg">
+	       	 					<img class="img2" src="images/candi1.jpg">
+	       	 					<img class="img2" src="images/candi2.jpg">
+	       	 					<img class="img2" src="images/candi4.jpg">
+	       	 					<img class="img2" src="images/candi3.jpg">
+	       	 					<img class="img2" src="images/candi1.jpg">
+	       	 					
 
 	                    </marquee>
 							</center>
