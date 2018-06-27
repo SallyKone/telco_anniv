@@ -15,10 +15,16 @@ class Utilitaires
         $data = htmlspecialchars($data);
         return $data;
     }
-    //Liste des 10er candidats d'une date d'anniversaire , votes.id_candidat, candidats.nom, candidats.prenom, candidats.photo , candidats.codecandidat
+    //Liste des 10er candidats d'une date d'anniversaire 
     public function getTop10bydate($ladate)
     {
     	return DB::select(DB::raw('CALL GET_TOP10_BY_DATE(?)'),array($ladate));
+    }
+    // liste des candidats en competition
+    public function listeCandidatCompet ()
+    {
+        return DB::table('candidats')->select(DB::raw('nom, prenom, codecandidat, photo'))->where("codecandidat","NOT LIKE",'tempo%')->get();
+
     }
 
     public function genererAnniversaire()

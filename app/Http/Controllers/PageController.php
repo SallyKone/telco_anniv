@@ -12,9 +12,12 @@ class PageController extends Controller
     {
 
     }
-    public function showIndex()
+    public function showIndex(Utilitaires $util)
     {
-        return view('index');
+        $listecandidats = $util->listeCandidatCompet();
+        $classement = $util->getTop10bydate(date('Y-m-d'));
+
+        return view('index')->with(["listecandidats"=>$listecandidats,'classement'=>$classement]);
     }
 
     public function showVueTest(Utilitaires $util)

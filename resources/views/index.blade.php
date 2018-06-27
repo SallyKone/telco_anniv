@@ -42,6 +42,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		.img2 {padding-right: 15px;	margin-left: 80px;}
 		.panel-body h5 { font-size:17px; letter-spacing: 0.5px; color: #0c0c0c;
 		    text-transform: uppercase; font-weight:700; text-align: center;}
+		.candilist{
+			width: 250px;
+			display: inline-block;
+			position: relative;
+			border: 1px solid black;
+			padding: 1% 2%;
+		} 
+		.candilist-img{
+			width: 100%;
+			position: relative;
+
+		}  
+		.candilist-img >img{
+			width: 100%;
+			position: relative;
+		} 
 	</style>
 </head>
 
@@ -162,11 +178,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
        	 <div class="row">
        	 	<div class="col-sm-12">
        	 		<div class="panel panel-primary">
-       	 		<div class="panel-heading"><center>LES CANDIDATS EN COMPETITION</center></div>
+	       	 		<div class="panel-heading"><center>LES CANDIDATS EN COMPETITION</center>
+	       	 		</div>
        	 			<div class="panel-body">
-       	 			<marquee style=" color:#B20;">
-                            
-       	 					<img class="img1" src="images/candi1.jpg">
+	       	 			<marquee>
+	       	 				@foreach($listecandidats as $candidat)
+	       	 				<div class="candilist">
+	       	 					<div class="candilist-img">
+	       	 						<img class="imag" src="{{URL::asset('/images/img/avatar/'.$candidat->photo)}}">
+	       	 					</div>
+	       	 					<p>{{$candidat->nom.' '.$candidat->prenom}}</p>
+								<p>Code de vote: {{$candidat->codecandidat}}</p>
+								
+	       	 				</div>
+       	 					<!-- <img class="img1" src="images/candi1.jpg">
        	 					<img class="img1" src="images/candi2.jpg">
        	 					<img class="img1" src="images/candi3.jpg">
        	 					<img class="img1" src="images/candi4.jpg">
@@ -174,11 +199,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
        	 					<img class="img1" src="images/candi1.jpg">
        	 					<img class="img1" src="images/candi2.jpg">
        	 					<img class="img1" src="images/candi3.jpg">
-       	 					<img class="img1" src="images/candi4.jpg">
-       	 					
-                    </marquee>
+       	 					<img class="img1" src="images/candi4.jpg"> -->
+       	 					@endforeach
+	                    </marquee>
        	 			</div>
-       	 		</div>
+	       	 	</div>
        	 	</div>
        	 </div>
        	 </div>
@@ -262,7 +287,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="live-info">
 							<center>
 								<marquee style="color:#B20;" direction="up" height="213px">
-	                            <img class="img2" src="images/candi2.jpg">
+									@foreach($classement as $classemt)
+										<div class="row" style="margin-bottom: 10px;">
+											<div class="col-sm-4">
+												<img class="imag" src="{{URL::asset('/images/img/avatar/'.$classemt->photo)}}">
+											</div>
+											<div class="col-sm-8">	
+												<p>{{$classemt->nom.' '.$classemt->prenom}}</p>
+												<p>Code: {{$classemt->codecandidat}}</p>
+												<p style="color: red">{{$classemt->voix}} voix</p>
+											</div>
+										</div>
+									@endforeach
+	                            <!-- <img class="img2" src="images/candi2.jpg">
 	       	 					<img class="img2" src="images/candi3.jpg">
 	       	 					<img class="img2" src="images/candi4.jpg">
 	       	 					<img class="img2" src="images/candi5.jpg">
@@ -270,10 +307,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	       	 					<img class="img2" src="images/candi2.jpg">
 	       	 					<img class="img2" src="images/candi4.jpg">
 	       	 					<img class="img2" src="images/candi3.jpg">
-	       	 					<img class="img2" src="images/candi1.jpg">
+	       	 					<img class="img2" src="images/candi1.jpg"> -->
 	       	 					
 
-	                    </marquee>
+	                            </marquee>
 							</center>
 							</div>
 						</div>
@@ -439,6 +476,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!-- //smooth scrolling -->
 
  <script src="{{URL::asset('js/bootstrap.js')}}"></script>
+
 </body>
 
 </html>
