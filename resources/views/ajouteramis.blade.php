@@ -40,58 +40,56 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	@include('header')
 	
 	<!-- team -->
-	
 
 <section class="login">
 	<div class="container">
-		
 		<div class="login-grids">
 			<div class=" col-md-7 .offset-md-1 login-form">
-@if(isset($statut))
-                   <div class=" {{isset($statut) && $statut ? 'alert alert-success' : 'alert alert-danger'}}"> 
-                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> 
-                    {{ $message }} 
-                    </div> 
-                    @endif
+				@if(isset($statut))
+                <div class=" {{isset($statut) && $statut ? 'alert alert-success' : 'alert alert-danger'}}"> 
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> 
+                {{ $message }} 
+                </div> 
+                @endif
 
-<form class="commentForm" action="{{route('ajouteramis')}}" method="post">
-	{{csrf_field()}}
-			<div class="myprofilemain" id="last">
-					<div class="" id="last">
-						<center><h3>Ajouter ami(s)</h3></center>
-					</div>
-					<br><br>
- 				<div class="clear"></div>
+				<form class="commentForm" action="ajouteramis" method="post">
+				{{csrf_field()}}
+					<div class="myprofilemain" id="last">
+						<div class="" id="last">
+							@if($ami->id != null)
+							<center><h3>Modifier un ami</h3></center>
+							@else
+							<center><h3>Ajouter un ami</h3></center>
+							@endif
+						</div><br><br>
+ 						<div class="clear"></div>
  
-				<div class="row">
-                                <label class="col-md-4"><strong>Pseudo/Nom: </strong></label>
-                                <input class="col-md-7" type="text" value="" required name="nom">
-                            </div>
-                            <br>
-                            <div class="row">
-                                <label class="col-md-4"><strong>Numero Mobile: </strong></label>
-                                <input class="col-md-7" type="text" value="" required name="numero">
-                            </div>
-				<br>
- 				<div class="clear"></div>
- 						<br>
- 				<input type="submit" id="submit" name="" value="Envoyer"  />
-           </div>
-</form>			
-		</div>
+						<div class="row">
+                            <label class="col-md-4"><strong>Pseudo/Nom: </strong></label>
+                            <input class="col-md-7" type="text" value="{{$ami->nom}}" required name="nom">
+                        </div><br>
+                        <div class="row">
+                            <label class="col-md-4"><strong>Numero Mobile: </strong></label>
+                            <input class="col-md-7" type="text" value="{{$ami->numero}}" required name="numero">
+                        </div><br>
+ 						<div class="clear"></div><br>
+ 						<input type="hidden" name="id" value="{{$ami->id}}">
+ 						<input type="submit" id="submit" name="" value="{{$ami->id !=null?'Modifier':'Ajouter'}}"  />
+           			</div>
+				</form>			
+			</div>
 			<div class=" col-md-4 dash "  >
 				<ul>
-<li><a href="profil">Mon profile</a></li>
-<li><a href="modifeprofile">Modifier mon profile</a></li>
-<li><a href="ajouteramis" >Ajouter ami(s)</a></li>
-<li><a href="listeamis">Liste d'amis</a></li>
-<!--<li><a href="#">Numeros inconnus</a></li>-->
-</ul>
-				
-		    <div class="clearfix"></div>
+					<li><a href="profil">Mon profile</a></li>
+					<li><a href="modifeprofile">Modifier mon profile</a></li>
+					<li><a href="ajouteramis" >Ajouter ami(s)</a></li>
+					<li><a href="listeamis">Liste d'amis</a></li>
+					<!--<li><a href="#">Numeros inconnus</a></li>-->
+				</ul>	
+		    	<div class="clearfix"></div>
 			</div>
 		</div>
-	
+	</div>
 </section>
 
 

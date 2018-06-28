@@ -7,19 +7,16 @@ use App\Mail\ContactMessageCreated;
 Route::get('/admins/genereranniv', 'AnnivController@genererAnniv');
 Route::post('/admins/genereranniv', 'AnnivController@genererAnniv');
 
-#Route::any('{teste?}','IndexController@comptaRebour')->where(['teste'=>'/\/\\S+/']);
+#Route::any({teste}','IndexController@comptaRebour')->where(['teste'=>'/\/\\S+/']);
 
 //Route Amis
 Route::get('/amis', 'AmisController@showAmis');
-Route::get('/ajouteramis', 'AmisController@showAjouterAmis');
-Route::post('/ajouteramis',['as' => 'ajouteramis','uses'=>'AmisController@ajouterAmis']);
-Route::get('/amis', 'AmisController@supprimerAmis');
+Route::get('/ajouteramis','AmisController@showAjouterAmis');
+Route::post('/ajouteramis', 'AmisController@ajouterModifierAmis');
 Route::post('/amis', 'AmisController@supprimerAmis')->name('amis');
 Route::get('/choixamis', 'AmisController@showChoixAmis');
 Route::post('/listeamis', 'AmisController@showListeAmis');
 Route::get ('/listeamis', 'AmisController@showListeAmis');
-#Route::post ('/listeamis', 'AmisController@modifierAmis');
-Route::post('supprimeramis', 'AmisController@supprimerAmis');
 
 //Route Candidats
 Route::get('/admins/ajoutcandidat', 'CandidatsController@ajouterCandidat')->name('ajoutcandidat');

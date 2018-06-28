@@ -26,39 +26,57 @@ class AmisController extends Controller
         }
     }
 
-    public function showAjouterAmis()
+    public function showAjouterAmis(Request $requet)
     {
-        return view('ajouteramis');
+        $ami = new Amis();
+        //dd(empty($requet->id));
+        if(!empty($requet->id)){
+            $ami = Amis::findOrfail($requet->id);
+            return view('ajouteramis')->with('ami',$ami);
+        }else{
+            return view('ajouteramis')->with('ami',$ami);
+        }
     }
 
 
                 //Fonctions Post
-    //Ajouter un ami
-    public function ajouterAmis(Request $request)
+    //Ajouter ou Modifier un ami
+    public function ajouterModifierAmis(Request $requete)
     {
-        $amis = new Amis;
-        $amis->nom = $request->nom;
-        $amis->numero = (int)$request->numero;
-        $amis->id_candidat = (int)session()->get("idcandidat");
-        $amis->created_at = now();
-        $amis->updated_at = now();
-        //dd ($amis);
-        $amis->save();
-        
-        if($amis->save())
-                {
-                    return view('ajouteramis')->with(['amis'=>$amis,'statut'=>true,'message'=>"Votre ami(e) à été ajouter avec succès !!"]);
-                }else
-                {
-                    return view('ajouteramis')->with(['amis'=>$amis,'statut'=>false,'message'=>"Impossible d'ajouter' !!"]);
-                }
-
+        $ami = new Amis();
+        if(empty($requete->id));
+        {
+            $ami->nom = $requete->nom;
+            $ami->numero = $requete->numero;
+            $ami->id_candidat = (int)session()->get("idcandidat");
+            $ami->created_at = now();
+            $ami->updated_at = now();
+            
+            if($ami->save())
+            {
+                $ami = new Amis();
+                return view('ajouteramis')->with(['ami'=>$ami,'statut'=>true,'message'=>"Votre ami(e) à été ajouter avec succès !!"]);
+            }else
+            {
+                return view('ajouteramis')->with(['ami'=>$ami,'statut'=>false,'message'=>"Impossible d'ajouter' !!"]);
+            }
+        }
+        if(!empty($requete->id))
+        {
+            $ami = Amis::find($requete->id);
+            $ami->nom = $requete->nom;
+            $ami->numero = $requete->numero;
+            $ami->updated_at = now();
+            if($ami->save())
+            {
+                return view('ajouteramis')->with(['ami'=>$ami,'statut'=>true,'message'=>"Votre ami(e) à été mis(e) à jour avec succès !!"]);
+            }else
+            {
+                return view('ajouteramis')->with(['ami'=>$ami,'statut'=>false,'message'=>"Impossible de mettre à jour' !!"]);
+            }
+        }
     }
-    //Modifier un ami
-    public function modifierAmis(Request $requete)
-    {
-    	return DB::table('amis')->where('id', $requete('id'))->update(['nom'=>$ami->nom,'numero'=>$ami->numero]);
-    }
+    
     //Supprimer un ami
     public function supprimerAmis() {
         $idami= Input::get('idami');
