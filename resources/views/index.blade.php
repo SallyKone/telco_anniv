@@ -286,30 +286,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="panel-body">
 							<div class="live-info">
 							<center>
-								<marquee style="color:#B20;" direction="up" height="213px">
+								<marquee style="" direction="up" height="213px">
 									@foreach($classement as $classemt)
-										<div class="row" style="margin-bottom: 10px;">
-											<div class="col-sm-4">
+										<div class="candilist" style="margin-bottom: 10px;">
+											<div class="candilist-img" >
 												<img class="imag" src="{{URL::asset('/images/img/avatar/'.$classemt->photo)}}">
 											</div>
-											<div class="col-sm-8">	
+											<div >	
 												<p>{{$classemt->nom.' '.$classemt->prenom}}</p>
 												<p>Code: {{$classemt->codecandidat}}</p>
 												<p style="color: red">{{$classemt->voix}} voix</p>
 											</div>
 										</div>
 									@endforeach
-	                            <!-- <img class="img2" src="images/candi2.jpg">
-	       	 					<img class="img2" src="images/candi3.jpg">
-	       	 					<img class="img2" src="images/candi4.jpg">
-	       	 					<img class="img2" src="images/candi5.jpg">
-	       	 					<img class="img2" src="images/candi1.jpg">
-	       	 					<img class="img2" src="images/candi2.jpg">
-	       	 					<img class="img2" src="images/candi4.jpg">
-	       	 					<img class="img2" src="images/candi3.jpg">
-	       	 					<img class="img2" src="images/candi1.jpg"> -->
-	       	 					
-
 	                            </marquee>
 							</center>
 							</div>
