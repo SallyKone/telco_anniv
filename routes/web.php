@@ -40,10 +40,11 @@ Route::get ('/test-email', function() {
 
 //Route Pages pour afficher les standards et les formulaires
 Route::get('/','PageController@showIndex');
+Route::post('/','PageController@showIndex');
 Route::get ('/vuedetest', 'PageController@showVueDeTest');
 Route::post ('/vuedetest', 'PageController@showVueTest');
 Route::get ('/index', 'PageController@showIndex');
-Route::post ('/index', 'PageController@showIndex')->name('home');
+Route::post ('/index', 'PageController@showIndex');
 Route::get ('/gallery', 'PageController@showGallery');
 Route::get('/description', 'PageController@description');
 Route::get ('/mdpassoublier', 'PageController@showMDPassOublier');

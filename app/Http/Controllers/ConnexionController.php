@@ -9,10 +9,14 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Session;
+use App\Providers\Utilitaires;
 
 class ConnexionController extends Controller
 {
-    
+    public function __construct(Utilitaires $advisor)
+    {
+
+    }
 	//LES FONCTIONS GET
     public function showConnexion()
     {
@@ -50,13 +54,15 @@ class ConnexionController extends Controller
 
     	return view('connexion')->with(['statut'=> false,'message'=>'Mot de passe incorrect !']);
     }
-    public function deconnecter(Request $requete){
+    public function deconnecter(Request $requete, Utilitaires $util){
         //Démarrer la session
         if($requete->session()->has('idcandidat'))
         {
             session()->flush();
             #Session::regenerate();
-            return view('index')->with(['statut'=> true,'message'=>'Déconnecté !']);
+            $listecandidats = $util->listeCandidatCompet();
+            $classement = $util->getTop10bydate(date('Y-m-d'));
+            return view('/index')->with(["listecandidats"=>$listecandidats,'classement'=>$classement,'statut'=> true,'message'=>'Déconnecté !']);
         }
     }
 
