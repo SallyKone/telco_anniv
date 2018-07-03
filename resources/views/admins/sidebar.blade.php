@@ -41,13 +41,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="" class="nav-link">
+                <a href="telcoanniv.com/phpmyadmin" class="nav-link">
                   <i class="fa fa-circle-o nav-icon"></i>
                   <p>PhpMyAdmin</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="" class="nav-link">
+                <a href="telcoanniv.com/adminer" class="nav-link">
                   <i class="fa fa-circle-o nav-icon"></i>
                   <p>Adminer</p>
                 </a>
