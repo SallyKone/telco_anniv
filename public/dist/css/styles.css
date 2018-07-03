@@ -1,0 +1,83 @@
+.bg-connexion{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+.entete-login{
+	padding: 2% 3%;
+	font-weight: bold;
+	color: rgba(0,0,0,0.5);
+	font-size: 1.65em;
+}
+.bg-connexion>img{
+	height: 100%;
+	width: 100%;
+}
+.login-box{
+	background-color: rgba(255,255,255,0.4);
+	padding: 1%;
+	margin-top: 15%;
+	border-radius: 5px;
+	z-index: 1; 
+}
+.field-box{
+	background-color: rgba(255,255,255,0.3);
+	padding: 3% 2%;
+	border-radius: 3px;
+}
+.opacite-input{
+	background-color: rgba(255,255,255, 0.2);
+	color: rgba(0,0,0,0.5);
+	border: inset 1.4px;
+	border-left: transparent;
+}
+.login-addon{
+	color: white;
+	border: inset 1.4px;
+	background-color: transparent;
+}
+.ligne-input{
+	margin-top: 2%;
+}
+.ligne-btn{
+	margin-top: 4%;
+}
+.mdp-oublie{
+	display: inline-block;
+}
+.btn-dlogin{
+	display: inline-block;
+}
+.mdp-oublie{
+	font-size: 0.74em;
+	color: white;
+	width: 50%;
+}
+.mdp-oublie a{
+	font-style: oblique;
+	text-decoration: underline;
+}
+.btn-dlogin{
+	width: 48%;
+	text-align: right;
+	vertical-align: text-bottom;
+}
+.btn-dlogin>input{
+	font-weight: bold;
+	color: white;
+	font-size: 1.35em;
+}
+.creer-compte{
+	padding: 3% 0;
+	font-size: 0.74em;
+	color: white;
+	text-align: center;
+}
+.creer-compte a{
+	color: white;
+	text-decoration: underline;
+	font-style: oblique;
+}

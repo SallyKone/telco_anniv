@@ -3,6 +3,13 @@
 
 use App\Mail\ContactMessageCreated;
 //Route de administration
+Route::get('/admins/','AdminsController@dashbord');
+Route::post('/admins/','AdminsController@dashbord');
+Route::get('/admins/index','AdminsController@dashbord');
+Route::post('/admins/index','AdminsController@dashbord');
+Route::get('/admins/login','AdminsController@showLogin');
+Route::post('/admins/login','AdminsController@showLogin');
+
 //Route Anniversaire
 Route::get('/admins/genereranniv', 'AnnivController@genererAnniv');
 Route::post('/admins/genereranniv', 'AnnivController@genererAnniv');
