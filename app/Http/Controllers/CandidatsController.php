@@ -93,7 +93,8 @@ class CandidatsController extends Controller
                 if($candidat->save())
                 {
                     $messageSucces .= "\nLogin: ".$lelogin;
-                    $messageSucces .= "\nVia www.telcoanniv.com Ajoutez vos amis";
+                    $messageSucces .= "\nMot de passe: ".$mdpass;
+                    $messageSucces .= "\nVia http://www.telcoanniv.com Ajoutez vos amis";
                     
                     if ($reseau = 98164) {
                         $util->accuseReceptionORANGE($lenumero, $messageSucces, 98164);
