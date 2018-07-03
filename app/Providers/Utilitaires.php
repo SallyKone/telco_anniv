@@ -35,10 +35,12 @@ class Utilitaires
     public function accuseReceptionMTN($destinataire, $message, $espediteur = 459){
         $message = strtoupper(urlencode($message)); 
         $url = "http://localhost:11013/cgi-bin/sendsms?username=telcoSender&password=telco12345&smsc=smsc_mtn_ci&from= $espediteur&to=$destinataire&text=$message";
+        header('location: '.$url);
     }
     public function accuseReceptionORANGE($destinataire, $message, $espediteur = 98164){
         $message = strtoupper(urlencode($message)); 
         $url = "http://localhost:11013/cgi-bin/sendsms?username=telcoSender&password=telco12345&smsc=smsc_ocit&from=$espediteur&to=$destinataire&text=$message";
+        header('location: '.$url);
     }
 
     //Pour la génération de code aléatoirement 
