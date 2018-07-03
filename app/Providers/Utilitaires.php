@@ -124,10 +124,10 @@ class Utilitaires
 
     public function addMessageRecu($dest,$esped,$mesg,$tps){
         //Enregistre les données
-        DB::table('Messages')->insert(['destinataire'=>$dest,'espediteur'=>$esped, 'message'=>$mesg, 'daterecu'=>$tps, 'typemsg'=>'recu']);
+        DB::table('messages')->insert(['destinataire'=>$dest,'espediteur'=>$esped, 'message'=>$mesg, 'daterecu'=>$tps, 'typemsg'=>'recu']);
     }
     public function addMessageEnvoye($dest,$esped,$mesg,$tps,$typ){
         //Enregistre les données
-        DB::table('Messages')->insert(['destinataire'=>$dest,'espediteur'=>$esped, 'message'=>$mesg, 'dateenvoi'=>$tps, 'typemsg'=>$typ]);
+        DB::table('messages')->insert(['destinataire'=>$dest,'espediteur'=>$esped, 'message'=>$mesg, 'dateenvoi'=>$tps, 'typemsg'=>$typ]);
     }
 }
