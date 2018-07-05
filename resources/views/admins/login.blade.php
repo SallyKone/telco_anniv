@@ -17,33 +17,39 @@
   <div class="login-box col-lg-offset-4 col-md-offset-4 col-sm-offset-4 col-xs-offset-2 col-lg-4 col-md-4 col-sm-4 col-xs-8">
     <div class="entete-login"><span class="fa fa-lock" aria-hidden="true" style="color:white"></span>&nbsp; Connexion</div>
     <div class="field-box">
-      <div class="ligne-input">
-        <div class="input-group">
-          <div class="input-group-addon login-addon">
-            <span class="fa fa-user" aria-hidden="true" style="color:white"></span>
+      <form method="post" action="login">
+        {{csrf_field()}}
+        <div class="ligne-input">
+          <div class="input-group">
+            <div class="input-group-addon login-addon">
+              <span class="fa fa-user" aria-hidden="true" style="color:white"></span>
+            </div>
+            <input required type="text" class="form-control opacite-input"name="login" id="login" placeholder="Login">
           </div>
-          <input type="text" class="form-control opacite-input" id="login" placeholder="Login">
         </div>
-      </div>
-      <div class="ligne-input">
-        <div class="input-group">
-          <div class="input-group-addon login-addon">
-            <i class="fas fa-key" style="color:white"></i>
+        <div class="ligne-input">
+          <div class="input-group">
+            <div class="input-group-addon login-addon">
+              <i class="fas fa-key" style="color:white"></i>
+            </div>
+            <input required type="password" class="form-control opacite-input" name="mdpasse" id="password" placeholder="Mot de passe">
           </div>
-          <input type="password" class="form-control opacite-input" id="password" placeholder="Password">
         </div>
-      </div>
-      <div class="ligne-btn">
-        <div class="mdp-oublie">
-          Mot de passe ou identifiant oublié ? <a href="">Cliquez ici !</a>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <span style="color: red;">{{isset($statut) ? $message :''}}</span>
         </div>
-        <div class="btn-dlogin">
-          <input type="button" value="Login" class="btn btn-primary">
+        <div class="ligne-btn">
+          <div class="mdp-oublie">
+            Mot de passe ou identifiant oublié ? <a href="">Cliquez ici !</a>
+          </div>
+          <div class="btn-dlogin">
+            <input type="submit" value="Login" class="btn btn-primary">
+          </div>
         </div>
-      </div>
+      </form>
     </div>
-    <div class="creer-compte">
-      Etes-vous enregistré(e) ? <a href="">Créer un compte !</a>
+    <div class="creer-compte" >
+       'Etes-vous enregistré(e) ? <a href="">Créer un compte !</a>
     </div>
   </div>
   <!-- /.login-box -->

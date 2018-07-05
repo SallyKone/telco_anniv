@@ -17,7 +17,7 @@
 
 <body>
 	<pre>{{isset($message) ? $message : ""}}</pre>
-
+	
 	<script type="text/javascript" src="{{URL::asset('js/jquery-3.3.1.min.js')}}"></script>
 </body>
 

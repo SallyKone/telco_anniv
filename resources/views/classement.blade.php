@@ -35,14 +35,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	
 	<br/><br/>
 	<div class="votretop">	
-		<form action="" method="post">
+		<form action="monrang" method="post">
+			{{csrf_field()}}
 			<div class="votretag"><strong>Saisir Votre</strong></div>
 				<div class="votredrop">
-				    <input type="text" name="identifiant" value=""  placeholder="Code de vote"  style="background:none; border:none;" required> 
+				    <input type="text" name="lecodecandidat" value=""  placeholder="Code de vote"  style="background:none; border:none;" required> 
 				</div>
-				<input type="submit" id="submit"  name="contactsubmit" value="Envoyer" class="contactsubbbtn" style="margin:0; float:left; font-size:12px; width:70px;" />
+				<input type="submit" id="submit" value="Envoyer" class="contactsubbbtn" style="margin:0; float:left; font-size:12px; width:70px;" />
 				<div class="clear"></div>
 				<div class="clear"></div>
+			
 		</form>
 
 		<div class="events-classe">
@@ -53,8 +55,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="panel panel-primary">
 							<div class="panel-heading"><center>VOTRE CLASSEMENT</center></div>
 							<div class="panel-body">
-								<div class="live-classe">
-													
+								<div class="row">
+									{{isset($message)? $message : ""}}
+									@if(isset($candidat))
+									<div class="col-sm-12">
+										<img class="imag" src="{{URL::asset('/images/img/avatar/'.$candidat->photo)}}">
+									</div>
+									<div class="col-sm-12">	
+										<p>{{$candidat->nom.' '.$candidat->prenom}}</p>
+										<p>Code: {{$candidat->codecandidat}}</p>
+										<p>{{$candidat->voix}}er avec {{$candidat->voix}} voix</p>
+									</div>
+									@endif			
 								</div>
 								
 							</div>

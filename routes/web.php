@@ -3,16 +3,21 @@
 
 use App\Mail\ContactMessageCreated;
 //Route de administration
-Route::get('/admins/','AdminsController@dashbord');
-Route::post('/admins/','AdminsController@dashbord');
-Route::get('/admins/index','AdminsController@dashbord');
-Route::post('/admins/index','AdminsController@dashbord');
+Route::group(['prefix'=>'admins','middleware'=>'utilisateur'],function(){
+	
+	Route::get('/','AdminsController@dashbord')->name('Home');
+	Route::post('/','AdminsController@dashbord')->name('Home');
+	Route::get('/index','AdminsController@dashbord')->name('Index');
+	Route::post('/index','AdminsController@dashbord')->name('Index');
+
+});
+
 Route::get('/admins/login','AdminsController@showLogin');
-Route::post('/admins/login','AdminsController@showLogin');
+Route::post('/admins/login','AdminsController@connexion');
 
 //Route Anniversaire
-Route::get('/admins/genereranniv', 'AnnivController@genererAnniv');
-Route::post('/admins/genereranniv', 'AnnivController@genererAnniv');
+Route::get('/admins/genereranniv', 'AnnivController@genererAnniv')->name('genereranniv');
+Route::post('/admins/genereranniv', 'AnnivController@genererAnniv')->name('genereranniv');
 
 #Route::any({teste}','IndexController@comptaRebour')->where(['teste'=>'/\/\\S+/']);
 
@@ -63,4 +68,6 @@ Route::get ('/souscritsms', 'PageController@showSoucritSms');
 //Route vote & Classement
 Route::get('/admins/ajoutvote', 'CandidatsController@addVote')->name('ajoutvote');
 Route::post('/admins/ajoutvote','CandidatsController@addVote')->name('ajoutvote');
-Route::get ('/classement', 'ClassementController@showClassement');
+Route::get('/classement', 'ClassementController@showClassement');
+Route::get('/monrang', 'ClassementController@monRang');
+Route::post('/monrang', 'ClassementController@monRang');

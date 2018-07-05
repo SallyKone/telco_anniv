@@ -20,6 +20,11 @@ class Utilitaires
     {
     	return DB::select(DB::raw('CALL GET_TOP10_BY_DATE(?)'),array($ladate));
     }
+    //Classement des candidats d'une date d'anniversaire 
+    public function classement($ladate)
+    {
+        return DB::select(DB::raw('CALL SP_CLASSEMENT(?)'),array($ladate));
+    }
     // liste des candidats en competition
     public function listeCandidatCompet ()
     {
