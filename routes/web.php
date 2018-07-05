@@ -9,6 +9,11 @@ Route::group(['prefix'=>'admins','middleware'=>'utilisateur'],function(){
 	Route::post('/','AdminsController@dashbord')->name('Home');
 	Route::get('/index','AdminsController@dashbord')->name('Index');
 	Route::post('/index','AdminsController@dashbord')->name('Index');
+	
+	Route::get('/candidat','AdminsController@showCandidat')->name('candidat');//Candidats
+	Route::post('/candidat','AdminsController@modifierCandidat')->name('candidat');
+	Route::get('/listcandidat','AdminsController@getAllCandidats')->name('listcandidat');
+	Route::post('/listcandidat','AdminsController@getAllCandidats')->name('listcandidat');
 
 });
 

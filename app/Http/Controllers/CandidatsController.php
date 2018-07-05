@@ -160,11 +160,6 @@ class CandidatsController extends Controller
 
     }
 
-    //Liste de tous les candidats
-    public function getAllCandidats()
-    {
-    	return DB::table('candidats')->get();
-    }
     //LES FONCTIONS POST
     
     //MODIFIER CANDIDATS

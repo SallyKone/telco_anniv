@@ -31,6 +31,7 @@
               </p>
             </a>
           </li>
+          <!-- Menu d'administration des anniversaires -->
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fa fa-tree"></i>
@@ -41,7 +42,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{route('genereranniv')}}" class="nav-link">
+                <a href="{{route('genereranniv')}}" class="nav-link" target="blank">
                   <i class="fa fa-circle-o nav-icon"></i>
                   <p>Générer</p>
                 </a>
@@ -60,6 +61,37 @@
               </li>
             </ul>
           </li>
+          <!-- Gestion des candidats -->
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-user"></i>
+              <p>
+                Candidats
+                <i class="fa fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Les Gagnant</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Profil incomplet</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('listcandidat')}}" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Liste complète</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <!-- Menu de la base de données -->
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
               <i class="nav-icon fa fa-table"></i>
