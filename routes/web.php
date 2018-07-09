@@ -9,11 +9,21 @@ Route::group(['prefix'=>'admins','middleware'=>'utilisateur'],function(){
 	Route::post('/','AdminsController@dashbord')->name('Home');
 	Route::get('/index','AdminsController@dashbord')->name('Index');
 	Route::post('/index','AdminsController@dashbord')->name('Index');
-	
-	Route::get('/candidat','AdminsController@showCandidat')->name('candidat');//Candidats
+	//Candidats
+	Route::get('/candidat','AdminsController@showCandidat')->name('candidat');
 	Route::post('/candidat','AdminsController@modifierCandidat')->name('candidat');
 	Route::get('/listcandidat','AdminsController@getAllCandidats')->name('listcandidat');
 	Route::post('/listcandidat','AdminsController@getAllCandidats')->name('listcandidat');
+	//Anniversaires
+	Route::get('/anniversaire','AdminsController@showAnniversaire')->name('anniversaire');
+	Route::post('/anniversaire','AdminsController@modifierAnniversaire')->name('anniversaire');
+	Route::get('/listanniv','AdminsController@getAllAnniversaires')->name('listanniv');
+	Route::post('/listanniv','AdminsController@getAllAnniversaires')->name('listanniv');
+	//Recompenses
+	Route::get('/recompense','AdminsController@showRecompense')->name('recompense');
+	Route::post('/recompense','AdminsController@modifierRecompense')->name('recompense');
+	Route::get('/listrecompense','AdminsController@getAllRecompenses')->name('listrecompense');
+	Route::post('/listrecompense','AdminsController@getAllRecompenses')->name('listrecompense');
 
 });
 

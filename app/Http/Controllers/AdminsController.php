@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\DB;
 use App\Providers\Utilitaires;
 use App\Utilisateurs;
 use App\Candidats;
+use App\Anniversaires;
+use App\Recompenses;
 
 class AdminsController extends Controller
 {
@@ -60,6 +62,32 @@ class AdminsController extends Controller
         $candidat = Candidats::findOrfail($idcandidat);
         return view('admins/candidat')->with(['candidat'=>$candidat,'nbrami'=>$nbrami[0]->nbramis]);
     }
+    //ANNIVERSAIRES
+    public function showAnniversaire(Request $request)
+    {
+        $idanniv = $request->id;
+        
+        $nbrparticip = DB::table('anniversaires')->leftjoin('participes','anniversaires.id','=','participes.id_anniversaire')->leftjoin('candidats','candidats.id','=','participes.id_candidat')->groupBy('anniversaires.id')->select(DB::raw('COUNT(participes.id_candidat) as nbrparticipe'))->where('anniversaires.id',$idanniv)->get();
+
+        $legagnant = DB::table('anniversaires')->join('participes','anniversaires.id','=','participes.id_anniversaire')->join('candidats','candidats.id','=','participes.id_candidat')->select('candidats.nom','candidats.prenom')->where([['anniversaires.id','=',$idanniv],['participes.gagne','=','1']])->get();
+
+        $anniversaire = DB::table('anniversaires')->leftjoin('recompenses','recompenses.id','=','anniversaires.id_recompense')->select('anniversaires.*',DB::raw('recompenses.photo as photo'))->where('anniversaires.id','=',$idanniv)->get();
+        //dd($anniversaire);
+        return view('admins/anniversaire')->with(['anniversaire'=>$anniversaire[0],'legagnant'=>$legagnant,'nbrparticipe'=>$nbrparticip[0]->nbrparticipe]);
+    }
+    //RECOMPENSES
+    public function showRecompense(Request $request)
+    {
+        $recompense = new Recompenses();
+        $listanniv = DB::table('anniversaires')->get();
+        if (isset($request->id)) {
+            $idrecompense = $request->id;
+
+            $recompense = Recompenses::findOrfail($idrecompense);
+            return view('admins/recompense')->with(['recompense'=>$recompense,'listanniv'=>$listanniv]);
+        }
+        return view('admins/recompense')->with(['recompense'=>$recompense,'listanniv'=>$listanniv]);
+    }
     //Liste de tous les candidats
     public function getAllCandidats()
     {
@@ -67,6 +95,26 @@ class AdminsController extends Controller
         $titreliste = 'Liste de tous les candidats';
         $lists = DB::table('candidats')->leftjoin('amis','candidats.id','=','amis.id_candidat')->groupBy('candidats.id')->select(DB::raw('COUNT(amis.id_candidat) as nbramis'),'candidats.id', 'candidats.login' , 'candidats.codecandidat', 'candidats.nom', 'candidats.prenom', 'candidats.numero', 'candidats.photo', 'candidats.jour_naiss', 'candidats.mois_naiss', 'annee_naiss', 'candidats.genre', 'candidats.profil_complet')->get();
         $colonnes = ['Nom & Prenom', 'Login', 'Code', 'Jour', 'Mois', 'Année', 'Genre', 'Numéro', 'Ami(s)', 'Profil'];
+
+        return view('admins/liste')->with(['nomtable'=>$nomtable,'titreliste'=>$titreliste,'lists'=>$lists,'colonnes'=>$colonnes]);
+    }
+    //Liste de tous les anniversaires
+    public function getAllAnniversaires()
+    {
+        $nomtable = 'anniversaire';
+        $titreliste = 'Liste de tous les anniversaires';
+        $lists = DB::table('anniversaires')->leftjoin('participes','anniversaires.id','=','participes.id_anniversaire')->leftjoin('candidats','candidats.id','=','participes.id_candidat')->groupBy('anniversaires.id')->select(DB::raw('COUNT(participes.id_candidat) as nbrparticipe'),'anniversaires.*')->get();
+        $colonnes = ['Libelle', 'Participant', 'Etat'];
+
+        return view('admins/liste')->with(['nomtable'=>$nomtable,'titreliste'=>$titreliste,'lists'=>$lists,'colonnes'=>$colonnes]);
+    }
+    //Liste de tous les recompenses
+    public function getAllRecompenses()
+    {
+        $nomtable = 'recompense';
+        $titreliste = 'Liste de toutes les recompenses';
+        $lists = DB::table('recompenses')->get();
+        $colonnes = ['Libelle', 'Description'];
 
         return view('admins/liste')->with(['nomtable'=>$nomtable,'titreliste'=>$titreliste,'lists'=>$lists,'colonnes'=>$colonnes]);
     }

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 3 | Data Tables</title>
+  <title>AdminTELCO-ANNIV | Liste</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -12,7 +12,7 @@
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- DataTables -->
-  <link rel="stylesheet" href="{{URL::asset('plugins/datatables/dataTables.bootstrap4.css')}}">
+  <link rel="stylesheet" href="{{URL::asset('datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.css')}}">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{URL::asset('dist/css/adminlte.min.css')}}">
   <!-- Google Font: Source Sans Pro -->
@@ -62,6 +62,7 @@
                 <tbody>
                 @foreach($lists as $key => $valeur)
                 <tr>
+                  @if($nomtable == 'candidat')
                   <td>{{$valeur->nom.' '.$valeur->prenom}}</td>
                   <td>{{$valeur->login}}</td>
                   <td>{{$valeur->codecandidat}}</td>
@@ -71,8 +72,20 @@
                   <td>{{$valeur->genre}}</td>
                   <td>{{$valeur->numero}}</td>
                   <td>{{$valeur->nbramis}}</td>
-                  <td>{{$valeur->profil_complet}}</td>
-                  <td><a href="{{route('candidat')}}?id={{$valeur->id}}" class="btn btn-sm btn-primary modifier">Modifier</a></td>
+                  <td>{{($valeur->profil_complet)?'Complet':'Incomplet'}}</td>
+                  <td style="text-align: center;"><a href="{{route('candidat')}}?id={{$valeur->id}}" class="btn btn-sm btn-primary modifier">Modifier</a></td>
+                  @endif
+                  @if($nomtable == 'anniversaire')
+                  <td>{{$valeur->libelle}}</td>
+                  <td style="text-align: right;">{{$valeur->nbrparticipe}}</td>
+                  <td>{{($valeur->anniv_cloture)?'Cloturé':'Ouvert'}}</td>
+                  <td style="text-align: center;"><a href="{{route('anniversaire')}}?id={{$valeur->id}}" class="btn btn-sm btn-primary modifier">Modifier</a></td>
+                  @endif
+                  @if($nomtable == 'recompense')
+                  <td>{{$valeur->libelle}}</td>
+                  <td>{{$valeur->description}}</td>
+                  <td style="text-align: center;"><a href="{{route('recompense')}}?id={{$valeur->id}}" class="btn btn-sm btn-primary modifier">Modifier</a></td>
+                  @endif
                 </tr>
                 @endforeach
                 </tbody>
@@ -112,8 +125,8 @@
 <!-- Bootstrap 4 -->
 <script src="{{URL::asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <!-- DataTables -->
-<script src="{{URL::asset('plugins/datatables/jquery.dataTables.js')}}"></script>
-<script src="{{URL::asset('plugins/datatables/dataTables.bootstrap4.js')}}"></script>
+<script src="{{URL::asset('datatables/DataTables-1.10.16/js/jquery.dataTables.min.js')}}"></script>
+<script src="{{URL::asset('datatables/DataTables-1.10.16/js/dataTables.bootstrap4.min.js')}}"></script>
 <!-- SlimScroll -->
 <script src="{{URL::asset('plugins/slimScroll/jquery.slimscroll.min.js')}}"></script>
 <!-- FastClick -->
@@ -125,14 +138,45 @@
 <!-- page script -->
 <script>
   $(function () {
-    $('#table').DataTable({
+    
+    var table = $('#table').DataTable({
+      "responsive": true,
+      "pagingType": "full_numbers",
+      "lengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "Tous"]],
+      "language" : {
+        "decimal" : ',',
+        "thousand" : '.',
+        "lengthMenu": "Afficher _MENU_ lignes par page",
+        "zeroRecords": "Aucun résultat - désolé",
+        "info": "Page _PAGE_ sur _PAGES_",
+        "infoEmpty": "Pas de données enregistrées",
+        "infoFiltered": "(filtré sur _MAX_ lignes total)",
+        "search" : "Rechercher"
+      },
       "paging": true,
       "lengthChange": true,
       "searching": true,
       "ordering": true,
       "info": true,
-      "autoWidth": false
+      "autoWidth": true,
     });
+
+    $('#table tfoot th:not(th:last-child)').each(function(){
+        var title = $(this).text();
+        
+        $(this).html('<input style="width:100%;" type="text" placeholder="Search '+title+'" />');
+    });
+ 
+    // Apply the search
+    table.columns().every(function () {
+        var that = this;
+ 
+        $('input', this.footer() ).on('keyup change', function(){
+            if (that.search() !== this.value ){
+                that.search( this.value ).draw();
+            }
+        } );
+    } );
   });
 </script>
 </body>

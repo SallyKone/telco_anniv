@@ -50,11 +50,35 @@
               <li class="nav-item">
                 <a href="" class="nav-link">
                   <i class="fa fa-circle-o nav-icon"></i>
-                  <p>Liste encours</p>
+                  <p>Les Gagnants</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="" class="nav-link">
+                <a href="{{route('listanniv')}}" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Liste complète</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <!-- Gestion des recompense -->
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-gift"></i>
+              <p>
+                Récompenses
+                <i class="fa fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('recompense')}}" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Ajouter</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('listrecompense')}}" class="nav-link">
                   <i class="fa fa-circle-o nav-icon"></i>
                   <p>Liste complète</p>
                 </a>
@@ -71,18 +95,6 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="" class="nav-link">
-                  <i class="fa fa-circle-o nav-icon"></i>
-                  <p>Les Gagnant</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="" class="nav-link">
-                  <i class="fa fa-circle-o nav-icon"></i>
-                  <p>Profil incomplet</p>
-                </a>
-              </li>
               <li class="nav-item">
                 <a href="{{route('listcandidat')}}" class="nav-link">
                   <i class="fa fa-circle-o nav-icon"></i>
