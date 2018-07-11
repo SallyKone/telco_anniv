@@ -46,6 +46,21 @@
           <div class="col-sm-6">
             <h1>Gestion des Candidats</h1>
           </div>
+          @if(isset($statut))
+          <div class="col-sm-12">
+            <div class="card bg-{{$statut?'success':'danger'}}-gradient">
+              <div class="card-header">
+                <h3 class="card-title">{{$message}}</h3>
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-widget="remove"><i class="fa fa-times"></i>
+                  </button>
+                </div>
+                <!-- /.card-tools -->
+              </div>
+              <!-- /.card-header -->
+            </div>
+          </div>
+          @endif
         </div>
       </div><!-- /.container-fluid -->
     </section>
@@ -55,155 +70,163 @@
       <div class="container-fluid">
         <!-- SELECT2 EXAMPLE -->
         <div class="card card-default">
-          <div class="card-header">
-            <h3 class="card-title">Modification</h3>
+          <form method="post" action="{{route('candidat')}}" enctype="multipart/form-data">
+            {{csrf_field()}}
+            <div class="card-header">
+              <h3 class="card-title">Modification</h3>
 
-            <div class="card-tools">
-              <button type="button" class="btn btn-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-            </div>
-          </div>
-          <!-- /.card-header -->
-          <div class="card-body">
-            <div class="row">
-              <div class="col-md-6">
-
-                <div class="form-group">
-                  <label for="exampleInputFile">Photo</label>
-                  <div class="row">
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                      <img src="{{URL::asset('/images/img/avatar/'.$candidat->photo)}}" alt="photo de profil du Candidat">
-                    </div>
-                  </div>
-                  <div class="input-group">
-                    <div class="custom-file">
-                      <input type="file" class="custom-file-input" id="exampleInputFile">
-                      <label class="custom-file-label" for="exampleInputFile">Choisir une photo</label>
-                    </div>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="nom">Nom</label>
-                  <input value="{{$candidat->nom}}" required type="text" class="form-control" id="nom" name="nom" placeholder="Entrez le nom">
-                </div>
-                <div class="form-group">
-                  <label for="nom">Prénom</label>
-                  <input value="{{$candidat->prenom}}" required type="text" class="form-control" id="prenom" name="prenom" placeholder="Entrez le prénom">
-                </div>
-                <div class="form-group">
-                  <label>Date naissance</label>
-                  <div class="row">
-                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                      <select class="form-control select2" style="width: 100%;">
-                        <option value="">Jour</option>
-                        <option>Alaska</option>
-                        <option>Washington</option>
-                      </select>
-                    </div>
-                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                      <select class="form-control select2" style="width: 100%;">
-                        <option value="">Mois</option>
-                        <option>Alaska</option>
-                        <option>Washington</option>
-                      </select>
-                    </div>
-                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                      <select class="form-control select2" style="width: 100%;">
-                        <option value="">Année</option>
-                        <option>Alaska</option>
-                        <option>Washington</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-                <!-- Genre -->
-                <div class="form-group">
-                  <label for="mtpass">Genre</label>
-                  <div class="row">
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                      <label>
-                        <input type="radio" name="r1" class="minimal"> Masculin
-                      </label>&nbsp;&nbsp;&nbsp;
-                      <label>
-                        <input type="radio" name="r1" class="minimal"> Feminin
-                      </label>
-                    </div>
-                  </div>
-                </div>
-                <!-- phone -->
-                <div class="form-group">
-                  <label>Téléphone</label>
-                  <div class="input-group">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text"><i class="fa fa-phone"></i></span>
-                    </div>
-                    <input value="{{$candidat->numero}}" type="text" class="form-control">
-                  </div>
-                  <!-- /.input group -->
-                </div>
-                <!-- /.form-group -->
-                
+              <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
               </div>
-              <!-- /.col -->
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="codecandidat">Code de vote</label>
-                  <input value="{{$candidat->codecandidat}}" disabled type="text" class="form-control" id="codecandidat" name="codecandidat">
-                </div>
-                <div class="form-group">
-                  <label for="login">Login</label>
-                  <input value="{{$candidat->login}}" disabled type="text" class="form-control" id="login" name="login">
-                </div>
-
-                <div class="form-group">
-                  <label for="mtpass">Mot de passe</label>
-                  <input type="password" class="form-control" id="mtpass" name="mtpass" placeholder="">
-                </div>
-                
-                <!-- Type de Pièces et identifiant -->
-                <div class="form-group">
-                  <label>Type de Pièces</label>
-                  <select class="form-control select2" style="width: 100%;">
-                    <option value="">Pièce</option>
-                    <option>Alaska</option>
-                    <option>Washington</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label for="numpiece">ID de la Pièce</label>
-                  <input type="text" class="form-control" id="numpiece" name="numpiece" placeholder="Entrez l'identifiant de la pièce">
-                </div>
-                <!-- Nationalité -->
-                <div class="form-group">
-                  <label>Pays</label>
-                  <select class="form-control select2" style="width: 100%;">
-                    <option value="">Sélectionner le pays</option>
-                    <option>Alaska</option>
-                    <option>Washington</option>
-                  </select>
-                </div>
-                <!-- Profil -->
-                <div class="form-group">
-                  <label>
-                    <input type="checkbox" class="minimal" disabled> Profil complet
-                  </label>
-                </div>
-                <div class="form-group">
-                  <label for="login">Nombre d'amis</label>
-                  <input disabled type="text" class="form-control" id="nbrami" name="nbrami" value="{{$nbrami}}">
-                </div>
-                <div class="form-group">
-                  <label for="login">Date dernière modification</label>
-                  <input value="{{isset($candidat->updated_at)? date('d-m-Y',strtotime($candidat->updated_at)):''}}" disabled type="text" class="form-control" id="login" name="login">
-                </div>
-              </div>
-              <!-- /.col -->
             </div>
-            <!-- /.row -->
-          </div>
-          <!-- /.card-body -->
-          <div class="card-footer" style="text-align:right;">
-            <input class="btn btn-primary push-rigth" type="submit" value="Valider">
-          </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="exampleInputFile">Photo</label>
+                    <div class="row">
+                      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <img width="50%" id="imgaffiche" src="{{URL::asset('/images/img/avatar/'.$candidat->photo)}}" alt="photo de profil du Candidat">
+                      </div>
+                    </div>
+                    <div class="input-group">
+                      <div class="custom-file">
+                        <input name="photo" type="file" class="custom-file-input" id="imgInp">
+                        <label id="labelimg" class="custom-file-label" for="imgInp">Choisir une photo</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="nom">Nom</label>
+                    <input value="{{$candidat->nom}}" required type="text" class="form-control" id="nom" name="nom" placeholder="Entrez le nom">
+                  </div>
+                  <div class="form-group">
+                    <label for="prenom">Prénom</label>
+                    <input value="{{$candidat->prenom}}" required type="text" class="form-control" id="prenom" name="prenom" placeholder="Entrez le prénom">
+                  </div>
+                  <div class="form-group">
+                    <label>Date naissance</label>
+                    <div class="row">
+                      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                        <select name="jour" class="form-control select2" style="width: 100%;">
+                          <option value="">Jour</option>
+                          @for($i=1; $i <= 31; $i++)
+                            <option {{ (int)$candidat->jour_naiss == $i ? 'selected' : ''}} value="{{$i}}">{{$i<10 ? '0'.$i : $i}}</option>
+                          @endfor
+                        </select>
+                      </div>
+                      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                        <select name="mois" class="form-control select2" style="width: 100%;">
+                          <option value="">Mois</option>
+                          @for($j=1; $j <= 12; $j++)
+                            <option {{ (int)$candidat->mois_naiss == $j ? 'selected' : ''}} value="{{$j}}">{{$j<10 ? '0'.$j : $j}}</option>
+                          @endfor
+                        </select>
+                      </div>
+                      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                        <select name="annee" class="form-control select2" style="width: 100%;">
+                          <option value="">Année</option>
+                          @for($i=1960; $i <= 2100; $i++)
+                            <option {{ (int)$candidat->annee_naiss == $i ? 'selected' : ''}} value="{{$i}}">{{$i}}</option>
+                          @endfor
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Genre -->
+                  <div class="form-group">
+                    <label for="mtpass">Genre</label>
+                    <div class="row">
+                      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <label>
+                          <input {{$candidat->genre == 'm' ? 'checked' : ''}} type="radio" name="genre" value="m" class="minimal"> Masculin
+                        </label>&nbsp;&nbsp;&nbsp;
+                        <label>
+                          <input {{$candidat->genre == 'f' ? 'checked' : ''}} type="radio" name="genre" value="f" class="minimal"> Feminin
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- phone -->
+                  <div class="form-group">
+                    <label>Téléphone</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fa fa-phone"></i></span>
+                      </div>
+                      <input name="numero" value="{{$candidat->numero}}" type="text" class="form-control">
+                    </div>
+                    <!-- /.input group -->
+                  </div>
+                  <!-- /.form-group -->
+                  
+                </div>
+                <!-- /.col -->
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="codecandidat">Code de vote</label>
+                    <input value="{{$candidat->codecandidat}}" disabled type="text" class="form-control" id="codecandidat" name="codecandidat">
+                  </div>
+                  <div class="form-group">
+                    <label for="login">Login</label>
+                    <input value="{{$candidat->login}}" disabled type="text" class="form-control" id="lelogin" name="lelogin">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="mtpass">Mot de passe</label>
+                    <input disabled value="{{$candidat->motpass}}" type="text" class="form-control" placeholder="">
+                  </div>
+                  
+                  <!-- Type de Pièces et identifiant -->
+                  <div class="form-group">
+                    <label>Type de Pièces</label>
+                    <select name="idtypiece" class="form-control select2" style="width: 100%;">
+                      <option value="">Sélectionnez un type</option>
+                      @foreach($typepieces as $typepiece)
+                        <option {{($candidat->id_typepiece == $typepiece->id) ? "selected":""}} value="{{$typepiece->id}}">{{$typepiece->abreviation}}</option>
+                      @endforeach
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="numpiece">ID de la Pièce</label>
+                    <input value="{{$candidat->numpiece}}" type="text" class="form-control" id="numpiece" name="numpiece" placeholder="Entrez l'identifiant de la pièce">
+                  </div>
+                  <!-- Nationalité -->
+                  <div class="form-group">
+                    <label for="idpays">Pays</label>
+                    <select id="idpays" name="idpays" class="form-control select2" style="width: 100%;">
+                      <option value="">Sélectionner le pays</option>
+                      @foreach($pays as $valeur)
+                        <option {{($candidat->id_pays == $valeur->id) ? "selected":""}} value="{{$valeur->id}}">{{$valeur->nom_fr_fr}}</option>
+                      @endforeach
+                    </select>
+                  </div>
+                  <!-- Profil -->
+                  <div class="form-group">
+                    <label>
+                      <input type="checkbox" class="minimal" disabled> Profil complet
+                    </label>
+                  </div>
+                  <div class="form-group">
+                    <label for="login">Nombre d'amis</label>
+                    <input disabled type="text" class="form-control" id="nbrami" name="nbrami" value="{{$nbrami}}">
+                  </div>
+                  <div class="form-group">
+                    <label>Date dernière modification</label>
+                    <input value="{{isset($candidat->updated_at)? date('d-m-Y',strtotime($candidat->updated_at)):''}}" disabled type="text" class="form-control">
+                  </div>
+                </div>
+                <!-- /.col -->
+              </div>
+              <!-- /.row -->
+            </div>
+            <!-- /.card-body -->
+            <div class="card-footer" style="text-align:right;">
+              <input type="hidden" name="id" value="{{$candidat->id}}">
+              <input class="btn btn-primary push-rigth" type="submit" value="Valider">
+            </div>
+          </form>
         </div>
         <!-- /.card -->
       </div><!-- /.container-fluid -->
@@ -246,6 +269,21 @@
 <!-- Page script -->
 <script>
   $(function () {
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('#imgaffiche').attr('src', e.target.result);
+            }
+            
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    
+    $("#imgInp").change(function(){
+        readURL(this);
+        $("#labelimg").html($("#imgInp").val());
+    });
     //Initialize Select2 Elements
     $('.select2').select2();
     $('.js-example-basic-single').select2({

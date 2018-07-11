@@ -77,26 +77,25 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <label class="col-md-4"><strong>Né(e) le: </strong></label>
                                 <select class="col-md-2" name="jour" id="Date" class="inqdropp" required>
                                     <option value="">Jour</option>
-                                         @for($i=1;$i<31;$i++)
+                                        @for($i=1;$i <= 31;$i++)
                                             <option {{(int)$candidat['jour_naiss'] == $i? "selected":""}} value="{{$i}}">{{$i}}
                                             </option>
                                         @endfor 
                                 </select>
                                 <select class="col-md-2" name="mois" id="Month" class="inqdropp" required>
-                                    <option value="0">Mois</option>
-
-                                    <option {{(int)$candidat['mois_naiss'] == 1? "selected":""}} value="1">Janvier</option>
-                                    <option {{(int)$candidat['mois_naiss'] == 2? "selected":""}} value="2">Fevrier</option>
-                                    <option {{(int)$candidat['mois_naiss'] == 3? "selected":""}} value="3">Mars</option>
-                                    <option {{(int)$candidat['mois_naiss'] == 4? "selected":""}} value="4">Avril</option>
-                                    <option {{(int)$candidat['mois_naiss'] == 5? "selected":""}} value="5">Mai</option>
-                                    <option {{(int)$candidat['mois_naiss'] == 6? "selected":""}} value="6">Juin</option>
-                                    <option {{(int)$candidat['mois_naiss'] == 7? "selected":""}} value="7">Juillet</option>
-                                    <option {{(int)$candidat['mois_naiss'] == 8? "selected":""}} value="8">Aout</option>
-                                    <option {{(int)$candidat['mois_naiss'] == 9? "selected":""}} value="9">Septembre</option>
-                                    <option {{(int)$candidat['mois_naiss'] == 10? "selected":""}} value="10">Octobre</option>
-                                    <option {{(int)$candidat['mois_naiss'] == 11? "selected":""}} value="11">Novembre</option>
-                                    <option {{(int)$candidat['mois_naiss'] == 12? "selected":""}} value="12">Decembre</option>
+                                    <option value="">Mois</option>
+                                    <option {{(int)$candidat['mois_naiss'] == 1 ? "selected":""}} value="1">Janvier</option>
+                                    <option {{(int)$candidat['mois_naiss'] == 2 ? "selected":""}} value="2">Fevrier</option>
+                                    <option {{(int)$candidat['mois_naiss'] == 3 ? "selected":""}} value="3">Mars</option>
+                                    <option {{(int)$candidat['mois_naiss'] == 4 ? "selected":""}} value="4">Avril</option>
+                                    <option {{(int)$candidat['mois_naiss'] == 5 ? "selected":""}} value="5">Mai</option>
+                                    <option {{(int)$candidat['mois_naiss'] == 6 ? "selected":""}} value="6">Juin</option>
+                                    <option {{(int)$candidat['mois_naiss'] == 7 ? "selected":""}} value="7">Juillet</option>
+                                    <option {{(int)$candidat['mois_naiss'] == 8 ? "selected":""}} value="8">Aout</option>
+                                    <option {{(int)$candidat['mois_naiss'] == 9 ? "selected":""}} value="9">Septembre</option>
+                                    <option {{(int)$candidat['mois_naiss'] == 10 ? "selected":""}} value="10">Octobre</option>
+                                    <option {{(int)$candidat['mois_naiss'] == 11 ? "selected":""}} value="11">Novembre</option>
+                                    <option {{(int)$candidat['mois_naiss'] == 12 ? "selected":""}} value="12">Decembre</option>
                                 </select>
                                 <select class="col-md-3" name="annee" id="year" class="inqdropp" required>
                                     <option value="0">Annee</option>
@@ -108,7 +107,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <br>
                             <div class="row">
                                 <label class="col-md-4"><strong>Téléphone: </strong></label>
-                                <input class="col-md-7" type="text"  value="{{$candidat['telephone']}}" required name="telephone">
+                                <input class="col-md-7" type="text"  value="{{$candidat['numero']}}" required name="numero">
                             </div>
                             <br>
                             <div class="clear"></div>

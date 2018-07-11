@@ -174,7 +174,7 @@ class CandidatsController extends Controller
             $candidats->jour_naiss = $request->jour; 
             $candidats->mois_naiss = $request->mois; 
             $candidats->annee_naiss = $request->annee;                
-            $candidats->telephone = $request->telephone;
+            $candidats->numero = $request->numero;
             
             //Enregistrement d'images autiorisées
             $typepermis = ['jpg','png','jpeg'];
@@ -192,7 +192,7 @@ class CandidatsController extends Controller
                 $candidats->photo = $avatar;
                 $candidats->updated_at = now();
 
-                if(1048600 > $_FILES["photo"]["size"])
+                if(2097200 > $_FILES["photo"]["size"])
                 {
                     if(in_array($extens, $typepermis))
                     {
@@ -214,7 +214,7 @@ class CandidatsController extends Controller
                 }
                 else
                 {
-                    $messg="La taille de l'image doit être inferieure à 1 Mo";
+                    $messg="La taille de l'image doit être inferieure à 2 Mo";
                 }
                 return view('modifeprofile')->with(['candidat'=>$candidats,'message'=>$messg,'statut'=>false]);
             }

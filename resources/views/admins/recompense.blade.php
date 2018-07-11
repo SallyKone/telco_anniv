@@ -43,9 +43,24 @@
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
-          <div class="col-sm-6">
+          <div class="col-sm-12">
             <h1>Gestion des recompenses</h1>
           </div>
+          @if(isset($statut))
+          <div class="col-sm-12">
+            <div class="card bg-{{$statut?'success':'danger'}}-gradient">
+              <div class="card-header">
+                <h3 class="card-title">{{$message}}</h3>
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-widget="remove"><i class="fa fa-times"></i>
+                  </button>
+                </div>
+                <!-- /.card-tools -->
+              </div>
+              <!-- /.card-header -->
+            </div>
+          </div>
+          @endif
         </div>
       </div><!-- /.container-fluid -->
     </section>
@@ -55,57 +70,74 @@
       <div class="container-fluid">
         <!-- SELECT2 EXAMPLE -->
         <div class="card card-default">
-          <div class="card-header">
-            <h3 class="card-title">Modification</h3>
+          <form method="post" action="{{route('recompense')}}" enctype="multipart/form-data">
+            {{csrf_field()}}
+            <div class="card-header">
+              <h3 class="card-title">Modification</h3>
 
-            <div class="card-tools">
-              <button type="button" class="btn btn-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-            </div>
-          </div>
-          <!-- /.card-header -->
-          <div class="card-body">
-            <div class="row">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="nom">Libelle</label>
-                  <input value="{{$recompense->libelle}}" required type="text" class="form-control" id="nom" name="nom" placeholder="Entrez le nom">
-                </div>
-                <div class="form-group">
-                  <label for="nom">Description</label>
-                  <textarea class="form-control" rows="3" value="{{$recompense->description}}" placeholder="Entrez la description"></textarea>
-                </div>
-                <!-- /.form-group -->
-                
+              <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
               </div>
-              <!-- /.col -->
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="exampleInputFile">Image</label>
-                  <div class="row">
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                      <img src="" alt="Image de la recompense">
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+              <div class="row">
+
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="dateanniv">Date Anniversaire</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                      </div>
+                      <input value="{{date('d/m/Y',strtotime($recompense->dateanniv))}}" required name="dateanniv" id="dateanniv" type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask>
+                    </div>
+                    <!-- /.input group -->
+                  </div>
+                  <div class="form-group">
+                    <label for="libelle">Libelle</label>
+                    <input value="{{$recompense->libelle}}" required type="text" class="form-control" id="libelle" name="libelle" placeholder="Entrez le libelle">
+                  </div>
+                  <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea name="description" id="description" class="form-control" rows="3" placeholder="Entrez la description">{{$recompense->description}}</textarea>
+                  </div>
+                  <!-- /.form-group -->
+                  
+                </div>
+                <!-- /.col -->
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="exampleInputFile">Image</label>
+                    <div class="row">
+                      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <img width="50%" id="imgaffiche" src="{{URL::asset('images/cadeaux/'.$recompense->photo)}}" alt="Image de la recompense">
+                        <input value="{{$recompense->photo}}" name="imagetest" id="imagetest" type="hidden">
+                      </div>
+                    </div>
+                    <div class="input-group">
+                      <div class="custom-file">
+                        <input name="imageRec" id="imageRec" type="file" class="custom-file-input">
+                        <label id="labelimg" class="custom-file-label" for="labelimg">Choisir une image</label>
+                      </div>
                     </div>
                   </div>
-                  <div class="input-group">
-                    <div class="custom-file">
-                      <input type="file" class="custom-file-input" id="exampleInputFile">
-                      <label class="custom-file-label" for="exampleInputFile">Choisir une image</label>
-                    </div>
+                  <div class="form-group">
+                    <label for="login">Date dernière modification</label>
+                    <input value="{{isset($recompense->updated_at)? date('d-m-Y',strtotime($recompense->updated_at)):''}}" disabled type="text" class="form-control">
                   </div>
                 </div>
-                <div class="form-group">
-                  <label for="login">Date dernière modification</label>
-                  <input value="{{isset($recompense->updated_at)? date('d-m-Y',strtotime($recompense->updated_at)):''}}" disabled type="text" class="form-control" id="login" name="login">
-                </div>
+                <!-- /.col -->
               </div>
-              <!-- /.col -->
+              <!-- /.row -->
             </div>
-            <!-- /.row -->
-          </div>
-          <!-- /.card-body -->
-          <div class="card-footer" style="text-align:right;">
-            <input class="btn btn-primary push-rigth" type="submit" value="Valider">
-          </div>
+            <!-- /.card-body -->
+            <div class="card-footer" style="text-align:right;">
+              <input type="hidden" name="id" value="{{$recompense->id}}">
+              <input class="btn btn-primary push-rigth" type="submit" value="Valider">
+            </div>
+          </form>
+            <!-- /.form -->
         </div>
         <!-- /.card -->
       </div><!-- /.container-fluid -->
@@ -148,11 +180,23 @@
 <!-- Page script -->
 <script>
   $(function () {
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('#imgaffiche').attr('src', e.target.result);
+            }
+            
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    
+    $("#imageRec").change(function(){
+        readURL(this);
+        $("#labelimg").html($("#imageRec").val());
+    });
     //Initialize Select2 Elements
     $('.select2').select2();
-    $('.js-example-basic-single').select2({
-      placeholder: 'Select an option'
-    });
 
     //Datemask dd/mm/yyyy
     $('#datemask').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' });
@@ -161,58 +205,11 @@
     //Money Euro
     $('[data-mask]').inputmask();
 
-    //Date range picker
-    $('#reservation').daterangepicker();
-    //Date range picker with time picker
-    $('#reservationtime').daterangepicker({
-      timePicker         : true,
-      timePickerIncrement: 30,
-      format             : 'MM/DD/YYYY h:mm A'
-    });
-    //Date range as a button
-    $('#daterange-btn').daterangepicker(
-      {
-        ranges   : {
-          'Today'       : [moment(), moment()],
-          'Hier'   : [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-          'Last 7 Days' : [moment().subtract(6, 'days'), moment()],
-          'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-          'This Month'  : [moment().startOf('month'), moment().endOf('month')],
-          'Last Month'  : [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
-        },
-        startDate: moment().subtract(29, 'days'),
-        endDate  : moment()
-      },
-      function (start, end) {
-        $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'))
-      }
-    )
-
     //iCheck for checkbox and radio inputs
     $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
       checkboxClass: 'icheckbox_minimal-blue',
       radioClass   : 'iradio_minimal-blue'
-    })
-    //Red color scheme for iCheck
-    $('input[type="checkbox"].minimal-red, input[type="radio"].minimal-red').iCheck({
-      checkboxClass: 'icheckbox_minimal-red',
-      radioClass   : 'iradio_minimal-red'
-    })
-    //Flat red color scheme for iCheck
-    $('input[type="checkbox"].flat-red, input[type="radio"].flat-red').iCheck({
-      checkboxClass: 'icheckbox_flat-green',
-      radioClass   : 'iradio_flat-green'
-    })
-
-    //Colorpicker
-    $('.my-colorpicker1').colorpicker()
-    //color picker with addon
-    $('.my-colorpicker2').colorpicker()
-
-    //Timepicker
-    $('.timepicker').timepicker({
-      showInputs: false
-    })
+    });
   })
 </script>
 </body>

@@ -17,6 +17,7 @@ class CreateRecompensesTable extends Migration
             $table->bigIncrements('id');
             $table->string('libelle')->length(255);
             $table->text('description');
+            $table->date('dateanniv');
             $table->text('photo')->length(500);
 
             $table->timestamps();

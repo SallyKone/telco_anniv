@@ -4,7 +4,7 @@
 				<div class="col-md-9 top-left">
 					<ul>
 						<li><i class="fa fa-map-marker" aria-hidden="true"></i>Riviera Palmeraie,Rond point ADO phcie St Moise.</li>
-						<li><i class="fa fa-phone" aria-hidden="true"></i> +(225) 22 46 61 64</li>
+						<li><i class="fa fa-phone" aria-hidden="true"></i> +(225) 22 46 72 66</li>
 						<li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:info@example.com">info@telco.com</a></li>
 					</ul>
 				</div>

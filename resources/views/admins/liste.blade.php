@@ -13,6 +13,9 @@
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- DataTables -->
   <link rel="stylesheet" href="{{URL::asset('datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.css')}}">
+  <!-- Buttons-1.5.1 -->
+  <link rel="stylesheet" type="text/css" href="{{URL::asset('datatables/Buttons-1.5.1/css/buttons.bootstrap4.min.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{URL::asset('datatables/Buttons-1.5.1/css/buttons.dataTables.min.css')}}">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{URL::asset('dist/css/adminlte.min.css')}}">
   <!-- Google Font: Source Sans Pro -->
@@ -49,7 +52,7 @@
               <h3 class="card-title">{{$titreliste}}</h3>
             </div>
             <!-- /.card-header -->
-            <div class="card-body">
+            <div class="card-body" style="overflow-x: scroll;">
               <table id="table" class="table table-bordered table-striped">
                 <thead>
                 <tr>
@@ -131,6 +134,14 @@
 <script src="{{URL::asset('plugins/slimScroll/jquery.slimscroll.min.js')}}"></script>
 <!-- FastClick -->
 <script src="{{URL::asset('plugins/fastclick/fastclick.js')}}"></script>
+<!-- Buttons  -->
+<script src="{{URL::asset('datatables/Buttons-1.5.1/js/buttons.colVis.min.js')}}" type="text/javascript"></script>
+<script src="{{URL::asset('datatables/Buttons-1.5.1/js/buttons.html5.min.js')}}" type="text/javascript"></script>
+<script src="{{URL::asset('datatables/Buttons-1.5.1/js/buttons.print.min.js')}}" type="text/javascript"></script>
+<script src="{{URL::asset('datatables/Buttons-1.5.1/js/dataTables.buttons.min.js')}}" type="text/javascript"></script>
+<script src="{{URL::asset('datatables/Buttons-1.5.1/js/jszip-3.1.3.js')}}" type="text/javascript"></script>
+<script src="{{URL::asset('datatables/Buttons-1.5.1/js/pdfmake-0.1.36.js')}}" type="text/javascript"></script>
+<script src="{{URL::asset('datatables/Buttons-1.5.1/js/vfs_fonts-0.1.36.js')}}" type="text/javascript"></script>
 <!-- AdminLTE App -->
 <script src="{{URL::asset('dist/js/adminlte.min.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
@@ -140,9 +151,12 @@
   $(function () {
     
     var table = $('#table').DataTable({
+      dom: 'Bfrtip',
+      buttons: [
+              'pageLength', 'print','copy','csv','excel', 'pdf'
+            ],
       "responsive": true,
-      "pagingType": "full_numbers",
-      "lengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "Tous"]],
+      "lengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "Afficher Tous"]],
       "language" : {
         "decimal" : ',',
         "thousand" : '.',
@@ -164,7 +178,7 @@
     $('#table tfoot th:not(th:last-child)').each(function(){
         var title = $(this).text();
         
-        $(this).html('<input style="width:100%;" type="text" placeholder="Search '+title+'" />');
+        $(this).html('<input style="width:100%;" type="text" placeholder="'+title+'" />');
     });
  
     // Apply the search

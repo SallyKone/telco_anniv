@@ -44,7 +44,7 @@ class AdminsController extends Controller
                 session()->put('photo',$utilisateur->photo);
                 //session()->save();
 
-                return view('admins/index');
+                return view(route('Home'));
             }else{
                 return view('admins/login')->with(['statut'=>false, 'message'=>'Mot de passe erroné ! ']);
             }
@@ -58,14 +58,17 @@ class AdminsController extends Controller
         $idcandidat = $request->id;
         
         $nbrami = DB::table('candidats')->leftjoin('amis','candidats.id','=','amis.id_candidat')->groupBy('candidats.id')->select(DB::raw('COUNT(amis.id_candidat) as nbramis'))->where('candidats.id',$idcandidat)->get();
-
+        $typepieces = DB::table('typepieces')->get();
+        $pays = DB::table('pays')->get();
         $candidat = Candidats::findOrfail($idcandidat);
-        return view('admins/candidat')->with(['candidat'=>$candidat,'nbrami'=>$nbrami[0]->nbramis]);
+
+        return view('admins/candidat')->with(['candidat'=>$candidat,'pays'=>$pays,'typepieces'=>$typepieces,'nbrami'=>$nbrami[0]->nbramis]);
     }
     //ANNIVERSAIRES
     public function showAnniversaire(Request $request)
     {
         $idanniv = $request->id;
+        $recompenses = DB::table('recompenses')->get();
         
         $nbrparticip = DB::table('anniversaires')->leftjoin('participes','anniversaires.id','=','participes.id_anniversaire')->leftjoin('candidats','candidats.id','=','participes.id_candidat')->groupBy('anniversaires.id')->select(DB::raw('COUNT(participes.id_candidat) as nbrparticipe'))->where('anniversaires.id',$idanniv)->get();
 
@@ -73,7 +76,7 @@ class AdminsController extends Controller
 
         $anniversaire = DB::table('anniversaires')->leftjoin('recompenses','recompenses.id','=','anniversaires.id_recompense')->select('anniversaires.*',DB::raw('recompenses.photo as photo'))->where('anniversaires.id','=',$idanniv)->get();
         //dd($anniversaire);
-        return view('admins/anniversaire')->with(['anniversaire'=>$anniversaire[0],'legagnant'=>$legagnant,'nbrparticipe'=>$nbrparticip[0]->nbrparticipe]);
+        return view('admins/anniversaire')->with(['anniversaire'=>$anniversaire[0],'legagnant'=>$legagnant,'nbrparticipe'=>$nbrparticip[0]->nbrparticipe,'recompenses'=>$recompenses]);
     }
     //RECOMPENSES
     public function showRecompense(Request $request)
@@ -120,14 +123,23 @@ class AdminsController extends Controller
     }
     public function modifierCandidat(Request $request)
     {
-        $messg="";$avatar="";
-         
-        $candidats->nom = $request->nom; 
-        $candidats->prenom = $request->prenom; 
-        $candidats->jour_naiss = $request->jour; 
-        $candidats->mois_naiss = $request->mois; 
-        $candidats->annee_naiss = $request->annee;                
-        $candidats->telephone = $request->telephone;
+        $messg=""; $avatar="";
+        $idcandidat = $request->id;
+        $candidat = empty($request->id)? new Candidats() : Candidats::find($request->id);
+        $candidat->nom = $request->nom; 
+        $candidat->prenom = $request->prenom; 
+        $candidat->jour_naiss = $request->jour; 
+        $candidat->mois_naiss = $request->mois; 
+        $candidat->annee_naiss = $request->annee;                
+        $candidat->numero = $request->numero;
+        $candidat->id_typepiece = $request->idtypiece;
+        $candidat->genre = $request->genre;
+        $candidat->id_pays = $request->idpays;
+        $candidat->numpiece = $request->numpiece;
+
+        $nbrami = DB::table('candidats')->leftjoin('amis','candidats.id','=','amis.id_candidat')->groupBy('candidats.id')->select(DB::raw('COUNT(amis.id_candidat) as nbramis'))->where('candidats.id',$idcandidat)->get();
+        $typepieces = DB::table('typepieces')->get();
+        $pays = DB::table('pays')->get();
         
         //Enregistrement d'images autiorisées
         $typepermis = ['jpg','png','jpeg'];
@@ -142,10 +154,10 @@ class AdminsController extends Controller
             $typimg = $_FILES["photo"]["type"];
             $avatar = session()->get("idcandidat").session()->get("nom").".".$extens;
             $cheminacces = $cheminacces.$avatar;
-            $candidats->photo = $avatar;
-            $candidats->updated_at = now();
+            $candidat->photo = $avatar;
+            $candidat->updated_at = now();
 
-            if(1048600 > $_FILES["photo"]["size"])
+            if(2097200 > $_FILES["photo"]["size"])
             {
                 if(in_array($extens, $typepermis))
                 {
@@ -153,10 +165,10 @@ class AdminsController extends Controller
                     {
                         if($candidats->save())
                         {
-                            return view('modifeprofile')->with(['candidat'=>$candidats,'statut'=>true,'message'=>"Modifié avec succès !!"]);
+                            return view('admins/candidat')->with(['candidat'=>$candidat,'pays'=>$pays,'typepieces'=>$typepieces,'nbrami'=>$nbrami[0]->nbramis,'statut'=>true,'message'=>"Modifié avec succès !!"]);
                         }else
                         {
-                            return view('modifeprofile')->with(['candidat'=>$candidats,'statut'=>false,'message'=>"Impossible de modifier !!"]);
+                            return view('admins/candidat')->with(['candidat'=>$candidat,'pays'=>$pays,'typepieces'=>$typepieces,'nbrami'=>$nbrami[0]->nbramis,'statut'=>false,'message'=>"Impossible de modifier !!"]);
                         }
                     }
                 }
@@ -169,16 +181,16 @@ class AdminsController extends Controller
             {
                 $messg="La taille de l'image doit être inferieure à 1 Mo";
             }
-            return view('modifeprofile')->with(['candidat'=>$candidats,'message'=>$messg,'statut'=>false]);
+            return view('admins/candidat')->with(['candidat'=>$candidat,'pays'=>$pays,'typepieces'=>$typepieces,'nbrami'=>$nbrami[0]->nbramis,'message'=>$messg,'statut'=>false]);
         }
         else 
         {
-            if($candidats->save())
+            if($candidat->save())
             {
-                return view('modifeprofile')->with(['candidat'=>$candidats,'statut'=>true,'message'=>"Modifié avec succès !!"]);
+                return view('admins/candidat')->with(['candidat'=>$candidat,'pays'=>$pays,'typepieces'=>$typepieces,'nbrami'=>$nbrami[0]->nbramis,'statut'=>true,'message'=>"Modifié avec succès !!"]);
             }else
             {
-                return view('modifeprofile')->with(['candidat'=>$candidats,'statut'=>false,'message'=>"Impossible de modifier !!"]);
+                return view('admins/candidat')->with(['candidat'=>$candidat,'pays'=>$pays,'typepieces'=>$typepieces,'nbrami'=>$nbrami[0]->nbramis,'statut'=>false,'message'=>"Impossible de modifier !!"]);
             }
         }
     }

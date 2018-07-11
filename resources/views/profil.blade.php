@@ -72,7 +72,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	            	</div>
 	            	<div class="row">
 	            		<label class="col-md-4"><strong>Téléphone:</strong></label>
-	            		<input class="col-md-7" type="text" readonly value="{{$candidat->telephone}}">
+	            		<input class="col-md-7" type="text" readonly value="{{$candidat->numero}}">
 	            	</div>
 	            	<div class="row">
 	            		<label class="col-md-4"><strong>Code de vote:</strong></label>

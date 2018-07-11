@@ -16,8 +16,9 @@ class PageController extends Controller
     {
         $listecandidats = $util->listeCandidatCompet();
         $classement = $util->getTop10bydate(date('Y-m-d'));
-
-        return view('index')->with(["listecandidats"=>$listecandidats,'classement'=>$classement]);
+        $anniversaire = DB::table('anniversaires')->leftjoin('recompenses','recompenses.id','=','anniversaires.id_recompense')->select('anniversaires.*',DB::raw('recompenses.photo as photo'))->where('anniversaires.date_anniv','=',date('Y/m/d'))->get();
+        
+        return view('index')->with(['anniversaire'=>$anniversaire[0],"listecandidats"=>$listecandidats,'classement'=>$classement]);
     }
 
     public function showVueTest(Utilitaires $util)

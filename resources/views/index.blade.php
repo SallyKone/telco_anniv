@@ -261,7 +261,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</video> -->  
 			<div class="container">
 				<h3 class="title-txt two"><span>A</span>ctualités</h3>
-
+				<div class="row">
 				<div class="col-md-4 live-grids-w3ls">
 					<center>
 					<div class="panel panel-primary">
@@ -269,7 +269,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="panel-body">
 							<div class="live-info">
 							
-							<img src="images/gagnant1.jpg">
+							<img width="100%" src="images/gagnant1.jpg">
 												
 							</div>
 							<h5>Moris Bah</h5>
@@ -285,7 +285,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="panel-heading"><center>TOP 10 EN TETE</center></div>
 						<div class="panel-body">
 							<div class="live-info">
-							<center>
 								<marquee style="" direction="up" height="213px">
 									@foreach($classement as $classemt)
 										<div class="candilist" style="margin-bottom: 10px;">
@@ -300,7 +299,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										</div>
 									@endforeach
 	                            </marquee>
-							</center>
 							</div>
 						</div>
 					</div>
@@ -313,14 +311,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="panel-heading"><center>LOT EN JEU AUJOURD'HUI</center></div>
 						<div class="panel-body">
 							<div class="live-info">
-							
-							<img src="images/ordi.jpg">
-												
+								<img width="100%" src="images/cadeaux/{{$anniversaire->photo}}">				
 							</div>
-							<h5>HP Core i5 Intel</h5>
+							<h5>Cadeau à venir</h5>
 						</div>
 					</div>
 					</center>
+				</div>
 				</div>
 			</div>
 			

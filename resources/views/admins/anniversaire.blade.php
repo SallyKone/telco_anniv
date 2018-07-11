@@ -43,9 +43,24 @@
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
-          <div class="col-sm-6">
+          <div class="col-sm-12">
             <h1>Gestion des anniversaires</h1>
           </div>
+          @if(isset($statut))
+          <div class="col-sm-12">
+            <div class="card bg-{{$statut?'success':'danger'}}-gradient">
+              <div class="card-header">
+                <h3 class="card-title">{{$message}}</h3>
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-widget="remove"><i class="fa fa-times"></i>
+                  </button>
+                </div>
+                <!-- /.card-tools -->
+              </div>
+              <!-- /.card-header -->
+            </div>
+          </div>
+          @endif
         </div>
       </div><!-- /.container-fluid -->
     </section>
@@ -55,70 +70,89 @@
       <div class="container-fluid">
         <!-- SELECT2 EXAMPLE -->
         <div class="card card-default">
-          <div class="card-header">
-            <h3 class="card-title">Modification</h3>
+          <form method="post" action="{{route('anniversaire')}}">
+            {{csrf_field()}}
+            <div class="card-header">
+              <h3 class="card-title">Modification</h3>
 
-            <div class="card-tools">
-              <button type="button" class="btn btn-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+              <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+              </div>
             </div>
-          </div>
-          <!-- /.card-header -->
-          <div class="card-body">
-            <div class="row">
-              <div class="col-md-6">
-
-                <div class="form-group">
-                  <label for="exampleInputFile">Photo de la recompense</label>
-                  <div class="row">
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                      <img src="" alt="photo du cadeau anniversaire">
+            <!-- /.card-header -->
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="exampleInputFile">Photo de la recompense</label>
+                    <div class="row">
+                      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <img width="50%" id="affiche" src="{{URL::asset('images/cadeaux/'.$anniversaire->photo)}}" alt="Aucune image du cadeau">
+                      </div>
+                    </div>
+                    <div class="input-group">
+                      <div class="custom-file">
+                        <a href="{{route('recompense')}}?id={{$anniversaire->id_recompense}}">Modifier la recompense</a>
+                      </div>
                     </div>
                   </div>
-                  <div class="input-group">
-                    <div class="custom-file">
-                      <a href="">Modifier la recompense</a>
+                  <!-- Choix de la recompense -->
+                  <div class="form-group">
+                    <label>Recompense</label>
+                    <select id="idrecompense" name="idrecompense" class="form-control select2" style="width: 100%;">
+                      <option value="">Sélectionnez</option>
+                      @foreach($recompenses as $recompense)
+                      <option {{($anniversaire->id_recompense == $recompense->id) ? "selected":""}} value="{{$recompense->id}}">{{$recompense->photo}}</option>
+                      @endforeach
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="nom">Libelle</label>
+                    <input value="{{$anniversaire->libelle}}" required type="text" class="form-control" id="libelle" name="libelle" placeholder="Entrez le nom">
+                  </div>               
+                </div>
+                <!-- /.col -->
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Date Anniversaire</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                      </div>
+                      <input value="{{date('d/m/Y',strtotime($anniversaire->date_anniv))}}" required id="dateanniv" name="dateanniv" type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask>
                     </div>
+                    <!-- /.input group -->
+                  </div>
+                  <div class="form-group">
+                    <label for="gagnant">Gagnant</label>
+                    <input id="gagnant" value="{{isset($legagnant->nom)? $legagnant->nom.' '.$legagnant->prenom:'Aucun'}}" disabled type="text" class="form-control">
+                  </div>
+                  
+                  <!-- Profil -->
+                  <div class="form-group">
+                    <label>
+                      <input type="checkbox" class="minimal" checked="{($anniversaire->anniv_cloture)?'true':'false'}}"> Anniversaire Cloturé
+                    </label>
+                  </div>
+                  <div class="form-group">
+                    <label for="nombre">Nombre de candidats</label>
+                    <input id="nombre" disabled type="text" class="form-control"  value="{{$nbrparticipe}}">
+                  </div>
+                  <div class="form-group">
+                    <label for="derniere">Date dernière modification</label>
+                    <input value="{{isset($anniversaire->updated_at)? date('d-m-Y',strtotime($anniversaire->updated_at)):''}}" disabled type="text" class="form-control" id="derniere">
                   </div>
                 </div>
-                <div class="form-group">
-                  <label for="nom">Libelle</label>
-                  <input value="{{$anniversaire->libelle}}" required type="text" class="form-control" id="libelle" name="libelle" placeholder="Entrez le nom">
-                </div>
-                <div class="form-group">
-                  <label for="nom">Date</label>
-                  <input value="{{date('d-m-Y',strtotime($anniversaire->date_anniv))}}" required type="text" class="form-control" id="dateanniv" name="dateanniv" placeholder="Entrez le prénom">
-                </div>                
+                <!-- /.col -->
               </div>
-              <!-- /.col -->
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="login">Gagnant</label>
-                  <input value="{{isset($legagnant->nom)? $legagnant->nom.' '.$legagnant->prenom:'Aucun'}}" disabled type="text" class="form-control">
-                </div>
-                
-                <!-- Profil -->
-                <div class="form-group">
-                  <label>
-                    <input type="checkbox" class="minimal" checked="{($anniversaire->anniv_cloture)?'true':'false'}}"> Anniversaire Cloturé
-                  </label>
-                </div>
-                <div class="form-group">
-                  <label for="login">Nombre d'amis</label>
-                  <input disabled type="text" class="form-control"  value="{{$nbrparticipe}}">
-                </div>
-                <div class="form-group">
-                  <label for="login">Date dernière modification</label>
-                  <input value="{{isset($anniversaire->updated_at)? date('d-m-Y',strtotime($anniversaire->updated_at)):''}}" disabled type="text" class="form-control" id="login" name="login">
-                </div>
-              </div>
-              <!-- /.col -->
+              <!-- /.row -->
             </div>
-            <!-- /.row -->
-          </div>
-          <!-- /.card-body -->
-          <div class="card-footer" style="text-align:right;">
-            <input class="btn btn-primary push-rigth" type="submit" value="Valider">
-          </div>
+            <!-- /.card-body -->
+            <div class="card-footer" style="text-align:right;">
+              <input type="hidden" name="id" value="{{$anniversaire->id}}">
+              <input class="btn btn-primary push-rigth" type="submit" value="Valider">
+            </div>
+          </form>
         </div>
         <!-- /.card -->
       </div><!-- /.container-fluid -->
@@ -161,6 +195,10 @@
 <!-- Page script -->
 <script>
   $(function () {
+    $("#idrecompense").on('click change',function(){
+      $('#affiche').attr('src','../images/cadeaux/'+$(this).find('option:checked').text());
+    });
+
     //Initialize Select2 Elements
     $('.select2').select2();
     $('.js-example-basic-single').select2({

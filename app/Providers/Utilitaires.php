@@ -15,6 +15,19 @@ class Utilitaires
         $data = htmlspecialchars($data);
         return $data;
     }
+    public function dateFr_En($chaine)
+    {
+        $tab = explode(' ', $chaine);
+        $ladate = explode('/', $tab[0]);
+        $letps = null;
+        if(count($tab) > 1)
+        {
+            $letps = explode(':', $tab[1]);
+            return ['ladate'=>$ladate,'letps'=>$letps];
+        }else{
+            return ['ladate'=>$ladate,'letps'=>$letps];
+        }
+    }
     //Liste des 10er candidats d'une date d'anniversaire 
     public function getTop10bydate($ladate)
     {
