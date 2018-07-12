@@ -311,9 +311,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="panel-heading"><center>LOT EN JEU AUJOURD'HUI</center></div>
 						<div class="panel-body">
 							<div class="live-info">
-								<img width="100%" src="images/cadeaux/{{$anniversaire->photo}}">				
+								<img width="100%" src="images/cadeaux/{{isset($anniversaire->photo)?$anniversaire->photo : 'defaut.jpg'}}">				
 							</div>
-							<h5>Cadeau à venir</h5>
+							<h5>{{isset($anniversaire->libelle)?$anniversaire->libelle : 'Cadeau à venir'}}</h5>
 						</div>
 					</div>
 					</center>
