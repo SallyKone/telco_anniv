@@ -15,17 +15,19 @@ class CreatePaysTable extends Migration
     {
         Schema::create('pays', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('codepays');
-            $table->string('nompays');
-            $table->string('codepostal');
-            $table->unsignedInteger('id_langue');
+            $table->string('codepays')->length(8)->nullable();
+            $table->string('alpha2')->length(2);
+            $table->string('alpha3')->length(3);
+            $table->string('nom_en_gb')->length(150);
+            $table->string('nom_fr_fr')->length(150);
 
             $table->timestamps();
 
             #Cle étrangère et colonne unique;
             $table->unique('codepays');
-            $table->unique('nompays');
-            $table->foreign('id_langue')->references('id')->on('langues');
+            $table->unique('alpha2');
+            $table->unique('alpha3');
+            
             $table->engine = 'InnoDB';
         });
     }

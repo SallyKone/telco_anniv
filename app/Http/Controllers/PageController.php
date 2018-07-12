@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Providers\Utilitaires;
+use App\Anniversaire;
 
 class PageController extends Controller
 {
@@ -17,8 +18,9 @@ class PageController extends Controller
         $listecandidats = $util->listeCandidatCompet();
         $classement = $util->getTop10bydate(date('Y-m-d'));
         $anniversaire = DB::table('anniversaires')->leftjoin('recompenses','recompenses.id','=','anniversaires.id_recompense')->select('anniversaires.*',DB::raw('recompenses.photo as photo'))->where('anniversaires.date_anniv','=',date('Y/m/d'))->get();
-        dd($anniversaire);
-        return view('index')->with(['anniversaire'=>$anniversaire[0],"listecandidats"=>$listecandidats,'classement'=>$classement]);
+        $anniversaire = isset($anniversaire[0]) ? $anniversaire[0] : new Anniversaire();
+
+        return view('index')->with(['anniversaire'=>$anniversaire,"listecandidats"=>$listecandidats,'classement'=>$classement]);
     }
 
     public function showVueTest(Utilitaires $util)
