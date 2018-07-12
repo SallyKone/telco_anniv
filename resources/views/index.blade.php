@@ -57,7 +57,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		.candilist-img >img{
 			width: 100%;
 			position: relative;
-		} 
+		}
+		.lesdivlot{
+			height: 400px;
+			position: relative;
+			overflow: hidden;
+		}
+		.lesdivlot div{
+			position: relative;
+		}
+		.lesdivlot img{
+			width: 90%;
+		}
 	</style>
 </head>
 
@@ -264,12 +275,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="row">
 				<div class="col-md-4 live-grids-w3ls">
 					<center>
-					<div class="panel panel-primary">
+					<div class="panel panel-primary lesdivlot">
 						<div class="panel-heading"><center>VAINQUEUR DU JOUR</center></div>
 						<div class="panel-body">
 							<div class="live-info">
 							
-							<img width="100%" src="images/gagnant1.jpg">
+							<img src="images/gagnant1.jpg">
 												
 							</div>
 							<h5>Moris Bah</h5>
@@ -281,7 +292,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 				<div class="col-md-4 live-grids-w3ls">
 					<center>
-					<div class="panel panel-primary">
+					<div class="panel panel-primary lesdivlot">
 						<div class="panel-heading"><center>TOP 10 EN TETE</center></div>
 						<div class="panel-body">
 							<div class="live-info">
@@ -307,11 +318,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 				<div class="col-md-4 live-grids-w3ls">
 					<center>
-					<div class="panel panel-primary">
+					<div class="panel panel-primary lesdivlot">
 						<div class="panel-heading"><center>LOT EN JEU AUJOURD'HUI</center></div>
 						<div class="panel-body">
 							<div class="live-info">
-								<img width="100%" src="images/cadeaux/{{isset($anniversaire->photo)?$anniversaire->photo : 'defaut.jpg'}}">				
+								<img src="images/cadeaux/{{isset($anniversaire->photo)?$anniversaire->photo : 'defaut.jpg'}}">				
 							</div>
 							<h5>{{isset($anniversaire->libelle)?$anniversaire->libelle : 'Cadeau à venir'}}</h5>
 						</div>
