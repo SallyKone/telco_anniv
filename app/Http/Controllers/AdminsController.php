@@ -44,7 +44,7 @@ class AdminsController extends Controller
                 session()->put('photo',$utilisateur->photo);
                 //session()->save();
 
-                return view(route('Home'));
+                return redirect('admins/index');
             }else{
                 return view('admins/login')->with(['statut'=>false, 'message'=>'Mot de passe erroné ! ']);
             }
