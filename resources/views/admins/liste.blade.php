@@ -162,10 +162,14 @@
         "thousand" : '.',
         "lengthMenu": "Afficher _MENU_ lignes par page",
         "zeroRecords": "Aucun résultat - désolé",
-        "info": "Page _PAGE_ sur _PAGES_",
+        "info": "Vue de _START_ à _END_ sur _TOTAL_",
         "infoEmpty": "Pas de données enregistrées",
         "infoFiltered": "(filtré sur _MAX_ lignes total)",
-        "search" : "Rechercher"
+        "search" : "Rechercher",
+        "oPaginate" : {
+            "sPrevious": "Préc",
+            "sNext":     "Suiv"
+        }
       },
       "paging": true,
       "lengthChange": true,
