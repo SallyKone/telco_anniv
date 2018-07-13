@@ -114,6 +114,12 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
+                <a href="{{route('ami')}}" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Ajouter</p>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a href="{{route('listami')}}" class="nav-link">
                   <i class="fa fa-circle-o nav-icon"></i>
                   <p>Liste complète</p>
