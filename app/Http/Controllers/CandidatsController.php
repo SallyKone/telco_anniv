@@ -163,22 +163,19 @@ class CandidatsController extends Controller
             
             if($vote->save())
             {
-                dd($tableau);
                 return view('/admins/ajoutvote')->with(['statut' => true,'message'=>'Vote Accepté ! '.$requet->msg]);
             }else{
                 return view('/admins/ajoutvote')->with(['statut' => false,'message'=>'Vote Réfusé ! '.$requet->msg]);
             }
         }else {
-            dd($tableau);
             $fichierlog = fopen('../storage/logs/fichierlog.log', 'a+');  
             if ($fichierlog)
             {
                 fputs($fichierlog,date('d-m-Y H:i:s').' Error ce code de vote n\'existe pas '.$codecand."\n"); 
                 fclose($fichierlog);
             }
-            return view('/admins/ajoutvote')->with(['statut' => false,'message'=>'Le code de vote est incorrect ou n\'existe pas '.$requet->msg]);
+            return view('/ajoutvote')->with(['statut' => false,'message'=>'Le code de vote est incorrect ou n\'existe pas '.$requet->msg]);
         }
-
     }
 
     //LES FONCTIONS POST
