@@ -152,7 +152,7 @@ class CandidatsController extends Controller
         $codecand = trim(str_replace(' ', '', $requet->msg));
         
         $tableau = $util->idCandetAnniv($codecand);
-        dd($tableau);
+        
         if($tableau)
         {
             //Enregistrer les données
