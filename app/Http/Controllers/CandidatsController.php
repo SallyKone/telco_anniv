@@ -163,11 +163,13 @@ class CandidatsController extends Controller
             
             if($vote->save())
             {
+                dd($tableau);
                 return view('/admins/ajoutvote')->with(['statut' => true,'message'=>'Vote Accepté ! '.$requet->msg]);
             }else{
                 return view('/admins/ajoutvote')->with(['statut' => false,'message'=>'Vote Réfusé ! '.$requet->msg]);
             }
         }else {
+            dd($tableau);
             $fichierlog = fopen('../storage/logs/fichierlog.log', 'a+');  
             if ($fichierlog)
             {
