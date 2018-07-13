@@ -58,6 +58,23 @@ class CandidatsController extends Controller
         //Enregitrer le message reçu
         if(isset($requet->msg))
         {$util->addMessageRecu($reseau,$lenumero,$requet->msg,$tpsrecept);}
+        
+        if ($util->testNumCand($lenumero)) {
+            $candidats = DB::table('candidats')->where('numero','=',$lenumero)->first();
+            foreach ($candidats as $value) {
+                $candidat = $value;
+            }
+            $messageSucces = "Vous etes déjà inscrit! Connectez vous avec votre\nLogin: ".$candidat->login;
+            $messageSucces .= "\nVia http://www.telcoanniv.com et ajoutez vos amis";
+            if ($reseau = 98164) {
+                $util->accuseReceptionORANGE($lenumero, $messageSucces, 98164);
+            }
+            elseif ($reseau = 459){
+                $util->accuseReceptionMTN($lenumero,$messageSucces,459);
+            }
+            $mesg = "DEJA INSCRIT!"."\nLogin: ".$candidat->login."\nVia www.telcoanniv.com Ajoutez vos amis";
+            $util->addMessageEnvoye($lenumero,$reseau,$mesg,date("Y-m-d H:i:s"),'accuse');
+        }
 
         if(count($lesms) == 4 && $lesms[0] == 'I')
         {
@@ -99,7 +116,7 @@ class CandidatsController extends Controller
                     if ($reseau = 98164) {
                         $util->accuseReceptionORANGE($lenumero, $messageSucces, 98164);
                     }
-                    else{
+                    elseif ($reseau = 459){
                         $util->accuseReceptionMTN($lenumero,$messageSucces,459);
                     }
                     $mesg = "INSCRIPTION VALIDEE!"."\nLogin: ".$lelogin."\nMot de passe: xxxxxx"."\nVia www.telcoanniv.com Ajoutez vos amis";

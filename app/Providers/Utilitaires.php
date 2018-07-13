@@ -101,6 +101,11 @@ class Utilitaires
         return DB::table('candidats')->where('codecandidat','=',$codepropose)->exists();
     }
 
+    public function testNumCand($numero){
+        //Préparation de la requête
+        return DB::table('candidats')->where('numero','=',$numero)->exists();
+    }
+
     //Teste de vote 
     public function idCandetAnniv($lecodecandidat){
         //Préparation de la requête
