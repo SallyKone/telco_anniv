@@ -74,6 +74,7 @@ class CandidatsController extends Controller
             }
             $mesg = "DEJA INSCRIT!"."\nLogin: ".$candidat->login."\nVia www.telcoanniv.com Ajoutez vos amis";
             $util->addMessageEnvoye($lenumero,$reseau,$mesg,date("Y-m-d H:i:s"),'accuse');
+            return view('/admins/ajoutcandidat')->with(['statut' => true,'message'=>'Candidat existant déjà avec le login '.$candidat->login]);
         }
 
         if(count($lesms) == 4 && $lesms[0] == 'I')
@@ -123,7 +124,6 @@ class CandidatsController extends Controller
                     $util->addMessageEnvoye($lenumero,$reseau,$mesg,date("Y-m-d H:i:s"),'accuse');
                     $util->miseAjrCandidat();
                     return view('/admins/ajoutcandidat')->with(['statut' => true,'message'=>'Candidat ajouté avec succès '.$requet->msg]);
-
                 }
                 else
                 {
