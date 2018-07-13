@@ -150,6 +150,7 @@ class CandidatsController extends Controller
         //Definitions des traitements de données
         $lenumero = trim(str_replace(' ', '', $requet->source));
         $codecand = trim(str_replace(' ', '', $requet->msg));
+        dd($codecand);
         $tableau = $util->idCandetAnniv($codecand);
         
         if($tableau)

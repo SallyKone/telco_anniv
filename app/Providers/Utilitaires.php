@@ -126,7 +126,6 @@ class Utilitaires
         //Mets en compétition les candidats
         foreach ($candidats as $valeur) 
         {
-
             $codecandid = $this->genererchiffre(5);
             while($this->testCode($codecandid))
             {
