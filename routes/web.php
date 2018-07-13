@@ -24,6 +24,11 @@ Route::group(['prefix'=>'admins','middleware'=>'utilisateur'],function(){
 	Route::post('/recompense','AnnivController@ajoutmodifRecompense')->name('recompense');
 	Route::get('/listrecompense','AdminsController@getAllRecompenses')->name('listrecompense');
 	Route::post('/listrecompense','AdminsController@getAllRecompenses')->name('listrecompense');
+	//Amis
+	Route::get('/ami','AdminsController@showAmi')->name('ami');
+	Route::post('/ami','AmisController@ajouterModifierAmis')->name('ami');
+	Route::get('/listami','AdminsController@getAllAmis')->name('listami');
+	Route::post('/listami','AdminsController@getAllAmis')->name('listami');
 
 });
 

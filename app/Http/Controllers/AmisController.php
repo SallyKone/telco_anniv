@@ -43,36 +43,33 @@ class AmisController extends Controller
     //Ajouter ou Modifier un ami
     public function ajouterModifierAmis(Request $requete)
     {
-        $ami = new Amis();
-        if(empty($requete->id));
+        $idami = $requete->id;
+        $ami = empty($idami) ? new Amis() : Amis::findOrfail($idami);
+        $candidats = empty($idami)? null : DB::table('candidats')->select('candidats.id','candidats.nom','candidats.prenom','candidats.login')->get();
+        $ami->nom = $requete->nom;
+        $ami->numero = $requete->numero;
+        $ami->id_candidat = session()->has("idcandidat") ? (int)session()->get("idcandidat") : $requete->idcandidat;
+        $ami->updated_at = now();
+        $lapage = session()->has("idcandidat") ? "ajouteramis" : "admins/ami";
+
+        if($ami->save())
         {
-            $ami->nom = $requete->nom;
-            $ami->numero = $requete->numero;
-            $ami->id_candidat = (int)session()->get("idcandidat");
-            $ami->created_at = now();
-            $ami->updated_at = now();
-            
-            if($ami->save())
-            {
+            if (empty($idami)) {
                 $ami = new Amis();
-                return view('ajouteramis')->with(['ami'=>$ami,'statut'=>true,'message'=>"Votre ami(e) à été ajouter avec succès !!"]);
-            }else
-            {
-                return view('ajouteramis')->with(['ami'=>$ami,'statut'=>false,'message'=>"Impossible d'ajouter' !!"]);
+            return view($lapage)->with(['ami'=>$ami,'candidats'=>$candidats,'statut'=>true,'message'=>"Votre ami(e) à été ajouter avec succès !!"]);
+            }
+            else{
+                return view($lapage)->with(['ami'=>$ami,'candidats'=>$candidats,'statut'=>true,'message'=>"Votre ami(e) à été mis(e) à jour avec succès !!"]);
             }
         }
-        if(!empty($requete->id))
+        else   
         {
-            $ami = Amis::find($requete->id);
-            $ami->nom = $requete->nom;
-            $ami->numero = $requete->numero;
-            $ami->updated_at = now();
-            if($ami->save())
+            if (empty($idami)) {
+                return view($lapage)->with(['ami'=>$ami,'candidats'=>$candidats,'statut'=>false,'message'=>"Impossible d'ajouter' !!"]);
+            }
+            else
             {
-                return view('ajouteramis')->with(['ami'=>$ami,'statut'=>true,'message'=>"Votre ami(e) à été mis(e) à jour avec succès !!"]);
-            }else
-            {
-                return view('ajouteramis')->with(['ami'=>$ami,'statut'=>false,'message'=>"Impossible de mettre à jour' !!"]);
+                return view($lapage)->with(['ami'=>$ami,'candidats'=>$candidats,'statut'=>false,'message'=>"Impossible de mettre à jour' !!"]);
             }
         }
     }

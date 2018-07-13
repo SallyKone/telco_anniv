@@ -10,6 +10,7 @@ use App\Utilisateurs;
 use App\Candidats;
 use App\Anniversaires;
 use App\Recompenses;
+use App\Amis;
 
 class AdminsController extends Controller
 {
@@ -64,6 +65,17 @@ class AdminsController extends Controller
 
         return view('admins/candidat')->with(['candidat'=>$candidat,'pays'=>$pays,'typepieces'=>$typepieces,'nbrami'=>$nbrami[0]->nbramis]);
     }
+    //AMIS
+    public function showAmi(Request $request)
+    {
+        $idami = $request->id;
+        
+        $candidats = DB::table('candidats')->select('candidats.id','candidats.nom','candidats.prenom','candidats.login')->get();
+        
+        $ami = empty($idami)? new Amis() : Amis::findOrfail($idami);
+
+        return view('admins/ami')->with(['ami'=>$ami,'candidats'=>$candidats]);
+    }
     //ANNIVERSAIRES
     public function showAnniversaire(Request $request)
     {
@@ -108,6 +120,16 @@ class AdminsController extends Controller
         $titreliste = 'Liste de tous les anniversaires';
         $lists = DB::table('anniversaires')->leftjoin('participes','anniversaires.id','=','participes.id_anniversaire')->leftjoin('candidats','candidats.id','=','participes.id_candidat')->groupBy('anniversaires.id')->select(DB::raw('COUNT(participes.id_candidat) as nbrparticipe'),'anniversaires.*')->get();
         $colonnes = ['Libelle', 'Participant', 'Etat'];
+
+        return view('admins/liste')->with(['nomtable'=>$nomtable,'titreliste'=>$titreliste,'lists'=>$lists,'colonnes'=>$colonnes]);
+    }
+    //Liste de tous les amis
+    public function getAllAmis()
+    {
+        $nomtable = 'amis';
+        $titreliste = 'Liste de toutes les amis';
+        $lists = DB::table('amis')->join('candidats','candidats.id','=','amis.id_candidat')->select('amis.*','candidats.nom as nomc','candidats.prenom as prenomc','candidats.login')->get();
+        $colonnes = ['Nom & Prenom', 'Numéro','Candidat & Login'];
 
         return view('admins/liste')->with(['nomtable'=>$nomtable,'titreliste'=>$titreliste,'lists'=>$lists,'colonnes'=>$colonnes]);
     }

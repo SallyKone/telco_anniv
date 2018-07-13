@@ -66,7 +66,7 @@ class CandidatsController extends Controller
             }
 
             $messageSucces = "Vous etes déjà inscrit! Connectez vous avec votre\nLogin: ".$candidat->login;
-            $messageSucces .= "\nVia http://www.telcoanniv.com et ajoutez vos amis";
+            $messageSucces .= "\nMotPasse: ".$candidat->motpass."\nVia http://www.telcoanniv.com et ajoutez vos amis";
             if ($reseau = 98164) {
                 $util->accuseReceptionORANGE($lenumero, $messageSucces, 98164);
             }

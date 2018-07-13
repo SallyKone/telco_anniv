@@ -84,6 +84,12 @@
                   <td>{{($valeur->anniv_cloture)?'Cloturé':'Ouvert'}}</td>
                   <td style="text-align: center;"><a href="{{route('anniversaire')}}?id={{$valeur->id}}" class="btn btn-sm btn-primary modifier">Modifier</a></td>
                   @endif
+                  @if($nomtable == 'amis')
+                  <td>{{$valeur->nom}}</td>
+                  <td>{{$valeur->numero}}</td>
+                  <td>{{$valeur->nomc.' '.$valeur->prenomc.' ['.$valeur->login.']'}}</td>
+                  <td style="text-align: center;"><a href="{{route('ami')}}?id={{$valeur->id}}" class="btn btn-sm btn-primary modifier">Modifier</a></td>
+                  @endif
                   @if($nomtable == 'recompense')
                   <td>{{$valeur->libelle}}</td>
                   <td>{{$valeur->description}}</td>

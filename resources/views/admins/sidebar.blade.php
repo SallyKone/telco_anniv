@@ -103,6 +103,24 @@
               </li>
             </ul>
           </li>
+          <!-- Gestion des candidats -->
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-user"></i>
+              <p>
+                Amis
+                <i class="fa fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('listami')}}" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Liste complète</p>
+                </a>
+              </li>
+            </ul>
+          </li>
           <!-- Menu de la base de données -->
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
