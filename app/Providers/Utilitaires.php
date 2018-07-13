@@ -111,7 +111,7 @@ class Utilitaires
         //Préparation de la requête
         if(DB::table('anniversaires')->join('participes','anniversaires.id', '=', 'participes.id_anniversaire')->join('candidats','candidats.id', '=', 'participes.id_candidat')->where('candidats.codecandidat','=',$lecodecandidat)->exists())
         {
-            return DB::table('anniversaires')->join('participes','anniversaires.id', '=', 'participes.id_anniversaire')->join('candidats','candidats.id', '=', 'participes.id_candidat')->select(DB::raw('candidats.id as candid,anniversaires.id as anniv'))->where('candidats.codecandidat','=',$lecodecandidat)->first();
+            return DB::table('anniversaires')->join('participes','anniversaires.id', '=', 'participes.id_anniversaire')->join('candidats','candidats.id', '=', 'participes.id_candidat')->select(DB::raw('candidats.id as candid,anniversaires.id as anniv'))->where('candidats.codecandidat','=',$lecodecandidat)->get();
         }
         return false;
     }
