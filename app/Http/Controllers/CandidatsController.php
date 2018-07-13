@@ -60,10 +60,11 @@ class CandidatsController extends Controller
         {$util->addMessageRecu($reseau,$lenumero,$requet->msg,$tpsrecept);}
         
         if ($util->testNumCand($lenumero)) {
-            $candidats = DB::table('candidats')->where('numero','=',$lenumero)->first();
+            $candidats = DB::table('candidats')->where('numero','=',$lenumero)->get();
             foreach ($candidats as $value) {
                 $candidat = $value;
             }
+
             $messageSucces = "Vous etes déjà inscrit! Connectez vous avec votre\nLogin: ".$candidat->login;
             $messageSucces .= "\nVia http://www.telcoanniv.com et ajoutez vos amis";
             if ($reseau = 98164) {
