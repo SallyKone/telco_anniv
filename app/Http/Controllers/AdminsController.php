@@ -58,12 +58,14 @@ class AdminsController extends Controller
     {
         $idcandidat = $request->id;
         
-        $nbrami = DB::table('candidats')->leftjoin('amis','candidats.id','=','amis.id_candidat')->groupBy('candidats.id')->select(DB::raw('COUNT(amis.id_candidat) as nbramis'))->where('candidats.id',$idcandidat)->get();
         $typepieces = DB::table('typepieces')->get();
         $pays = DB::table('pays')->get();
+
+        $colonnes = ['Nom & Prenom', 'Numéro'];
+        $lists = DB::table('amis')->join('candidats','candidats.id','=','amis.id_candidat')->select('amis.*')->where('amis.id_candidat',$idcandidat)->get();
         $candidat = Candidats::findOrfail($idcandidat);
 
-        return view('admins/candidat')->with(['candidat'=>$candidat,'pays'=>$pays,'typepieces'=>$typepieces,'nbrami'=>$nbrami[0]->nbramis]);
+        return view('admins/candidat')->with(['candidat'=>$candidat,'lists'=>$lists,'colonnes'=>$colonnes,'pays'=>$pays,'typepieces'=>$typepieces]);
     }
     //AMIS
     public function showAmi(Request $request)
@@ -159,9 +161,10 @@ class AdminsController extends Controller
         $candidat->id_pays = $request->idpays;
         $candidat->numpiece = $request->numpiece;
 
-        $nbrami = DB::table('candidats')->leftjoin('amis','candidats.id','=','amis.id_candidat')->groupBy('candidats.id')->select(DB::raw('COUNT(amis.id_candidat) as nbramis'))->where('candidats.id',$idcandidat)->get();
         $typepieces = DB::table('typepieces')->get();
         $pays = DB::table('pays')->get();
+        $colonnes = ['Nom & Prenom', 'Numéro'];
+        $lists = DB::table('amis')->join('candidats','candidats.id','=','amis.id_candidat')->select('amis.*')->where('amis.id_candidat',$idcandidat)->get();
         
         //Enregistrement d'images autiorisées
         $typepermis = ['jpg','png','jpeg'];
@@ -187,10 +190,10 @@ class AdminsController extends Controller
                     {
                         if($candidats->save())
                         {
-                            return view('admins/candidat')->with(['candidat'=>$candidat,'pays'=>$pays,'typepieces'=>$typepieces,'nbrami'=>$nbrami[0]->nbramis,'statut'=>true,'message'=>"Modifié avec succès !!"]);
+                            return view('admins/candidat')->with(['candidat'=>$candidat,'lists'=>$lists,'colonnes'=>$colonnes,'pays'=>$pays,'typepieces'=>$typepieces,'statut'=>true,'message'=>"Modifié avec succès !!"]);
                         }else
                         {
-                            return view('admins/candidat')->with(['candidat'=>$candidat,'pays'=>$pays,'typepieces'=>$typepieces,'nbrami'=>$nbrami[0]->nbramis,'statut'=>false,'message'=>"Impossible de modifier !!"]);
+                            return view('admins/candidat')->with(['candidat'=>$candidat,'lists'=>$lists,'colonnes'=>$colonnes,'pays'=>$pays,'typepieces'=>$typepieces,'statut'=>false,'message'=>"Impossible de modifier !!"]);
                         }
                     }
                 }
@@ -203,16 +206,16 @@ class AdminsController extends Controller
             {
                 $messg="La taille de l'image doit être inferieure à 1 Mo";
             }
-            return view('admins/candidat')->with(['candidat'=>$candidat,'pays'=>$pays,'typepieces'=>$typepieces,'nbrami'=>$nbrami[0]->nbramis,'message'=>$messg,'statut'=>false]);
+            return view('admins/candidat')->with(['candidat'=>$candidat,'lists'=>$lists,'colonnes'=>$colonnes,'pays'=>$pays,'typepieces'=>$typepieces,'message'=>$messg,'statut'=>false]);
         }
         else 
         {
             if($candidat->save())
             {
-                return view('admins/candidat')->with(['candidat'=>$candidat,'pays'=>$pays,'typepieces'=>$typepieces,'nbrami'=>$nbrami[0]->nbramis,'statut'=>true,'message'=>"Modifié avec succès !!"]);
+                return view('admins/candidat')->with(['candidat'=>$candidat,'lists'=>$lists,'colonnes'=>$colonnes,'pays'=>$pays,'typepieces'=>$typepieces,'statut'=>true,'message'=>"Modifié avec succès !!"]);
             }else
             {
-                return view('admins/candidat')->with(['candidat'=>$candidat,'pays'=>$pays,'typepieces'=>$typepieces,'nbrami'=>$nbrami[0]->nbramis,'statut'=>false,'message'=>"Impossible de modifier !!"]);
+                return view('admins/candidat')->with(['candidat'=>$candidat,'lists'=>$lists,'colonnes'=>$colonnes,'pays'=>$pays,'typepieces'=>$typepieces,'statut'=>false,'message'=>"Impossible de modifier !!"]);
             }
         }
     }

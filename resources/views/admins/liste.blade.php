@@ -133,13 +133,13 @@
 <script src="{{URL::asset('plugins/jquery/jquery.min.js')}}"></script>
 <!-- Bootstrap 4 -->
 <script src="{{URL::asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-<!-- DataTables -->
-<script src="{{URL::asset('datatables/DataTables-1.10.16/js/jquery.dataTables.min.js')}}"></script>
-<script src="{{URL::asset('datatables/DataTables-1.10.16/js/dataTables.bootstrap4.min.js')}}"></script>
 <!-- SlimScroll -->
 <script src="{{URL::asset('plugins/slimScroll/jquery.slimscroll.min.js')}}"></script>
 <!-- FastClick -->
 <script src="{{URL::asset('plugins/fastclick/fastclick.js')}}"></script>
+<!-- DataTables -->
+<script src="{{URL::asset('datatables/DataTables-1.10.16/js/jquery.dataTables.min.js')}}"></script>
+<script src="{{URL::asset('datatables/DataTables-1.10.16/js/dataTables.bootstrap4.min.js')}}"></script>
 <!-- Buttons  -->
 <script src="{{URL::asset('datatables/Buttons-1.5.1/js/buttons.colVis.min.js')}}" type="text/javascript"></script>
 <script src="{{URL::asset('datatables/Buttons-1.5.1/js/buttons.html5.min.js')}}" type="text/javascript"></script>

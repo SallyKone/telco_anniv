@@ -23,6 +23,11 @@
   <link rel="stylesheet" href="{{URL::asset('plugins/timepicker/bootstrap-timepicker.min.css')}}">
   <!-- Select2 -->
   <link rel="stylesheet" href="{{URL::asset('plugins/select2/select2.min.css')}}">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="{{URL::asset('datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.css')}}">
+  <!-- Buttons-1.5.1 -->
+  <link rel="stylesheet" type="text/css" href="{{URL::asset('datatables/Buttons-1.5.1/css/buttons.bootstrap4.min.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{URL::asset('datatables/Buttons-1.5.1/css/buttons.dataTables.min.css')}}">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{URL::asset('dist/css/adminlte.min.css')}}">
   <!-- Google Font: Source Sans Pro -->
@@ -209,10 +214,6 @@
                     </label>
                   </div>
                   <div class="form-group">
-                    <label for="login">Nombre d'amis</label>
-                    <input disabled type="text" class="form-control" id="nbrami" name="nbrami" value="{{$nbrami}}">
-                  </div>
-                  <div class="form-group">
                     <label>Date dernière modification</label>
                     <input value="{{isset($candidat->updated_at)? date('d-m-Y',strtotime($candidat->updated_at)):''}}" disabled type="text" class="form-control">
                   </div>
@@ -227,6 +228,39 @@
               <input class="btn btn-primary push-rigth" type="submit" value="Valider">
             </div>
           </form>
+          @if(!empty($candidat->id))
+          <div class="row">
+            <div class="col-lg-12">
+              <table id="table" class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                  @foreach($colonnes as $key => $valeur)
+                  <th>{{$valeur}}</th>
+                  @endforeach
+                  <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach($lists as $key => $valeur)
+                <tr>
+                  <td>{{$valeur->nom}}</td>
+                  <td>{{$valeur->numero}}</td>
+                  <td style="text-align: center;"><a href="{{route('ami')}}?id={{$valeur->id}}" class="btn btn-sm btn-primary modifier">Modifier</a></td>
+                </tr>
+                @endforeach
+                </tbody>
+                <tfoot>
+                <tr>
+                  @foreach($colonnes as $key => $valeur)
+                  <th>{{$valeur}}</th>
+                  @endforeach
+                  <th>Action</th>
+                </tr>
+                </tfoot>
+              </table>
+            </div>
+          </div>
+          @endif
         </div>
         <!-- /.card -->
       </div><!-- /.container-fluid -->
@@ -262,6 +296,17 @@
 <script src="{{URL::asset('plugins/iCheck/icheck.min.js')}}"></script>
 <!-- FastClick -->
 <script src="{{URL::asset('plugins/fastclick/fastclick.js')}}"></script>
+<!-- DataTables -->
+<script src="{{URL::asset('datatables/DataTables-1.10.16/js/jquery.dataTables.min.js')}}"></script>
+<script src="{{URL::asset('datatables/DataTables-1.10.16/js/dataTables.bootstrap4.min.js')}}"></script>
+<!-- Buttons  -->
+<script src="{{URL::asset('datatables/Buttons-1.5.1/js/buttons.colVis.min.js')}}" type="text/javascript"></script>
+<script src="{{URL::asset('datatables/Buttons-1.5.1/js/buttons.html5.min.js')}}" type="text/javascript"></script>
+<script src="{{URL::asset('datatables/Buttons-1.5.1/js/buttons.print.min.js')}}" type="text/javascript"></script>
+<script src="{{URL::asset('datatables/Buttons-1.5.1/js/dataTables.buttons.min.js')}}" type="text/javascript"></script>
+<script src="{{URL::asset('datatables/Buttons-1.5.1/js/jszip-3.1.3.js')}}" type="text/javascript"></script>
+<script src="{{URL::asset('datatables/Buttons-1.5.1/js/pdfmake-0.1.36.js')}}" type="text/javascript"></script>
+<script src="{{URL::asset('datatables/Buttons-1.5.1/js/vfs_fonts-0.1.36.js')}}" type="text/javascript"></script>
 <!-- AdminLTE App -->
 <script src="{{URL::asset('dist/js/adminlte.min.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
@@ -275,7 +320,6 @@
             reader.onload = function (e) {
                 $('#imgaffiche').attr('src', e.target.result);
             }
-            
             reader.readAsDataURL(input.files[0]);
         }
     }
@@ -296,59 +340,57 @@
     $('#datemask2').inputmask('mm/dd/yyyy', { 'placeholder': 'mm/dd/yyyy' });
     //Money Euro
     $('[data-mask]').inputmask();
-
-    //Date range picker
-    $('#reservation').daterangepicker();
-    //Date range picker with time picker
-    $('#reservationtime').daterangepicker({
-      timePicker         : true,
-      timePickerIncrement: 30,
-      format             : 'MM/DD/YYYY h:mm A'
-    });
-    //Date range as a button
-    $('#daterange-btn').daterangepicker(
-      {
-        ranges   : {
-          'Today'       : [moment(), moment()],
-          'Hier'   : [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-          'Last 7 Days' : [moment().subtract(6, 'days'), moment()],
-          'Last 30 Days': [moment().subtract(29, 'days'), moment()],
-          'This Month'  : [moment().startOf('month'), moment().endOf('month')],
-          'Last Month'  : [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
-        },
-        startDate: moment().subtract(29, 'days'),
-        endDate  : moment()
-      },
-      function (start, end) {
-        $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'))
-      }
-    )
-
+    
     //iCheck for checkbox and radio inputs
     $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
       checkboxClass: 'icheckbox_minimal-blue',
       radioClass   : 'iradio_minimal-blue'
     })
-    //Red color scheme for iCheck
-    $('input[type="checkbox"].minimal-red, input[type="radio"].minimal-red').iCheck({
-      checkboxClass: 'icheckbox_minimal-red',
-      radioClass   : 'iradio_minimal-red'
-    })
-    //Flat red color scheme for iCheck
-    $('input[type="checkbox"].flat-red, input[type="radio"].flat-red').iCheck({
-      checkboxClass: 'icheckbox_flat-green',
-      radioClass   : 'iradio_flat-green'
-    })
+    var table = $('#table').DataTable({
+      dom: 'Bfrtip',
+      buttons: [
+              'pageLength', 'print','copy','csv','excel', 'pdf'
+            ],
+      "responsive": true,
+      "lengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, "Afficher Tous"]],
+      "language" : {
+        "decimal" : ',',
+        "thousand" : '.',
+        "lengthMenu": "Afficher _MENU_ lignes par page",
+        "zeroRecords": "Aucun résultat - désolé",
+        "info": "Vue de _START_ à _END_ sur _TOTAL_",
+        "infoEmpty": "Pas de données enregistrées",
+        "infoFiltered": "(filtré sur _MAX_ lignes total)",
+        "search" : "Rechercher",
+        "oPaginate" : {
+            "sPrevious": "Préc",
+            "sNext":     "Suiv"
+        }
+      },
+      "paging": true,
+      "lengthChange": true,
+      "searching": true,
+      "ordering": true,
+      "info": true,
+      "autoWidth": true,
+    });
 
-    //Colorpicker
-    $('.my-colorpicker1').colorpicker()
-    //color picker with addon
-    $('.my-colorpicker2').colorpicker()
-
-    //Timepicker
-    $('.timepicker').timepicker({
-      showInputs: false
-    })
+    $('#table tfoot th:not(th:last-child)').each(function(){
+        var title = $(this).text();
+        
+        $(this).html('<input style="width:100%;" type="text" placeholder="'+title+'" />');
+    });
+ 
+    // Apply the search
+    table.columns().every(function () {
+        var that = this;
+ 
+        $('input', this.footer() ).on('keyup change', function(){
+            if (that.search() !== this.value ){
+                that.search( this.value ).draw();
+            }
+        } );
+    } );
   })
 </script>
 </body>
