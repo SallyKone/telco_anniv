@@ -57,13 +57,13 @@ class AdminsController extends Controller
     public function showCandidat(Request $request)
     {
         $idcandidat = $request->id;
+        $candidat = empty($idcandidat) ? new Candidats() : Candidats::findOrfail($idcandidat);
         
         $typepieces = DB::table('typepieces')->get();
         $pays = DB::table('pays')->get();
 
         $colonnes = ['Nom & Prenom', 'Numéro'];
         $lists = DB::table('amis')->join('candidats','candidats.id','=','amis.id_candidat')->select('amis.*')->where('amis.id_candidat',$idcandidat)->get();
-        $candidat = Candidats::findOrfail($idcandidat);
 
         return view('admins/candidat')->with(['candidat'=>$candidat,'lists'=>$lists,'colonnes'=>$colonnes,'pays'=>$pays,'typepieces'=>$typepieces]);
     }
@@ -145,11 +145,27 @@ class AdminsController extends Controller
 
         return view('admins/liste')->with(['nomtable'=>$nomtable,'titreliste'=>$titreliste,'lists'=>$lists,'colonnes'=>$colonnes]);
     }
-    public function modifierCandidat(Request $request)
+    public function modifierCandidat(Request $request, Utilitaires $util)
     {
         $messg=""; $avatar="";
         $idcandidat = $request->id;
-        $candidat = empty($request->id)? new Candidats() : Candidats::find($request->id);
+        $candidat = empty($request->id) ? new Candidats() : Candidats::find($request->id);
+        if (empty($idcandidat)) {
+            $lelogin = strtolower($request->nom).$util->genererlogin(4);
+            $codecandidat = 'tempo '.$util->genererchaine(10);
+            $testeur = $util->testLoginEtCode($lelogin,$codecandidat);
+            if ($testeur != -1) {
+                while ($testeur) {
+                    $lelogin = strtolower($request->nom).$util->genererlogin(4);
+                    $codecandidat = 'tempo '.$util->genererchaine(10);
+                    $testeur = $util->testLoginEtCode($lelogin,$codecandidat);
+                }
+                $candidat->codecandidat = $codecandidat;
+                $candidat->login = $lelogin;
+                $candidat->motpass = $util->genererchaine(6);
+            }
+             
+        }
         $candidat->nom = $request->nom; 
         $candidat->prenom = $request->prenom; 
         $candidat->jour_naiss = $request->jour; 
@@ -159,7 +175,7 @@ class AdminsController extends Controller
         $candidat->id_typepiece = $request->idtypiece;
         $candidat->genre = $request->genre;
         $candidat->id_pays = $request->idpays;
-        $candidat->numpiece = $request->numpiece;
+        $candidat->numpiece = empty($request->idtypiece) ? null : $request->numpiece;
 
         $typepieces = DB::table('typepieces')->get();
         $pays = DB::table('pays')->get();
@@ -190,10 +206,10 @@ class AdminsController extends Controller
                     {
                         if($candidats->save())
                         {
-                            return view('admins/candidat')->with(['candidat'=>$candidat,'lists'=>$lists,'colonnes'=>$colonnes,'pays'=>$pays,'typepieces'=>$typepieces,'statut'=>true,'message'=>"Modifié avec succès !!"]);
+                            return view('admins/candidat')->with(['candidat'=>$candidat,'lists'=>$lists,'colonnes'=>$colonnes,'pays'=>$pays,'typepieces'=>$typepieces,'statut'=>true,'message'=>"Enregistrement effectué avec succès !!"]);
                         }else
                         {
-                            return view('admins/candidat')->with(['candidat'=>$candidat,'lists'=>$lists,'colonnes'=>$colonnes,'pays'=>$pays,'typepieces'=>$typepieces,'statut'=>false,'message'=>"Impossible de modifier !!"]);
+                            return view('admins/candidat')->with(['candidat'=>$candidat,'lists'=>$lists,'colonnes'=>$colonnes,'pays'=>$pays,'typepieces'=>$typepieces,'statut'=>false,'message'=>"Impossible d'enregistrer !!"]);
                         }
                     }
                 }
@@ -210,12 +226,13 @@ class AdminsController extends Controller
         }
         else 
         {
+            $candidat->photo = empty($idcandidat) ? "defaut.png" : $request->laphoto;
             if($candidat->save())
             {
-                return view('admins/candidat')->with(['candidat'=>$candidat,'lists'=>$lists,'colonnes'=>$colonnes,'pays'=>$pays,'typepieces'=>$typepieces,'statut'=>true,'message'=>"Modifié avec succès !!"]);
+                return view('admins/candidat')->with(['candidat'=>$candidat,'lists'=>$lists,'colonnes'=>$colonnes,'pays'=>$pays,'typepieces'=>$typepieces,'statut'=>true,'message'=>"Enregistrement effectué avec succès !!"]);
             }else
             {
-                return view('admins/candidat')->with(['candidat'=>$candidat,'lists'=>$lists,'colonnes'=>$colonnes,'pays'=>$pays,'typepieces'=>$typepieces,'statut'=>false,'message'=>"Impossible de modifier !!"]);
+                return view('admins/candidat')->with(['candidat'=>$candidat,'lists'=>$lists,'colonnes'=>$colonnes,'pays'=>$pays,'typepieces'=>$typepieces,'statut'=>false,'message'=>"Impossible d'enregistrer !!"]);
             }
         }
     }

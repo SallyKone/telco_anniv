@@ -93,6 +93,7 @@
                     <div class="row">
                       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                         <img width="50%" id="imgaffiche" src="{{URL::asset('/images/img/avatar/'.$candidat->photo)}}" alt="photo de profil du Candidat">
+                        <input type="hidden" name="laphoto" value="{{$candidat->photo}}">
                       </div>
                     </div>
                     <div class="input-group">
@@ -114,7 +115,7 @@
                     <label>Date naissance</label>
                     <div class="row">
                       <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                        <select name="jour" class="form-control select2" style="width: 100%;">
+                        <select required name="jour" class="form-control select2" style="width: 100%;">
                           <option value="">Jour</option>
                           @for($i=1; $i <= 31; $i++)
                             <option {{ (int)$candidat->jour_naiss == $i ? 'selected' : ''}} value="{{$i}}">{{$i<10 ? '0'.$i : $i}}</option>
@@ -122,7 +123,7 @@
                         </select>
                       </div>
                       <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                        <select name="mois" class="form-control select2" style="width: 100%;">
+                        <select required name="mois" class="form-control select2" style="width: 100%;">
                           <option value="">Mois</option>
                           @for($j=1; $j <= 12; $j++)
                             <option {{ (int)$candidat->mois_naiss == $j ? 'selected' : ''}} value="{{$j}}">{{$j<10 ? '0'.$j : $j}}</option>
@@ -160,7 +161,7 @@
                       <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fa fa-phone"></i></span>
                       </div>
-                      <input name="numero" value="{{$candidat->numero}}" type="text" class="form-control">
+                      <input required name="numero" value="{{$candidat->numero}}" type="text" class="form-control">
                     </div>
                     <!-- /.input group -->
                   </div>
@@ -210,7 +211,7 @@
                   <!-- Profil -->
                   <div class="form-group">
                     <label>
-                      <input type="checkbox" class="minimal" disabled> Profil complet
+                      <input type="checkbox" class="minimal"> Profil complet
                     </label>
                   </div>
                   <div class="form-group">
