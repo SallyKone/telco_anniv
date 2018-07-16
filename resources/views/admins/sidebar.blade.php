@@ -49,7 +49,7 @@
               </li>
               <li class="nav-item">
                 <a href="" class="nav-link">
-                  <i class="fa fa-circle-o nav-icon"></i>
+                  <i class="fa fa-circle-o text-danger"></i>
                   <p>Les Gagnants</p>
                 </a>
               </li>
