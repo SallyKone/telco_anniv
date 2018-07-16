@@ -28,6 +28,50 @@ class Utilitaires
             return ['ladate'=>$ladate,'letps'=>$letps];
         }
     }
+    public function determineReseau($lenumero)
+    {
+        $tabMTN = ['4','5','6'];
+        $tabORANGE = ['7','8','9'];
+        $tabMOOV = ['1','2','3'];
+        $numero = str_replace(' ', '', trim($lenumero));
+
+        if(strlen($numero) == 8){
+            
+            $chiffreduReseau = substr($numero, 1, 1);
+            
+            if(in_array($chiffreduReseau, $tabMTN))
+            {
+                return 'MTN';
+            }
+            if(in_array($chiffreduReseau, $tabORANGE))
+            {
+                return 'ORANGE';
+            }
+            if(in_array($chiffreduReseau, $tabMOOV))
+            {
+                return 'MOOV';
+            }
+        }
+        elseif(strlen($numero) == 11){
+            $phonereduit = substr($numero, 3);
+            $chiffreduReseau = substr($phonereduit, 1, 1);
+
+            if(in_array($chiffreduReseau, $tabMTN))
+            {
+                return 'MTN';
+            }
+            if(in_array($chiffreduReseau, $tabORANGE))
+            {
+                return 'ORANGE';
+            }
+            if(in_array($chiffreduReseau, $tabMOOV))
+            {
+                return 'MOOV';
+            }
+        }else{
+            return null;
+        }
+    }
     //Liste des 10er candidats d'une date d'anniversaire 
     public function getTop10bydate($ladate)
     {

@@ -163,6 +163,7 @@ class AdminsController extends Controller
                 $candidat->codecandidat = $codecandidat;
                 $candidat->login = $lelogin;
                 $candidat->motpass = $util->genererchaine(6);
+                $candidat->nom_inscription = $request->nom.' '.$request->prenom;
             }
              
         }

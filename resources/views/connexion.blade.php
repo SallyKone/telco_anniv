@@ -82,7 +82,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 								<div class="forgotpassword"><a href="mdpassoublier">Mot de passe oublié ?</a></div>
 								<div class="forgotpassword"><a href="identifiantoublier">Identifiant oublié ?</a></div>
-								<div class="forgotpassword"><a href="modifiermdpass">Changer mot de passe</a></div>
 								<br>	
 								<div class="clear"></div>
 								<br/>	
@@ -175,7 +174,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		    width: 100%; 
 		}
 
-		.forgotpassword{width:160px; height:30px;  font-size:13px; color:#000; line-height:30px; text-align:center; margin:10px 0 0 0px; float:left;}
+		.forgotpassword{width:160px; height:30px;  font-size:13px; color:#000; line-height:30px;  margin:10px 0 0 0px; float:left;}
 		.forgotpassword a{text-decoration:none; color:#000;}
 		.forgotpassword a:hover{font-size:14px;}
 

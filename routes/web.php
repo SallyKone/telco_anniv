@@ -56,6 +56,8 @@ Route::post('/admins/ajoutcandidat','CandidatsController@ajouterCandidat')->name
 Route::get('/profil', 'CandidatsController@profil');
 Route::get ('/modifeprofile', 'CandidatsController@showModifProfil');
 Route::post('/modifeprofile',['as' => 'modifeprofile',	'uses' => 'CandidatsController@modifProfil']);
+Route::post('/identifiantoublier', 'CandidatsController@recupererIdentif');
+Route::post('/mdpassoublier', 'CandidatsController@recupererMotPass');
 
 //Route Connexion
 Route::get ('/connexion', 'ConnexionController@showConnexion');

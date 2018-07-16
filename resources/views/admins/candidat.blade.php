@@ -17,10 +17,6 @@
   <link rel="stylesheet" href="{{URL::asset('plugins/daterangepicker/daterangepicker-bs3.css')}}">
   <!-- iCheck for checkboxes and radio inputs -->
   <link rel="stylesheet" href="{{URL::asset('plugins/iCheck/all.css')}}">
-  <!-- Bootstrap Color Picker -->
-  <link rel="stylesheet" href="{{URL::asset('plugins/colorpicker/bootstrap-colorpicker.min.css')}}">
-  <!-- Bootstrap time Picker -->
-  <link rel="stylesheet" href="{{URL::asset('plugins/timepicker/bootstrap-timepicker.min.css')}}">
   <!-- Select2 -->
   <link rel="stylesheet" href="{{URL::asset('plugins/select2/select2.min.css')}}">
   <!-- DataTables -->
@@ -286,11 +282,6 @@
 <script src="{{URL::asset('plugins/input-mask/jquery.inputmask.extensions.js')}}"></script>
 <!-- date-range-picker -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js"></script>
-<script src="{{URL::asset('plugins/daterangepicker/daterangepicker.js')}}"></script>
-<!-- bootstrap color picker -->
-<script src="{{URL::asset('plugins/colorpicker/bootstrap-colorpicker.min.js')}}"></script>
-<!-- bootstrap time picker -->
-<script src="{{URL::asset('plugins/timepicker/bootstrap-timepicker.min.js')}}"></script>
 <!-- SlimScroll 1.3.0 -->
 <script src="{{URL::asset('plugins/slimScroll/jquery.slimscroll.min.js')}}"></script>
 <!-- iCheck 1.0.1 -->
@@ -331,9 +322,6 @@
     });
     //Initialize Select2 Elements
     $('.select2').select2();
-    $('.js-example-basic-single').select2({
-      placeholder: 'Select an option'
-    });
 
     //Datemask dd/mm/yyyy
     $('#datemask').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' });

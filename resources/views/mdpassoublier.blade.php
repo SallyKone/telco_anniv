@@ -42,69 +42,26 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!-- team -->
 	
 
-<div class="events-sections">
+	<div class="events-sections">
 		<div class="container">
-			
-			<div class="">
-				<div class="col-sm-4 live-grids-w3ls">
-					
-					<div class="panel panel-primary">
-						
-						<div class="panel-body">
-
-							<img class="imgDp" src="images/DES1.jpg">
-							
-						</div>
-					</div>
-					
-					
-				</div>
-
-				<div class="col-sm-4 live-grids-w3ls">
-					
-					<div class="panel panel-primary">
-						
-						<div class="panel-body">
-							<h4>Retrouver mon mot de passe</h4>
-							<br>
-						<p>Votre mot de passe vous sera envoyé par SMS.</p>
-							<br>
-							<form action="" method="POST">
-							<br>
-							<input type="text" id="name" name="name" placeholder="Login" class="chaageform" />
-							<br>
-<div class="clear"></div>
-<br>
-<input type="text" id="phone" name="phone" placeholder="Telephone" class="chaageform" />
-<br><br><br>
-
-
-
-<div class="clear"></div>
-<center>
-<input type="submit" id="submit"  name="contactsubmit" value="Envoyer" class="changesubbtn" /><br>
-<br><br>
- </center>
-
-<div class="clear"></div>
-
-
-								
-							</form>
-						</div>
-					</div>
-					
-				</div>
-
-				<div class="col-sm-4 live-grids-w3ls">
-					
-					<div class="panel panel-primary">
-						
-						<div class="panel-body">
-							<img class="imgDp" src="images/REGIS.jpg">
-						</div>
-					</div>
-					
+			<div class="row">
+				<div class="col-xs-12 col-sm-offset-3 col-sm-6 col-md-offset-4 col-md-4 col-lg-offset-4 col-lg-4">	
+					<h4>Retrouver mon mot de passe</h4>
+					<p>{{isset($statut)?$message : ""}}</p>
+					<br>
+					<form action="mdpassoublier" method="POST">
+						<br>{{csrf_field()}}
+						<input required type="text" id="login" name="login" placeholder="Login" class="form-control" />
+						<div class="clear"></div><br>
+						<input  required type="text" id="phone" name="phone" placeholder="Telephone" class="form-control" />
+						<br><br><br>
+						<div class="clear"></div>
+						<center>
+							<input type="submit" id="submit" value="Envoyer" class="changesubbtn" /><br>
+							<br><br>
+						</center>
+						<div class="clear"></div>
+					</form>
 				</div>
 			</div>	
 			<div class="clearfix"> </div>

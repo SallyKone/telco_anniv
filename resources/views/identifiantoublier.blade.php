@@ -26,6 +26,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!-- // Meta Tags -->
 	<link href="{{URL::asset('css/bootstrap.css')}}" rel="stylesheet" type="text/css" media="all" />
 	<link href="{{URL::asset('css/font-awesome.min.css')}}" rel="stylesheet" type="text/css" media="all">
+	<!-- Select2 -->
+  	<link rel="stylesheet" href="{{URL::asset('plugins/select2/select2.min.css')}}">
 	<!--testimonial flexslider-->
 	<link href="{{URL::asset('css/style.css')}}" rel="stylesheet" type="text/css" media="all" />
 	<!--fonts-->
@@ -41,90 +43,56 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!-- team -->
 	
 
-<div class="events-sections">
+	<div class="events-sections">
 		<div class="container">
-			
 			<div class="">
 				<div class="col-sm-4 live-grids-w3ls">
-					
-					<div class="panel panel-primary">
-						
+					<div class="panel panel-primary">	
 						<div class="panel-body">
-
 							<img class="imgDp" src="images/DES1.jpg">
-							
 						</div>
 					</div>
-					
-					
 				</div>
 
 				<div class="col-sm-4 live-grids-w3ls">
-					
 					<div class="panel panel-primary">
-						
 						<div class="panel-body">
 							<h3>Retrouver mon identifiant</h3>
-							<p>Votre identifiant vous sera envoyé par SMS.</p>
-							<br>
-							<form action="" method="POST">
-							<br>
-<input type="text" id="name" name="name" placeholder="Nom" class="chaageform" />
-<br>
-
-<input type="text" id="phone" name="phone" placeholder="Telephone"  class="chaageform" />
-<div class="">
-	<br>
- <select name="Date" id="Date" >
-    
-   <option value="0">Date</option>
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-    
-   </select>
-    
-    
-   <select name="Month" id="Month" >
-    
-   <option value="0">Month</option>
-      <option value="Jan">Jan</option>
-      <option value="Feb">Feb</option>
-      <option value="Mer">Mer</option>
-      <option value="Apr">Apr</option>    
-    </select>
-    
-    
-    
-    <select name="Year" id="Year" >
-    
-		   <option value="0">Year</option>
-	      <option value="2000">2000</option>
-	      <option value="2001">2001</option>
-	      <option value="2002">2002</option>
-	      <option value="2003">2003</option>   
-    </select>
-   </div>
-   
-<div class="clear"></div>
-<br>
-<br/>
-<br/>
-<br/>
-<center>
-<input type="submit" id="submit"  name="contactsubmit" value="Envoyer" class="changesubbtn" />
-</center>
-<br/>
-
-<div class="clear"></div>
-
-
+							<br><p>{{isset($statut)?$message : ""}}</p>
+							<form action="identifiantoublier" method="POST">
+								<br>{{csrf_field()}}
+								<input type="text" id="nom" name="nom" placeholder="Nom" class="form-control chaageform" />
 								
+								<input maxlength="8" required type="text" id="phone" name="phone" placeholder="Telephone"  class="form-control chaageform" /><br>
+								<div class="">
+									<label>Date naissance</label>
+									<div class="row">
+				                      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+				                        <select required name="jour" class="form-control select2" style="width: 100%;">
+				                          <option value="">Jour</option>
+				                          @for($i=1; $i <= 31; $i++)
+				                            <option value="{{$i}}">{{$i< 10 ? '0'.$i : $i}}</option>
+				                          @endfor
+				                        </select>
+				                      </div>
+				                      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+				                        <select required name="mois" class="form-control select2" style="width: 100%;">
+				                          <option value="">Mois</option>
+				                          @for($j=1; $j <= 12; $j++)
+				                            <option value="{{$j}}">{{$j< 10 ? '0'.$j : $j}}</option>
+				                          @endfor
+				                        </select>
+				                      </div>
+				                    </div>
+   								</div>
+								<div class="clear"></div><br><br/><br/><br/>
+								<center>
+								<input type="submit" id="submit" value="Envoyer" class="changesubbtn" />
+								</center><br/>
+								<div class="clear"></div>
 							</form>
 						</div>
 					</div>
-					
 				</div>
 
 				<div class="col-sm-4 live-grids-w3ls">
@@ -150,6 +118,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!-- Common Js -->
 	<script type="text/javascript" src="{{URL::asset('js/jquery-2.2.3.min.js')}}"></script>
 	<!--// Common Js -->
+	<!-- Select2 -->
+	<script src="{{URL::asset('plugins/select2/select2.full.min.js')}}"></script>
+
 	<!--search-bar-agileits-->
 	<script src="{{URL::asset('js/main.js')}}"></script>
 	<!--//search-bar-agileits-->
@@ -157,13 +128,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<script type="text/javascript" src="{{URL::asset('js/move-top.js')}}"></script>
 	<script type="text/javascript" src="{{URL::asset('js/easing.js')}}"></script>
 	<script type="text/javascript">
-		jQuery(document).ready(function ($) {
+		$(document).ready(function ($) {
 			$(".scroll").click(function (event) {
 				event.preventDefault();
 				$('html,body').animate({
 					scrollTop: $(this.hash).offset().top
 				}, 1000);
 			});
+			//Initialize Select2 Elements
+    		$('.select2').select2();
 		});
 	</script>
 	<!-- start-smoth-scrolling -->

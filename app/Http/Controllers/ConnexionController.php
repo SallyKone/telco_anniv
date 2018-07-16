@@ -51,7 +51,6 @@ class ConnexionController extends Controller
                 return view('connexion')->with(['statut'=> false,'message'=>'Mot de passe incorrect !']);
             }
     	}
-
     	return view('connexion')->with(['statut'=> false,'message'=>'Mot de passe incorrect !']);
     }
     public function deconnecter(Request $requete, Utilitaires $util){

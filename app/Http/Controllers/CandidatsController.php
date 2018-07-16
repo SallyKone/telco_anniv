@@ -179,7 +179,66 @@ class CandidatsController extends Controller
     }
 
     //LES FONCTIONS POST
-    
+    //Retrouver identifiant
+    public function recupererIdentif(Request $requete, Utilitaires $util)
+    {
+        $lelogin = "";
+        $nom = $requete->nom;
+        $telephone = '225'.$requete->phone;
+        $jour = $requete->jour;
+        $mois = $requete->mois;
+        $msg = '';
+
+        if(DB::table('candidats')->where([['jour_naiss','=',$jour],['mois_naiss','=',$mois],['numero','=',$telephone]])->exists())
+        {
+            $lelogin = DB::table('candidats')->select('login')->where([['jour_naiss','=',$jour],['mois_naiss','=',$mois],['numero','=',$telephone]])->get();
+            $msg = 'Votre login : '.$lelogin;
+            switch ($util->determineReseau($telephone)) {
+                case 'MTN':
+                    $util->accuseReceptionMTN($telephone,$msg);
+                    break;
+                case 'ORANGE':
+                    $util->accuseReceptionORANGE($telephone,$msg);
+                    break;
+                case 'MOOV':
+                    
+                    break;
+                default: ;
+            }
+            return view('/identifiantoublier')->with(['statut'=>true,'message'=>"Votre identifiant a été envoyé par SMS"]);
+        }
+        return view('/identifiantoublier')->with(['statut'=>false,'message'=>"Les données saisies ne correspondent à aucun candidat !"]);
+    }
+    //Retrouver le mot de passe
+    public function recupererMotPass(Request $requete, Utilitaires $util)
+    {
+        $lemotpass = "";
+        $monlogin = $requete->login;
+        $telephone = '225'.$requete->phone;
+        $mesg = '';
+        if(DB::table('candidats')->where([['login','=',$monlogin],['numero','=',$telephone]])->exists())
+        {
+            $lemotpass = $util->genererchaine(6);
+            DB::table('candidats')->where([['login','=',$monlogin],['numero','=',$telephone]])->update(['motpass'=>$lemotpass,'updated_at'=>now()]);
+            
+            $msg = 'Mot de passe : '.$lemotpass.'\nConnectez vous puis modifiez le !';
+            switch ($util->determineReseau($telephone)) {
+                case 'MTN':
+                    $util->accuseReceptionMTN($telephone,$msg);
+                    break;
+                case 'ORANGE':
+                    $util->accuseReceptionORANGE($telephone,$msg);
+                    break;
+                case 'MOOV':
+                    
+                    break;
+                default: ;
+            }
+            
+            return view('/mdpassoublier')->with(['statut'=>true,'message'=>"Votre mot de passe a été envoyé par SMS".$lemotpass]);
+        }
+        return view('/mdpassoublier')->with(['statut'=>false,'message'=>"Les données saisies ne correspondent à aucun candidat !"]);
+    }
     //MODIFIER CANDIDATS
     public function modifProfil(Request $request)
     {

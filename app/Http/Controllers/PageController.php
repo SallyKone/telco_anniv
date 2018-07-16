@@ -47,7 +47,7 @@ class PageController extends Controller
 
     public function showMDPassOublier()
     {
-    	return view('mdpassoublier');
+        return view('mdpassoublier');
     }
 
     public function showIdOublier()
@@ -62,7 +62,13 @@ class PageController extends Controller
 
     public function showModifMDPass()
     {
-    	return view('modifiermdpass');
+        if (session()->has("idcandidat")) {
+    	   return view('modifiermdpass');
+        }
+        else
+        {
+            return view('connexion');
+        }
     }
     
     public function comptaRebour(){
