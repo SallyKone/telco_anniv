@@ -86,6 +86,7 @@ Route::get ('/modifiermdpass', 'PageController@showModifMDPass');
 Route::get ('/identifiantoublier','PageController@showIdOublier');
 Route::get ('/icons', 'PageController@showIcons');
 Route::get ('/souscritsms', 'PageController@showSoucritSms');
+Route::get ('/indexajax', 'PageController@ajaxIndex');//Requêtes ajax
 
 //Route vote & Classement
 Route::get('/admins/ajoutvote', 'CandidatsController@addVote')->name('ajoutvote');

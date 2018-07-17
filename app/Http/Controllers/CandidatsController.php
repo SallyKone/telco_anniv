@@ -221,7 +221,7 @@ class CandidatsController extends Controller
             $lemotpass = $util->genererchaine(6);
             DB::table('candidats')->where([['login','=',$monlogin],['numero','=',$telephone]])->update(['motpass'=>$lemotpass,'updated_at'=>now()]);
             
-            $msg = 'Mot de passe : '.$lemotpass.'\nConnectez vous puis modifiez le !';
+            $msg = 'Mot de passe: '.$lemotpass."\nConnectez vous puis modifiez le pour plus de sécurité !";
             switch ($util->determineReseau($telephone)) {
                 case 'MTN':
                     $util->accuseReceptionMTN($telephone,$msg);
@@ -235,7 +235,7 @@ class CandidatsController extends Controller
                 default: ;
             }
             
-            return view('/mdpassoublier')->with(['statut'=>true,'message'=>"Votre mot de passe a été envoyé par SMS".$lemotpass]);
+            return view('/mdpassoublier')->with(['statut'=>true,'message'=>"Votre mot de passe a été envoyé par SMS"]);
         }
         return view('/mdpassoublier')->with(['statut'=>false,'message'=>"Les données saisies ne correspondent à aucun candidat !"]);
     }

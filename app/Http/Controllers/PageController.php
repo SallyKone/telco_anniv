@@ -22,6 +22,16 @@ class PageController extends Controller
 
         return view('index')->with(['anniversaire'=>$anniversaire,"listecandidats"=>$listecandidats,'classement'=>$classement]);
     }
+    //Fonction pour une requête ajax
+    public function ajaxIndex(Utilitaires $util)
+    {
+        $listecandidats = $util->listeCandidatCompet();
+        $classement = $util->getTop10bydate(date('Y-m-d'));
+        $anniversaire = DB::table('anniversaires')->leftjoin('recompenses','recompenses.id','=','anniversaires.id_recompense')->select('anniversaires.*',DB::raw('recompenses.photo as photo'))->where('anniversaires.date_anniv','=',date('Y/m/d'))->get();
+        $anniversaire = isset($anniversaire[0]) ? $anniversaire[0] : new Anniversaires();
+
+        return response()->json(['anniversaire'=>$anniversaire,"listecandidats"=>$listecandidats,'classement'=>$classement]);
+    }
 
     public function showVueTest(Utilitaires $util)
     {
