@@ -66,7 +66,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
  
 						<div class="row">
                             <label class="col-md-4"><strong>Pseudo/Nom: </strong></label>
-                            <input class="col-md-7" type="text" value="{{$ami->nom}}" required name="nom">
+                            <input class="col-md-7" type="text" value="{{isset($ami->nom)?$ami->nom:'Mon ami'}}" required name="nom">
                         </div><br>
                         <div class="row">
                             <label class="col-md-4"><strong>Numero Mobile: </strong></label>

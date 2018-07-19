@@ -70,6 +70,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		.lesdivlot img{
 			width: 90%;
 		}
+		#top10index{
+			overflow-y: scroll;
+		}
 	</style>
 </head>
 
@@ -201,17 +204,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	       	 					</div>
 	       	 					<p>{{$candidat->nom.' '.$candidat->prenom}}</p>
 								<p>Code de vote: {{$candidat->codecandidat}}</p>
-								
 	       	 				</div>
-       	 					<!-- <img class="img1" src="images/candi1.jpg">
-       	 					<img class="img1" src="images/candi2.jpg">
-       	 					<img class="img1" src="images/candi3.jpg">
-       	 					<img class="img1" src="images/candi4.jpg">
-       	 					<img class="img1" src="images/candi5.jpg">
-       	 					<img class="img1" src="images/candi1.jpg">
-       	 					<img class="img1" src="images/candi2.jpg">
-       	 					<img class="img1" src="images/candi3.jpg">
-       	 					<img class="img1" src="images/candi4.jpg"> -->
        	 					@endforeach
 	                    </marquee>
        	 			</div>
@@ -295,9 +288,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<center>
 					<div class="panel panel-primary lesdivlot">
 						<div class="panel-heading"><center>TOP 10 EN TETE</center></div>
-						<div class="panel-body">
+						<div id="top10index" class="panel-body" style="height: 90%">
 							<div class="live-info">
-								<marquee style="" direction="up" height="213px">
+								<!-- <marquee style="" direction="up" height="213px"> -->
 									@foreach($classement as $classemt)
 										<div class="candilist" style="margin-bottom: 10px;">
 											<div class="candilist-img" >
@@ -310,7 +303,28 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											</div>
 										</div>
 									@endforeach
-	                            </marquee>
+	                            <!-- </marquee> -->
+
+	                            <div class="candilist" style="margin-bottom: 10px;">
+									<div class="candilist-img" >
+										<img class="imag" src="/images/img/avatar/defaut.png">
+									</div>
+									<div >	
+										<p>Marc Durant</p>
+										<p>Code: 23456</p>
+										<p style="color: red">8 voix</p>
+									</div>
+								</div>
+								<div class="candilist" style="margin-bottom: 10px;">
+									<div class="candilist-img" >
+										<img class="imag" src="/images/img/avatar/defaut.png">
+									</div>
+									<div >	
+										<p>Marc Durant</p>
+										<p>Code: 23456</p>
+										<p style="color: red">8 voix</p>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -462,15 +476,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
 			    }
 			});
-			setInterval(function(){},60*1000);
-			$.ajax({
-				url: '/indexajax', //construit l’url pour cette demande
-	           	type: 'POST',
-	           	data: "id=1",
-	           	dataType: 'json',
-	           	success: function (donnee) { },
-	           	error: function (donnee) { }
-    		});
+			console.log($("#top10index").children());
+			setInterval(function(){
+				$.ajax({
+					url: '/indexajax', //construit l’url pour cette demande
+		           	type: 'post',
+		           	data: "",
+		           	dataType: 'json',
+		           	success: function (donnee) {
+		           		console.log(JSON.stringify(donnee));
+		           	},
+		           	error: function (donnee) { 
+		           		console.log('Erreur '+donnee);
+		           	}
+	    		});
+	    	},1000*1200);
 			$().UItoTop({
 				easingType: 'easeOutQuart'
 			});

@@ -61,7 +61,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="panel panel-primary">
 						
 						<div class="panel-body">
-							<h3>Accéder à mon compte</h3>
+							<h3>Accéder à mon compte</h3><br><br>
 							@if(isset($statut))
 							<div class=" {{isset($statut) && $statut ? 'alert alert-success' : 'alert alert-danger'}}"> 
                         		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> 

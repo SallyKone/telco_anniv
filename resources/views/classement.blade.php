@@ -26,7 +26,27 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<link href="//fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
 	<link href="//fonts.googleapis.com/css?family=Raleway:300,400,500,600,800" rel="stylesheet">
 	<!--//fonts-->
+	<style type="text/css">
+		.votretop{width:350px; height:auto; margin:0 auto 30px auto; position:relative;}
+		.votretag{width:115px; height:auto; float:left; text-align:right; font-size:15px; line-height:25px;}
+		.votredrop{width:116px; height:37px; padding:5px 10px; border-radius:10px; box-shadow:inset 0 0 10px #CCC; outline:none; border:none; margin:0px 10px 10px 10px; overflow:hidden; float:left; background:#FFF; float:left;}
+		.votredrop img{width:100%; float:right;}
+		.dropp{width:200px; height:20px; outline:none; border:none; background:none !important; -web-kit-background:none !important}
 
+		.downtag{width:300px; height:auto; font-size:15px; text-align:left; line-height:15px; border:solid 1px #000; margin:0 0 0 20px;}
+		.downtag span{float:right;}
+		.downtag p{padding:5px; margin:0px;}
+		.downheading{width:300px; height:30px; background:#fd841e; border-bottom:solid 1px #000; font-size:20px; text-align:center; line-height:30px; margin:0 0 10px 0px;}
+		.votreimg{width:5%; position:absolute; bottom:5px; left:-50px;}
+		.votreimgg{width:5%; position:absolute; bottom:5px; right:-20px;}
+		.imag{position: relative;width: 100%;}
+		.colum-classement{
+			width: 19.6%;
+			position: relative;
+			display: inline-block;
+		}
+
+	</style>
 </head>
 
 <body>
@@ -38,13 +58,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<form action="monrang" method="post">
 			{{csrf_field()}}
 			<div class="votretag"><strong>Saisir Votre</strong></div>
-				<div class="votredrop">
-				    <input type="text" name="lecodecandidat" value=""  placeholder="Code de vote"  style="background:none; border:none;" required> 
-				</div>
-				<input type="submit" id="submit" value="Envoyer" class="contactsubbbtn" style="margin:0; float:left; font-size:12px; width:70px;" />
-				<div class="clear"></div>
-				<div class="clear"></div>
-			
+			<div class="votredrop">
+			    <input type="text" name="lecodecandidat" value=""  placeholder="Code de vote"  style="background:none; border:none;" required> 
+			</div>
+			<input type="submit" id="submit" value="Envoyer" class="contactsubbbtn" style="margin:0; float:left; font-size:12px; width:70px;" />
+			<div class="clear"></div>
 		</form>
 
 		<div class="events-classe">
@@ -236,31 +254,5 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!--// Bootstrap Js -->
 
 	<!--// Required Scripts -->
-
-	<style type="text/css">
-		
-		.votretop{width:350px; height:auto; margin:0 auto 30px auto; position:relative;}
-		.votretag{width:115px; height:auto; float:left; text-align:right; font-size:15px; line-height:25px;}
-		.votredrop{width:116px; height:37px; padding:5px 10px; border-radius:10px; box-shadow:inset 0 0 10px #CCC; outline:none; border:none; margin:0px 10px 10px 10px; overflow:hidden; float:left; background:#FFF; float:left;}
-		.votredrop img{width:100%; float:right;}
-		.dropp{width:200px; height:20px; outline:none; border:none; background:none !important; -web-kit-background:none !important}
-
-		.downtag{width:300px; height:auto; font-size:15px; text-align:left; line-height:15px; border:solid 1px #000; margin:0 0 0 20px;}
-		.downtag span{float:right;}
-		.downtag p{padding:5px; margin:0px;}
-		.downheading{width:300px; height:30px; background:#fd841e; border-bottom:solid 1px #000; font-size:20px; text-align:center; line-height:30px; margin:0 0 10px 0px;}
-		.votreimg{width:5%; position:absolute; bottom:5px; left:-50px;}
-		.votreimgg{width:5%; position:absolute; bottom:5px; right:-20px;}
-		.imag{position: relative;width: 100%;}
-		.colum-classement{
-			width: 19.6%;
-			position: relative;
-			display: inline-block;
-		}
-
-	</style>
-
-
 </body>
-
 </html>
