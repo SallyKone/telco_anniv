@@ -79,18 +79,21 @@ class AdminsController extends Controller
         return view('admins/ami')->with(['ami'=>$ami,'candidats'=>$candidats]);
     }
     //ANNIVERSAIRES
-    public function showAnniversaire(Request $request)
+    public function showAnniversaire(Request $request, Utilitaires $util)
     {
         $idanniv = $request->id;
         $recompenses = DB::table('recompenses')->get();
+        $participants = $util->getParticipantByAnniv($idanniv);
         
-        $nbrparticip = DB::table('anniversaires')->leftjoin('participes','anniversaires.id','=','participes.id_anniversaire')->leftjoin('candidats','candidats.id','=','participes.id_candidat')->groupBy('anniversaires.id')->select(DB::raw('COUNT(participes.id_candidat) as nbrparticipe'))->where('anniversaires.id',$idanniv)->get();
-
+        /*$nbrparticip = DB::table('anniversaires')->leftjoin('participes','anniversaires.id','=','participes.id_anniversaire')->leftjoin('candidats','candidats.id','=','participes.id_candidat')->groupBy('anniversaires.id')->select(DB::raw('COUNT(participes.id_candidat) as nbrparticipe'))->where('anniversaires.id',$idanniv)->get();
+*/
         $legagnant = DB::table('anniversaires')->join('participes','anniversaires.id','=','participes.id_anniversaire')->join('candidats','candidats.id','=','participes.id_candidat')->select('candidats.nom','candidats.prenom')->where([['anniversaires.id','=',$idanniv],['participes.gagne','=','1']])->get();
 
+        $colonnes = ['Nom & Prenom', 'Login', 'Code', 'Année', 'Genre', 'Numéro', 'Profil'];
+
         $anniversaire = DB::table('anniversaires')->leftjoin('recompenses','recompenses.id','=','anniversaires.id_recompense')->select('anniversaires.*',DB::raw('recompenses.photo as photo'))->where('anniversaires.id','=',$idanniv)->get();
-        //dd($anniversaire);
-        return view('admins/anniversaire')->with(['anniversaire'=>$anniversaire[0],'legagnant'=>$legagnant,'nbrparticipe'=>$nbrparticip[0]->nbrparticipe,'recompenses'=>$recompenses]);
+        
+        return view('admins/anniversaire')->with(['anniversaire'=>$anniversaire[0],'legagnant'=>$legagnant,'recompenses'=>$recompenses,'colonnes'=>$colonnes,'participants'=>$participants]);
     }
     //RECOMPENSES
     public function showRecompense(Request $request)

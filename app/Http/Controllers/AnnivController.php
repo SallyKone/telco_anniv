@@ -18,6 +18,7 @@ class AnnivController extends Controller
 		$util->miseAjrCandidat();
 		return view('/admins/genereranniv')->with('message','Anniversaire(s) généré(s)');
 	}
+	
 	//Modifier anniversaire
 	public function modifierAnniv(Request $requete, Utilitaires $util)
 	{

@@ -77,6 +77,11 @@ class Utilitaires
     {
     	return DB::select(DB::raw('CALL GET_TOP10_BY_DATE(?)'),array($ladate));
     }
+    //Liste des candidats par anniversaire 
+    public function getParticipantByAnniv($idanniv)
+    {
+        return DB::select(DB::raw('CALL SP_PARTICIPANT_BY_ANNIV(?)'),array($idanniv));
+    }
     //Classement des candidats d'une date d'anniversaire 
     public function classement($ladate)
     {

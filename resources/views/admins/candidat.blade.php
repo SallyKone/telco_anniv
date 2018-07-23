@@ -71,8 +71,7 @@
       <div class="container-fluid">
         <!-- SELECT2 EXAMPLE -->
         <div class="card card-default">
-          <form method="post" action="{{route('candidat')}}" enctype="multipart/form-data">
-            {{csrf_field()}}
+          
             <div class="card-header">
               <h3 class="card-title">Modification</h3>
 
@@ -81,6 +80,8 @@
               </div>
             </div>
             <!-- /.card-header -->
+            <form method="post" action="{{route('candidat')}}" enctype="multipart/form-data">
+            {{csrf_field()}}
             <div class="card-body">
               <div class="row">
                 <div class="col-md-6">
@@ -226,6 +227,7 @@
             </div>
           </form>
           @if(!empty($candidat->id))
+          <div class="card-body">
           <div class="row">
             <div class="col-lg-12">
               <table id="table" class="table table-bordered table-striped">
@@ -256,6 +258,7 @@
                 </tfoot>
               </table>
             </div>
+          </div>
           </div>
           @endif
         </div>
