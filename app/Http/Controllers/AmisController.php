@@ -45,7 +45,7 @@ class AmisController extends Controller
     {
         $idami = $requete->id;
         $ami = empty($idami) ? new Amis() : Amis::findOrfail($idami);
-        $candidats = empty($idami)? null : DB::table('candidats')->select('candidats.id','candidats.nom','candidats.prenom','candidats.login')->get();
+        $candidats = session()->has('idcandidat') ? null : DB::table('candidats')->select('candidats.id','candidats.nom','candidats.prenom','candidats.login')->get();
         $ami->nom = $requete->nom;
         $ami->numero = $requete->numero;
         $ami->id_candidat = session()->has("idcandidat") ? (int)session()->get("idcandidat") : $requete->idcandidat;

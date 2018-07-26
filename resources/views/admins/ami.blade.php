@@ -105,7 +105,7 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label>Candidats</label>
-                    <select {{empty($ami->id_candidat) ? "":"disabled"}} name="idcandidat" class="form-control select2" style="width: 100%;">
+                    <select {{ empty($ami->id_candidat) ? "" : "disabled" }} name="idcandidat" class="form-control select2" style="width: 100%;">
                       <option value="">Sélectionnez un candidat</option>
                       @foreach($candidats as $candidat)
                       <option {{($ami->id_candidat == $candidat->id) ? "selected":""}} value="{{$candidat->id}}">{{$candidat->nom.' '.$candidat->prenom.' ['.$candidat->login.']'}}</option>
