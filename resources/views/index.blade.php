@@ -144,40 +144,59 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 		<!--//top-bar-w3layouts-->
 		<!--Slider-->
-					<section class="slider" id="home">
+			<section class="slider" id="home">
 				<div class="container-fluid">
 					<div class="row">
-
-					    <div id="carouselHacked" class="carousel slide carousel-fade" data-ride="carousel">
-							<div class="header-backup"></div>
-					        <!-- Wrapper for slides -->
-					        <div class="carousel-inner" role="listbox">
-					            <div class="item active">
-					            	<img src="images/slide1.jpg" alt="">
-					                <div class="carousel-caption">
-				               			
-					                </div>
-					            </div>
-					            <div class="item">
-					            	<img src="images/slide3.jpg" alt="">
-					                <div class="carousel-caption">
-				               			
-					                </div>
-					            </div>
-					            <div class="item">
-					            	<img src="images/slide4.jpg" alt="">
-					                <div class="carousel-caption">
-				               			
-					                </div>
-					            </div>
-					            
-					        </div>
-
-					        <!-- Controls -->
-					        
-					        
+						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+						    <div id="carouselHacked" class="carousel slide carousel-fade" data-ride="carousel">
+								<div class="header-backup"></div>
+						        <!-- Wrapper for slides -->
+						        <div class="carousel-inner" role="listbox">
+						            <div class="item active">
+						            	<img src="images/slide1.jpg" alt="">
+						                <div class="carousel-caption">
+					               			
+						                </div>
+						            </div>
+						            <div class="item">
+						            	<img src="images/slide3.jpg" alt="">
+						                <div class="carousel-caption">
+					               			
+						                </div>
+						            </div>
+						            <div class="item">
+						            	<img src="images/slide4.jpg" alt="">
+						                <div class="carousel-caption">
+					               			
+						                </div>
+						            </div>
+						        </div>
+						        <!-- Controls -->
+						    </div>
 					    </div>
-
+					    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+					    	<video controls style="width: 100%;height: 400px">
+					    		<source src="videos/videofinal.webm" type="video/webm">
+					    		<source src="videos/videofinal.mp4" type="video/mp4">
+					    	</video>
+					    </div>
+					</div>
+					<div class="row" id="logopartenaire">
+						<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+							<img src="images/logo/logoorange.jpg">
+						</div>
+						<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+							<img src="images/logo/logomtn.jpeg">
+						</div>
+						<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+							<img src="images/logo/logotrace.png">
+						</div>
+						<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+							<img src="images/logo/logojumia.png">
+						</div>
+						<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+							<img src="images/logo/logotourisme.jpg">
+						</div>
 					</div>
 				</div>
 			</section><!-- end of slider section -->
