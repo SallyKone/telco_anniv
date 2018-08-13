@@ -85,7 +85,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="col-md-9 top-left">
 					<ul>
 						<li><i class="fa fa-map-marker" aria-hidden="true"></i>Riviera Palmeraie,Rond point ADO phcie St Moise.</li>
-						<li><i class="fa fa-phone" aria-hidden="true"></i> +(225) 22 46 61 64</li>
+						<li><i class="fa fa-phone" aria-hidden="true"></i> +(225) 22 46 72 66</li>
 						<li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:info@example.com">info@telco.com</a></li>
 					</ul>
 				</div>
@@ -248,8 +248,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							
 							</div>
 							<div class="services-icon-info">
-								</a><h5>AJOUT D'AMIS</h5>
-								<p>Ajouter vos amis gratuitement ici et augmenter vos chances d'être le vainqueurs.</p>
+								</a><h5>AJOUT D'AMI(E)S</h5>
+								<p>Ajouter vos amis gratuitement ici et augmenter vos chances d'être le vainqueur.</p>
 							</div>
 						</div>
 					</div>
@@ -264,7 +264,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</div>
 							<div class="services-icon-info">
 								<h5>CLASSEMENT</h5>
-								<p>Suivez en direct sur notre site le classement des divers condidats en competition.</p>
+								<p>Suivez en direct sur notre site le classement des candidats en competition.</p>
 							</div>
 						</div>
 					</div>
@@ -387,7 +387,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<div class="testimonial-info-wthree">
 										<h5>Andy Brou</h5>
 										<br>
-										<p class="para-w3ls">Un grand merci à toute l’équipes de mon incroyable anniversaire, pour cette belle fête organisé en mon honneur, en présence de tous mes amis, ma familles et pour ce merveilleux cadeau. Alors  faite comme moi et devenez l’heureux gagnant du jour !!!. </p>
+										<p class="para-w3ls">Un grand merci à toute l’équipe de mon incroyable anniversaire, pour cette belle fête organisé en mon honneur, en présence de tous mes amis, ma familles et pour ce merveilleux cadeau. Alors  faite comme moi et devenez l’heureux gagnant du jour !!!. </p>
 									</div>
 								</div>
 							</li>
@@ -397,7 +397,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<div class="testimonial-info-wthree">
 										<h5>Bernard Tanoh</h5>
 										<br>
-										<p class="para-w3ls">Un grand merci à toute l’équipes de mon incroyable anniversaire, pour cette belle fête organisé en mon honneur, en présence de tous mes amis, ma familles et pour ce merveilleux cadeau. Alors  faite comme moi et devenez l’heureux gagnant du jour !!!. </p>
+										<p class="para-w3ls">Un grand merci à toute l’équipe de mon incroyable anniversaire, pour cette belle fête organisé en mon honneur, en présence de tous mes amis, ma familles et pour ce merveilleux cadeau. Alors  faite comme moi et devenez l’heureux gagnant du jour !!!. </p>
 									</div>
 								</div>
 							</li>
@@ -407,7 +407,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<div class="testimonial-info-wthree">
 										<h5>Alex Merphy </h5>
 										<br>
-										<p class="para-w3ls">Un grand merci à toute l’équipes de mon incroyable anniversaire, pour cette belle fête organisé en mon honneur, en présence de tous mes amis, ma familles et pour ce merveilleux cadeau. Alors  faite comme moi et devenez l’heureux gagnant du jour !!!. </p>
+										<p class="para-w3ls">Un grand merci à toute l’équipe de mon incroyable anniversaire, pour cette belle fête organisé en mon honneur, en présence de tous mes amis, ma familles et pour ce merveilleux cadeau. Alors  faite comme moi et devenez l’heureux gagnant du jour !!!. </p>
 									</div>
 								</div>
 							</li>
