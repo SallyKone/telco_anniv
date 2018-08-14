@@ -172,27 +172,27 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						    </div>
 					    </div>
 					    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-					    	<video controls style="width: 100%;height: 400px">
+					    	<video poster="images/img/imgdelavideo.png" controls style="width: 100%;height: 400px">
 					    		<source src="videos/videofinal.webm" type="video/webm">
 					    		<source src="videos/videofinal.mp4" type="video/mp4">
 					    	</video>
 					    </div>
 					</div>
 					<div class="row" id="logopartenaire">
-						<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-							<img src="images/logo/logoorange.jpg">
-						</div>
-						<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+						<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1">
 							<img src="images/logo/logomtn.jpeg">
 						</div>
 						<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
 							<img src="images/logo/logotrace.png">
 						</div>
 						<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+							<img src="images/logo/logotourisme.jpg">
+						</div>
+						<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
 							<img src="images/logo/logojumia.png">
 						</div>
 						<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-							<img src="images/logo/logotourisme.jpg">
+							<img src="images/logo/logoorange.jpg">
 						</div>
 					</div>
 				</div>
@@ -246,7 +246,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</div>
 							<div class="services-icon-info">
 								</a><h5>AJOUT D'AMI(E)S</h5>
-								<p>Ajouter vos amis gratuitement ici et augmenter vos chances d'être le vainqueur.</p>
+								<p>Ajouter vos ami(e)s gratuitement ici et augmenter vos chances d'être le vainqueur.</p>
 							</div>
 						</div>
 					</div>
@@ -261,7 +261,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</div>
 							<div class="services-icon-info">
 								<h5>CLASSEMENT</h5>
-								<p>Suivez en direct sur notre site le classement des candidats en competition.</p>
+								<p>Suivez en direct sur notre site le classement des candidats en compétition.</p>
 							</div>
 						</div>
 					</div>
@@ -373,7 +373,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- Testimonials -->
 	<div class="testimonials">
 		<div class="container">
-			<h3 class="title-txt"><span>T</span>emoignages</h3>
+			<h3 class="title-txt"><span>T</span>émoignages</h3>
 			<div class="col-md-6 testimonials-main">
 				<section class="slider">
 					<div class="flexslider">
@@ -384,7 +384,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<div class="testimonial-info-wthree">
 										<h5>Andy Brou</h5>
 										<br>
-										<p class="para-w3ls">Un grand merci à toute l’équipe de mon incroyable anniversaire, pour cette belle fête organisé en mon honneur, en présence de tous mes amis, ma familles et pour ce merveilleux cadeau. Alors  faite comme moi et devenez l’heureux gagnant du jour !!!. </p>
+										<p class="para-w3ls">Un grand merci à toute l’équipe de mon incroyable anniversaire, pour cette belle fête organisée en mon honneur, en présence de tous mes amis, ma familles et pour ce merveilleux cadeau. Alors  faite comme moi et devenez l’heureux gagnant du jour !!!. </p>
 									</div>
 								</div>
 							</li>
@@ -394,7 +394,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<div class="testimonial-info-wthree">
 										<h5>Bernard Tanoh</h5>
 										<br>
-										<p class="para-w3ls">Un grand merci à toute l’équipe de mon incroyable anniversaire, pour cette belle fête organisé en mon honneur, en présence de tous mes amis, ma familles et pour ce merveilleux cadeau. Alors  faite comme moi et devenez l’heureux gagnant du jour !!!. </p>
+										<p class="para-w3ls">Un grand merci à toute l’équipe de mon incroyable anniversaire, pour cette belle fête organisée en mon honneur, en présence de tous mes amis, ma familles et pour ce merveilleux cadeau. Alors faite comme moi et devenez l’heureux gagnant du jour !!!. </p>
 									</div>
 								</div>
 							</li>

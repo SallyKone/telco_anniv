@@ -79,7 +79,7 @@
 			    </div>
 			</div>
 		    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-		    	<video controls style="width: 100%;height: 400px">
+		    	<video poster="images/img/imgdelavideo.png" controls style="width: 100%;height: 400px">
 		    		<source src="videos/videofinal.webm" type="video/webm">
 		    		<source src="videos/videofinal.mp4" type="video/mp4">
 		    	</video>
