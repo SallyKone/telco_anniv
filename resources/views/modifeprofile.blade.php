@@ -112,7 +112,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <br>
                             <div class="clear"></div>
                             <div class="submit1">
-                                <input type="submit" value="Modifier">
+                                <input type="submit" value="Enregister">
                             </div>
                         </div>
                     </form>
