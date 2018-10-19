@@ -63,9 +63,9 @@
 		<!--//top-bar-w3layouts-->
 		<!--Slider-->
 		
-		<div class="row" style="padding: 30px;">
+		<div class="row" style="padding: 19px;">
 		    <div class="col-md-2 logopartenaire">
-			<div class="">
+						<div class="">
                         	<img src="images/logo/logomtn.jpeg">
                         </div>
                         <div class="">
@@ -74,14 +74,14 @@
                         <div class="">
                                 <img src="images/logo/logotourisme.jpg">
                         </div>
-                    </div>
+            </div>
 		    <div class="col-md-8">
 		    	<video poster="images/img/imgdelavideo.png" controls style="width: 100%;height:30%" autoplay="true">
 		    		<source src="videos/videofinal.webm" type="video/webm">
 		    		<source src="videos/videofinal.mp4" type="video/mp4">
 		    	</video>
 		    </div>
-		    <div class="col-md-2 logopartenaire">
+		    <div class="col-md-2 logoptenaire">
 			<div class="">
                                 <img src="images/logo/logoorange.jpg">
                         </div>

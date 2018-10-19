@@ -106,7 +106,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
        <div class="container">
        	<div id="candidat">
        	 <div class="row">
-       	 	<div class="col-sm-12" style="margin-top: -51px;">
+       	 	<div class="col-sm-12" style="margin-top: -70px;">
        	 		<div class="panel panel-primary">
 	       	 		<div class="panel-header"><center>LES CANDIDATS EN COMPETITION</center>
 	       	 		</div>

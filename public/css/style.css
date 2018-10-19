@@ -26,10 +26,19 @@ body {
 	background: #00000;
 }
 .logopartenaire img{
-	width: 80%;
+	width: 75%;
 	height: 100%;
 }
 .logopartenaire div{
+	padding: 5%;
+	height: 100%;
+}
+.logoptenaire img{
+	width: 75%;
+	height: 100%;
+	margin-left: 39px;
+}
+.logoptenaire div{
 	padding: 5%;
 	height: 100%;
 }
