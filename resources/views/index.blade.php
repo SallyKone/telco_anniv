@@ -189,7 +189,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="panel-body">
 							<div class="live-info">
 							
-							<img src="images/gagnant12.JPEG">
+							<img src="images/gagnant12.jpeg">
 												
 							</div>
 							<h5>KOUAKOU Junior</h5>

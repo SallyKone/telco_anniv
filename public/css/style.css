@@ -25,11 +25,6 @@ body {
 	font-family: 'Lato', sans-serif;
 	background: #00000;
 }
-.logovideo div{
-	width: 100%;
-	height: 80%;
-
-}
 .logopartenaire img{
 	width: 80%;
 	height: 100%;
@@ -3281,6 +3276,7 @@ h3.title-txt {
 
 #candidat{
 	margin-top:50px;
+	color: #191818;
 }
 #lastli1{
 		display: none;
