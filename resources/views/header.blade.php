@@ -1,3 +1,4 @@
+
 		<div class="header">
 			<div class="top">
 				<div class="container">	
@@ -20,7 +21,7 @@
 			</div>
 		</div>
 		<!--top-bar-w3layouts-->
-		<div class="top-bar-w3layouts">
+		<div class="top-bar-w3layouts" style="margin-top: -15px;margin-bottom: -50px;">
 			<div class="container">
 				<nav class="navbar navbar-default">
 					<div class="navbar-header">
@@ -62,28 +63,32 @@
 		<!--//top-bar-w3layouts-->
 		<!--Slider-->
 		
-		<div class="row">
-			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-			    <div id="carouselHacked" class="carousel slide carousel-fade" data-ride="carousel">
-					<div class="header-backup"></div>
-			        <!-- Wrapper for slides -->
-			        <div class="carousel-inner" role="listbox">
-			            <div class="item active">
-			            	<img src="images/slide1.jpg" alt="">
-			                <div class="carousel-caption">
-		               			
-			                </div>
-			            </div>
-			        </div>
-			        <!-- Controls -->
-			    </div>
-			</div>
-		    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-		    	<video poster="images/img/imgdelavideo.png" controls style="width: 100%;height: 400px">
+		<div class="row" style="padding: 30px;">
+		    <div class="col-md-2 logopartenaire">
+			<div class="">
+                        	<img src="images/logo/logomtn.jpeg">
+                        </div>
+                        <div class="">
+                                <img src="images/logo/logotrace.png">
+                        </div>
+                        <div class="">
+                                <img src="images/logo/logotourisme.jpg">
+                        </div>
+                    </div>
+		    <div class="col-md-8">
+		    	<video poster="images/img/imgdelavideo.png" controls style="width: 100%;height:30%" autoplay="true">
 		    		<source src="videos/videofinal.webm" type="video/webm">
 		    		<source src="videos/videofinal.mp4" type="video/mp4">
 		    	</video>
 		    </div>
+		    <div class="col-md-2 logopartenaire">
+			<div class="">
+                                <img src="images/logo/logoorange.jpg">
+                        </div>
+			<div class="">
+                                <img src="images/logo/logojumia.png">
+                        </div>
+                    </div>
 		</div>
 		<!-- //Modal1 -->
 	<!--//Slider-->

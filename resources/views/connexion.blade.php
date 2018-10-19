@@ -50,7 +50,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						
 						<div class="panel-body">
 
-						<img class="imgDp" src="images/precampagne.jpg">
+						<img class="imgDp" src="images/REGIS.jpg">
 							
 						</div>
 					</div>

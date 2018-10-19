@@ -35,7 +35,7 @@ class ConnexionController extends Controller
     	if (DB::table('candidats')->where('login','=',$login)->exists())
         {
             $candidat = DB::table('candidats')->where('login','=',$login)->first();
-            //dd($candidat->motpass);
+            //dd($candidat->motpass." ".$motpass);
             if($motpass == $candidat->motpass)
             {
                 session()->put('idcandidat',$candidat->id);

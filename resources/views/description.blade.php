@@ -103,15 +103,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</dl>
 				</div>
 			</div>
+
 			<div class="col-md-4 col-sm-12" >
 				<img class="imgD" src="images/DES1.jpg">
-
-    </div>
-    <div class="col-md-4 col-sm-12" >
-
+    		</div>
+		    <div class="col-md-4 col-sm-12" >
 				<img class="imgD" src="images/REGIS.jpg">
-
-    </div>
+		    </div>
     
 					</div>
 			
@@ -186,8 +184,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		.description{width:100%; height:auto; text-align:left; margin:0 30px 0 0px; float:none;}
 
 		.imgD {
-			height: 502px;
-		    width: 100%; 
+			height: 450px;
+		    width: 100%;
+		    margin-top: 84px; 
 		}
 	</style>
 </body>
