@@ -98,8 +98,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<i class="fa fa-phone" aria-hidden="true"></i>
 					<div class="contact-right">
 						<p>Téléphone</p>
-						<p><span> +225 22 46 61 64 </span></p>
-						<span> +225 22 46 61 64 </span>
+						<p><span> +225 22 46 72 66 </span></p>
+						<span> +225 22 46 72 66 </span>
 					</div>
 				</div>
 				<div class="col-md-3 contact-grid1">
