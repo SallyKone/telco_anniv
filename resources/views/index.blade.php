@@ -54,7 +54,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		.candilist-img{
 			width: 100%;
 			position: relative;
-
 		}  
 		.candilist-img >img{
 			width: 100%;
@@ -280,7 +279,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<div class="inner-testimonials-w3ls">
 									<img src="images/1.jpg" alt=" " style="height: 60%;" class="img-responsive" />
 									<div class="testimonial-info-wthree">
-										<h5>Regis GNONROU</h5>
+										<h5>GISREY</h5>
 										<br>
 										<p class="para-w3ls">Un grand merci à toute l’équipe de mon incroyable anniversaire, pour cette belle fête organisée en mon honneur, en présence de tous mes amis, ma familles et pour ce merveilleux cadeau. Alors  faite comme moi et devenez l’heureux gagnant du jour !!!. </p>
 									</div>
@@ -298,9 +297,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</li>
 							<li>
 								<div class="inner-testimonials-w3ls">
-									<img src="images/1.jpg" alt=" " class="img-responsive" />
+									<img src="images/3.jpeg" alt=" " class="img-responsive" />
 									<div class="testimonial-info-wthree">
-										<h5>Regis GNONROU</h5>
+										<h5>NEYTIRIE</h5>
 										<br>
 										<p class="para-w3ls">Un grand merci à toute l’équipe de mon incroyable anniversaire, pour cette belle fête organisé en mon honneur, en présence de tous mes amis, ma familles et pour ce merveilleux cadeau. Alors  faite comme moi et devenez l’heureux gagnant du jour !!!. </p>
 									</div>
