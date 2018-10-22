@@ -48,7 +48,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		      	<div class="description">
 					<h1>Description</h1>
 					<dl>
-						<dt>
+						<dt >
 							<h2>1. Contexte du jeu</h2>
 							<dd>
 							<p>« Le bon sens est la chose du monde la mieux partagée », dit René Descartes. C'est ainsi que le désir de célébrer et d'être célébré, de contenter et d'être contenté reste une chose que nous partageons tous, parents, amis, collègues, clients, « followers » sur les réseaux sociaux …<br>
@@ -58,7 +58,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<dt>
 							<h2>2. Comment participer au jeu</h2>
 							<dd>
-							<p>Inscrivez-vous gratuitement sur ce site avec vos informations personnelles dont les plus importantes sont votre date de naissance (jour, mois et année) et votre numéro de téléphone. Après l'inscription, vous recevrez un code de vote avec lequel vos amis pourront voter pour vous en envoyant un sms.</p>
+							<p>Inscrivez vous à partir de votre numéro ORANGE ou MTN. Envoyez par sms vos informations de la manière suivante I,Nom,Prénom,Jour-Mois au 459 abonné MTN et au 98164 abonné Orange. Exemple : I,konan,samuel,12-07  NB : Pas d’espace ni d’accent dans la syntaxe d’inscription.
+							Le coût de l'inscription est de 103fcfa.</p>
 							</dd>
 						</dt>
 						<dt>
