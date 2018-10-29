@@ -62,9 +62,9 @@
 		</div>
 		<!--//top-bar-w3layouts-->
 		<!--Slider-->
-		
+	<div class="container">
 		<div class="row" style="padding: 19px;">
-		    <div class="col-md-2 logopartenaire">
+		    <div class="col-md-2 col-sm-2 col-lg-2 logopartenaire" style="margin-top: 35px">
 						<div class="">
                         	<img src="images/logo/logomtn.jpeg">
                         </div>
@@ -75,21 +75,32 @@
                                 <img src="images/logo/logotourisme.jpg">
                         </div>
             </div>
-		    <div class="col-md-8">
-		    	<video poster="images/img/imgdelavideo.png" controls style="width: 100%;height:30%" autoplay="true">
+		    <div class="col-md-8 col-sm-6 col-lg-8 ">
+		    	<video poster="images/img/imgdelavideo.png" controls style="width: 100%;height:30%;margin-top: 41px;" autoplay="true">
 		    		<source src="videos/videofinal.webm" type="video/webm">
 		    		<source src="videos/videofinal.mp4" type="video/mp4">
 		    	</video>
 		    </div>
-		    <div class="col-md-2 logoptenaire">
-			<div class="">
+		    <div class="col-md-2 col-sm-2 col-lg-2 logoptenaire" style="margin-top: 35px">
+						<div class="">
                                 <img src="images/logo/logoorange.jpg">
                         </div>
-			<div class="">
+						<div class="">
                                 <img src="images/logo/logojumia.png">
                         </div>
-                    </div>
+            </div>
 		</div>
+	</div>
 		<!-- //Modal1 -->
 	<!--//Slider-->
 	</div>
+	<style type="text/css">
+		@media all and (max-device-width: 480px) {
+    .logopartenaire {width:70px;}
+    .logopartenaire img {
+        margin-top: 36px;
+        }
+     .logopartenaire div {display: none;}
+     .logoptenaire div {display: none;}
+	}
+	</style>
