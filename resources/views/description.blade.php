@@ -42,14 +42,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!-- team -->
 <div class="team">
     <div class="container">
-		<h3 class="title-txt"><span>D</span>ESCRIPTION DU JEU</h3>
+		<h3 class="title-txt"><span>D</span>ESCRIPTION DU CONCOURS</h3>
 		<div class="row team-row">
 			<div class="col-md-8  ">
 		      	<div class="description">
 					<h1>Description</h1>
 					<dl>
 						<dt >
-							<h2>1. Contexte du jeu</h2>
+							<h2>1. Contexte de la compétition</h2>
 							<dd>
 							<p>« Le bon sens est la chose du monde la mieux partagée », dit René Descartes. C'est ainsi que le désir de célébrer et d'être célébré, de contenter et d'être contenté reste une chose que nous partageons tous, parents, amis, collègues, clients, « followers » sur les réseaux sociaux …<br>
 							En effet, il nous tient tous à cœur de souhaiter un vibrant <strong>Joyeux Anniversaire</strong> avec un somptueux présent à nos Amis [parents, amis, collègues, clients, partenaires, followers…] le jour de la célébration de leur naissance. Aussi, tout un chacun rêve d'avoir un <strong>Anniversaire Inoubliable,</strong> un <strong>Incroyable Anniversaire </strong>où nous sommes arrosés de divers cadeaux. Cependant, les contraintes de notre quotidien, difficultés financières, indisponibilité due aux voyages, au travail font que très souvent nous n'arrivons pas à réaliser notre rêve ou notre souhait. Notre Platforme de compétition <strong>"Mon Incroyable Anniversaire</strong> va donner l'opportunité à tous ces Wishers and Dreamers de réaliser leur rêve.</p>
