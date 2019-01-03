@@ -79,14 +79,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								</dd>
 								<dd>
 								<strong><span>3.3 Comment suivre le concours ?</span></strong>
-								<p>Vous pouvez à tout moment suivre votre classement et la tendance sur notre site internet (www.telcoanniv.com). Vous pourrez voir de façon dynamique tous les candidats concourant ce jour ainsi que leur position. Et plus précisément, vous aurez un zoom sur les dix en tête de liste ainsi que le lot du jour.</p>
+								<p> Vous pouvez à tout moment suivre votre classement et la tendance sur notre site internet (www.telcoanniv.com). Vous pourrez voir de façon dynamique tous les candidats concourant ce jour ainsi que leur position en termes de vote obtenu. Par ailleurs, vous aurez un zoom sur les dix compétiteurs du jour en tête de liste et le lot destiné au vainqueur du jour.
+
+</p>
 								</dd>
 							</dt>
 						</dt>
 						<dt>
 							<h2>4. Sélection du gagnant</h2>
 							<dd>
-							<p>À la fin de la journée (23H), le candidat qui aura eu le nombre maximal de vote (SMS) se verra vainqueur de la compétition pendant cette journée et bénéficiera d'un super <strong>cadeau d'anniversaire.</strong> La photo du vainqueur ainsi que son lot seront affichés sur notre site web (www.telcoanniv.com).</p>
+							<p>À la fin de la journée (23H), le candidat qui aura eu le nombre maximal de vote (SMS) se verra vainqueur de la compétition pendant cette journée et bénéficiera d'un super <strong>cadeau d'anniversaire</strong>. La photo du vainqueur ainsi que son lot seront affichés sur notre site web (www.telcoanniv.com).<strong> Dans le cas d’une victoire équipollente, pour ainsi dire si nous avons des vainqueurs ayant eu le même nombre de vote, chacun d’entre eux recevra la récompense destinée au gagnant (le lot) du jour.</strong></p>
 							</dd>
 						</dt>
 						<dt>
@@ -98,7 +100,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<dt>
 							<h2>6. La Télé-réalité</h2>
 							<dd>
-							<p>Les <strong>quatres (04)</strong> meilleurs de chaque mois seront aménés à fêter leur anniversaire entièrement, financé, par TELCO et ses parténaires.</p>
+							<p>Les <strong>quatres (04)</strong> meilleurs de chaque mois, pour ainsi dire les (04) candidats ayant obtenu les plus grand nombre de vote au cour de chaque mois, seront amenés à fêter leur anniversaire à travers une Télé-réalité entièrement  financé  par TELCO et ses partenaires.
+
+</p>
 							</dd>
 						</dt>
 					</dl>

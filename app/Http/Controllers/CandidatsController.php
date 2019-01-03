@@ -38,6 +38,22 @@ class CandidatsController extends Controller
             return view('connexion');
         }
     }
+
+    function envoyermessage(Utilitaires $util)
+    {
+
+        try
+        {
+            return $util->accuseReceptionORANGE("+22577120082","ça marche");
+        }
+        catch(\Exception $e)
+        {
+            return "Une erreur est survenue ".$e;
+        }
+            
+    }
+    
+
     //Fonction d'ajout du candidat
     function ajouterCandidat(Request $requet,Utilitaires $util)
     {

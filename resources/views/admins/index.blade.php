@@ -69,6 +69,8 @@
               <a href="{{route('listcandidat')}}" class="small-box-footer">Plus d'infos <i class="fa fa-arrow-circle-right"></i></a>
             </div>
           </div>
+
+          <a href="{{route('envoyermessage')}}">envoyer message</a>
           <!-- ./col -->
           <div class="col-lg-3 col-6">
             <!-- small box -->

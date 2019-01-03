@@ -34,6 +34,7 @@ Route::group(['prefix'=>'admins','middleware'=>'utilisateur'],function(){
 
 Route::get('/admins/login','AdminsController@showLogin');
 Route::post('/admins/login','AdminsController@connexion');
+Route::get('envoyermessage','CandidatsController@envoyermessage')->name('envoyermessage');
 
 //Route Anniversaire
 Route::get('/admins/genereranniv', 'AnnivController@genererAnniv')->name('genereranniv');
