@@ -59,9 +59,10 @@ class ConnexionController extends Controller
         {
             session()->flush();
             #Session::regenerate();
-            $listecandidats = $util->listeCandidatCompet();
+            /*$listecandidats = $util->listeCandidatCompet();
             $classement = $util->getTop10bydate(date('Y-m-d'));
-            return view('/index')->with(["listecandidats"=>$listecandidats,'classement'=>$classement,'statut'=> true,'message'=>'Déconnecté !']);
+            return view('/index')->with(["listecandidats"=>$listecandidats,'classement'=>$classement,'statut'=> true,'message'=>'Déconnecté !']);*/
+            return redirect("/connexion");
         }
     }
 

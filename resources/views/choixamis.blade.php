@@ -59,8 +59,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<p></p>
 							</div>
 						</div>
-					</div> -->
-						
+					</div> -->						
 					
 					<div class="col-md-5 col-md-offset-4  services-right-grid">
 						<div class="se-top">
@@ -75,9 +74,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 					</div>
 					
-					<div class="clearfix"> </div>
-
-					
+					<div class="clearfix"> </div>					
 				</div>
 				
 			</div>

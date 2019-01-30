@@ -80,9 +80,11 @@ class CandidatsController extends Controller
     }*/
     
 
-    //Fonction d'ajout du candidat
+       //Fonction d'ajout du candidat
     function ajouterCandidat(Request $requet,Utilitaires $util)
     {
+        try
+        {
         $candidat = new Candidats();
         //Les variables
         $testeur = false; $lelogin = ""; $mdpass = ""; $lenom = ""; $leprenom = "";$datenaissaice = "";
@@ -93,15 +95,15 @@ class CandidatsController extends Controller
         $lenumero = trim(str_replace(' ', '', $requet->source));
         $tpsrecept = $requet->time;
 
-        
+
         //$lecodecandidat = 'tempo '.$util->genererchaine(10);
-        
-        $lesms = explode(',', $requet->msg);
-        
+        $message = str_replace(' ','',$requet->msg);
+        $lesms = explode(',', $message);
+
         //Enregitrer le message reçu
         if(isset($requet->msg))
         {$util->addMessageRecu($reseau,$lenumero,$requet->msg,$tpsrecept);}
-        
+
         if ($util->testNumCand($lenumero)) {
             $candidats = DB::table('candidats')->where('numero','=',$lenumero)->get();
             foreach ($candidats as $value) {
@@ -112,7 +114,7 @@ class CandidatsController extends Controller
             $messageSucces .= "\nMotPasse: ".$candidat->motpass."\nVia http://www.telcoanniv.com et ajoutez vos amis";
             if ($reseau == 98164) {
                 $util->accuseReceptionORANGE($lenumero, $messageSucces, 98164);
-	    }
+            }
             elseif ($reseau == 459){
                 $util->accuseReceptionMTN($lenumero,$messageSucces,459);
             }
@@ -135,7 +137,7 @@ class CandidatsController extends Controller
             //appeler le code du candidat
             $lecodecandidat =$util->generercodecandi($moisnaiss);
 
-            
+
 
             $testeur = $util->testLoginEtCode($lelogin, $lecodecandidat);
             if ($testeur != -1) {
@@ -144,7 +146,7 @@ class CandidatsController extends Controller
                     $lecodecandidat = 'tempo '.$util->genererchaine(10);
                     $testeur = $util->testLoginEtCode($lelogin,$lecodecandidat);
                 }
-                //Appel de la fontion d'ajout du candidat 
+                   //Appel de la fontion d'ajout du candidat 
                 $candidat->login = $lelogin;
                 $candidat->motpass = $mdpass;
                 $candidat->codecandidat = $lecodecandidat;
@@ -162,7 +164,7 @@ class CandidatsController extends Controller
                     $messageSucces .= "\nLogin: ".$lelogin;
                     $messageSucces .= "\nMot de passe: ".$mdpass;
                     $messageSucces .= "\nVia http://www.telcoanniv.com Ajoutez vos amis";
-                    
+
                     if ($reseau == 98164) {
                         $util->accuseReceptionORANGE($lenumero, $messageSucces, 98164);
                     }
@@ -188,6 +190,25 @@ class CandidatsController extends Controller
                 fclose($fichierlog);
             }
             return view('/admins/ajoutcandidat')->with(['statut' => false,'message'=>'Structure du message non conforme '.$requet->msg]);
+        }
+        }catch(\Exception $e)
+        {
+                $fichierlog = fopen('../storage/logs/fichierlog.log', 'a+');  
+                if ($fichierlog)
+                {
+                        fputs($fichierlog,date('d-m-Y H:i:s').' Error Structure du message non conforme '.$e."\n"); 
+                        fclose($fichierlog);
+                }
+                $reseau = trim(str_replace(' ', '', $requet->dest));
+                $lenumero = trim(str_replace(' ', '', $requet->source));
+                $messageSucces = "Echec de l'envoie, mauvaise structure du message";
+                if ($reseau == 98164) {
+                        $util->accuseReceptionORANGE($lenumero, $messageSucces, 98164);
+                }
+                elseif ($reseau == 459){
+                        $util->accuseReceptionMTN($lenumero,$messageSucces,459);
+                }
+
         }  
     }
 

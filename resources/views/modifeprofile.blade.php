@@ -325,7 +325,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 .dash{width:220px; height:40px;  text-align:center !important; }
 .dash li a{font-size:20px; color:#000; padding:10px 0px; text-decoration:none; line-height:40px;}
-.dash ul{margin-top:43px; padding:0px;}
+.dash ul{margin-top:59px; padding:0px;}
 .dash ul li{list-style:none; display:block; margin:0 0 5px 0px;  background:#219b2f; border-radius:5px;}
 .dash ul li a{font-size:20px; color:#000; padding:10px 0px; text-decoration:none; line-height:40px;}
 
