@@ -189,16 +189,26 @@ class CandidatsController extends Controller
                 fputs($fichierlog,date('d-m-Y H:i:s').' Error Structure du message non conforme '.$requet->msg."\n"); 
                 fclose($fichierlog);
             }
-            return view('/admins/ajoutcandidat')->with(['statut' => false,'message'=>'Structure du message non conforme '.$requet->msg]);
+            //return view('/admins/ajoutcandidat')->with(['statut' => false,'message'=>'Structure du message non conforme '.$requet->msg]);
+
+	    $reseau = trim(str_replace(' ', '', $requet->dest));
+            $lenumero = trim(str_replace(' ', '', $requet->source));
+            $messageSucces = "Echec de l'envoie, mauvaise structure du message";
+            if ($reseau == 98164) {
+                    $util->accuseReceptionORANGE($lenumero, $messageSucces, 98164);
+            }
+            elseif ($reseau == 459){
+                    $util->accuseReceptionMTN($lenumero,$messageSucces,459);
+            }
         }
         }catch(\Exception $e)
         {
-                $fichierlog = fopen('../storage/logs/fichierlog.log', 'a+');  
+                /*$fichierlog = fopen('../storage/logs/fichierlog.log', 'a+');  
                 if ($fichierlog)
                 {
                         fputs($fichierlog,date('d-m-Y H:i:s').' Error Structure du message non conforme '.$e."\n"); 
                         fclose($fichierlog);
-                }
+                }*/
                 $reseau = trim(str_replace(' ', '', $requet->dest));
                 $lenumero = trim(str_replace(' ', '', $requet->source));
                 $messageSucces = "Echec de l'envoie, mauvaise structure du message";
