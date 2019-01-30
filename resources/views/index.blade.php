@@ -108,25 +108,41 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	       	 		</div>
        	 			<div class="panel-body">
 
-	       	 			<!-- <marquee onmouseout="this.start();" onmouseover="this.stop();" loop="infinite"  direction="left">
-	       	 				@foreach($listecandidats as $candidat)
+	       	 			<marquee onmouseout="this.start();" onmouseover="this.stop();" loop="infinite"  direction="left">
+	       	 				@foreach($listecandidats_votes as $candidat1)
 	       	 				<div class="candilist">
 	       	 					<div class="candilist-img">
-	       	 						<img class="imag" src="{{URL::asset('/images/img/avatar/'.$candidat->photo)}}">
+	       	 						<img class="imag" src="{{URL::asset('/images/img/avatar/'.$candidat1->photo)}}">
 	       	 					</div>
-	       	 					@if(strlen($candidat->nom.' '.$candidat->prenom)>19)
-	       	 					<p title="{{$candidat->nom.' '.$candidat->prenom}}">{{substr($candidat->nom.' '.$candidat->prenom,0,19)."..."}}</p>
+	       	 					@if(strlen($candidat1->nom.' '.$candidat1->prenom)>19)
+	       	 					<p title="{{$candidat1->nom.' '.$candidat1->prenom}}">{{substr($candidat1->nom.' '.$candidat1->prenom,0,19)."..."}}</p>
 	       	 					@else
-	       	 					<p>{{$candidat->nom.' '.$candidat->prenom}}</p>
+	       	 					<p>{{$candidat1->nom.' '.$candidat1->prenom}}</p>
 	       	 					@endif
 								<p>Code de vote: </p>
-								<p style="color: red">{{$candidat->codecandidat}}</p>
-								<p></p>
+								<p style="color: red">{{$candidat1->codecandidat}}</p>
+								<p style="color: orange">{{$candidat1->nbre_vote}} votes</p>
 
 	       	 				</div>
        	 					@endforeach
-	                    </marquee> -->
-	                    <marquee onmouseout="this.start();" onmouseover="this.stop();" loop="infinite"  direction="left">
+       	 					@foreach($listecandidats_non_votes as $candidat2)
+	       	 				<div class="candilist">
+	       	 					<div class="candilist-img">
+	       	 						<img class="imag" src="{{URL::asset('/images/img/avatar/'.$candidat2->photo)}}">
+	       	 					</div>
+	       	 					@if(strlen($candidat2->nom.' '.$candidat2->prenom)>19)
+	       	 					<p title="{{$candidat2->nom.' '.$candidat2->prenom}}">{{substr($candidat2->nom.' '.$candidat2->prenom,0,19)."..."}}</p>
+	       	 					@else
+	       	 					<p>{{$candidat2->nom.' '.$candidat2->prenom}}</p>
+	       	 					@endif
+								<p>Code de vote: </p>
+								<p style="color: red">{{$candidat2->codecandidat}}</p>
+								<p style="color: orange">0 votes</p>
+
+	       	 				</div>
+       	 					@endforeach
+	                    </marquee>
+	                    <!-- <marquee onmouseout="this.start();" onmouseover="this.stop();" loop="infinite"  direction="left">
 									@foreach($classement as $classemt)
 										<div class="candilist" style="margin-bottom: 10px;">
 											<div class="candilist-img" >
@@ -143,7 +159,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											
 										</div>
 										@endforeach
-						</marquee>
+						</marquee> -->
 	                    
        	 			</div>
 	       	 	</div>

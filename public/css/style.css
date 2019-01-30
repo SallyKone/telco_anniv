@@ -2430,6 +2430,7 @@ textarea{
     color: #fff;
     font-size: .9em;
     letter-spacing: 2px;
+    margin: 0;
 }
 .contact-form  input[type="submit"]:hover{
 	background: none;
@@ -2489,7 +2490,7 @@ textarea{
     padding: 0.5em 1em;
     font-size: .9em;
     width: 100%;
-    background:white;
+    background:transparent;
     border: 2px solid #fff;
 	color:#080808;
 	letter-spacing: 2px;

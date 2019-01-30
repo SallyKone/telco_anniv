@@ -78,17 +78,38 @@ class Utilitaires
     {
 
         $candidats = DB::select('select id_candidat, photo, nom, prenom, codecandidat, count(id_candidat) as nbre_vote 
-            FROM votes, candidats, anniversaires 
-            WHERE votes.id_candidat = candidats.id 
-            and anniversaires.date_anniv = ?
-            and votes.id_anniversaire = anniversaires.id
-            and DATE_FORMAT(votes.created_at, "%Y-%m-%d") BETWEEN ADDDATE(DATE_FORMAT(?, "%Y-%m-%d"), INTERVAL -5 DAY) AND DATE_FORMAT(?, "%Y-%m-%d") 
+            FROM votes, candidats 
+            WHERE votes.id_candidat = candidats.id
+            AND candidats.jour_naiss = DAY(?)
+            AND candidats.mois_naiss = MONTH(?)
+            and DATE_FORMAT(votes.created_at, "%Y-%m-%d") BETWEEN ADDDATE(DATE_FORMAT(?, "%Y-%m-%d"), INTERVAL -5 DAY) AND DATE_FORMAT(?, "%Y-%m-%d")
             group BY id_candidat
             order by nbre_vote DESC
+            LIMIT 10', [$date,$date,$date,$date]);
+
+        $ids = [];
+
+        for($i=0;$i<count($candidats);$i++)
+        {
+            array_push($ids, $candidats[$i]->id_candidat);
+        }
+
+        $tout_les_candidats_du_jour = DB::select('select id, photo, nom, prenom, codecandidat
+            FROM candidats
+            WHERE candidats.jour_naiss = DAY(?)
+            AND candidats.mois_naiss = MONTH(?)
             LIMIT 10', [$date,$date,$date]);
 
-            return $candidats;
+        $candidats_non_votes = [];
+        for($i=0;$i<count($tout_les_candidats_du_jour);$i++) {
+            if(!in_array($tout_les_candidats_du_jour[$i]->id, $ids))
+                array_push($candidats_non_votes, $tout_les_candidats_du_jour[$i]);
+        };
+
+        return [$candidats, $candidats_non_votes];
+
             //dd($nbre_vote) ;
+
 
     }
     //classement des candidats par periode

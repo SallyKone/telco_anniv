@@ -48,19 +48,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="agileits-services">
 				<div class="services-right-grids">
 					
-					<div class="col-md-5 col-md-offset-1 col-sm-12 services-right-grid">
+					<!-- <div class="col-md-5 col-md-offset-1 col-sm-12 services-right-grid">
 						<div class="se-top">
 							<div class="services-icon">
 								<a href="souscritsms"><img src="images/newsms.png"></a>
-							<!-- <i class="fa fa-eye" aria-hidden="true"></i> -->
+							 <i class="fa fa-eye" aria-hidden="true"></i> 
 							</div>
 							<div class="services-icon-info">
-								</a><h5>VIA SMS</h5>
+								<h5>VIA SMS</h5>
 								<p></p>
 							</div>
 						</div>
-					</div>
-					<div class="col-md-5 col-sm-12  services-right-grid">
+					</div> -->
+						
+					
+					<div class="col-md-5 col-md-offset-4  services-right-grid">
 						<div class="se-top">
 							<div class="services-icon">
 							<a href="connexion"><img src="images/newglob.png"></a>
@@ -72,7 +74,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</div>
 						</div>
 					</div>
+					
 					<div class="clearfix"> </div>
+
+					
 				</div>
 				
 			</div>

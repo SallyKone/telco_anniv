@@ -21,12 +21,13 @@ class PageController extends Controller
 
     public function showIndex(Utilitaires $util)
     {
-        $listecandidats = $util->getTop10bydate(date('Y-m-d'));
-        $classement = $util->getTop10bydate(date('Y-m-d'));
+        $listecandidats_votes = $util->getTop10bydate(date('Y-m-d'))[0];
+        $listecandidats_non_votes = $util->getTop10bydate(date('Y-m-d'))[1];
+        $classement = $util->getTop10bydate(date('Y-m-d'))[0];
         $anniversaire = DB::table('anniversaires')->leftjoin('recompenses','recompenses.id','=','anniversaires.id_recompense')->select('anniversaires.*',DB::raw('recompenses.photo as photo'))->where('anniversaires.date_anniv','=',date('Y/m/d'))->get();
         $anniversaire = isset($anniversaire[0]) ? $anniversaire[0] : new Anniversaires();
 
-        return view('index')->with(['anniversaire'=>$anniversaire,"listecandidats"=>$listecandidats,'classement'=>$classement]);
+        return view('index')->with(['anniversaire'=>$anniversaire,"listecandidats_votes"=>$listecandidats_votes,"listecandidats_non_votes"=>$listecandidats_non_votes,'classement'=>$classement]);
     }
     //Fonction pour une requête ajax
     public function ajaxIndex(Request $requete, Utilitaires $util)
