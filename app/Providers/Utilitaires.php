@@ -77,7 +77,7 @@ class Utilitaires
     public function getTop10bydate($date)
     {
 
-        $candidats = DB::select('select id_candidat, photo, nom, prenom, codecandidat, count(id_candidat) as nbre_vote 
+        $candidats = DB::select('select id_candidat, photo, nom, prenom, codecandidat, jour_naiss, mois_naiss, count(id_candidat) as nbre_vote 
             FROM votes, candidats 
             WHERE votes.id_candidat = candidats.id
             AND candidats.jour_naiss = DAY(?)
@@ -94,11 +94,11 @@ class Utilitaires
             array_push($ids, $candidats[$i]->id_candidat);
         }
 
-        $tout_les_candidats_du_jour = DB::select('select id, photo, nom, prenom, codecandidat
+        $tout_les_candidats_du_jour = DB::select('select id, photo, nom, prenom, codecandidat, jour_naiss, DAY(?) as date_jour, mois_naiss
             FROM candidats
             WHERE candidats.jour_naiss = DAY(?)
             AND candidats.mois_naiss = MONTH(?)
-            LIMIT 10', [$date,$date,$date]);
+            LIMIT 10', [$date,$date,$date,$date]);
 
         $candidats_non_votes = [];
         for($i=0;$i<count($tout_les_candidats_du_jour);$i++) {
@@ -232,15 +232,37 @@ class Utilitaires
     }
 
     //Teste de vote 
-    public function idCandetAnniv($lecodecandidat){
+    public function idCandetAnniv($lecodecandidat)
+    {
         //Préparation de la requête
-        if(DB::table('anniversaires')->join('participes','anniversaires.id', '=', 'participes.id_anniversaire')->join('candidats','candidats.id', '=', 'participes.id_candidat')->where('candidats.codecandidat','=',$lecodecandidat)->exists())
+        
+        $candidats_votables = [];
+        for($i=0;$i<2;$i++)
         {
-            return DB::table('anniversaires')->join('participes','anniversaires.id', '=', 'participes.id_anniversaire')->join('candidats','candidats.id', '=', 'participes.id_candidat')->select(DB::raw('candidats.id as candid,anniversaires.id as anniv'))->where('candidats.codecandidat','=',$lecodecandidat)->get();
+            $candidats_votables = array_merge($candidats_votables, $this::getTop10bydate(date('Y-m-d'))[$i]);
+            $candidats_votables = array_merge($candidats_votables, $this::getTop10bydate(date('Y-m-d', strtotime("+1 day")))[$i]);
+            $candidats_votables = array_merge($candidats_votables, $this::getTop10bydate(date('Y-m-d', strtotime("+2 day")))[$i]);
+            $candidats_votables = array_merge($candidats_votables, $this::getTop10bydate(date('Y-m-d', strtotime("+3 day")))[$i]);
+            $candidats_votables = array_merge($candidats_votables, $this::getTop10bydate(date('Y-m-d', strtotime("+4 day")))[$i]);
         }
-        return false;
+
+        if(Candidats::where('codecandidat','=',$lecodecandidat)->exists())
+        {
+            for($i=0;$i<count($candidats_votables);$i++)
+            {
+                if($candidats_votables[$i]->codecandidat==$lecodecandidat)
+                {
+                    return $candidats_votables[$i];
+                }
+            }
+
+            return "existe";
+        }
+
+        return "existe pas";
     }
     
+
     //Fonction de mise en competition de candidats
     public function miseAjrCandidat()
     {
