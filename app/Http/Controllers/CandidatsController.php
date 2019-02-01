@@ -259,7 +259,8 @@ class CandidatsController extends Controller
         if($tableau)
         {
             //Enregistrer les données
-            $vote->id_candidat = $tableau->id_candidat;
+	    
+            $vote->id_candidat = $tableau->id;
             $vote->id_anniversaire = 48;
             $vote->numeroVotant = $lenumero;
             $vote->created_at = now();
@@ -275,11 +276,12 @@ class CandidatsController extends Controller
                 //return view('/admins/ajoutvote')->with(['statut' => false,'message'=>'Vote Réfusé ! '.$requet->msg]);
             }
 
-            if ($reseau == 98164) {
+            /*if ($reseau == 98164) {
                 $util->accuseReceptionORANGE($lenumero, $messageSucces, 98164);
-            }
-            elseif ($reseau == 459){
-                $util->accuseReceptionMTN($lenumero,$messageSucces,459);
+            }*/
+
+            if ($reseau == 460){
+		$util->accuseReceptionMTN($lenumero,$messageSucces,460);
             }
 
             return $messageSucces;

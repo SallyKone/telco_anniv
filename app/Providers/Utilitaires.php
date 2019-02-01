@@ -77,7 +77,7 @@ class Utilitaires
     public function getTop10bydate($date)
     {
 
-        $candidats = DB::select('select id_candidat, photo, nom, prenom, codecandidat, jour_naiss, mois_naiss, count(id_candidat) as nbre_vote 
+        $candidats = DB::select('select candidats.id, id_candidat, photo, nom, prenom, codecandidat, jour_naiss, mois_naiss, count(id_candidat) as nbre_vote 
             FROM votes, candidats 
             WHERE votes.id_candidat = candidats.id
             AND candidats.jour_naiss = DAY(?)
