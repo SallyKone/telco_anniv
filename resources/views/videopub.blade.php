@@ -5,7 +5,7 @@
 </head>
 <body>
 	<video controls loop id="lavideo" autoplay>
-		<source src="videos/comptarebour.mp4" type="video/mp4">
+		<source src="videos/spotTelcoanniv.mp4" type="video/mp4">
 	</video>
 
 </body>
