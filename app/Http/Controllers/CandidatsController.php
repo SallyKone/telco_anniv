@@ -52,7 +52,7 @@ class CandidatsController extends Controller
         }
             
     }
-
+    
     function traitementmessage(Request $requet, Utilitaires $util)
    {
        try
