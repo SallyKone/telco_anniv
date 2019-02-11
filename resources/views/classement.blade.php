@@ -55,7 +55,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	
 	<br/><br/>
 	<div class="votretop">	
-		<form method="POST" id="montableau">
+		<div id="montableau">
 			{{csrf_field()}}
 			<div class="votretag"><strong style="color: white">Saisissez Votre</strong></div>
 			<div class="votredrop">
@@ -64,7 +64,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<input type="button" value="Verifier" reset onclick="message()" style="margin: auto; float:left; font-size:18px; width:90px;" />
 			<!-- <input type="reset" value="annuler" name=""/ style="margin-left: 112px;width: 138px;margin-top: 17px;"> -->
 			<div class="clear"></div>
-		</form>
+		</div>
 
 		<div class="events-classe dash">
 			<div class="container ">			

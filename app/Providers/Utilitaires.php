@@ -115,32 +115,24 @@ class Utilitaires
     //classement des candidats par periode
     public function rangCandi($lecodecandidat){
             
-       $candidats = DB::select('select id_candidat, photo, nom, prenom, codecandidat, count(id_candidat) as nbre_vote 
-            FROM votes, candidats, anniversaires 
-            WHERE votes.id_candidat = candidats.id 
-            and anniversaires.date_anniv =DATE_FORMAT(NOW(), "%Y-%m-%d")
-            and votes.id_anniversaire = anniversaires.id
-            and DATE_FORMAT(votes.created_at, "%Y-%m-%d") BETWEEN ADDDATE(DATE_FORMAT(NOW(), "%Y-%m-%d"), INTERVAL -5 DAY) AND DATE_FORMAT(NOW(), "%Y-%m-%d") 
-            group BY id_candidat
-            order by nbre_vote DESC');  
+       
+	$candidats = DB::select('select candidats.id,nom,COUNT(votes.id) as nbre_vote, codecandidat from candidats,votes where votes.id_candidat=candidats.id and jour_naiss=DAY(NOW()) and mois_naiss=MONTH(NOW()) GROUP BY candidats.id ORDER BY nbre_vote DESC',[date("%Y-%m-%d"),date("%Y-%m-%d")]);
 
-       for($i=0;$i<count($candidats);$i++)
-       {
+       	for($i=0;$i<count($candidats);$i++)
+       	{
 
             if($candidats[$i]->codecandidat == $lecodecandidat)
             {
                 switch ($i+1) {
                     case 1:
-                            return ($i+1)."ier avec" .$candidats[$i]->nbre_vote." votes";
+                            return ($i+1)."ier avec " .$candidats[$i]->nbre_vote." votes";
                         break;
-                    
                     default:
-                            return ($i+1)."ieme avec" .$candidats[$i]->nbre_vote." votes";
+                            return ($i+1)."ieme avec " .$candidats[$i]->nbre_vote." votes";
                         break;
                 }
             }
-            
-       }
+       	}
 
         return "Vous n'êtes pas en competition!!";
 

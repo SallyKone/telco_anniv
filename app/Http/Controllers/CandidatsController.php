@@ -191,9 +191,9 @@ class CandidatsController extends Controller
             }
             //return view('/admins/ajoutcandidat')->with(['statut' => false,'message'=>'Structure du message non conforme '.$requet->msg]);
 
-	        $reseau = trim(str_replace(' ', '', $requet->dest));
+	    $reseau = trim(str_replace(' ', '', $requet->dest));
             $lenumero = trim(str_replace(' ', '', $requet->source));
-            $messageSucces = "Echec de l'envoie, mauvaise structure du message";
+            $messageSucces = strtoupper("Echec de l'envoie, mauvaise structure du message");
             if ($reseau == 98164) {
                     $util->accuseReceptionORANGE($lenumero, $messageSucces, 98164);
             }
@@ -211,7 +211,7 @@ class CandidatsController extends Controller
                 }*/
                 $reseau = trim(str_replace(' ', '', $requet->dest));
                 $lenumero = trim(str_replace(' ', '', $requet->source));
-                $messageSucces = "Echec de l'envoie, mauvaise structure du message";
+                $messageSucces = strtoupper("Echec de l'envoie, mauvaise structure du message");
                 if ($reseau == 98164) {
                         $util->accuseReceptionORANGE($lenumero, $messageSucces, 98164);
                 }
@@ -228,14 +228,15 @@ class CandidatsController extends Controller
         $tableau = false;
         //Definitions des traitements de données
         $lenumero = trim(str_replace(' ', '', $requet->source));
-        $codecand = trim(str_replace(' ', '', $requet->msg));
+        //$codecand = trim(str_replace(' ', '', $requet->msg));
+	$codecand = trim($requet->msg);
         $reseau = trim(str_replace(' ', '', $requet->dest));
         
         $tableau = $util->idCandetAnniv($codecand);
 
-        if($tableau=="existe")
-        {
-            $messageSucces = "Ce candidat n'est pas en compétition";
+	if($tableau=="existe")
+	{
+	    $messageSucces = strtoupper("Ce candidat n'est pas en competition ").$codecand;
             if ($reseau == 98164) {
                 $util->accuseReceptionORANGE($lenumero, $messageSucces, 98164);
             }
@@ -243,17 +244,17 @@ class CandidatsController extends Controller
                 $util->accuseReceptionMTN($lenumero,$messageSucces,459);
             }
             return $messageSucces;
-        }
-        elseif ($tableau=="existe pas")
+	}
+        else if ($tableau=="existe pas")
         {
-            $messageSucces = "Ce code candidat n'existe pas ".$codecand;
+            $messageSucces = strtoupper("Ce code candidat n'existe pas ").$codecand;
             if ($reseau == 98164) {
                 $util->accuseReceptionORANGE($lenumero, $messageSucces, 98164);
             }
             elseif ($reseau == 459){
                 $util->accuseReceptionMTN($lenumero,$messageSucces,459);
             }
-            return $messageSucces;   
+            return $messageSucces;
         }
         
         if($tableau)
@@ -267,11 +268,11 @@ class CandidatsController extends Controller
             
             if($vote->save())
             {
-                $messageSucces = "Vote ajouté avec succès";
+                $messageSucces = strtoupper("Votre vote a ete pris en compte, continuez de voter pour faire gagner votre ami(e).");
 
                 //return view('/admins/ajoutvote')->with(['statut' => true,'message'=>'Vote Accepté ! '.$requet->msg]);
             }else{
-                $messageSucces = "Echec de l'enrgistrement du vote";
+                $messageSucces = strtoupper("Echec de l'enrgistrement du vote");
 
                 //return view('/admins/ajoutvote')->with(['statut' => false,'message'=>'Vote Réfusé ! '.$requet->msg]);
             }
