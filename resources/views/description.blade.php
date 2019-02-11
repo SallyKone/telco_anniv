@@ -68,17 +68,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<a href="index"><img  style="margin-top: 10px" src="images/telco.png"></a>
+						<a href="index"><img src="images/telco.png"></a>
 					</div>
 					<!-- navbar-header -->
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						<a id="lastli" href="{{session()->has('idcandidat') ? 'deconnexion':'connexion' }}" class="btn btn-primary btn-md" role="button" title="Lien">{{session()->has('idcandidat') ? 'Déconnexion':'Connexion' }}</a>
 						<ul class="nav navbar-nav navbar-right">
-							<li><a style="font-family: Roboto Slab;" href="index" class="active">Accueil</a></li>
-							<li><a style="font-family: Roboto Slab;" href="{{session()->has('idcandidat') ? 'profil':'connexion' }}" class="active">Profil</a></li>
-							<li><a style="font-family: Roboto Slab;" href="description" class="active">Description</a></li>
-							<li><a style="font-family: Roboto Slab;" href="contact" class="active">Contact</a></li>	
-							<li style="font-family: Roboto Slab;" id="lastli1"><a href="{{session()->has('idcandidat') ? 'deconnexion':'connexion' }}" class="btn btn-primary btn-md" role="button" title="Lien">{{session()->has('idcandidat') ? 'Déconnexion':'Connexion' }}</a></li>	
+							<li><a href="index" class="active">Accueil</a></li>
+							<li><a href="{{session()->has('idcandidat') ? 'profil':'connexion' }}" class="active">Profil</a></li>
+							<li><a href="description" class="active">Description</a></li>
+							<li><a href="contact" class="active">Contact</a></li>	
+							<li id="lastli1"><a href="{{session()->has('idcandidat') ? 'deconnexion':'connexion' }}" class="btn btn-primary btn-md" role="button" title="Lien">{{session()->has('idcandidat') ? 'Déconnexion':'Connexion' }}</a></li>	
 						</ul>
 						
 					</div>

@@ -3182,7 +3182,7 @@ h3.title-txt {
 	.navbar-toggle {
 		padding: 7px 7px;
 		margin-top: 20px;
-		margin-right: 44px;
+		margin-right: 0px;
 	}
 	.navbar-header h1 a {
 		font-size: 0.87em;

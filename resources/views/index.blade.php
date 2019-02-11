@@ -89,7 +89,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 }
 	</style>
 </head>
-<body class="light-theme animation-theme snow" id="canvasAnimation" width="1366" height="423">
+<body class="light-theme animation-theme snow" id="canvasAnimation" >
+	<div class="container">
+		
+	
 	<!--Header-->
 	@include('header')
 		<!-- end of slider section -->
@@ -346,8 +349,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="clearfix"> </div>
 		</div>
 	</div>
+	
 	<!-- //Testimonials -->
 	@include('footer')
+</div>	
 	<!-- Required Scripts -->
 	<!-- Common Js -->
 	<script type="text/javascript" src="{{URL::asset('js/jquery-2.2.3.min.js')}}"></script>

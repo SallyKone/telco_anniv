@@ -1100,7 +1100,7 @@ textarea {
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
-  width: 100%;
+  width: 50px;
 }
 a {
   color: #337ab7;
@@ -1603,8 +1603,8 @@ pre code {
 }
 @media (min-width: 1200px) {
   .container {
-    width: 1170px;
-    margin-left: 42px;
+    width: 100%;
+    /*margin-left: 42px;*/
   }
 }
 .container-fluid {

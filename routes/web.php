@@ -83,6 +83,7 @@ Route::get ('/test-email', function() {
 
 //Route Pages pour afficher les standards et les formulaires
 //Route::get('/', 'PageController@comptaRebour');
+
 Route::get('/','PageController@showIndex');
 Route::post('/','PageController@showIndex');
 Route::get ('/vuedetest', 'PageController@showVueDeTest');

@@ -9,9 +9,9 @@ use App\Anniversaires;
 
 class PageController extends Controller
 {
-    public function __construct(Utilitaires $advisor)
+    public function accueil()
     {
-
+        return view ('master');
     }
 
     public function retourne_test(Utilitaires $util)
