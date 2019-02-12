@@ -40,7 +40,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		.pannel-body img {padding-right: 30px;}
 		.img1 {padding-right: 15px;}
 		.img2 {padding-right: 15px;	margin-left: 80px;}
-		.panel-body h5 { font-size:17px; letter-spacing: 0.5px; color:#59545433;
+		.panel-body h5 { font-size:17px; letter-spacing: 0.5px; color:black;
 		    text-transform: uppercase; font-weight:700; text-align: center;}
 		.panel-header {background-color:orange; color:#080707; font-size: 17px;font-family: New Century Schoolbook, TeX Gyre Schola, serif; font-weight: bold;}
 		.candilist{
@@ -60,7 +60,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			position: relative;
 		}
 		.lesdivlot{
-			height: 420px;
+			height: 80%;
 			position: relative;
 			overflow: hidden;
 		}
@@ -68,7 +68,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			position: relative;
 		}
 		.lesdivlot img{
-			width: 90%;
+			width: 80%;
 		}
 		#top10index{
 			overflow-y: scroll;
@@ -145,24 +145,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	       	 				</div>
        	 					@endforeach
 	                    </marquee>
-	                    <!-- <marquee onmouseout="this.start();" onmouseover="this.stop();" loop="infinite"  direction="left">
-									@foreach($classement as $classemt)
-										<div class="candilist" style="margin-bottom: 10px;">
-											<div class="candilist-img" >
-												<img class="imag" src="{{URL::asset('/images/img/avatar/'.$classemt->photo)}}">
-											</div>
-											@if(strlen($classemt->nom.' '.$classemt->prenom)>19)
-											<p title="{{$classemt->nom.' '.$classemt->prenom}}">{{substr($classemt->nom.' '.$classemt->prenom,0,19)."..."}}</p>
-	       	 								@else	
-												<p>{{$classemt->nom.' '.$classemt->prenom}}</p>
-											@endif
-												<p>Code de vote: </p>
-												<p style="color: red">{{$classemt->codecandidat}}</p>
-												<p style="color: orange">{{$classemt->nbre_vote}} votes</p>
-											
-										</div>
-										@endforeach
-						</marquee> -->
+	                  
 	                    
        	 			</div>
 	       	 	</div>
@@ -240,9 +223,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<center>
 					<div class="panel panel-primary lesdivlot">
 						<div class="panel-header"><center>TOP 10 EN TETE</center></div>
-						<div id="top10index" class="panel-body" style="height: 94%">
+						<div id="top10index" class="panel-body">
 							<div class="live-info">
-								<marquee direction="up" height="400px" onmouseout="this.start();" onmouseover="this.stop();" loop="infinite">
+								<marquee direction="up" height="330px" onmouseout="this.start();" onmouseover="this.stop();" loop="infinite" >
 									@foreach($classement as $classemt)
 										<div class="candilist" style="margin-bottom: 10px;">
 											<div class="candilist-img" >
@@ -256,27 +239,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										</div>
 										@endforeach
 								</marquee> 
-								<!-- 
-	                            <div class="candilist" style="margin-bottom: 10px;">
-									<div class="candilist-img" >
-										<img class="imag" src="/images/img/avatar/defaut.png">
-									</div>
-									<div>	
-										<p>Marc Durant</p>
-										<p>Code: 23456</p>
-										<p style="color: red">8 voix</p>
-									</div>
-								</div>
-								<div class="candilist" style="margin-bottom: 10px;">
-									<div class="candilist-img" >
-										<img class="imag" src="/images/img/avatar/defaut.png">
-									</div>
-									<div >	
-										<p>Marc Durant</p>
-										<p>Code: 23456</p>
-										<p style="color: red">8 voix</p>
-									</div>
-								</div> -->
+								
 							</div>
 						</div>
 					</div>
@@ -290,7 +253,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="live-info">
 								<img src="images/cadeaux/{{isset($anniversaire->photo)?$anniversaire->photo : 'defaut.jpg'}}">				
 							</div>
-							<h5>{{isset($anniversaire->libelle)?$anniversaire->libelle : 'Cadeau à venir'}}</h5>
+							<h5 style="margin-top: 71px">{{isset($anniversaire->libelle)?$anniversaire->libelle : 'Cadeau à venir'}}</h5>
 						</div>
 					</div>
 					</center>

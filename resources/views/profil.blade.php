@@ -218,7 +218,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		{
 			.dash{
 		     	display: inline-block;
-		     	margin-left: 59px;
+		     	margin-left: 20%;
 
 		     }
 		   	 .login-form{

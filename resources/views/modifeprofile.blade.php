@@ -284,7 +284,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
                         }
              .saisiForm {
-                width: auto;
+                width: 100%;
                 float: left;
              }
              
@@ -346,6 +346,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         color: white;
         background-color: red;
 }
+.submit1{
+    margin-left: -23%;
+    }
+
+
 	</style>
 </body>
 

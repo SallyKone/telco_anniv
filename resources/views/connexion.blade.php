@@ -88,7 +88,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<br/>	
 								
 								<div class="submit" >
-                                	<input type="submit" value="Connecter" style="margin-left: -5px;" >
+                                	<input type="submit" value="Connecter" style="margin-left: 25%;width: 47%;" >
                             	</div>
 								<div class="clear"></div>
 							</form>
@@ -209,9 +209,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		    color: #080808;
 		    border-radius: 14px;
 		    width: 100%;
-		    margin-top: 3px;
+		    margin-top: 14px;
 		}
 		.submit{
+			margin-bottom: 13%;
 
 		}
 	</style>

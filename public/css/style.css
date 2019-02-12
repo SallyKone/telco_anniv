@@ -1144,7 +1144,7 @@ ul.nav.navbar-nav li a.active::before {
     -ms-background-size: cover;
      background-attachment: fixed;
      vertical-align: top;
-    padding: 0 3%;
+    padding: 0 8%;
     margin-top: -157px;
 }
 .events-section {
@@ -1408,7 +1408,7 @@ p.para-w3ls {
     color: white;
     line-height: 30px;
     margin-bottom: 2em;
-    font-family: URW Chancery L, cursive;
+    font-family:'Raleway', sans-serif;
     margin-left: 5px;
 }
 /*-- services --*/
@@ -2266,6 +2266,7 @@ section#tables  p {
 }
 .alert {
 	font-size: 1.1em;
+	margin-top: -44px
 }
 h1.t-button,h2.t-button,h3.t-button,h4.t-button,h5.t-button {
 	line-height:2em;
@@ -2431,6 +2432,8 @@ textarea{
     font-size: .9em;
     letter-spacing: 2px;
     margin: 0;
+    width: 50%;
+    margin-left: 22%;
 }
 .contact-form  input[type="submit"]:hover{
 	background: none;
@@ -2517,10 +2520,10 @@ textarea{
     color: #fff;
     font-size: .9em;
     letter-spacing: 2px;
-    margin-left: 111px;
+    margin-left: 22%;
     border-radius: 10px;
     font-weight: bold;
-    width: 50%;
+    width: 58%;
     text-align: center;
 }
 .login-form  input[type="submit"]:hover{
@@ -2732,7 +2735,8 @@ h3.subheading-w3-agile {
 }
 .se-top {
     padding: 40px 20px;
-    margin-left: 22px;
+    margin-left: 4px;
+    width: 100%;
 }
 .exp-info-right {
     margin-top: 2em;
