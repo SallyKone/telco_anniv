@@ -52,7 +52,7 @@ body {
 }
 #lastli{
 	float: right;
-	margin: 2% 0 0 2%;
+	margin: 2% 213px 0 6%;
 }
 #divavatar{
 	position: relative;
@@ -824,6 +824,7 @@ ul.nav.navbar-nav li.active a::before {
 .header-top {
 	padding-right: 2.8em;
 	margin-top: 1.2em;
+	margin-right: 7%;
 }
 
 .header-nav {

@@ -31,11 +31,13 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<a href="index"><img  style="margin-top: 10px" src="images/telco.png"></a>
+						<a href="index"><img  style="margin-top: 10px; width: 85%;" src="images/telco.png"></a>
 					</div>
 					<!-- navbar-header -->
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-						<a id="lastli" href="{{session()->has('idcandidat') ? 'deconnexion':'connexion' }}" class="btn btn-primary btn-md" role="button" title="Lien">{{session()->has('idcandidat') ? 'Déconnexion':'Connexion' }}</a>
+						
+							<a id="lastli" href="{{session()->has('idcandidat') ? 'deconnexion':'connexion' }}" class="btn btn-primary btn-md" role="button" title="Lien">{{session()->has('idcandidat') ? 'Déconnexion':'Connexion' }}</a>
+						<a href="index"><img  style="margin-top: 10px;width:7%; float: right;margin-right: -388px;" src="images/aplusivoire.jpg"></a>
 						<ul class="nav navbar-nav navbar-right">
 							<li><a style="font-family: Roboto Slab;" href="index" class="active">Accueil</a></li>
 							<li><a style="font-family: Roboto Slab;" href="{{session()->has('idcandidat') ? 'profil':'connexion' }}"class="active" class="active">Profil</a></li>
@@ -65,16 +67,14 @@
 	<div class="container">
 		
 			<div class="row" style="padding: 19px;">
-				    <div class="col-md-2 col-sm-2 col-lg-2 logopartenaire" style="margin-top: 35px">
+				    <div class="col-md-2 col-sm-2 col-lg-2 logopartenaire" style="margin-top: 17%;">
 								<div class="">
 		                        	<img src="images/logo/logomtn.jpeg">
 		                        </div>
 		                        <div class="">
 		                                <img src="images/logo/logotrace.png">
 		                        </div>
-		                        <div class="">
-		                                <img src="images/logo/logotourisme.jpg">
-		                        </div>
+		                       
 		            </div>
 
 				    <div class="col-md-8 ">
@@ -84,12 +84,12 @@
 				    	</video>
 				    </div>
 
-				    <div class="col-md-2 col-sm-2 col-lg-2 logoptenaire" style="margin-top: 35px">
+				    <div class="col-md-2 col-sm-2 col-lg-2 logoptenaire" style="margin-top: 17%;">
 								<div class="">
 		                                <img src="images/logo/logoorange.jpg">
 		                        </div>
 								<div class="">
-		                                <img style="margin-top: 5px" src="images/logo/logojumia.png">
+		                                <img src="images/logo/logotourisme.jpg">
 		                        </div>
 		            </div>
             </div>
