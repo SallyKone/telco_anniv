@@ -91,8 +91,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </head>
 <body class="light-theme animation-theme snow" id="canvasAnimation" >
 	<div class="container">
-		
-	
 	<!--Header-->
 	@include('header')
 		<!-- end of slider section -->
