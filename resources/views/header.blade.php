@@ -24,20 +24,30 @@
 		<div class="top-bar-w3layouts" style="margin-top: -15px;margin-bottom: -50px;">
 			<div class="container">
 				<nav class="navbar navbar-default">
-					<div class="navbar-header">
+					<div class="navbar-header" name="imgTelco">
 						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" >
 							<span class="sr-only">Toggle navigation</span>
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<a href="index"><img  style="margin-top: 10px; width: 85%;" src="images/telco.png"></a>
+						<div class="imgTelco">
+							<a href="index" ><img  style="margin-top: 10px; width: 85%;" src="images/telco.png">
+							</a>
+						</div>
+						
 					</div>
 					<!-- navbar-header -->
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						
-							<a id="lastli" href="{{session()->has('idcandidat') ? 'deconnexion':'connexion' }}" class="btn btn-primary btn-md" role="button" title="Lien">{{session()->has('idcandidat') ? 'Déconnexion':'Connexion' }}</a>
-						<a href="index"><img  style="margin-top: 10px;width:7%; float: right;margin-right: -388px;" src="images/aplusivoire.jpg"></a>
+							<a id="lastli" href="{{session()->has('idcandidat') ? 'deconnexion':'connexion' }}" class="btn btn-primary btn-md" role="button" title="Lien">{{session()->has('idcandidat') ? 'Déconnexion':'Connexion' }}
+							</a>
+							<div class="aplus">
+								
+								<img style="margin-top: 10px;width:7%; float: right;margin-right: -388px;" src="images/aplusivoire.jpg">
+								
+							</div>
+							
 						<ul class="nav navbar-nav navbar-right">
 							<li><a style="font-family: Roboto Slab;" href="index" class="active">Accueil</a></li>
 							<li><a style="font-family: Roboto Slab;" href="{{session()->has('idcandidat') ? 'profil':'connexion' }}"class="active" class="active">Profil</a></li>
@@ -99,14 +109,24 @@
 	<!--//Slider-->
 	</div>
 	<style type="text/css">
-		@media all and (max-device-width: 1024px) {
+		@media all and (max-device-width: 1024px) and (min-width: 360px) {
     .logopartenaire {width:70px;}
     .logopartenaire img {
         margin-top: 36px;
         }
      .logopartenaire div {display: none;}
      .logoptenaire div {display: none;}
+     .aplus img 
+            {
+                display: none;
+             }
+      .imgTelco
+             {
+             	width:32%;
+             }        
+
 	}
 	a:active{color:red;}
+	
 	</style>
 	
