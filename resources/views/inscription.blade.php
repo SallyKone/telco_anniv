@@ -85,39 +85,42 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
      </div>
    @endif
 
+								  <form action="{{route('inscription')}}" method="POST" enctype="multipart/form-data">
+								  	{{csrf_field()}}
+								  <div class="form-group">
+								    <label for="nom">Nom</label>
+								    <input required="required" type="text" class="form-control" name="nom" id="nom"  placeholder="Nom">
+								    
+								  </div>
+								  <div class="form-group">
+								   <label for="prenom">Prénom</label>
+								    <input required="required" type="text" class="form-control" name="prenom" id="prenom"  placeholder="Prénom">
+								  </div>
+								  <div class="form-group">
+								   <label for="dateNaiss">Date de naissance</label>
+								    <input required="required" type="date" class="form-control" name="dateNaiss" id="dateNaiss"  placeholder="Date de naissance">
+								  </div>
+								  <div class="form-group">
+								   <label for="telephone">Telephone</label>
+								    <input required="required" type="text" class="form-control" name="telephone" id="telephone"  placeholder="XXXXXXXX">
+								  </div>
+								  <div class="form-group">
+								   <label for="login">Login</label>
+								    <input required="required" type="text" class="form-control" name="login" id="login"  placeholder="Login">
+								  </div>
+								  <div class="form-group">
+								   <label for="password">Password</label>
+								    <input required="required" type="password" class="form-control" name="password" id="password"  placeholder="Password">
+								  </div>
+								  <div class="form-group">
+								   <label for="photo">Photo</label>
+								    <input required="required" type="file" class="form-control" name="photo" id="photo"  placeholder="Prénom">
+								  </div>
+								  <button type="submit" class="btn btn-primary" style="width: 26%;font-weight: bold;margin-left: 37%;margin-top: 4px;">Enregistrer</button>
+								</form>
 								
-								  <h3>Accéder à mon compte</h3><br><br>
-							@if(isset($statut))
-							<div class=" {{isset($statut) && $statut ? 'alert alert-success' : 'alert alert-danger'}}"> 
-                        		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> 
-		                    	{{ $message }} 
-		                    </div>
-		                    @endif
-							<form action="" method="POST">
-								{{ csrf_field() }}
-								{{ isset($resultat) ? $resultat : ""}}
-								
-								<div class="row ">	
-										<input class="col-md-9 forme" type="text" id="login" name="login" placeholder="Identifiant / Login" required />
-								</div>
-								
-								<div class="row ">
-										<input class="col-md-9 forme" type="password" id="password" name="password" placeholder="Mot de passe / Password"  required/>
-								</div>
 
-								<div class="forgotpassword"><a href="mdpassoublier">Mot de passe oublié ?</a></div>
-								<div class="forgotpassword"><a href="identifiantoublier">Identifiant oublié ?</a></div>
-								<br>	
-								<div class="clear"></div>
-								<br/>	
-								<br/>	
-								
-								<div class="submit" >
-                                	<input type="submit" value="Connecter" style="margin-left: 25%;width: 47%;" >
-                            	</div>
-								<div class="clear"></div>
-							</form>
-													
+							
 						</div>
 					</div>
 					

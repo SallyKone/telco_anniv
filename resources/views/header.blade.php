@@ -1,20 +1,25 @@
 
 		<div class="header">
 			<div class="top">
-				<div class="container">	
+				<div class="container" style="height: 50px">	
 				<div class="col-md-9 top-left">
-					<ul>
-						<li><i class="fa fa-map-marker" aria-hidden="true"></i>Riviera Palmeraie,Rond point ADO phcie St Moise.</li>
-						<li><i class="fa fa-phone" aria-hidden="true"></i> +(225) 22 46 72 66</li>
-						<li><i class="fa fa-envelope-o" aria-hidden="true"></i> <a href="mailto:info@example.com">info@telco.com</a></li>
-					</ul>
+					
+						<MARQUEE BEHAVIOR="alternate" >
+						 <img style="margin-top: -15px;" src="{{URL::asset('/images/header.png')}}"> 
+						<!-- MON INCROYABLE ANNIVERSAIRE Désormais n'offrez plus de cadeau, VOTEZ --> 
+						</MARQUEE>
 				</div>
 				<div class="col-md-3 top-middle">
 					<ul>
-						<li><a href="https://web.facebook.com/monincroyableanniv/"><i class="fa fa-facebook"></i></a></li>
-						<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-						<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-						<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+						<li><a href="{{session()->has('idcandidat') ? 'deconnexion':'connexion' }}" class="btn btn-primary btn-md" role="button" title="Lien">{{session()->has('idcandidat') ? 'Déconnexion':'Connexion' }}
+							</a></li>
+							@if(!session()->has('idcandidat'))
+							<li>
+							<a  href="{{Route('frm-inscription')}}" title="Lien" class="btn btn-primary btn-md" role="button">{{session()->has('idcandidat') ? '':'Inscription' }}
+							</a>
+							</li>
+							@endif
+						
 					</ul>
 				</div>
 				<div class="clearfix"></div>
@@ -32,20 +37,16 @@
 							<span class="icon-bar"></span>
 						</button>
 						<div class="imgTelco">
-							<a href="index" ><img  style="margin-top: 10px; width: 85%;" src="images/telco.png">
+							<a href="index" ><img  style="margin-top: 10px; width: 19%;" src="images/teee.png">
 							</a>
 						</div>
 						
 					</div>
 					<!-- navbar-header -->
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-						
-							<a id="lastli" href="{{session()->has('idcandidat') ? 'deconnexion':'connexion' }}" class="btn btn-primary btn-md" role="button" title="Lien">{{session()->has('idcandidat') ? 'Déconnexion':'Connexion' }}
-							</a>
-							<div class="aplus">
-								
-								<img style="margin-top: 10px;width:7%; float: right;margin-right: -388px;" src="images/aplusivoire.jpg">
-								
+					
+							<div class="aplus">	
+								<img style="margin-top: 10px;width:10%; float: right;margin-right:0px;" src="images/aaaaa.png">								
 							</div>
 							
 						<ul class="nav navbar-nav navbar-right">
@@ -53,7 +54,8 @@
 							<li><a style="font-family: Roboto Slab;" href="{{session()->has('idcandidat') ? 'profil':'connexion' }}"class="active" class="active">Profil</a></li>
 							<li><a style="font-family: Roboto Slab;" href="description" class="active">Description</a></li>
 							<li><a style="font-family: Roboto Slab;" href="contact" class="active">Contact</a></li>	
-							<li style="font-family: Roboto Slab;" id="lastli1"><a href="{{session()->has('idcandidat') ? 'deconnexion':'connexion' }}" class="btn btn-primary btn-md" role="button" title="Lien">{{session()->has('idcandidat') ? 'Déconnexion':'Connexion' }}</a></li>	
+							<li><a style="font-family: Roboto Slab;" href="classement" class="active">Classement</a></li>	
+								
 						</ul>
 						
 					</div>
@@ -74,37 +76,7 @@
 		</div>
 		<!--//top-bar-w3layouts-->
 		<!--Slider-->
-	<div class="container">
-		
-			<div class="row" style="padding: 19px;">
-				    <div class="col-md-2 col-sm-2 col-lg-2 logopartenaire" style="margin-top: 17%;">
-								<div class="">
-		                        	<img src="images/logo/logomtn.jpeg">
-		                        </div>
-		                        <div class="">
-		                                <img src="images/logo/logotrace.png">
-		                        </div>
-		                       
-		            </div>
-
-				    <div class="col-md-8 ">
-				    	<video poster="images/img/imgdelavideo.png" controls style="width: 100%;height:30%;margin-top: 14px;" autoplay="true">
-				    		<source src="videos/videofinal.webm" type="video/webm">
-				    		<source src="videos/videofinal.mp4" type="video/mp4">
-				    	</video>
-				    </div>
-
-				    <div class="col-md-2 col-sm-2 col-lg-2 logoptenaire" style="margin-top: 17%;">
-								<div class="">
-		                                <img src="images/logo/logoorange.jpg">
-		                        </div>
-								<div class="">
-		                                <img src="images/logo/logotourisme.jpg">
-		                        </div>
-		            </div>
-            </div>
-		
-	</div>
+	
 		<!-- //Modal1 -->
 	<!--//Slider-->
 	</div>
@@ -127,6 +99,19 @@
 
 	}
 	a:active{color:red;}
-	
+	.img{
+		width: 26%;
+		float: right;
+	}
+	.img1{
+	width: 9%;
+	}
+	.img2{
+		width: 8%;
+	}
+	.img3{
+		width: 9%
+
+	}
 	</style>
 	

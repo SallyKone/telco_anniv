@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use App\Providers\Utilitaires;
+use App\Http\Requests\storeCandidatRequest;
 
 class CandidatsController extends Controller
 {
@@ -72,15 +73,65 @@ class CandidatsController extends Controller
                return $e;
        }
    }
-    /*function testCode(Request $requet,Utilitaires $util)
-    {
-        $moisnaiss=7;
-        $lecodecandidat = $util->generercodecandi($moisnaiss);
-        return $lecodecandidat;
-    }*/
-    
+ //Fonction d'ajout du candidat
+   function inscriptionCandidat(storeCandidatRequest $request, Utilitaires $util){
+         
+        //Hnadle file upload
+        
+        $candidat = new Candidats();
+        $candidat->nom = $request->input("nom");
+        $candidat->prenom = $request->input("prenom");
+        $candidat->mois_naiss = explode("-",$request->input("dateNaiss"))[1];
+        $candidat->jour_naiss = explode("-",$request->input("dateNaiss"))[2];
+        $candidat->numero = $request->input("telephone");
+        $candidat->codecandidat = $util->generercodecandi($candidat->mois_naiss);
+        $candidat->login = $request->input("login");
+        $candidat->motpass = $request->input("password");
 
-       //Fonction d'ajout du candidat
+        $candidat->save();
+
+        if(Candidats::where("id","=",$candidat->id)->exists())
+        {
+            if($request->hasFile('photo'))
+            {
+                // Get Filename with the extension
+                $filenameWithExt = $request->file('photo')->getClientOriginalName();
+                //Get just filename
+                $filename = pathInfo($filenameWithExt, PATHINFO_FILENAME);
+
+                //Get just extension
+                $extension = $request->file('photo')->getClientOriginalExtension();
+
+                //filename to store
+                $fileNameToStore = $candidat->id.$candidat->nom.".".$extension;
+
+                //Upload Image
+                if(!move_uploaded_file($request->file('photo'),"images/img/avatar/".$fileNameToStore))
+                {
+                    Candidats::destroy($candidat->id);
+                    return redirect()->back()->with("error","Echec de l'inscription, veuillez réessayer svp.");
+                }
+
+            } else {
+                $fileNameToStore = 'defaut.jpg';
+            }    
+
+            $candidat->photo = $fileNameToStore;
+
+            $candidat->save();
+
+            return redirect()->back()->with("success","Inscription effectuée avec succès");
+        }
+        else
+        {
+            return redirect()->back()->with("error","Echec de l'inscription");
+        }
+   }
+   function inscription(){
+
+    return view ("inscription");
+   }
+
     function ajouterCandidat(Request $requet,Utilitaires $util)
     {
         try

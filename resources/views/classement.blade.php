@@ -27,7 +27,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<link href="//fonts.googleapis.com/css?family=Raleway:300,400,500,600,800" rel="stylesheet">
 	<!--//fonts-->
 	<style type="text/css">
-		.votretop{width:350px; height:auto; margin:-50px auto 30px auto; position:relative;}
+		.votretop {
+		    width: 33%;
+		    height: auto;
+		    margin: 98px auto 30px 4px;
+		    position: relative;}
 		.votretag{width:115px; height:auto; float:left; text-align:right; font-size:15px; line-height:25px;}
 		.votredrop{width:35%; height:37px; padding:5px 10px; border-radius:10px; box-shadow:inset 0 0 10px #CCC; outline:none; border:none; margin:0px 10px 10px 10px; overflow:hidden; float:left; background:#FFF; float:left;}
 		.votredrop img{width:100%; float:right;}
@@ -53,8 +57,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!--Header-->
 	@include('header')
 	
-	<br/><br/>
-	<div class="votretop">	
+	
+<div class="container">
+	<div class="row">
+		
+	
+	<div class="col-md-4 col-sm-4 imG2">
+				<img class="imgD" src="images/biere.png">
+	</div>
+	
+	<div class="col-md-4 col-sm-4 votretop">	
 		<div id="montableau">
 			{{csrf_field()}}
 			<div class="votretag"><strong style="color: white">Saisissez Votre</strong></div>
@@ -62,13 +74,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			    <input type="text" name="lecodecandidat" id="lecodecandidat" placeholder="Code de vote"  style="background:none; border:none;width: 100%;" required> 
 			</div>
 			<input type="button" value="Verifier" reset onclick="message()" style="margin: auto; float:left; font-size:18px; width:90px;" />
-			<!-- <input type="reset" value="annuler" name=""/ style="margin-left: 112px;width: 138px;margin-top: 17px;"> -->
 			<div class="clear"></div>
 		</div>
 
-		<div class="events-classe dash">
+		<div class="events-classe dash" style="margin-top: 43px;">
 			<div class="container ">			
-				<div class="">
+				<div class="test">
 					<div class="colum-classement dash " style="width: 55%; margin-left: 69px;">	
 						<div class="panel panel-primary">
 							<div class="panel-heading"><center >VOTRE CLASSEMENT</center></div>
@@ -83,9 +94,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="clearfix"> </div>
 			</div>
 		</div>
-	</div><br/><br/><br/><br>
-
-	<div class="events-sectione">
+	</div>
+	<div class="col-md-4 col-sm-4 imG2">
+				<img class="imgD" src="images/biereTurn.png" style="margin-left: 28px;">
+	</div>
+	
+	</div>
+	<div class="events-sectione" style="margin-top:0px;">
 		<div class="row">
 			<div class="colum-classement tableau">
 				<div class="panel panel-primary">
@@ -205,7 +220,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>	
 		<div class="clearfix"> </div>
 	</div>
-
+</div>
 	@include('footer')
 	<!-- Required Scripts -->
 	<!-- Common Js -->
@@ -215,14 +230,25 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             .dash {
                 width: 75%;
     			margin-left: 41px;
+    			margin-top: 81px;
              }
              .tableau{
              	width: 49%;
              	position: relative;
 
              }
+             .test{
+             	margin-top: -69px;
+             }
              
         }
+    </style>
+    <style type="text/css">
+    	.imgD {
+		    height: 289px;
+		    width: 90%;
+		    margin-top: 50px;
+		}
     </style>
 	<script type="text/javascript" src="{{URL::asset('js/jquery-2.2.3.min.js')}}"></script>
 	<!--// Common Js -->

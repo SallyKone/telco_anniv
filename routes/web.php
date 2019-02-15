@@ -37,6 +37,9 @@ Route::group(['prefix'=>'admins','middleware'=>'utilisateur'],function(){
 	Route::delete('/deleteAmi/{id}','AdminsController@deleteAmis')->name('deleteAmi');
 
 });
+//inscription
+Route::post('inscription','CandidatsController@inscriptionCandidat')->name('inscription');
+Route::get('inscription','CandidatsController@inscription')->name('frm-inscription');
 
 Route::get('/admins/login','AdminsController@showLogin');
 Route::post('/admins/login','AdminsController@connexion');

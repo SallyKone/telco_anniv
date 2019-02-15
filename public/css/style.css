@@ -24,10 +24,12 @@ body {
 	font-size: 100%;
 	font-family: 'Lato', sans-serif;
 	background: rgb(34, 34, 34);
+	background-image: url(../images/007.jpg);
 }
 .logopartenaire img{
-	width: 75%;
-	height: 100%;
+	width: 43%;
+    height: 100%;
+    margin-top: 10px;
 }
 .logopartenaire div{
 	padding: 5%;
@@ -110,7 +112,7 @@ p {
 }
 
 ul {
-	margin: 0;
+	margin: 5px;
 	padding: 0;
 
 }
@@ -222,7 +224,7 @@ label {
 .top-bar-w3layouts {
 	width: 100%;
 	z-index: 99999;
-	background: rgb(34, 34, 34);
+	/*background: rgb(34, 34, 34);*/
 }
 
 
@@ -823,8 +825,8 @@ ul.nav.navbar-nav li.active a::before {
 .navbar-nav,
 .header-top {
 	padding-right: 2.8em;
-	margin-top: 1.2em;
-	margin-right: 7%;
+    margin-top: -46px;
+    margin-right: 21%;
 }
 
 .header-nav {
@@ -1187,7 +1189,7 @@ ul.nav.navbar-nav li a.active::before {
 
 
 .live-info {
-    margin: 1em 1em;
+    /*margin: 1em 1em;*/
     background: ;
     box-shadow: 1px 1px 17px #ffffff;
 }

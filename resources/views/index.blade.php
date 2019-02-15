@@ -30,7 +30,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<link href="{{URL::asset('css/style.css')}}" rel="stylesheet" type="text/css" media="all" />
 	<!--fonts-->
 	<link href="//fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+
 	<link href="//fonts.googleapis.com/css?family=Raleway:300,400,500,600,800" rel="stylesheet">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<!--//fonts-->
 	<!--// Required Scripts -->
 	<style type="text/css">
@@ -42,9 +44,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		.img2 {padding-right: 15px;	margin-left: 80px;}
 		.panel-body h5 { font-size:17px; letter-spacing: 0.5px; color:black;
 		    text-transform: uppercase; font-weight:700; text-align: center;}
-		.panel-header {background-color:orange; color:#080707; font-size: 17px;font-family: New Century Schoolbook, TeX Gyre Schola, serif; font-weight: bold;}
+		.panel-header {background-color:orange; color:#080707; font-size: 18px;
+    					font-family: berlin sans fb demi; font-weight: bold;}
 		.candilist{
-			width: 185px;
+			width: 10%;
 			display: inline-block;
 			position: relative;
 			border: 1px solid black;
@@ -60,15 +63,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			position: relative;
 		}
 		.lesdivlot{
-			height: 80%;
+			height: 353px;
 			position: relative;
 			overflow: hidden;
 		}
 		.lesdivlot div{
 			position: relative;
+			    width: 100%;
 		}
 		.lesdivlot img{
-			width: 80%;
+			width: 100%;
 		}
 		#top10index{
 			overflow-y: scroll;
@@ -83,16 +87,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     display: block;
     width: 100%;
     height: 100%;
-    background-size: cover;
+    background-size: auto;
     background-position: 50%;
     z-index: 0;
 }
 	</style>
 </head>
 <body class="light-theme animation-theme snow" id="canvasAnimation" >
-	<div class="container">
+	<div class="container" >
+
 	<!--Header-->
 	@include('header')
+	@include('information')
 		<!-- end of slider section -->
 		<div class="clearfix"> </div>
 		<!-- //Modal1 -->
@@ -103,7 +109,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
        <div class="container">
        	<div id="candidat">
        	 <div class="row">
-       	 	<div class="col-sm-12" style="margin-top: -70px;">
+       	 	<div class="col-sm-12" style="margin-top: -4%;">
        	 		<div class="panel panel-primary">
 	       	 		<div class="panel-header"><center>LES CANDIDATS EN COMPETITION</center>
 	       	 		</div>
@@ -153,7 +159,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
        </div>
       <!--//Candidat-->
 	<!-- services -->
-	<div class="w3-agile-services">
+	<!-- <div class="w3-agile-services">
 		<div class="container"  style="margin-top: -50px;">
 			<h3 class="title-txt"><span>S</span>ervices</h3>
 		<div class="agileits-services">
@@ -175,7 +181,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="se-top">
 							<div class="services-icon">
 								<a href="classement"><img src="images/midicon3.png"></a>
-							<!-- <i class="fa fa-flask" aria-hidden="true"></i> -->
+							 <i class="fa fa-flask" aria-hidden="true"></i> 
 							</div>
 							<div class="services-icon-info">
 								<h5>CLASSEMENT</h5>
@@ -188,7 +194,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				
 			</div>
 		</div>
-	</div>
+	</div> -->
 	<!-- //services -->
         
    <!-- news -->
@@ -208,7 +214,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="panel-body">
 							<div class="live-info">
 							
-							<img src="images/vainqueur1.JPG">
+							<img src="images/vainqueur1.JPG" style="width: 62%">
 												
 							</div>
 							<h5>KOUAKOU Junior</h5>
@@ -223,7 +229,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="panel-header"><center>TOP 10 EN TETE</center></div>
 						<div id="top10index" class="panel-body">
 							<div class="live-info">
-								<marquee direction="up" height="330px" onmouseout="this.start();" onmouseover="this.stop();" loop="infinite" >
+								<marquee direction="up"  onmouseout="this.start();" onmouseover="this.stop();" loop="infinite" height="290px">
 									@foreach($classement as $classemt)
 										<div class="candilist" style="margin-bottom: 10px;">
 											<div class="candilist-img" >
@@ -247,11 +253,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<center>
 					<div class="panel panel-primary lesdivlot">
 						<div class="panel-header"><center>LOT EN JEU AUJOURD'HUI</center></div>
-						<div class="panel-body" style="height: 94%;">
+						<div class="panel-body" style="">
 							<div class="live-info">
-								<img src="images/cadeaux/{{isset($anniversaire->photo)?$anniversaire->photo : 'defaut.jpg'}}">				
+								<img src="images/cadeaux/{{isset($anniversaire->photo)?$anniversaire->photo : 'defaut.png'}}" style="width: 62%">				
 							</div>
-							<h5 style="margin-top: 71px">{{isset($anniversaire->libelle)?$anniversaire->libelle : 'Cadeau à venir'}}</h5>
+							<h5 style="margin-top: 58px">{{isset($anniversaire->libelle)?$anniversaire->libelle : 'Cadeau à venir'}}</h5>
 						</div>
 					</div>
 					</center>
