@@ -58,8 +58,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<dt>
 							<h2>2. Comment participer au concours</h2>
 							<dd>
-							<p>Inscrivez vous à partir de votre numéro ORANGE ou MTN. Envoyez par sms vos informations de la manière suivante I,Nom,Prénom,Jour-Mois au 459 abonné MTN et au 98164 abonné Orange. Exemple : I,konan,samuel,12-07  NB : Pas d’espace ni d’accent dans la syntaxe d’inscription.
-							Le coût de l'inscription est de 103fcfa.</p>
+							<p>Inscrivez-vous sur le site www.telcoanniv.com en cliquant sur le bouton inscription et renseignez la fiche d'inscription. Vous pourrez voter 5(cinq) jours avant la date de votre anniversaire en envoyant votre code de vote par SMS au 98164.</p>
 							</dd>
 						</dt>
 						<dt>

@@ -38,6 +38,9 @@ Route::group(['prefix'=>'admins','middleware'=>'utilisateur'],function(){
 
 });
 //inscription
+Route::get('index1',function(){
+	return view ('index1');
+});
 Route::post('inscription','CandidatsController@inscriptionCandidat')->name('inscription');
 Route::get('inscription','CandidatsController@inscription')->name('frm-inscription');
 

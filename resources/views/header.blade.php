@@ -81,13 +81,8 @@
 	<!--//Slider-->
 	</div>
 	<style type="text/css">
-		@media all and (max-device-width: 1024px) and (min-width: 360px) {
-    .logopartenaire {width:70px;}
-    .logopartenaire img {
-        margin-top: 36px;
-        }
-     .logopartenaire div {display: none;}
-     .logoptenaire div {display: none;}
+		@media all and (max-device-width: 360) {
+     
      .aplus img 
             {
                 display: none;
