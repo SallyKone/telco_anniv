@@ -86,7 +86,7 @@
                 <div class="panel-body actua" style="background-color: wheat;">
                    <marquee direction="up" onmouseout="this.start();" onmouseover="this.stop();" loop="infinite" height="300px"> 
                   @foreach($classement as $classemt)
-                  <div class="card" style="position: relative;width:80%;display: inline-block;margin-bottom: 10px;margin-left:10%;">
+                  <div class="card" style="position: relative;width:70%;display: inline-block;margin-bottom: 10px;margin-left:15%;">
                     
                     <div class="row" style="margin-right: 0px; margin-left: 0px">
                           <div class="col-12" style="background-image: url(images/img/avatar/{{$classemt->photo}}); background-repeat: no-repeat; background-position: center; background-size:100% 100%;height: 139px;">  </div>
