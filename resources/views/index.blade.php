@@ -38,8 +38,8 @@
                           <div class="col-12 card-body" style="height: 77px;padding: 0.25rem;background-color: #1e3953;color:#56f704;">
 
                             <div class="card-text" style="width: 100%;"> 
-                              @if(strlen($candidat2->nom.' '.$candidat2->prenom)>19)
-                              {{substr($candidat2->nom.' '.$candidat2->prenom,0,19)."..."}}  
+                              @if(strlen($candidat2->nom.' '.$candidat2->prenom)>25)
+                              {{substr($candidat2->nom.' '.$candidat2->prenom,0,25)."..."}}  
                               @else
                               {{$candidat2->nom.' '.$candidat2->prenom}}
                               @endif<br/> 
@@ -94,7 +94,7 @@
                     <div class="row" style="margin-right: 0px; margin-left: 0px">
                       <div class="col-12 card-body" style="height:96px;padding: 0.25rem;background-color: #1e3953;color:#56f704;">
                         <div class="card-text" style="width: 100%;"> 
-                                {{$classemt->nom.' '.$classemt->prenom}}<br/>          
+                              {{$classemt->nom.' '.$classemt->prenom}}<br/>          
                                 <font style="color:white">Code de vote:</font>  <font style="color: gold;"> {{$classemt->codecandidat}} </font><br/>
                                      <font style="color: red;"><center>{{$classemt->nbre_vote}} votes</center></font>
                                    </div>
