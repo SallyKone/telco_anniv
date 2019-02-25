@@ -20,6 +20,10 @@ class ConnexionController extends Controller
 	//LES FONCTIONS GET
     public function showConnexion()
     {
+	if(session()->has('idcandidat'))
+	{
+		return redirect()->back();
+	}
     	return view('connexion');
     }
     
@@ -44,13 +48,15 @@ class ConnexionController extends Controller
                 //session()->put('avatar',$candidat->photo);
                 session()->put('ip',$requete->ip());
                 session()->save();
-                return view('profil')->with(['candidat'=> $candidat,'statut'=> true,'message'=>'Bienvenue ']);
+		//return redirect()->intended("profil");
+                return redirect('profil')->with(['candidat'=> $candidat,'statut'=> true,'message'=>'Bienvenue ']);
             }
             else
             {
                 return view('connexion')->with(['statut'=> false,'message'=>'Mot de passe incorrect !']);
             }
     	}
+	
     	return view('connexion')->with(['statut'=> false,'message'=>'Mot de passe incorrect !']);
     }
     public function deconnecter(Request $requete, Utilitaires $util){

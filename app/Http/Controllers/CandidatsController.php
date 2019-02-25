@@ -23,7 +23,7 @@ class CandidatsController extends Controller
         }
         else
         {
-            return view('connexion');
+            return redirect('connexion');
         }
     }
 
@@ -36,7 +36,7 @@ class CandidatsController extends Controller
         }
         else
         {
-            return view('connexion');
+            return redirect('connexion');
         }
     }
 
@@ -384,8 +384,9 @@ class CandidatsController extends Controller
     {
         $lemotpass = "";
         $monlogin = $requete->login;
-        $telephone = '225'.$requete->phone;
+        $telephone = "225".$requete->phone;
         $mesg = '';
+	
         if(DB::table('candidats')->where([['login','=',$monlogin],['numero','=',$telephone]])->exists())
         {
             $lemotpass = $util->genererchaine(6);
@@ -414,15 +415,15 @@ class CandidatsController extends Controller
     {
         $messg="";$avatar="";
         if (session()->has("idcandidat")) {
+	    $dateNaiss = explode('-',$request->dateNaiss);
             $idcandidat =  (int)session()->get("idcandidat");
-            $candidats = Candidats::find($idcandidat); 
+            $candidats = Candidats::find($idcandidat);
             $candidats->nom = $request->nom; 
-            $candidats->prenom = $request->prenom; 
-            $candidats->jour_naiss = $request->jour; 
-            $candidats->mois_naiss = $request->mois; 
-            $candidats->annee_naiss = $request->annee;                
+            $candidats->prenom = $request->prenom;
+            $candidats->jour_naiss = intval($dateNaiss[2]); 
+            $candidats->mois_naiss = intval($dateNaiss[1]); 
+            $candidats->annee_naiss = intval($dateNaiss[0]); 
             $candidats->numero = $request->numero;
-            
             //Enregistrement d'images autiorisées
             $typepermis = ['jpg','png','jpeg'];
             $cheminacces ="images/img/avatar/";
@@ -478,7 +479,7 @@ class CandidatsController extends Controller
         }
         else
         {
-            return view('connexion');
+            return redirect('connexion');
         }
     }
 

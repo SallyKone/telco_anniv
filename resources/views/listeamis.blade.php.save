@@ -6,13 +6,18 @@
   <div class="col-10" style="background-color:#a7a1a1;margin-top: 5%;">
     <div class="row">
       <div class="col-md-4" style="background-color: gray;">
+        <div class="row">
+          <div class="col-2"></div>
+          
+          <div class="col-2"></div>
+        </div> 
         <div>
-                    <nav class="nav flex-column navbar-expand-lg navbar-light ">
-
+                <nav class="nav flex-column navbar-expand-lg navbar-light ">
+                      
                       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation" style="margin-top: 13px;margin-bottom: 13px;">
                         <span class="navbar-toggler-icon"></span>
                       </button>
-                      <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style=" flex-basis:17%;">
+                      <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style=" flex-basis:44%;">
                         <div class="col-md"></div>
                         <div class="nav flex-column">
                           <a class="nav-item nav-link btn btn-dark" style="margin-top:16px;margin-bottom: 5px;" href="profil">Mon profil<span class="sr-only">(current)</span></a>
@@ -22,32 +27,35 @@
                         </div>
                         <div class="col-md"></div>
                       </div>
-                    </nav>
+                </nav>
         </div>       
       </div>
-      <div class="col-md-8">
-        <h4 style="text-align: center;margin-bottom: 5%;margin-top:3%;">
-        La liste de mes ami(e)s</h4>
-          <table id="table" class="display" style="width: 100%">
-            <thead>
-              <tr>
-                <th style="text-align: center;">Nom</th>
-                <th style="text-align: center;">Numéro</th>
-                <th style="text-align: center;">Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              @foreach($listeamis as $ami)
-              <tr>
-                <td>{{$ami->nom}}</td>
-                <td>{{$ami->numero}}</td>
-                <td>
-                  <a href="ajouteramis?id={{$ami->id}}" class="btn btn-sm btn-primary modifier">Modifier</a>
-                </td>
-              </tr>
-              @endforeach
-            </tbody>
-          </table>
+      <div class="col-md-8" style="margin-bottom: 7%;">
+      	<h4 style="text-align: center;margin-bottom: 5%;margin-top:3%;">
+      	La liste de mes ami(e)s</h4>
+       		<table id="table" class="display" style="width: 100%">
+					<thead>
+						<tr>
+							<th style="text-align: center;">Nom</th>
+							<th style="text-align: center;">Numéro</th>
+							<th style="text-align: center;">Action</th>
+						</tr>
+					</thead>
+					<tbody>
+							@foreach($listeamis as $ami)
+							<tr>
+								<td>{{$ami->nom}}</td>
+								<td>{{$ami->numero}}</td>
+								<td>
+									
+									<a href="ajouteramis?id={{$ami->id}}" class="btn btn-sm btn-primary modifier">Modifier</a>
+
+								</td>
+
+							</tr>
+							@endforeach
+						</tbody>
+			</table>
       </div>
     </div>
   </div>
@@ -55,3 +63,13 @@
 </div>
 
 @endsection
+
+<style type="text/css">
+	.menu{
+		margin-left: 30%;
+		margin-top: 5px;
+	}
+	.nav-item{
+		color: black;
+	}
+</style>

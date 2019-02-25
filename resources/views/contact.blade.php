@@ -1,108 +1,55 @@
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
-<!DOCTYPE html>
-<html lang="fr">
-
-<head>
-	<title>Mon incroyable anniversaire | Telco</title>
-	<!-- Meta Tags -->
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="keywords" content="Bettering Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" />
-	<script type="application/x-javascript">
-		addEventListener("load", function () {
-			setTimeout(hideURLbar, 0);
-		}, false);
-
-		function hideURLbar() {
-			window.scrollTo(0, 1);
-		}
-	</script>
-	<!-- map -->
-	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJzgyR3Un04ndSCrm3Ac1goqPxd5U_HQw&callback=initMap" type="text/javascript"></script>
-	<!-- fin map -->
-
-	<!-- // Meta Tags -->
-	<link href="{{URL::asset('css/bootstrap.css')}}" rel="stylesheet" type="text/css" media="all" />
-	<link href="{{URL::asset('css/font-awesome.min.css')}}" rel="stylesheet" type="text/css" media="all">
-	<!--testimonial flexslider-->
-	<link href="{{URL::asset('css/style.css')}}" rel="stylesheet" type="text/css" media="all" />
-	<!--fonts-->
-	<link href="//fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
-	<link href="//fonts.googleapis.com/css?family=Raleway:300,400,500,600,800" rel="stylesheet">
-	<!--//fonts-->
-
-</head>
-
-<body>
-	<!--Header-->
-	 @include('header')
-	<!--//Header-->
-	<!-- contact -->
-<section class="contact">
-	<div class="container">
-		<h3 class="title-txt"><span>N</span>ous Contacter </h3>
-		<div class="contact-grids">
-			 <!-- @if(session('success')) 
-								{{-- ====================================================================================== --}}
-								
-									<div class="alert alert-success"> 
-										<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> 
-										{{ session('success') }} 
-									</div> 
-								@endif 
-								@if(session('error')) 
-									<div class="alert alert-danger"> 
-										<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> 
-										{{ session('error') }} 
-									</div> 
-								@endif 
-								{{-- ====================================================================================== --}} --> 
-
-
-			<div class=" col-md-5 contact-form">
-			<h4 class="heading">Vos informations</h4>
-				<form action="{{ route ('contact_path')}}" method="post">
-					{{ csrf_field() }}
-						<input type="text" name="nom" placeholder="Votre nom" required=""/>
-						<input type="email" name="email" placeholder="Votre Email" required=""/>
-						<input type="text" name="telephone" placeholder="Telephone" required=""/>
-						<textarea name="msg" placeholder="Message" required=""></textarea>
-						<br/>
-						<br/>
-						<div class="submit1">
-							<input type="submit" value="Envoyer">
-						</div>
-				</form>
+@extends('partials/master')
+@section('content')
+	<h1 class="title-txt" style="color: white;text-align:center;margin-top: 48px;"><span>N</span>ous Contacter </h1>
+		<div class="row">
+			<div class="col-md-5" style="padding: 4em 3em;background: #1e3953;">
+					<div style="margin-top:-33px">
+					<h3 style="text-align: center;color:white;">Vos informations</h3>
+					</div>	
+					<form action="{{ route ('contact_path')}}" method="POST" style="margin-top:24px">
+				    	{{ csrf_field() }}
+						  <div class="form-group">
+						    
+						    <input type="text" class="form-control" name="nom" placeholder=" Votre nom">
+						   
+						  </div>
+						  <div class="form-group">
+						   
+						    <input type="email" class="form-control" name="email" placeholder="Votre email">
+						  </div>
+						  <div class="form-group">
+						   
+						    <input type="text" class="form-control" name="telephone" placeholder="Telephone">
+						  </div>
+						 
+						  <div class="form-group">
+						  	<textarea class="form-control" name="msg" rows="4" placeholder="Laissez nous un message"></textarea>
+						  </div>
+						  
+						  <button type="submit" class="btn btn-primary" style="margin-left:35%;margin-top: 10%;">Envoyer</button>
+					</form>
+				
 			</div>
-
-
-			<div class=" col-md-7 map">
+			<div class="col-md-7 map">
 				<div id="conteneur">
-			
+					
 				</div>
-				<br>
-				<div class="col-md-5 contact-grid1">
+				<!-- <div class="col-md-5 contact-grid1" style="position:relative;float:left;display:inline-block;">
 					<i class="fa fa-map-marker" aria-hidden="true"></i>
 					<div class="contact-right">
 						<p>Adresse</p>
 						<span>Riviera Palmeraie, Rond point ADO phcie St Moise.</span>
 					</div>
 				</div>
-				<div class="col-md-4 contact-grid1">
+				<div class="col-md-4 contact-grid1" style="position:relative;float:left;display:inline-block;">
 					<i class="fa fa-phone" aria-hidden="true"></i>
 					<div class="contact-right">
 						<p>Téléphone</p>
 						<p><span> +225 22 46 72 66 </span></p>
-						<span> +225 22 46 72 66 </span>
+						<p><span> +225 22 46 72 66 </span></p>
 					</div>
 				</div>
-				<div class="col-md-3 contact-grid1">
+				<div class="col-md-3 contact-grid1" style="position:relative;float:left;display:inline-block;">
 					<i class="fa fa-envelope" aria-hidden="true"></i>
 					<div class="contact-right">
 						<p>Email</p>
@@ -110,52 +57,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<a href="mailto:info@example1.com">info@telcoanniv.com</a>
 					</div>
 					
-				</div>
-				<div class="clearfix"></div>
+				</div> -->
+			
 			</div>
 		</div>
-	</div>
-</section>
-<!-- //contact -->
-	@include('footer')
-	<!-- Required Scripts -->
-	<!-- Common Js -->
-	<script type="text/javascript" src="{{URL::asset('js/jquery-2.2.3.min.js')}}"></script>
-	
-	<!--// Common Js -->
-	<!--search-bar-agileits-->
-	<script src="{{URL::asset('js/main.js')}}"></script>
-	<!--//search-bar-agileits-->
-	<!-- start-smoth-scrolling -->
-	<script type="text/javascript" src="{{URL::asset('js/move-top.js')}}"></script>
-	<script type="text/javascript" src="{{URL::asset('js/easing.js')}}"></script>
-	<script type="text/javascript">
-		jQuery(document).ready(function ($) {
-			$(".scroll").click(function (event) {
-				event.preventDefault();
-				$('html,body').animate({
-					scrollTop: $(this.hash).offset().top
-				}, 1000);
-			});
-		});
-	</script>
-	<!-- start-smoth-scrolling -->
-	<!-- smooth scrolling -->
-	<script type="text/javascript">
-		$(document).ready(function () {
-			/*
-				var defaults = {
-				containerID: 'toTop', // fading element id
-				containerHoverID: 'toTopHover', // fading element hover id
-				scrollSpeed: 1200,
-				easingType: 'linear' 
-				};
-			*/
-			$().UItoTop({
-				easingType: 'easeOutQuart'
-			});
-		});
-	</script>
+		
 
 	<script>
 	
@@ -179,20 +85,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		  initMap(); 
 	
 	</script>
-
-	<a href="#home" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
-	<!-- //smooth scrolling -->
-
-	<!-- Bootstrap Js -->
-	<script type="text/javascript" src="{{URL::asset('js/bootstrap.js')}}"></script>
-	<!--// Bootstrap Js -->
-
-	<!--// Required Scripts -->
 	<style type="text/css">
 		#conteneur{
 			
-			height: 430px;
+			height: 549px;
 			width: 100%;
+			margin-top: 13px;
 			
 		}
 		.navbar-default .navbar-nav>li>a:focus,
@@ -200,7 +98,25 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			color: white;
 			background-color: red;
 		}
+		.contact-right span, .contact-right a{
+			font-size: 15px;
+		    color: orange;
+		    letter-spacing: 1px;
+		    line-height: 26px;
+		}
+		.contact-grid1 i {
+		    font-size: 25px;
+		    color: #93c83f;
+		    margin-bottom: 15px;
+		}
+		.contact-right p {
+		    font-weight: 600;
+		    font-size: 18px;
+		    color: white;
+		    margin-bottom: 5px;
+		}
 	</style>
-</body>
 
-</html>
+@endsection
+
+

@@ -1,0 +1,7 @@
+<div class="row">
+        <div class="col-12" style="background-image: url(images/CHAM.jpg); background-repeat: no-repeat; background-position: center; background-size: cover; width: 100%;height: 400px;"> 
+        <div class="col-2">
+          <img src="images/toout.png">
+        </div> 
+        </div> 
+</div>
