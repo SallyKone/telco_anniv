@@ -117,22 +117,45 @@ class Utilitaires
             
        
 	$candidats = DB::select('select candidats.id,nom,COUNT(votes.id) as nbre_vote, codecandidat from candidats,votes where votes.id_candidat=candidats.id and jour_naiss=DAY(NOW()) and mois_naiss=MONTH(NOW()) GROUP BY candidats.id ORDER BY nbre_vote DESC',[date("%Y-%m-%d"),date("%Y-%m-%d")]);
-
-       	for($i=0;$i<count($candidats);$i++)
-       	{
-
-            if($candidats[$i]->codecandidat == $lecodecandidat)
+	
+	
+        foreach ($candidats as $i => $candidat) {
+            if($i!=0 && $candidats[$i-1]->nbre_vote==$candidat->nbre_vote)
             {
-                switch ($i+1) {
-                    case 1:
-                            return ($i+1)."ier avec " .$candidats[$i]->nbre_vote." votes";
-                        break;
-                    default:
-                            return ($i+1)."ieme avec " .$candidats[$i]->nbre_vote." votes";
-                        break;
+                $candidat->rang=$candidats[$i-1]->rang;   
+            }
+            else
+                $candidat->rang = $i+1;
+        }
+
+        $candidats = collect($candidats);
+	foreach ($candidats as $i => $candidat) {
+            if($candidat->codecandidat == $lecodecandidat)
+            {
+                if(count($candidats->where("rang","=",$candidat->rang))>1)
+                {
+                    if($candidat->rang==1)
+                    {
+                        return $candidat->rang."ier ex aequo avec ".$candidat->nbre_vote." votes";
+                    }
+                    else
+                    {
+                        return $candidat->rang."ième ex aequo avec ".$candidat->nbre_vote." votes";
+                    }
+                }
+                else
+                {
+                    if($candidat->rang==1)
+                    {
+                        return $candidat->rang."ier avec ".$candidat->nbre_vote." votes";
+                    }
+                    else
+                    {
+                        return $candidat->rang."ième avec ".$candidat->nbre_vote." votes";
+                    }
                 }
             }
-       	}
+        }
 
         return "Vous n'êtes pas en competition!!";
 

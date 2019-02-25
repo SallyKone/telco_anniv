@@ -37,10 +37,12 @@ Route::group(['prefix'=>'admins','middleware'=>'utilisateur'],function(){
 	Route::delete('/deleteAmi/{id}','AdminsController@deleteAmis')->name('deleteAmi');
 
 });
+
 //inscription
 Route::get('index1',function(){
 	return view ('index1');
 });
+
 Route::post('inscription','CandidatsController@inscriptionCandidat')->name('inscription');
 Route::get('inscription','CandidatsController@inscription')->name('frm-inscription');
 
@@ -77,8 +79,9 @@ Route::post('/mdpassoublier', 'CandidatsController@recupererMotPass');
 //Route Connexion
 Route::get ('/connexion', 'ConnexionController@showConnexion');
 Route::post ('/connexion', 'ConnexionController@connecter');
-Route::get ('/deconnexion', 'ConnexionController@deconnecter');
-Route::post ('/deconnexion', 'ConnexionController@deconnecter');
+Route::get('/deconnexion','ConnexionController@deconnecter');
+//Route::get ('/deconnexion', 'ConnexionController@deconnecter');
+//Route::post ('/deconnexion', 'ConnexionController@deconnecter');
 
 //Route Contact
 Route::get('/contact', 'ContactController@contact');
