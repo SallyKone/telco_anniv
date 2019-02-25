@@ -161,10 +161,7 @@
                     </div>
                   </div>
                 </div>
-              </div>
-              
-              <!-- Left and right controls -->
-             
+              </div>             
             </div>
 
 		</div>
