@@ -20,7 +20,7 @@
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="background-color:gold;">
                 <span class="navbar-toggler-icon" style="border-color:white;"></span>
               </button>
-              <div class="collapse navbar-collapse" id="navbarNav">
+              <div class="collapse navbar-collapse" id="navbarNav" style="width:100%;padding-left:15%">
                 <ul class="navbar-nav">
                   <li class="nav-item">
                     <a class="nav-link" href="/index" style="color:black;font-weight:bold;">Accueil</a>
