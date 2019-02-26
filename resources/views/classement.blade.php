@@ -37,7 +37,7 @@
                 <div class="panel-body actua" style="background-color: wheat;">
                    <marquee direction="up" onmouseout="this.start();" onmouseover="this.stop();" loop="infinite" height="300px">  
                     @foreach($classement0 as $classement)
-                      <div class="card" style="margin-right: 15px;position: relative;width: 100%;display: inline-block;margin-bottom: 10px">
+                      <div class="card" style="margin-right: 15px;position: relative;width: 80%;display: inline-block;margin-bottom: 10px;margin-left:10%;">
                         <div class="row" style="margin-right: 0px; margin-left: 0px">
                           <div class="col-12" style="background-image: url(images/img/avatar/{{$classement->photo}}); background-repeat: no-repeat; background-position: center; background-size:100% 100%;height: 139px;"> 
                           </div>
@@ -65,14 +65,14 @@
                    <marquee direction="up" onmouseout="this.start();" onmouseover="this.stop();" loop="infinite" height="300px"> 
 
                   @foreach($classement1 as $classement)
-                      <div class="card" style="margin-right: 15px;position: relative;width: 100%;display: inline-block;margin-bottom: 10px">
+                      <div class="card" style="margin-right: 15px;position: relative;width: 80%;display: inline-block;margin-bottom: 10px;margin-left:10%;">
                         <div class="row" style="margin-right: 0px; margin-left: 0px">
                           <div class="col-12" style="background-image: url(images/img/avatar/{{$classement->photo}}); background-repeat: no-repeat; background-position: center; background-size:100% 100%;height: 139px;"> 
                           </div>
                         </div>
                         <div class="row" style="margin-right: 0px; margin-left: 0px">
                           <div class="col-12 card-body" style="height:136px;padding: 0.25rem;background-color: #1e3953;color:#56f704;">
-                            <div class="card-text" style="width: 100%;"> {{$classement->nom.' '.$classement->prenom}}  <br/>          
+                                    
                             <div class="card-text" style="width: 100%;"> {{$classement->nom.' '.$classement->prenom}}  <br/>          
                                 <font style="color:white">Code:</font>  <font style="color: gold;"> {{$classement->codecandidat}} </font><br/>
                                      <font style="color: red;"><center>{{$classement->nbre_vote}} votes</center></font>
@@ -94,14 +94,13 @@
                     <marquee direction="up" onmouseout="this.start();" onmouseover="this.stop();" loop="infinite" height="300px"> 
 
                   @foreach($classement2 as $classement)
-                      <div class="card" style="margin-right: 15px;position: relative;width: 100%;display: inline-block;margin-bottom: 10px;">
+                      <div class="card" style="margin-right: 15px;position: relative;width:80%;display: inline-block;margin-bottom:10px;margin-left:10%;">
                         <div class="row" style="margin-right: 0px; margin-left: 0px">
                           <div class="col-12" style="background-image: url(images/img/avatar/{{$classement->photo}}); background-repeat: no-repeat; background-position: center; background-size:100% 100%;height: 139px;"> 
                           </div>
                         </div>
                         <div class="row" style="margin-right: 0px; margin-left: 0px">
-                          <div class="col-12 card-body" style="height:136px;padding: 0.25rem;background-color: #1e3953;color:#56f704;">
-                            <div class="card-text" style="width: 100%;"> {{$classement->nom.' '.$classement->prenom}}  <br/>          
+                          <div class="col-12 card-body" style="height:136px;padding: 0.25rem;background-color: #1e3953;color:#56f704;">         
                             <div class="card-text" style="width: 100%;"> {{$classement->nom.' '.$classement->prenom}}  <br/>          
                                 <font style="color:white">Code:</font>  <font style="color: gold;"> {{$classement->codecandidat}} </font><br/>
                                      <font style="color: red;"><center>{{$classement->nbre_vote}} votes</center></font>
@@ -124,14 +123,13 @@
                   <marquee direction="up" onmouseout="this.start();" onmouseover="this.stop();" loop="infinite" height="300px"> 
 
                   @foreach($classement3 as $classement)
-                      <div class="card" style="margin-right: 15px;position: relative;width: 100%;display: inline-block;margin-bottom: 10px;">
+                      <div class="card" style="margin-right: 15px;position: relative;width:80%;display: inline-block;margin-bottom:10px;margin-left:10%">
                         <div class="row" style="margin-right: 0px; margin-left: 0px">
                           <div class="col-12" style="background-image: url(images/img/avatar/{{$classement->photo}}); background-repeat: no-repeat; background-position: center; background-size:100% 100%;height: 139px;"> 
                           </div>
                         </div>
                         <div class="row" style="margin-right: 0px; margin-left: 0px">
-                          <div class="col-12 card-body" style="height:136px;padding: 0.25rem;background-color: #1e3953;color:#56f704;">
-                            <div class="card-text" style="width: 100%;"> {{$classement->nom.' '.$classement->prenom}}  <br/>          
+                          <div class="col-12 card-body" style="height:136px;padding: 0.25rem;background-color: #1e3953;color:#56f704;">        
                             <div class="card-text" style="width: 100%;"> {{$classement->nom.' '.$classement->prenom}}  <br/>          
                                 <font style="color:white">Code:</font>  <font style="color: gold;"> {{$classement->codecandidat}} </font><br/>
                                      <font style="color: red;"><center>{{$classement->nbre_vote}} votes</center></font>
@@ -152,14 +150,13 @@
                 <div class="panel-body actua" style="background-color: wheat;">
                    <marquee direction="up" onmouseout="this.start();" onmouseover="this.stop();" loop="infinite" height="300px">  
                     @foreach($classement4 as $classement)
-                      <div class="card" style="margin-right: 15px;position: relative;width: 100%;display: inline-block;margin-bottom: 10px;">
+                      <div class="card" style="margin-right: 15px;position: relative;width: 800%;display: inline-block;margin-bottom: 10px;margin-left:10%;">
                         <div class="row" style="margin-right: 0px; margin-left: 0px">
                           <div class="col-12" style="background-image: url(images/img/avatar/{{$classement->photo}}); background-repeat: no-repeat; background-position: center; background-size:100% 100%;height: 139px;"> 
                           </div>
                         </div>
                         <div class="row" style="margin-right: 0px; margin-left: 0px">
-                          <div class="col-12 card-body" style="height:136px;padding: 0.25rem;background-color: #1e3953;color:#56f704;">
-                            <div class="card-text" style="width: 100%;"> {{$classement->nom.' '.$classement->prenom}}  <br/>          
+                          <div class="col-12 card-body" style="height:136px;padding: 0.25rem;background-color: #1e3953;color:#56f704;">          
                            <div class="card-text" style="width: 100%;"> {{$classement->nom.' '.$classement->prenom}}  <br/>          
                                 <font style="color:white">Code:</font>  <font style="color: gold;"> {{$classement->codecandidat}} </font><br/>
                                      <font style="color: red;"><center>{{$classement->nbre_vote}} votes</center></font>
