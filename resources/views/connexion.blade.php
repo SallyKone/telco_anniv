@@ -59,7 +59,7 @@
 		  <button type="submit" class="btn btn-primary" style="margin-left:35%;margin-bottom:18px">Connecter</button>
 	</form>
 	</div>
-  <div class="col-md-4" style="background-image:url(images/flow.jpg); background-color: wheat;background-repeat: no-repeat; background-position: center; background-size:100% 100%;height:375px;">
+  <div class="col-md-4" style="background-image:url(images/grill.jpg); background-color: wheat;background-repeat: no-repeat; background-position: center; background-size:100% 100%;height:375px;">
     
   </div>
 </div>

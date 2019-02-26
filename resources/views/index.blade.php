@@ -72,7 +72,7 @@
                 <div class="panel-heading" style="">VAINQUEUR DU JOUR</div>
                 <div class="panel-body actua" style="background-color: wheat;">
                   
-                 <img src="images/vainqueur1.JPG" style="height: 100%;width: 80%;margin-left:10%;">
+                 <img src="images/daniel.jpg" style="height: 100%;width: 80%;margin-left:10%;">
                  
                 </div>
                  <h5 style="text-align: center;color: white;font-weight: bold;background-color: #1d1d23;">KASSI FRANCK</h5>

@@ -68,7 +68,7 @@
 		</div>
 		<div class="col-md-4 imG1">
 			<img class="imgD" src="images/projet.jpg">
-			<img class="imgD1" src="images/flow.jpg">
+			<img class="imgD1" src="images/choix.jpg">
 		</div>
 		
 	</div>
