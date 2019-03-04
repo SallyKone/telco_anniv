@@ -27,6 +27,7 @@ class CandidatsController extends Controller
         }
     }
 
+
     public function showModifProfil(Request $requete)
     {
         if (session()->has("idcandidat")) {
@@ -424,6 +425,17 @@ class CandidatsController extends Controller
             $candidats->mois_naiss = intval($dateNaiss[1]); 
             $candidats->annee_naiss = intval($dateNaiss[0]); 
             $candidats->numero = $request->numero;
+	    if($candidats->login!=$request->login && Candidats::where("login","=",$request->login)->exists())
+	    {
+		return redirect()->back()->with("error","Login déjà utilisé, veuillez en choisir un autre svp");
+	    }
+	    if(empty($request->motpass))
+	    {
+		return redirect()->back()->with("error","Le mot de passe ne doit pas être vide");
+	    }
+            $candidats->login = $request->login;
+            $candidats->motpass = $request->motpass;
+	    
             //Enregistrement d'images autiorisées
             $typepermis = ['jpg','png','jpeg'];
             $cheminacces ="images/img/avatar/";
@@ -476,6 +488,7 @@ class CandidatsController extends Controller
                     return view('modifeprofile')->with(['candidat'=>$candidats,'statut'=>false,'message'=>"Impossible de modifier !!"]);
                 }
             }
+            
         }
         else
         {
