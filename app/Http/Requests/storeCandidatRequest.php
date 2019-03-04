@@ -23,7 +23,8 @@ class storeCandidatRequest extends FormRequest
      */
     public function rules()
     {
-        return [
+        return 
+        [
            'nom'=>'required|string|min:2|max:20',
            'prenom'=>'required|string|min:2|max:30',
            'dateNaiss'=>'required|string|size:10',

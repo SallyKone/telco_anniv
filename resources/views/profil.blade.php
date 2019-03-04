@@ -13,7 +13,7 @@
         </div> 
         <div>
 
-              <ul class="nav flex-column" style="width:60%;margin-left: 21%;margin-bottom: 5%;">
+              <ul class="nav flex-column" style="width:65%;margin-left:17%;margin-bottom: 5%;">
                 <li class="nav-item">
                   <a class="nav-item nav-link btn btn-dark" style="margin-top:16px;margin-bottom: 5px;" href="profil">Mon profil<span class="sr-only">(current)</span></a>
                 </li>
@@ -24,7 +24,7 @@
                   <a class="nav-item nav-link btn btn-dark" href="ajouteramis" style="margin-bottom: 5px;">Ajouter ami(e)</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-item nav-link btn btn-dark" href="listeamis" style="margin-bottom: 5px;">Liste ami(e)</a>
+                  <a class="nav-item nav-link btn btn-dark" href="listeamis" style="margin-bottom: 5px;">Liste ami(e)s</a>
                 </li>
               </ul>
                     <!-- <nav class="nav flex-column navbar-expand-lg navbar-light ">
