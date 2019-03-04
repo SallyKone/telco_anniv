@@ -19,7 +19,21 @@
           <div class="col-2"></div>
         </div> 
        <div>
-          <nav class="nav flex-column navbar-expand-lg navbar-light ">
+        <ul class="nav flex-column" style="width:60%;margin-left: 21%;margin-bottom: 5%;">
+                <li class="nav-item">
+                  <a class="nav-item nav-link btn btn-dark" style="margin-top:16px;margin-bottom: 5px;" href="profil">Mon profil<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-item nav-link btn btn-dark" href="modifeprofile" style="margin-bottom: 5px;">Modifier mon profil</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-item nav-link btn btn-dark" href="ajouteramis" style="margin-bottom: 5px;">Ajouter ami(e)</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-item nav-link btn btn-dark" href="listeamis" style="margin-bottom: 5px;">Liste ami(e)</a>
+                </li>
+              </ul>
+          <!-- <nav class="nav flex-column navbar-expand-lg navbar-light ">
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation" style="margin-top: 13px;margin-bottom: 13px;">
               <span class="navbar-toggler-icon"></span>
@@ -34,7 +48,7 @@
               </div>
               <div class="col-md"></div>
             </div>
-          </nav>
+          </nav> -->
         </div>       
       </div>
       <div class="col-md-8">
@@ -44,6 +58,11 @@
                     {{ $message }} 
                     </div> 
                 @endif
+		@if(session('error'))
+  <div class="alert alert-danger">
+      {{session('error')}}
+  </div>
+@endif
         <form style="margin-top: 5px;color: white">
           <div class="form-group">
               <label >Nom:</label>
@@ -68,10 +87,20 @@
               <input type="text" class="form-control" value="{{$candidat['numero']}}" required name="numero">
 
           </div>
+          <div class="form-group">
+              <label >Login:</label>
+              <input type="text" class="form-control" value="{{$candidat['login']}}" required name="login">
+
+          </div>
+          <div class="form-group">
+              <label >Mot de passe:</label>
+              <input type="text" class="form-control" value="{{$candidat['motpass']}}" required name="motpass">
+
+          </div>
            <div class="form-group">
                 <button type="submit" class="btn btn-success" style="margin-left:40%">Modifer</button>
 
-            </div>
+           </div>
         </form>
       </div>
     </div>
@@ -112,4 +141,11 @@
       readURL(this);
   }); 
    </script>
+   <style type="text/css">
+        li:hover{
+          background-color:gray;
+          
+        }
+        
+      </style>
 @endsection

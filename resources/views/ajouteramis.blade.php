@@ -7,7 +7,21 @@
     <div class="row">
       <div class="col-md-4" style="background-color: gray;">
         <div>
-                    <nav class="nav flex-column navbar-expand-lg navbar-light ">
+              <ul class="nav flex-column" style="width:60%;margin-left: 21%;margin-bottom: 5%;">
+                <li class="nav-item">
+                  <a class="nav-item nav-link btn btn-dark" style="margin-top:16px;margin-bottom: 5px;" href="profil">Mon profil<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-item nav-link btn btn-dark" href="modifeprofile" style="margin-bottom: 5px;">Modifier mon profil</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-item nav-link btn btn-dark" href="ajouteramis" style="margin-bottom: 5px;">Ajouter ami(e)</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-item nav-link btn btn-dark" href="listeamis" style="margin-bottom: 5px;">Liste ami(e)</a>
+                </li>
+              </ul>
+                   <!--  <nav class="nav flex-column navbar-expand-lg navbar-light ">
 
                       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation" style="margin-top: 13px;margin-bottom: 13px;">
                         <span class="navbar-toggler-icon"></span>
@@ -22,7 +36,7 @@
                         </div>
                         <div class="col-md"></div>
                       </div>
-                    </nav>
+                    </nav> -->
         </div>       
       </div>
       <div class="col-md-8">
@@ -43,7 +57,7 @@
           </div>
           <div class="form-group">
           <label>Pseudo/Nom:</label>
-                          <input type="text" class="form-control" value="{{isset($ami->nom)?$ami->nom:'Mon ami'}}" required name="nom">
+                          <input type="text" class="form-control" placeholder="Nom de votre ami(e)" required name="nom">
           </div>
           <div class="form-group">
             <label for="pwd">Numero Mobile: </label>
@@ -60,5 +74,12 @@
   </div>
   <div class="col-1"></div>
 </div>
-
+<style type="text/css">
+        li:hover{
+          background-color:gray;
+          
+        }
+        
+      </style>
 @endsection
+      
