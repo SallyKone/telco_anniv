@@ -75,7 +75,7 @@
                  <img src="images/daniel.jpg" style="height: 100%;width: 80%;margin-left:10%;">
                  
                 </div>
-                 <h5 style="text-align: center;color: white;font-weight: bold;background-color: #1d1d23;">KASSI FRANCK</h5>
+                 <h5 style="text-align: center;color: white;font-weight: bold;background-color: #1d1d23;">Daniel Breezy</h5>
                 
             </div>
           
