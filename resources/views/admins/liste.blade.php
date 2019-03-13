@@ -85,7 +85,7 @@
                   <td>{{$valeur->numero}}</td>
                   <td>{{$valeur->nbramis}}</td>
                   <td>{{($valeur->profil_complet)?'Complet':'Incomplet'}}</td>
-                  <td ><a href="{{route('candidat')}}?id={{$valeur->id}}" class="btn btn-sm btn-primary modifier"><i class="fa fa-edit"></i></a>
+                  <td><a href="{{route('candidat')}}?id={{$valeur->id}}" class="btn btn-sm btn-primary modifier"><i class="fa fa-edit"></i></a>
                     <form id="frm_supprimer_valeur_{{$valeur->id}}" action="  {{route('deleteCandidat',$valeur->id)}}" method="POST">
                             <input type="hidden" name="_method" value="DELETE">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -235,7 +235,7 @@
         var that = this;
  
         $('input', this.footer() ).on('keyup change', function(){
-            if (that.search() !== this.value ){
+            if (that.search() === this.value ){
                 that.search( this.value ).draw();
             }
         } );

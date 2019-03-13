@@ -9,12 +9,16 @@ Route::group(['prefix'=>'admins','middleware'=>'utilisateur'],function(){
 	Route::post('/','AdminsController@dashbord')->name('Home');
 	Route::get('/index','AdminsController@dashbord')->name('Index');
 	Route::post('/index','AdminsController@dashbord')->name('Index');
+	
 	//Candidats
 	Route::get('/candidat','AdminsController@showCandidat')->name('candidat');
 	Route::post('/candidat','AdminsController@modifierCandidat')->name('candidat');
 	Route::get('/listcandidat','AdminsController@getAllCandidats')->name('listcandidat');
 	Route::post('/listcandidat','AdminsController@getAllCandidats')->name('listcandidat');
 	Route::delete('/deleteCandidat/{id}','AdminsController@deleteCandidats')->name('deleteCandidat');
+	Route::get('/listeCandidat',function(){
+	return view ('listeCandidat');
+	});
 	
 	
 	//Anniversaires

@@ -56,8 +56,8 @@ class AdminsController extends Controller
     //CANDIDATS
     public function showCandidat(Request $request)
     {
-        $idcandidat = $request->id;
-        $candidat = empty($idcandidat) ? new Candidats() : Candidats::findOrfail($idcandidat);
+      $idcandidat = $request->id;
+      $candidat = empty($idcandidat) ? new Candidats() : Candidats::findOrfail($idcandidat);
         
         $typepieces = DB::table('typepieces')->get();
         $pays = DB::table('pays')->get();
@@ -114,7 +114,11 @@ class AdminsController extends Controller
         
         $nomtable = 'candidat';
         $titreliste = 'Liste de tous les candidats';
-        $lists = DB::table('candidats')->leftjoin('amis','candidats.id','=','amis.id_candidat')->groupBy('candidats.id')->select(DB::raw('COUNT(amis.id_candidat) as nbramis'),'candidats.id', 'candidats.login' , 'candidats.codecandidat', 'candidats.nom', 'candidats.prenom', 'candidats.numero', 'candidats.photo', 'candidats.jour_naiss', 'candidats.mois_naiss', 'annee_naiss', 'candidats.genre', 'candidats.profil_complet')->get();
+        $lists = DB::table('candidats')
+        ->leftjoin('amis','candidats.id','=','amis.id_candidat')
+        ->groupBy('candidats.id')
+        ->select(DB::raw('COUNT(amis.id_candidat) as nbramis'),'candidats.id', 'candidats.login' , 'candidats.codecandidat', 'candidats.nom', 'candidats.prenom', 'candidats.numero', 'candidats.photo', 'candidats.jour_naiss', 'candidats.mois_naiss', 'annee_naiss', 'candidats.genre', 'candidats.profil_complet')
+        ->get();
         $colonnes = ['Nom & Prenom', 'Login', 'Code', 'Jour', 'Mois', 'Année', 'Genre', 'Numéro', 'Ami(s)', 'Profil'];
 
         return view('admins/liste')->with(['nomtable'=>$nomtable,'titreliste'=>$titreliste,'lists'=>$lists,'colonnes'=>$colonnes]);
