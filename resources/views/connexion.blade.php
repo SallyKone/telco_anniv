@@ -3,7 +3,7 @@
 <div class="container" style="margin-top:5%; margin-bottom:5%;">
 	
 <div class="row">
-  <div class="col-md-4" style="background-image:url(images/TFL.jpg); background-color: wheat;background-repeat: no-repeat; background-position: center; background-size:100% 100%;height:375px;">
+  <div class="col-md-4" style="background-image:url(images/profil1.jpeg); background-color: wheat;background-repeat: no-repeat; background-position: center; background-size:100% 100%;height:375px;">
     
   </div>
   <div class="col-md-4" style="background-color: wheat;">
@@ -59,7 +59,7 @@
 		  <button type="submit" class="btn btn-primary" style="margin-left:35%;margin-bottom:18px">Connecter</button>
 	</form>
 	</div>
-  <div class="col-md-4" style="background-image:url(images/grill.jpg); background-color: wheat;background-repeat: no-repeat; background-position: center; background-size:100% 100%;height:375px;">
+  <div class="col-md-4" style="background-image:url(images/profil2.jpeg); background-color: wheat;background-repeat: no-repeat; background-position: center; background-size:100% 100%;height:375px;">
     
   </div>
 </div>

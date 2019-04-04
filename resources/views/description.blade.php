@@ -67,7 +67,7 @@
 				</div>
 		</div>
 		<div class="col-md-4 imG1">
-			<img class="imgD" src="images/projet.jpg">
+			<img class="imgD" src="images/INCROYABLE.jpg">
 			<img class="imgD1" src="images/FTC.jpg">
 		</div>
 		
@@ -77,12 +77,12 @@
 <style type="text/css">
 	.imgD {
     height: 400px;
-    width: 100%;
+    width: 115%;
     margin-top: 137px;
 }
 	.imgD1{
 		height: 400px;
-		width: 100%;
+		width: 115%;
 		margin-top: 112px;
 	}
 @media all and (max-device-width: 740px) {
