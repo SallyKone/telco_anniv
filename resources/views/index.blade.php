@@ -4,7 +4,7 @@
       <div class="row" style="margin-left: 0px; margin-right: 0px;">
         <div class="col-md-12 live-grids-w3ls" style="margin-top: 14px;">
             <div class="panel panel-primary">
-                <div class="panel-heading" style="";>CANDIDAT(E)S EN COMPETITION</div>
+                <div class="panel-heading" style="";><!--CANDIDAT(E)S EN COMPETITION-->CANDIDAT(E)S NÉ(E)S AUJOURD'HUI</div>
                 <div class="panel-body" style="background-color: wheat;height: 220px;">
                    <marquee direction="left" onmouseout="this.start();" onmouseover="this.stop();" loop="infinite"> 
                     @foreach($listecandidats_votes as $candidat1)
@@ -15,7 +15,7 @@
                         <div class="row" style="margin-right: 0px; margin-left: 0px">
                           <div class="col-12 card-body" style="height: 77px;padding: 0.25rem;background-color: #1e3953;color:#56f704">
 
-                            <div class="card-text" style="width: 100%;"> 
+                            <div class="card-text" style="width: 100%;" title="{{$candidat1->nom.' '.$candidat1->prenom}}"> 
                               @if(strlen($candidat1->nom.' '.$candidat1->prenom)>19)
                               {{substr($candidat1->nom.' '.$candidat1->prenom,0,19)."..."}}  
                               @else
@@ -23,7 +23,7 @@
                               @endif 
                               <br/>
                                     <font style="color:white;">Code de vote:</font> <font style="color: gold;">{{$candidat1->codecandidat}} </font><br/>
-                                     <font style="color: red;"><center>{{$candidat1->nbre_vote}} votes</center></font>
+                                     <!--<font style="color: wheat;"><center>{{$candidat1->nbre_vote}} votes</center></font>-->
                             </div>   
                             </div>
                         </div>
@@ -37,7 +37,7 @@
                         <div class="row" style="margin-right: 0px; margin-left: 0px">
                           <div class="col-12 card-body" style="height: 77px;padding: 0.25rem;background-color: #1e3953;color:#56f704;">
 
-                            <div class="card-text" style="width: 100%;"> 
+                            <div class="card-text" style="width: 100%;" title="{{$candidat2->nom.' '.$candidat2->prenom}}">
                               @if(strlen($candidat2->nom.' '.$candidat2->prenom)>19)
                               {{substr($candidat2->nom.' '.$candidat2->prenom,0,19)."..."}}  
                               @else
@@ -45,7 +45,7 @@
                               @endif<br/> 
 
                                    <font style="color:white">Code de vote:</font>  <font style="color: gold;"> {{$candidat2->codecandidat}} </font><br/>
-                                     <font style="color: red;"><center>0 votes</center></font>
+                                     <!--<font style="color: wheat;"><center>0 votes</center></font>-->
                                    </div>   
                             </div>
                         </div>

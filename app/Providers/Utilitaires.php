@@ -205,8 +205,14 @@ class Utilitaires
     }
     public function generercodecandi($moisnaiss){
         $codecandi = array('jan','fev','mar','avr','mai','jui','juil','aou','sep','oct','nov','dec');
-        $nbre = count(Candidats::where('mois_naiss','=',$moisnaiss)->get())+1;
+	//dd(Candidats::where('mois_naiss','=',$moisnaiss)->orderBy('created_at','desc')->first()->id);
+        $nbre = count(Candidats::all());
+	//$nbre = DB::table('candidats')->where('mois_naiss','=',$moisnaiss)->last()->id+1;
         $lecodecandidat = $codecandi[$moisnaiss-1].$nbre;
+	while(Candidats::where('codecandidat','=',$lecodecandidat)->first()!=null) {
+		$nbre++;
+		$lecodecandidat = $codecandi[$moisnaiss-1].$nbre;
+	}
         return $lecodecandidat;
 
     }

@@ -1,4 +1,4 @@
-<div class="footer" style="background-color: #1e3953;color: white; margin-top: 20px;">
+<div class="footer" style="background-color: #1e3953;color: white; margin-top: 50px;">
      <div class="container">
       <div class="row">
         <div class="col-md-4 w3layouts_footer_grid">

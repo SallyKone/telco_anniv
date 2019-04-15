@@ -6,7 +6,7 @@
             
           </div>
           
-          <div class="col-2" style="text-align: right;background-image:url(images/logo_aqua.png);background-repeat: no-repeat; background-position: center; background-size:100% 100%;height:54px;">
+          <div class="col-2" style="text-align: right;/*background-image:url(images/logo_aqua.png);background-repeat: no-repeat; background-position: center; background-size:100% 100%;*/height:54px;">
              
           </div>
       </div>
@@ -45,6 +45,8 @@
            
           </div>
       </div>
+<div>
+
       <style type="text/css">
         li:hover{
           background-color:orange;

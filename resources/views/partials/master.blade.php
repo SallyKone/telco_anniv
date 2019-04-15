@@ -86,14 +86,15 @@
 }
   </style>
 
+
     <title>Telco anniv</title>
   </head>
-  <body>
+  <body onload="close_modal()">
      @include('partials/navbar')
     <div class="container">
       @include('partials/header')
       @yield('content')
-    </div>
+    </div></div>
    @include('partials/footer')
 
     <!-- Optional JavaScript -->

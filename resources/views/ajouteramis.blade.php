@@ -46,6 +46,20 @@
           {{ $message }} 
         </div> 
         @endif
+	<center>                @if(session('message'))
+  <div class="alert alert-success">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    {{session('message')}} 
+  </div>  
+@endif
+@if(!$errors->isEmpty())
+     <div class="alert alert-danger">
+     @foreach($errors->all() as $error)
+       {{$error}}<br/>
+     @endforeach
+     </div>
+   @endif
+</center>
         <form class="commentForm" action="ajouteramis" method="post">
           {{csrf_field()}}
           <div class="" id="last">
@@ -57,11 +71,11 @@
           </div>
           <div class="form-group">
           <label>Pseudo/Nom:</label>
-                          <input type="text" class="form-control" placeholder="Nom de votre ami(e)" required name="nom">
+                          <input type="text" class="form-control" value="{{$ami->nom}}" placeholder="Nom de votre ami(e)" required name="nom">
           </div>
           <div class="form-group">
             <label for="pwd">Numero Mobile: </label>
-            <input type="text" class="form-control" value="{{$ami->numero}}" required name="numero">
+            <input type="number" placeholder="XXXXXXXX" class="form-control" value="{{$ami->numero}}" required name="numero">
           </div>
           <div class="form-group">
             <input type="hidden" name="id" value="{{$ami->id}}">

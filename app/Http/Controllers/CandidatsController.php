@@ -10,6 +10,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use App\Providers\Utilitaires;
 use App\Http\Requests\storeCandidatRequest;
+use App\Http\Requests\updateCandidatRequest;
 
 class CandidatsController extends Controller
 {
@@ -54,12 +55,31 @@ class CandidatsController extends Controller
         }
             
     }
+
+    function determiner_reseau($numero) {
+
+	$numero_mtn = ["04", "05", "06", "44", "45", "46", "54", "55", "56", "74", "75", "76", "84", "85", "86"];
+	$numero_orange = ["07", "08", "09", "47", "48", "49", "57", "58", "59", "77", "78", "79", "87", "88", "89"];
+
+	$numero = trim(str_replace('225','',$numero));
+        $numero = trim(str_replace('225','',$numero));
+        $numero = trim(str_replace('+','',$numero));
+        $numero = trim(str_replace('a','',$numero));
+	$identifiant = $numero[0].$numero[1];
+	if(in_array($identifiant,$numero_mtn)) {
+		return "MTN";
+	}
+	if(in_array($identifiant,$numero_orange)) {
+		return "ORANGE";
+	}
+
+    }
     
     function traitementmessage(Request $requet, Utilitaires $util)
    {
        try
        {
-               $reseau = trim(str_replace(' ', '', $requet->dest));
+              /* $reseau = trim(str_replace(' ', '', $requet->dest));
                if($reseau==459 || $reseau==98164)
                {
                        return $this::ajouterCandidat($requet, $util);
@@ -67,7 +87,8 @@ class CandidatsController extends Controller
                else if($reseau==460)
                {
                        return $this::addVote($requet, $util);
-               }
+               }*/
+		return $this::addVote($requet, $util);
        }
        catch(\Exception $e)
        {
@@ -78,13 +99,20 @@ class CandidatsController extends Controller
    function inscriptionCandidat(storeCandidatRequest $request, Utilitaires $util){
          
         //Hnadle file upload
-        
+        try
+	{
+		/*$fichierlog = fopen('../storage/logs/fichierlog.log', 'a+');  
+                if ($fichierlog)
+                {
+                        fputs($fichierlog,date('d-m-Y H:i:s').' '.$request->all()."\n"); 
+                        fclose($fichierlog);
+                }*/
         $candidat = new Candidats();
         $candidat->nom = $request->input("nom");
         $candidat->prenom = $request->input("prenom");
         $candidat->mois_naiss = explode("-",$request->input("dateNaiss"))[1];
         $candidat->jour_naiss = explode("-",$request->input("dateNaiss"))[2];
-        $candidat->numero = $request->input("telephone");
+        $candidat->numero = $request->input("numero");
         $candidat->codecandidat = $util->generercodecandi($candidat->mois_naiss);
         $candidat->login = $request->input("login");
         $candidat->motpass = $request->input("password");
@@ -127,10 +155,23 @@ class CandidatsController extends Controller
         {
             return redirect()->back()->with("error","Echec de l'inscription");
         }
+	}
+	catch(\Exception $e) {
+		redirect()->back()->with("error","Une erreur est survenue, veuillez réessayer");
+		$fichierlog = fopen('../storage/logs/fichierlog.log', 'a+');  
+                if ($fichierlog)
+                {
+                        fputs($fichierlog,date('d-m-Y H:i:s').' Error Structure du message non conforme '.$e."\n"); 
+                        fclose($fichierlog);
+                }
+	}
    }
    function inscription(){
-
-    return view ("inscription");
+	if(session()->has('idcandidat'))
+    	{
+		return redirect()->back()->with("error","Vous êtes dejà connecté, deconnectez vous pour inscrire un nouveau candidat");
+	}
+	return view ("inscription");
    }
 
     function ajouterCandidat(Request $requet,Utilitaires $util)
@@ -226,6 +267,12 @@ class CandidatsController extends Controller
                     $mesg = "INSCRIPTION VALIDEE!"."\nLogin: ".$lelogin."\nMot de passe: xxxxxx"."\nVia www.telcoanniv.com Ajoutez vos amis";
                     $util->addMessageEnvoye($lenumero,$reseau,$mesg,date("Y-m-d H:i:s"),'accuse');
                     $util->miseAjrCandidat();
+		    $fichierlog = fopen('../storage/logs/fichierlog.log', 'a+');  
+            if ($fichierlog)
+            {
+                fputs($fichierlog,date('d-m-Y H:i:s').' Error Structure du message non conforme '.$requet->msg."\n"); 
+                fclose($fichierlog);
+            }
                     return view('/admins/ajoutcandidat')->with(['statut' => true,'message'=>'Candidat ajouté avec succès '.$requet->msg]);
                 }
                 else
@@ -255,12 +302,12 @@ class CandidatsController extends Controller
         }
         }catch(\Exception $e)
         {
-                /*$fichierlog = fopen('../storage/logs/fichierlog.log', 'a+');  
+                $fichierlog = fopen('../storage/logs/fichierlog.log', 'a+');  
                 if ($fichierlog)
                 {
                         fputs($fichierlog,date('d-m-Y H:i:s').' Error Structure du message non conforme '.$e."\n"); 
                         fclose($fichierlog);
-                }*/
+                }
                 $reseau = trim(str_replace(' ', '', $requet->dest));
                 $lenumero = trim(str_replace(' ', '', $requet->source));
                 $messageSucces = strtoupper("Echec de l'envoie, mauvaise structure du message");
@@ -282,29 +329,29 @@ class CandidatsController extends Controller
         $lenumero = trim(str_replace(' ', '', $requet->source));
         //$codecand = trim(str_replace(' ', '', $requet->msg));
 	$codecand = trim($requet->msg);
-        $reseau = trim(str_replace(' ', '', $requet->dest));
-        
+        //$reseau = trim(str_replace(' ', '', $requet->dest));
+        $reseau = $this::determiner_reseau($lenumero);
         $tableau = $util->idCandetAnniv($codecand);
 
 	if($tableau=="existe")
 	{
 	    $messageSucces = strtoupper("Ce candidat n'est pas en competition ").$codecand;
-            if ($reseau == 98164) {
+            if (/*$reseau == 98164*/$reseau = "ORANGE") {
                 $util->accuseReceptionORANGE($lenumero, $messageSucces, 98164);
             }
-            elseif ($reseau == 459){
-                $util->accuseReceptionMTN($lenumero,$messageSucces,459);
+            elseif (/*$reseau == 459*/$reseau = "MTN"){
+                $util->accuseReceptionMTN($lenumero,$messageSucces,98164);
             }
             return $messageSucces;
 	}
         else if ($tableau=="existe pas")
         {
             $messageSucces = strtoupper("Ce code candidat n'existe pas ").$codecand;
-            if ($reseau == 98164) {
+            if (/*$reseau == 98164*/$reseau = "ORANGE") {
                 $util->accuseReceptionORANGE($lenumero, $messageSucces, 98164);
             }
-            elseif ($reseau == 459){
-                $util->accuseReceptionMTN($lenumero,$messageSucces,459);
+            elseif (/*$reseau == 459*/ $reseau = "MTN"){
+                $util->accuseReceptionMTN($lenumero,$messageSucces,98164);
             }
             return $messageSucces;
         }
@@ -329,12 +376,12 @@ class CandidatsController extends Controller
                 //return view('/admins/ajoutvote')->with(['statut' => false,'message'=>'Vote Réfusé ! '.$requet->msg]);
             }
 
-            /*if ($reseau == 98164) {
+            if ($reseau == "ORANGE") {
                 $util->accuseReceptionORANGE($lenumero, $messageSucces, 98164);
-            }*/
+            }
 
-            if ($reseau == 460){
-		$util->accuseReceptionMTN($lenumero,$messageSucces,460);
+            if ($reseau == "MTN"){
+		$util->accuseReceptionMTN($lenumero,$messageSucces,98164);
             }
 
             return $messageSucces;

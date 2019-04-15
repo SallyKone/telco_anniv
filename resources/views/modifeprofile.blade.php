@@ -12,7 +12,7 @@
           <div class="col-2"></div>
           <div style="background-image:url(images/img/avatar/{{$candidat->photo}});background-color: wheat;background-repeat: no-repeat;background-position: center; background-size:100% 100%;height:150px;border-radius: 100%;margin-top: 5px" id="blah" class="col-8">
             <label class="custom-file-upload" title="Modifier votre photo">
-                <input type="file" id="imgInp" name="photo" />
+                <input type="file" id="imgInp" name="photo" accept="image/png, image/jpeg, image/bmp, image/jpg"/>
                 <i role="button" class="fa fa-camera"></i>
             </label>
           </div>

@@ -1,7 +1,7 @@
 @extends('partials/master')
 @section('content')
 <div class="row" style="margin-top:50px;">
-  <div class="col-md-4 imG1" style="background-image:url(images/chiccoin.jpg); background-color: wheat;background-repeat: no-repeat; background-position: center; background-size:100% 100%;height:279px;">
+  <div class="col-md-4 imG1" style="background-image:url(images/imagegauche.jpeg); background-color: wheat;background-repeat: no-repeat; background-position: center; background-size:100% 100%;height:279px;">
     
   </div>
   <div class="col-md-4" style="background-color: wheat;">

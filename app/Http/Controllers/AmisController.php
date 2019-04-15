@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use response;
+use App\Http\Requests\storeAmisRequest;
 
 class AmisController extends Controller
 {
@@ -41,8 +42,12 @@ class AmisController extends Controller
 
                 //Fonctions Post
     //Ajouter ou Modifier un ami
-    public function ajouterModifierAmis(Request $requete)
+    public function ajouterModifierAmis(storeAmisRequest $requete)
     {
+	/*$validatedData = $request->validate([
+        	'nom' => 'required|string|max:255',
+        	'numero'=>'required|numeric|size:8|unique:amis'
+    	]);*/
         $idami = $requete->id;
         $ami = empty($idami) ? new Amis() : Amis::findOrfail($idami);
         $candidats = session()->has('idcandidat') ? null : DB::table('candidats')->select('candidats.id','candidats.nom','candidats.prenom','candidats.login')->get();
@@ -56,7 +61,7 @@ class AmisController extends Controller
         {
             if (empty($idami)) {
                 $ami = new Amis();
-            return view($lapage)->with(['ami'=>$ami,'candidats'=>$candidats,'statut'=>true,'message'=>"Votre ami(e) à été ajouter avec succès !!"]);
+            return redirect()->back()->with(['ami'=>$ami,'candidats'=>$candidats,'statut'=>true,'message'=>"Votre ami(e) à été ajouté(e) avec succès !!"]);
             }
             else{
                 return view($lapage)->with(['ami'=>$ami,'candidats'=>$candidats,'statut'=>true,'message'=>"Votre ami(e) à été mis(e) à jour avec succès !!"]);
@@ -65,7 +70,7 @@ class AmisController extends Controller
         else   
         {
             if (empty($idami)) {
-                return view($lapage)->with(['ami'=>$ami,'candidats'=>$candidats,'statut'=>false,'message'=>"Impossible d'ajouter' !!"]);
+                return redirect()->back()->with(['ami'=>$ami,'candidats'=>$candidats,'statut'=>false,'message'=>"Impossible d'ajouter' !!"]);
             }
             else
             {

@@ -28,10 +28,10 @@ class storeCandidatRequest extends FormRequest
            'nom'=>'required|string|min:2|max:20',
            'prenom'=>'required|string|min:2|max:30',
            'dateNaiss'=>'required|string|size:10',
-           'telephone'=>'required|size:8|unique:candidats',
+           'numero'=>'required|digits:8|numeric|unique:candidats',
            'login'=>'required|string|min:5|max:15|unique:candidats',
            'password'=>'required|string|min:5|max:15',
-           'photo'=>'required|mimes:jpeg,bmp,png|max:600000'
+           'photo'=>'required|mimes:jpeg,bmp,png|max:5000000'
         ];
     }
 }

@@ -68,7 +68,7 @@
 		</div>
 		<div class="col-md-4 imG1">
 			<img class="imgD" src="images/INCROYABLE.jpeg">
-			<img class="imgD1" src="images/FTC.jpg">
+			<img class="imgD1" src="images/imagedescription.jpeg">
 		</div>
 		
 	</div>
